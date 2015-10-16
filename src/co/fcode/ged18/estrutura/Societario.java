@@ -76,7 +76,96 @@ public class Societario {
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
 		public Societario(){
+			setDocCnpj(new TipoDocumento(1,"CNPJ","CNPJ"));
+			setDocCertbx(new TipoDocumento(2, "CERTIDÃO DE BAIXA", "CERTBX"));
+			setDocInsest(new TipoDocumento(3, "INSCRIÇÃO ESTADUAL", "INSEST"));
+			setDocLdexcb(new TipoDocumento(4, "CERTIDÃO DE BAIXA DA INSCRIÇÃO ESTADUAL", "LDEXCB"));
+			setDocCertcb(new TipoDocumento(5, "CERTIF DE APROVACAO DO CORPO DE BOMBEIROS", "CERTCB"));
+			setDocAlvara(new TipoDocumento(6, "ALVARA", "ALVARA"));
+			setDocFincad(new TipoDocumento(7, "FICHA DE INFORMACOES CADASTRAIS", "FINCAD"));
+			setDocBxiss(new TipoDocumento(8, "MEMORANDO DE BAIXA ISS", "BXISS"));
+			setDocBxalv(new TipoDocumento(9, "BAIXA DO ALVARA", "BXALV"));
+			setDocSanipj(new TipoDocumento(10, "TERMO DE LICENCA DE FUNCIONAMENTO SANITARIO", "SANIPJ"));
+			setDocCis(new TipoDocumento(11, "CERTIFICADO DE INSPECAO SANITARIA", "CIS"));
+			setDocSanipf(new TipoDocumento(12, "TERMO DE ASSENTIMENTO SANITARIO", "SANIPF"));
+			setDocSmtr(new TipoDocumento(13, "CERTIDAO DE ASSESSIBILIDADE", "SMTR"));
+			setDocSmo(new TipoDocumento(14, "DECLARACAO DE REBAIXAMENTO DE MEIO FIO", "SMO"));
+			setDocCinstc(new TipoDocumento(15, "CERTIDAO DE INSTALACAO COMERCIAL", "CINSCT"));
+			setDocHabite(new TipoDocumento(16, "HABITE-SE", "HABITE"));
+			setDocCtrans(new TipoDocumento(17, "CERTIDAO DE TRANSFORMACAO DE USO", "CTRANS"));
+			setDocSmac(new TipoDocumento(18, "REQUERIMENTO DE MEIO AMBIENTE", "SMAC"));
+			setDocPlpubl(new TipoDocumento(19, "PLANTA DE AUTORIZACAO DE PUBLICIDADE", "PLPUBL"));
+			setDocTxmeca(new TipoDocumento(20, "TAXA DE MESAS E CADEIRAS", "TXMECA"));
+			setDocTxpubl(new TipoDocumento(21, "TAXA DE PUBLICIDADE ", "TXPUBL"));
+			setDocIptu(new TipoDocumento(22, "IPTU", "IPTU"));
+			setDocConloc(new TipoDocumento(23, "CONTRATO DE LOCACAO ", "CONLOC"));
+			setDocCpf(new TipoDocumento(24, "CPF DOS SOCIOS", "CPF"));
+			setDocRg(new TipoDocumento(25, "RG DOS SOCIOS", "RG"));
+			setDocCompre(new TipoDocumento(26, "COMPROVANTE DE RESIDENCIA DOS SOCIOS", "COMPRE"));
+			setDocRegpro(new TipoDocumento(27, "REGISTRO PROFISSIONAL", "REGPRO"));
+			setDocPcv(new TipoDocumento(28, "PROMESSA DE COMPRA E VENDA", "PCV"));
+			setDocNit(new TipoDocumento(29, "NUMERO DE INSCRICAO DO TRABALHADOR/SOCIO", ""));
 			
+			setTiposAtos(new ArrayList<TipoDocumento>());
+			setTiposFed(new ArrayList<TipoDocumento>());
+			setTiposEst(new ArrayList<TipoDocumento>());
+			setTiposMun(new ArrayList<TipoDocumento>());
+			setTiposDvrs(new ArrayList<TipoDocumento>());
+			
+			TiposAtos.add(DocConsoc);
+			TiposAtos.add(DocAltcon);
+			TiposAtos.add(DocDist);
+			TiposAtos.add(DocAta);
+			TiposAtos.add(DocReqemp);
+			TiposAtos.add(DocEnq);
+			TiposAtos.add(DocReenq);
+			TiposAtos.add(DocBalreg);
+			TiposAtos.add(DocProinc);
+			TiposAtos.add(DocParal);
+			TiposAtos.add(DocLavpal);
+			TiposAtos.add(DocEstat);
+			
+			TiposFed.add(DocCnpj);
+			TiposFed.add(DocCertbx);
+			
+			TiposEst.add(DocInsest);
+			TiposEst.add(DocParal);
+			TiposEst.add(DocCertbx);
+			TiposEst.add(DocLdexcb);
+			TiposEst.add(DocCertcb);
+			
+			TiposMun.add(DocAlvara);
+			TiposMun.add(DocFincad);
+			TiposMun.add(DocParal);
+			TiposMun.add(DocBxiss);
+			TiposMun.add(DocBxalv);
+			TiposMun.add(DocSanipj);
+			TiposMun.add(DocCis);
+			TiposMun.add(DocSanipf);
+			TiposMun.add(DocSmtr);
+			TiposMun.add(DocSmo);
+			TiposMun.add(DocCinstc);
+			TiposMun.add(DocHabite);
+			TiposMun.add(DocCtrans);
+			TiposMun.add(DocSmac);
+			TiposMun.add(DocPlpubl);
+			TiposMun.add(DocTxmeca);
+			TiposMun.add(DocTxpubl);
+			TiposMun.add(DocIptu);
+			
+			TiposDvrs.add(DocConloc);
+			TiposDvrs.add(DocCpf);
+			TiposDvrs.add(DocRg);
+			TiposDvrs.add(DocCompre);
+			TiposDvrs.add(DocRegpro);
+			TiposDvrs.add(DocPcv);
+			TiposDvrs.add(DocNit);
+			
+			setAtos(new Organizacao(1,"ATOS","ATOS",TiposAtos));
+			setFed(new Organizacao(2,"Federal","FED",TiposFed));
+			setEst(new Organizacao(3,"Estadual","EST",TiposEst));
+			setMun(new Organizacao(4,"Municipal","MUN",TiposMun));
+			setDvrs(new Organizacao(5,"Diversos","DVRS",TiposDvrs));
 		}
 //------------------------------------------------------------------------------------------------
 /**
