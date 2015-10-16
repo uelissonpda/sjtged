@@ -47,7 +47,47 @@ public class Admapo {
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
 		public Admapo(){
+			setDocMens(new TipoDocumento(1,"Mensal","MENS"));
+			setDocTrim(new TipoDocumento(2,"Trimestral","TRIM"));
+			setDocOutr(new TipoDocumento(3, "Outros", "OUTR"));
+			setDocFisc(new TipoDocumento(4, "Fiscais", "FISC"));
+			setDocAlug(new TipoDocumento(5, "Aluguel", "ALUG"));
+			setDocCont(new TipoDocumento(6, "Contabilidade", "CONT"));
+			setDocDp(new TipoDocumento(7, "Departamento Pessoal", "DP"));
+			setDocBanc(new TipoDocumento(8, "Bancarios", "BANC"));
+			setDocInvt(new TipoDocumento(9, "Investimentos", "INVT"));
+			setDocCcre(new TipoDocumento(10, "Cartao de Credito", "CCRE"));
+			setDocNfrj(new TipoDocumento(11, "Nota Fiscal RJ", "NFRJ"));
+			setDocNfsp(new TipoDocumento(12, "Nota Fiscal SP", "NFSP"));
+			setDocNfoe(new TipoDocumento(13, "Nota Fiscal Outros Estados", "NFOE"));
 			
+			setTiposCom(new ArrayList<TipoDocumento>());
+			setTiposDoc(new ArrayList<TipoDocumento>());
+			setTiposExtr(new ArrayList<TipoDocumento>());
+			setTiposNfr(new ArrayList<TipoDocumento>());
+			
+			TiposCom.add(DocMens);
+			TiposCom.add(DocTrim);
+			TiposCom.add(DocOutr);
+			
+			TiposDoc.add(DocFisc);
+			TiposDoc.add(DocAlug);
+			TiposDoc.add(DocCont);
+			TiposDoc.add(DocCont);
+			TiposDoc.add(DocDp);
+			
+			TiposExtr.add(DocBanc);
+			TiposExtr.add(DocInvt);
+			TiposExtr.add(DocCcre);
+			
+			TiposNfr.add(DocNfrj);
+			TiposNfr.add(DocNfsp);
+			TiposNfr.add(DocNfoe);
+			
+			setCom(new Organizacao(1,"Comunicados","COM",TiposCom));
+			setDoc(new Organizacao(2,"Documentos","DOC",TiposDoc));
+			setExtr(new Organizacao(3,"Extratos","EXTR",TiposExtr));
+			setNfr(new Organizacao(4,"Notas Com Retencao","NFR",TiposNfr));
 		}
 //----------------------------------------------------------------------------------------------
 		public ArrayList<TipoDocumento> getTiposNfr() {
