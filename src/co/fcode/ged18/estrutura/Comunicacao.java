@@ -43,7 +43,67 @@ public class Comunicacao {
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
 			public Comunicacao(){
+				setDocAdm(new TipoDocumento(1, "Admapo", "ADM"));
+				setDocCont(new TipoDocumento(2, "Contabil", "CONT"));
+				setDocDp(new TipoDocumento(3, "Departamento Pessoal", "DP"));
+				setDocDir(new TipoDocumento(4, "Direcao", "DIR"));
+				setDocFisc(new TipoDocumento(5, "Fiscal", "FISC"));
+				setDocSoc(new TipoDocumento(6, "Societario", "SOC"));
 				
+				setTiposCext(new ArrayList<TipoDocumento>());
+				setTiposEmen(new ArrayList<TipoDocumento>());
+				setTiposEmre(new ArrayList<TipoDocumento>());
+				setTiposInti(new ArrayList<TipoDocumento>());
+				setTiposMmot(new ArrayList<TipoDocumento>());
+				setTiposMr(new ArrayList<TipoDocumento>());
+				
+				TiposCext.add(DocAdm);
+				TiposCext.add(DocCont);
+				TiposCext.add(DocDp);
+				TiposCext.add(DocDir);
+				TiposCext.add(DocFisc);
+				TiposCext.add(DocSoc);
+				
+				TiposEmen.add(DocAdm);
+				TiposEmen.add(DocCont);
+				TiposEmen.add(DocDp);
+				TiposEmen.add(DocDir);
+				TiposEmen.add(DocFisc);
+				TiposEmen.add(DocSoc);
+				
+				TiposEmre.add(DocAdm);
+				TiposEmre.add(DocCont);
+				TiposEmre.add(DocDp);
+				TiposEmre.add(DocDir);
+				TiposEmre.add(DocFisc);
+				TiposEmre.add(DocSoc);
+				
+				TiposInti.add(DocAdm);
+				TiposInti.add(DocCont);
+				TiposInti.add(DocDp);
+				TiposInti.add(DocDir);
+				TiposInti.add(DocFisc);
+				TiposInti.add(DocSoc);
+				
+				TiposMmot.add(DocAdm);
+				TiposMmot.add(DocCont);
+				TiposMmot.add(DocDp);
+				TiposMmot.add(DocDir);
+				TiposMmot.add(DocFisc);
+				
+				TiposMr.add(DocAdm);
+				TiposMr.add(DocCont);
+				TiposMr.add(DocDp);
+				TiposMr.add(DocDir);
+				TiposMr.add(DocFisc);
+				TiposMr.add(DocSoc);
+				
+				setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
+				setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
+				setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
+				setInti(new Organizacao(4,"Intimicoes/Notificacoes","INTI",TiposInti));
+				setMmot(new Organizacao(5,"Memorandos/Orientacoes Tecnincas","MMOT",TiposMmot));
+				setMr(new Organizacao(6,"Memoria de Reuniao","MR",TiposMr));
 			}
 //-------------------------------------------------------------------------------------------
 public ArrayList<TipoDocumento> getTiposMr() {
