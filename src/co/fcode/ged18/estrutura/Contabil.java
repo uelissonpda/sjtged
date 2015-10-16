@@ -54,7 +54,61 @@ public class Contabil {
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
 			public Contabil(){
+				setDocTbp(new TipoDocumento(1, "Termo Balanço Patrimonial","TBP"));
+				setDocDre(new TipoDocumento(2, "Demonstracao do Resultado do Exercicio", "DRE"));
+				setDocTdre(new TipoDocumento(3, "Termo Demonstracao do Resultado do Exercicio", "TDRE"));
+				setDocBm(new TipoDocumento(4, "Balancete Mensal", "BM"));
+				setDocBt(new TipoDocumento(5, "Balancetes Trimestrais", "Balancetes Anual"));
+				setDocDlpa(new TipoDocumento(6, "Demonstracao de Lucros ou Prejuizos Acumulados", "Dlpa"));
+				setDocDmpl(new TipoDocumento(7, "Demonstracao da Mutacao do Pratimonio Liquido", "Dmpl"));
+				setDocDfc(new TipoDocumento(8, "Demonstracao dos Fluxos de Caixa", "Dfc"));
+				setDocNe(new TipoDocumento(9, "Notas Explicativas", "NE"));
+				setDocIndliq(new TipoDocumento(10, "Indices de Liquidez", "INDLIQ"));
+				setDocRcentr(new TipoDocumento(11, "Recibo de Entrega", "RCENTR"));
+				setDocReqnto(new TipoDocumento(12, "Requerimento", "Reqnto"));
+				setDocTermos(new TipoDocumento(13, "Termos de Abertura e Encerramento", "TERMOS"));
+				setDocCopseg(new TipoDocumento(14, "Copia SEG ARQ Transmitido", "COPSEG"));
+				setDocTxpaga(new TipoDocumento(15, "Taxa Paga", "TXPAGA"));
+				setDocAutent(new TipoDocumento(16, "Termo Autenticacao", "AUTENT"));
+				setDocDiario(new TipoDocumento(17, "Diario", "DIARIO"));
 				
+				setTiposBlnc(new ArrayList<TipoDocumento>());
+				setTiposDre(new ArrayList<TipoDocumento>());
+				setTiposBlct(new ArrayList<TipoDocumento>());
+				setTiposDcon(new ArrayList<TipoDocumento>());
+				setTiposEcd(new ArrayList<TipoDocumento>());
+				
+				TiposBlnc.add(DocBp);
+				TiposBlnc.add(DocTbp);
+				TiposDre.add(DocDre);
+				TiposDre.add(DocTdre);
+				TiposBlct.add(DocBm);
+				TiposBlct.add(DocBt);
+				TiposBlct.add(DocBa);
+				TiposDcon.add(DocDlpa);
+				TiposDcon.add(DocDmpl);
+				TiposDcon.add(DocDfc);
+				TiposDcon.add(DocNe);
+				TiposDcon.add(DocIndliq);
+				TiposEcd.add(DocRcentr);
+				TiposEcd.add(DocReqnto);
+				TiposEcd.add(DocTermos);
+				TiposEcd.add(DocCopseg);
+				TiposEcd.add(DocTxpaga);
+				TiposEcd.add(DocAutent);
+				TiposEcd.add(DocDiario);
+				TiposEcd.add(DocDlpa);
+				TiposEcd.add(DocDmpl);
+				TiposEcd.add(DocNe);
+				TiposEcd.add(DocNe);
+				TiposEcd.add(DocBp);
+				TiposEcd.add(DocDre);
+				
+				setBlnc(new Organizacao(1,"Balancos","BLNC",TiposBlnc));
+				setDre(new Organizacao(2,"Demonstracao Resultado de Exercicio","DRE",TiposDre));
+				setBlct(new Organizacao(3, "Balancetes", "BLCT", TiposBlct));
+				setDcon(new Organizacao(4,"Demonstrativos Contabeis", "DCON", TiposDcon));
+				setEcd(new Organizacao(5,"Escrituracao Contabil Fiscal","ECD",TiposEcd));
 			}
 //------------------------------------------------------------------------------------------------
 			/**
