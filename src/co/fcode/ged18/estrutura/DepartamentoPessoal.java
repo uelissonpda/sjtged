@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
+import co.fcode.ged18.Unidade;
 /***************
 *@author UANJOS*
 ***************/
@@ -60,9 +61,13 @@ public class DepartamentoPessoal {
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 	
+	private ArrayList<Organizacao> organizacoes;
+	private Unidade dp;
+	
 	public DepartamentoPessoal(){
 		setDocAdmiss(new TipoDocumento(1,"Admissao","ADMISS"));
-		setDocQuitac(new TipoDocumento(2,"Folhas","FOLHAS"));
+		setDocQuitac(new TipoDocumento(1,"Quitação", ""));  // TODO: Com Erro
+		setDocFolhas(new TipoDocumento(2,"Folhas","FOLHAS"));
 		setDocGfip(new TipoDocumento(3,"Gfip","GFIP"));
 		setDocDarf(new TipoDocumento(4,"Darf","DARF"));
 		setDocGps(new TipoDocumento(5,"Gps","GPS"));
@@ -96,43 +101,50 @@ public class DepartamentoPessoal {
 		setTiposObac(new ArrayList<TipoDocumento>());
 		setTiposDvrs(new ArrayList<TipoDocumento>());
 		
-		TiposRot.add(DocAdmiss);
-		TiposRot.add(DocQuitac);
-		TiposRot.add(DocFolhas);
-		TiposRot.add(DocGfip);
-		TiposRot.add(DocDarf);
-		TiposRot.add(DocGps);
-		TiposRot.add(DocCaged);
-		TiposRot.add(DocCompvt);
-		TiposRot.add(DocPonto);
-		TiposRot.add(DocFerias);
-		TiposRot.add(DocGrcsu);
-		TiposRot.add(DocAssist);
-		TiposRot.add(DocProlab);
-		TiposRot.add(DocPatron);
-		TiposRot.add(DocPis);
+		TiposRot.add(getDocAdmiss());
+		TiposRot.add(getDocQuitac());
+		TiposRot.add(getDocFolhas());
+		TiposRot.add(getDocGfip());
+		TiposRot.add(getDocDarf());
+		TiposRot.add(getDocGps());
+		TiposRot.add(getDocCaged());
+		TiposRot.add(getDocCompvt());
+		TiposRot.add(getDocPonto());
+		TiposRot.add(getDocFerias());
+		TiposRot.add(getDocGrcsu());
+		TiposRot.add(getDocAssist());
+		TiposRot.add(getDocProlab());
+		TiposRot.add(getDocPatron());
+		TiposRot.add(getDocPis());
 		
-		TiposObac.add(DocDirf);
-		TiposObac.add(DocRais);
-		TiposObac.add(DocInfrend);
+		TiposObac.add(getDocDirf());
+		TiposObac.add(getDocRais());
+		TiposObac.add(getDocInfrend());
 		
-		TiposDvrs.add(DocProces);
-		TiposDvrs.add(DocAudito);
-		TiposDvrs.add(DocReproc);
-		TiposDvrs.add(DocCnd);
-		TiposDvrs.add(DocCrf);
-		TiposDvrs.add(DocCrf);
-		TiposDvrs.add(DocCndtra);
-		TiposDvrs.add(DocDeclar);
-		TiposDvrs.add(DocDataba);
-		TiposDvrs.add(DocPrepos);
-		TiposDvrs.add(DocComext);
-		TiposDvrs.add(DocPartic);
-		TiposDvrs.add(DocRecalc);
+		TiposDvrs.add(getDocProces());
+		TiposDvrs.add(getDocAudito());
+		TiposDvrs.add(getDocReproc());
+		TiposDvrs.add(getDocCnd());
+		TiposDvrs.add(getDocCrf());
+		TiposDvrs.add(getDocCrf());
+		TiposDvrs.add(getDocCndtra());
+		TiposDvrs.add(getDocDeclar());
+		TiposDvrs.add(getDocDataba());
+		TiposDvrs.add(getDocPrepos());
+		TiposDvrs.add(getDocComext());
+		TiposDvrs.add(getDocPartic());
+		TiposDvrs.add(getDocRecalc());
 		
 		setRot(new Organizacao(1, "Rotinas", "ROT", TiposRot));
 		setObac(new Organizacao(2, "Obrigacoes Acessorias", "OBAC", TiposObac));
-		setDvrs(new Organizacao(3,"Diversos","DVRS",TiposDvrs));
+		setDvrs(new Organizacao(3,"Diversos", "DVRS",TiposDvrs));
+		
+		setOrganizacoes(new ArrayList<Organizacao>());
+		getOrganizacoes().add(getRot());
+		getOrganizacoes().add(getObac());
+		getOrganizacoes().add(getDvrs());
+		
+		setDp(new Unidade(3,"Depto. Pessoal","DP",getOrganizacoes()));
 	}
 //------------------------------------------------------------------------------------------------	
 /**
@@ -557,5 +569,17 @@ public void setTiposObac(ArrayList<TipoDocumento> tiposObac) {
 
 	public void setDocFerias(TipoDocumento docFerias) {
 		DocFerias = docFerias;
+	}
+	public ArrayList<Organizacao> getOrganizacoes() {
+		return organizacoes;
+	}
+	public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
+		this.organizacoes = organizacoes;
+	}
+	public Unidade getDp() {
+		return dp;
+	}
+	public void setDp(Unidade dp) {
+		this.dp = dp;
 	}
 }

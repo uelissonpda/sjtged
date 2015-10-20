@@ -23,6 +23,13 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.MaskFormatter;
 
+import co.fcode.ged18.Unidade;
+import co.fcode.ged18.estrutura.Admapo;
+import co.fcode.ged18.estrutura.Comunicacao;
+import co.fcode.ged18.estrutura.Contabil;
+import co.fcode.ged18.estrutura.DepartamentoPessoal;
+import co.fcode.ged18.estrutura.Fiscal;
+import co.fcode.ged18.estrutura.Societario;
 import co.fcode.sjtged.sistema.Database;
 import co.fcode.sjtged.sistema.FileDrop;
 import co.fcode.sjtged.sistema.FuncoesExtras;
@@ -33,7 +40,8 @@ public class TratarArquivo extends JDesktopPane{
 	Statement stmt;
 	
 	String query = "select NmEmpresa,CdEmpresa from wphd.Empresa";
-	StringBuffer caminho = new StringBuffer("Y:/CLIENTES/PJ - PESSOA JURÍDICA/");
+	StringBuffer caminho = new StringBuffer("Y:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
+	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug
 	
 	JComboBox<String> comboUnidade = new JComboBox<String>();
 	JComboBox<String> comboOrganizacao = new JComboBox<String>();
@@ -50,14 +58,27 @@ public class TratarArquivo extends JDesktopPane{
 	JLabel lblPF = new JLabel("Pessoa Física");
 	JCheckBox pessoaFis = new JCheckBox();
 
-	JLabel lblUnidade = new JLabel("Unidade");
-	JLabel lblOrgUnidade = new JLabel("Organização da Unidade");
-	JLabel lblTipoDoc = new JLabel("Tipo de Documento");
+	JLabel lblUnidade = new JLabel("Setor");
+	JLabel lblOrgUnidade = new JLabel("Assunto");
+	JLabel lblTipoDoc = new JLabel("Tipo");
 	JLabel lblCompetencia = new JLabel("Competência");
+	JLabel lblNfe = new JLabel("NFe");
 		
 	JTextArea text = new JTextArea();
 	JScrollPane text2 = new JScrollPane(text);
 	ArrayList<File> arquivos = new ArrayList<File>();
+	
+	Admapo ad = new Admapo();
+	Comunicacao cm = new Comunicacao();
+	Contabil ct = new Contabil();
+	DepartamentoPessoal dp = new DepartamentoPessoal();
+	Fiscal fs = new Fiscal();
+	Societario sc = new Societario();
+	
+	ArrayList<Unidade> unidades = new ArrayList<Unidade>();
+	
+	JFormattedTextField competencia;
+	JFormattedTextField nfe;
 	
 	public TratarArquivo(){
 		try{
@@ -67,7 +88,7 @@ public class TratarArquivo extends JDesktopPane{
 			stmt = conn.createStatement();
 			
 			// ----- Nï¿½mero da Empresa
-			lblNumeroE.setBounds(30, 10, 110, 14);
+			lblNumeroE.setBounds(30, 90, 110, 14);
 			add(lblNumeroE);
 			
 			numEmpresa.setColumns(10);
@@ -101,10 +122,19 @@ public class TratarArquivo extends JDesktopPane{
 			lblUnidade.setIcon(FuncoesExtras.buscarIcone("img/box.png"));
 			add(lblUnidade);
 				
-			//unidades.forEach((Unidade u) -> comboUnidade.addItem(u.getNome()));
+			/* Lista de Unidades */
+			unidades.add(ad.getAdmapo());
+			unidades.add(cm.getComunicacao());
+			unidades.add(ct.getContabil());
+			unidades.add(dp.getDp());
+			unidades.add(fs.getFiscal());
+			unidades.add(sc.getSoc());
+			
+			/* Adição das Unidades na ComboBox */
+			unidades.forEach(u -> comboUnidade.addItem(u.getNomeCompleto()));
 			comboUnidade.setBounds(30, lblUnidade.getY()+30, 190, 25);
 			comboUnidade.setToolTipText("Selecione a Unidade");
-			//comboUnidade.addActionListener (event -> OrganizarUnidade(comboUnidade.getSelectedIndex()));
+			comboUnidade.addActionListener (e -> OrganizarUnidade(comboUnidade.getSelectedIndex()));
 			add(comboUnidade);
 			
 			// Selecionar Organização de Unidade
@@ -115,7 +145,7 @@ public class TratarArquivo extends JDesktopPane{
 			comboOrganizacao.setBounds(30, lblOrgUnidade.getY()+30, 190, 25);
 			comboOrganizacao.setToolTipText("Selecione a Organização da Unidade");
 			comboOrganizacao.setEnabled(false);
-			//comboOrganizacao.addActionListener(event -> OrganizarDocumentos(comboUnidade.getSelectedIndex(),comboOrganizacao.getSelectedIndex()));
+			comboOrganizacao.addActionListener(e -> OrganizarDocumentos(comboUnidade.getSelectedIndex(),comboOrganizacao.getSelectedIndex()));
 			add(comboOrganizacao);
 			
 			// Tipo de Documento
@@ -130,15 +160,23 @@ public class TratarArquivo extends JDesktopPane{
 			add(comboDocumento);
 			
 			// ----- Competencia
-			lblCompetencia.setBounds(lblTipoDoc.getX(), comboDocumento.getY()+30, 190, 25);
+			lblCompetencia.setBounds(lblTipoDoc.getX(), comboDocumento.getY()+30, 100, 25);
 			add(lblCompetencia);
-			MaskFormatter dateMask = new MaskFormatter("##-##-##");
-			JFormattedTextField competencia = new JFormattedTextField(dateMask);
+			MaskFormatter dateMask = new MaskFormatter("######");
+			competencia = new JFormattedTextField(dateMask);
 			competencia.setBounds(lblCompetencia.getX(), lblCompetencia.getY()+30, 100, 25);
 			add(competencia);
 			
+			// ----- NFE
+			lblNfe.setBounds(lblCompetencia.getX()+lblCompetencia.getWidth()+20, lblCompetencia.getY(), 100, 25);
+			add(lblNfe);
+			MaskFormatter nfeMask = new MaskFormatter("HHHHHHHHH");
+			nfe = new JFormattedTextField(nfeMask);
+			nfe.setBounds(competencia.getX()+competencia.getWidth()+20, competencia.getY(), 100, 25);
+			add(nfe);
+			
 			// ----- Renomear Arquivo
-			btnRenomear.setBounds(580, 0, 180, 50);
+			btnRenomear.setBounds(580, 90, 180, 50);
 			btnRenomear.setIcon(FuncoesExtras.buscarIcone("img/doc_convert.png"));
 			btnRenomear.setEnabled(false);
 			add(btnRenomear);
@@ -163,7 +201,7 @@ public class TratarArquivo extends JDesktopPane{
 			});
 			
 			/* Campo para Adicionar Arquivos */
-			 text2.setSize(getWidth(), 80);
+			 text2.setBounds(0,0,765, 80);
 			 text.setText("Jogue os arquivos aqui!\n");
 			 text.setEnabled(false);
 		     add(text2);
@@ -187,9 +225,26 @@ public class TratarArquivo extends JDesktopPane{
 		invalidate();
 		validate();
 	}
+	
+	public void OrganizarUnidade(int codUnidade){
+		comboOrganizacao.setEnabled(true);
+		comboOrganizacao.removeAllItems();
+		unidades.get(codUnidade).getOrganizacao().forEach(o -> {
+			comboOrganizacao.addItem(o.getNomeCompleto());
+		});
+	}
+	
+	public void OrganizarDocumentos(int codUnidade, int codOrg){
+		comboDocumento.setEnabled(true);
+		comboDocumento.removeAllItems();
+		if(codOrg >= 0){
+			unidades.get(codUnidade).getOrganizacao().get(codOrg).getDocumentos().forEach(d -> {
+				comboDocumento.addItem(d.getNomeCompleto());
+			});
+		}
+	}
 
 	public void RenomearArquivos(){
-		int contador = 0;
 		for(File arqVelho : arquivos){
 			String codEmpresa = new String();
 			ResultSet rs;
@@ -208,8 +263,12 @@ public class TratarArquivo extends JDesktopPane{
 				JOptionPane.showMessageDialog(null, "A empresa não existe!", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
 			else if(numEmpresa.getText().equals("")){
-				JOptionPane.showMessageDialog(null, "O número da empresa não pode estar em branco", "Erro", JOptionPane.ERROR_MESSAGE);
-			} else {
+				JOptionPane.showMessageDialog(null, "O número da empresa não pode estar em branco.", "Erro", JOptionPane.ERROR_MESSAGE);
+			}
+			else if(competencia.getText().equals("      ")){
+				JOptionPane.showMessageDialog(null, "A competência não pode estar em branco.", "Erro", JOptionPane.ERROR_MESSAGE);
+			}
+			else {
 				/* Criação de Diretório, caso não existam*/
 				// Y:/EMPRESAS/NumeroDaEmpresa
 				File empresaDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText());
@@ -236,6 +295,25 @@ public class TratarArquivo extends JDesktopPane{
 					catch(SecurityException se){}
 				}
 				
+				StringBuffer nomeArquivo = new StringBuffer("");
+				nomeArquivo.append(codEmpresa);
+				nomeArquivo.append("_");
+				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getSigla());
+				nomeArquivo.append("_");
+				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
+						get(comboOrganizacao.getSelectedIndex()).getSigla());
+				nomeArquivo.append("_");
+				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
+						get(comboOrganizacao.getSelectedIndex()).getDocumentos().get(comboDocumento.getSelectedIndex()).getSigla());
+				nomeArquivo.append("_");
+				if(!nfe.getText().equals("         ")){
+					nomeArquivo.append(nfe.getText());
+					nomeArquivo.append("_");
+				}
+				nomeArquivo.append(competencia.getText());
+				nomeArquivo.append(".");
+				nomeArquivo.append(FuncoesExtras.getFileExtension(arqVelho));
+				
 				File arqNovo = null;
 		
 					if(orgUnidadeTxt.equals("")){
@@ -243,16 +321,16 @@ public class TratarArquivo extends JDesktopPane{
 							caminho+codEmpresa+" - "+
 							nomeEmpresa.getText()+"/"+
 							unidadeTxt+"/"+
-							codEmpresa+"_"+contador+"."+FuncoesExtras.getFileExtension(arqVelho));
-					} else {
+							nomeArquivo);
+					}
+					else {
 						arqNovo = new File(
 							caminho+codEmpresa+" - "+
 							nomeEmpresa.getText()+"/"+
 							unidadeTxt+"/"+
 							orgUnidadeTxt+"/"+
 							tipoDocTxt+"/"+
-							tipoDocTxt+"_"+
-							codEmpresa+"_"+contador+"."+FuncoesExtras.getFileExtension(arqVelho));
+							nomeArquivo);
 					}
 					//System.out.println(arqNovo.getAbsolutePath());
 		 				
@@ -269,7 +347,6 @@ public class TratarArquivo extends JDesktopPane{
 							JOptionPane.showMessageDialog(null, "Arquivo sobrescrito!");
 						}
 					}
-				contador++;
 			}
 			text.setText("Jogue os arquivos aqui!\n");
 			btnRenomear.setEnabled(false);

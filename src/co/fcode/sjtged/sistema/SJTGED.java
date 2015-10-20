@@ -31,11 +31,11 @@ public class SJTGED extends JFrame{
 	}
 
 	public SJTGED(){
-		Janela j = new Janela(nomePrograma+" - "+versao, new Dimension(770,500));
+		Janela j = new Janela(nomePrograma+" - "+versao, new Dimension(770,600));
 		JDesktopPane jdp = new JDesktopPane();
 		jdp.setLayout(new BorderLayout());
 		
-		j.setIconImage(FuncoesExtras.buscarIcone("img/sort_ascending.png").getImage());
+		j.setIconImage(FuncoesExtras.buscarIcone("img/export.png").getImage());
 	
 		JTabbedPane jtp = new JTabbedPane();
 		jdp.add(jtp);

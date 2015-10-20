@@ -6,11 +6,12 @@ import java.util.ArrayList;
 
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
+import co.fcode.ged18.Unidade;
 
 public class Contabil {
 //-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
 	
-			private Organizacao blnç; // BALANÇOS
+			private Organizacao blnc; // BALANÇOS
 			private Organizacao dre;  // DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO
 			private Organizacao blct; // TIPOS BALANCETES
 			private Organizacao dcon; // TIPOS DEMONSTRATIVOS CONTÁBEIS
@@ -45,7 +46,7 @@ public class Contabil {
 			
 //-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 			
-			private ArrayList<TipoDocumento> TiposBlnç; // TIPOS BALANÇOS
+			private ArrayList<TipoDocumento> TiposBlnc; // TIPOS BALANÇOS
 			private ArrayList<TipoDocumento> TiposDre;  // TIPOS DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO
 			private ArrayList<TipoDocumento> TiposBlct; // TIPOS BALANCETES
 			private ArrayList<TipoDocumento> TiposDcon; // TIPOS DEMONSTRATIVOS CONTÁBEIS
@@ -53,12 +54,17 @@ public class Contabil {
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
+			private ArrayList<Organizacao> organizacoes;
+			private Unidade contabil;
+			
 			public Contabil(){
+				setDocBp(new TipoDocumento(1,"Balanço Patrimonial","BP")); // TODO: Com Erro!
 				setDocTbp(new TipoDocumento(1, "Termo Balanço Patrimonial","TBP"));
 				setDocDre(new TipoDocumento(2, "Demonstracao do Resultado do Exercicio", "DRE"));
 				setDocTdre(new TipoDocumento(3, "Termo Demonstracao do Resultado do Exercicio", "TDRE"));
 				setDocBm(new TipoDocumento(4, "Balancete Mensal", "BM"));
 				setDocBt(new TipoDocumento(5, "Balancetes Trimestrais", "Balancetes Anual"));
+				setDocBa(new TipoDocumento(5,"Balancetes Anuais","BA")); // TODO: Com Erro!
 				setDocDlpa(new TipoDocumento(6, "Demonstracao de Lucros ou Prejuizos Acumulados", "Dlpa"));
 				setDocDmpl(new TipoDocumento(7, "Demonstracao da Mutacao do Pratimonio Liquido", "Dmpl"));
 				setDocDfc(new TipoDocumento(8, "Demonstracao dos Fluxos de Caixa", "Dfc"));
@@ -78,37 +84,46 @@ public class Contabil {
 				setTiposDcon(new ArrayList<TipoDocumento>());
 				setTiposEcd(new ArrayList<TipoDocumento>());
 				
-				TiposBlnc.add(DocBp);
-				TiposBlnc.add(DocTbp);
-				TiposDre.add(DocDre);
-				TiposDre.add(DocTdre);
-				TiposBlct.add(DocBm);
-				TiposBlct.add(DocBt);
-				TiposBlct.add(DocBa);
-				TiposDcon.add(DocDlpa);
-				TiposDcon.add(DocDmpl);
-				TiposDcon.add(DocDfc);
-				TiposDcon.add(DocNe);
-				TiposDcon.add(DocIndliq);
-				TiposEcd.add(DocRcentr);
-				TiposEcd.add(DocReqnto);
-				TiposEcd.add(DocTermos);
-				TiposEcd.add(DocCopseg);
-				TiposEcd.add(DocTxpaga);
-				TiposEcd.add(DocAutent);
-				TiposEcd.add(DocDiario);
-				TiposEcd.add(DocDlpa);
-				TiposEcd.add(DocDmpl);
-				TiposEcd.add(DocNe);
-				TiposEcd.add(DocNe);
-				TiposEcd.add(DocBp);
-				TiposEcd.add(DocDre);
+				TiposBlnc.add(getDocBp());
+				TiposBlnc.add(getDocTbp());
+				TiposDre.add(getDocDre());
+				TiposDre.add(getDocTdre());
+				TiposBlct.add(getDocBm());
+				TiposBlct.add(getDocBt());
+				TiposBlct.add(getDocBa());
+				TiposDcon.add(getDocDlpa());
+				TiposDcon.add(getDocDmpl());
+				TiposDcon.add(getDocDfc());
+				TiposDcon.add(getDocNe());
+				TiposDcon.add(getDocIndliq());
+				TiposEcd.add(getDocRcentr());
+				TiposEcd.add(getDocReqnto());
+				TiposEcd.add(getDocTermos());
+				TiposEcd.add(getDocCopseg());
+				TiposEcd.add(getDocTxpaga());
+				TiposEcd.add(getDocAutent());
+				TiposEcd.add(getDocDiario());
+				TiposEcd.add(getDocDlpa());
+				TiposEcd.add(getDocDmpl());
+				TiposEcd.add(getDocNe());
+				TiposEcd.add(getDocNe());
+				TiposEcd.add(getDocBp());
+				TiposEcd.add(getDocDre());
 				
-				setBlnc(new Organizacao(1,"Balancos","BLNC",TiposBlnc));
-				setDre(new Organizacao(2,"Demonstracao Resultado de Exercicio","DRE",TiposDre));
+				setBlnc(new Organizacao(1,"Balanços","BLNC",TiposBlnc));
+				setDre(new Organizacao(2,"Demonstrção Resultado de Exercício","DRE",TiposDre));
 				setBlct(new Organizacao(3, "Balancetes", "BLCT", TiposBlct));
-				setDcon(new Organizacao(4,"Demonstrativos Contabeis", "DCON", TiposDcon));
-				setEcd(new Organizacao(5,"Escrituracao Contabil Fiscal","ECD",TiposEcd));
+				setDcon(new Organizacao(4,"Demonstrativos Contábeis", "DCON", TiposDcon));
+				setEcd(new Organizacao(5,"Escrituração Contábil Fiscal","ECD",TiposEcd));
+				
+				setOrganizacoes(new ArrayList<Organizacao>());
+				getOrganizacoes().add(getBlnc());
+				getOrganizacoes().add(getDre());
+				getOrganizacoes().add(getBlct());
+				getOrganizacoes().add(getDcon());
+				getOrganizacoes().add(getEcd());
+
+				setContabil(new Unidade(2,"Contábil","CT",getOrganizacoes()));
 			}
 //------------------------------------------------------------------------------------------------
 			/**
@@ -160,16 +175,16 @@ public class Contabil {
 				TiposDre = tiposDre;
 			}
 /**
-			 * @return the tiposBlnç
+			 * @return the tiposblnc
 			 */
-			public ArrayList<TipoDocumento> getTiposBlnç() {
-				return TiposBlnç;
+			public ArrayList<TipoDocumento> getTiposBlnc() {
+				return TiposBlnc;
 			}
 			/**
 			 * @param tiposBlnç the tiposBlnç to set
 			 */
-			public void setTiposBlnç(ArrayList<TipoDocumento> tiposBlnç) {
-				TiposBlnç = tiposBlnç;
+			public void setTiposBlnc(ArrayList<TipoDocumento> tiposBlnc) {
+				TiposBlnc = tiposBlnc;
 			}
 //-------------------------------------------------------------------------------------------------
 			public TipoDocumento getDocDiario() {
@@ -319,11 +334,23 @@ public class Contabil {
 				this.dre = dre;
 			}
 
-			public Organizacao getBlnç() {
-				return blnç;
+			public Organizacao getBlnc() {
+				return blnc;
 			}
-
-			public void setBlnç(Organizacao blnç) {
-				this.blnç = blnç;
+			
+			public void setBlnc(Organizacao blnc) {
+				this.blnc = blnc;
+			}
+			public ArrayList<Organizacao> getOrganizacoes() {
+				return organizacoes;
+			}
+			public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
+				this.organizacoes = organizacoes;
+			}
+			public Unidade getContabil() {
+				return contabil;
+			}
+			public void setContabil(Unidade contabil) {
+				this.contabil = contabil;
 			}	
 	}

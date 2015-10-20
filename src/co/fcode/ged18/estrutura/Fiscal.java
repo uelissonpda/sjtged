@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
+import co.fcode.ged18.Unidade;
 /***************
 *@author UANJOS*
 ***************/
@@ -75,10 +76,13 @@ public class Fiscal {
 		private ArrayList<TipoDocumento> TiposTrib; // TIPOS IMPOSTOS/CONTRIBUIÇÕES
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
+		
+		private ArrayList<Organizacao> organizacoes;
+		private Unidade fiscal;
 			
 		public Fiscal(){
 			setDocTdm(new TipoDocumento(1, "Tdm", "TDM"));
-			setDocAutliv(new TipoDocumento(2, "Sepd","SEPD"));
+			setDocAutliv(new TipoDocumento(2, "Sepd","SEPD")); // TODO: Com Erro
 			setDocXmle(new TipoDocumento(3,"XML Entrada","XMLE"));
 			setDocXmls(new TipoDocumento(4,"XML Saida","XMLS"));
 			setDocXmliss(new TipoDocumento(5,"XML Iss","XMLISS"));
@@ -90,13 +94,13 @@ public class Fiscal {
 			setDocEsplho(new TipoDocumento(11,"Espelho","ESPLHO"));
 			setDocPiscof(new TipoDocumento(12,"PIS e COFINS","PISCOF"));
 			setDocCnefes(new TipoDocumento(13,"Cnefes","CNEFES"));
-			setDocTomret(new TipoDocumento(14,"Tomadores/Retencoes",""));
+			setDocTomret(new TipoDocumento(14,"Tomadores/Retencoes","")); // TODO: ERRO: Não Pode conter "/" no Nome
 			setDocSn(new TipoDocumento(15,"Simples Nacional","SN"));
-			setDocIrcsll(new TipoDocumento(16,"IRPJ/CSLL","IRCSLL"));
+			setDocIrcsll(new TipoDocumento(16,"IRPJ/CSLL","IRCSLL")); // TODO: ERRO: Não Pode conter "/" no Nome
 			setDocIr1708(new TipoDocumento(17,"IFFF 1708","Ir1708"));
 			setDocIr3280(new TipoDocumento(18,"IRRF 3280","Ir3280"));
 			setDocIr3208(new TipoDocumento(19,"IRRF 3208","Ir3208"));
-			setDocPc5952(new TipoDocumento(20,"PIS/COFINS/CSLL 5952","PC5952"));
+			setDocPc5952(new TipoDocumento(20,"PIS/COFINS/CSLL 5952","PC5952")); // TODO: ERRO: Não Pode conter "/" no Nome
 			setDocPis(new TipoDocumento(21,"PIS","PIS"));
 			setDocCofins(new TipoDocumento(22,"COFINS","COFINS"));
 			setDocIrpj(new TipoDocumento(23,"IRPJ","IRPJ"));
@@ -119,51 +123,51 @@ public class Fiscal {
 			setTiposSpdf(new ArrayList<TipoDocumento>());
 			setTiposXml(new ArrayList<TipoDocumento>());
 			
-			TiposTdm.add(DocTdm);
+			TiposTdm.add(getDocTdm());
 			
-			TiposSepd.add(DocAutliv);
+			TiposSepd.add(getDocAutliv());
 			
-			TiposXml.add(DocXmle);
-			TiposXml.add(DocXmls);
-			TiposXml.add(DocXmliss);
+			TiposXml.add(getDocXmle());
+			TiposXml.add(getDocXmls());
+			TiposXml.add(getDocXmliss());
 			
-			TiposSpdc.add(DocDecl);
-			TiposSpdc.add(DocArqtxt);
-			TiposSpdc.add(DocRecent);
+			TiposSpdc.add(getDocDecl());
+			TiposSpdc.add(getDocArqtxt());
+			TiposSpdc.add(getDocRecent());
 			
-			TiposSpdf.add(DocDecl);
-			TiposSpdf.add(DocArqtxt);
-			TiposSpdf.add(DocRecent);
+			TiposSpdf.add(getDocDecl());
+			TiposSpdf.add(getDocArqtxt());
+			TiposSpdf.add(getDocRecent());
 			
-			TiposDcla.add(DocDecl);
+			TiposDcla.add(getDocDecl());
 			
-			TiposDub.add(DocDecl);
+			TiposDub.add(getDocDecl());
 			
-			TiposSn.add(DocMemapu);
-			TiposSn.add(DocExtrat);
-			TiposSn.add(DocRecent);
+			TiposSn.add(getDocMemapu());
+			TiposSn.add(getDocExtrat());
+			TiposSn.add(getDocRecent());
 			
-			TiposGia.add(DocRecent);
-			TiposGia.add(DocEsplho);
+			TiposGia.add(getDocRecent());
+			TiposGia.add(getDocEsplho());
 			
-			TiposMcal.add(DocPiscof);
-			TiposMcal.add(DocCnefes);
-			TiposMcal.add(DocTomret);
-			TiposMcal.add(DocSn);
-			TiposMcal.add(DocIrcsll);
+			TiposMcal.add(getDocPiscof());
+			TiposMcal.add(getDocCnefes());
+			TiposMcal.add(getDocTomret());
+			TiposMcal.add(getDocSn());
+			TiposMcal.add(getDocIrcsll());
 			
-			TiposTrib.add(DocIr1708);
-			TiposTrib.add(DocIr3280);
-			TiposTrib.add(DocIr3208);
-			TiposTrib.add(DocPc5952);
-			TiposTrib.add(DocPis);
-			TiposTrib.add(DocCofins);
-			TiposTrib.add(DocCsll);
-			TiposTrib.add(DocDas);
-			TiposTrib.add(DocIcms);
-			TiposTrib.add(DocIcmsst);
-			TiposTrib.add(DocDifal);
-			TiposTrib.add(DocIss);
+			TiposTrib.add(getDocIr1708());
+			TiposTrib.add(getDocIr3280());
+			TiposTrib.add(getDocIr3208());
+			TiposTrib.add(getDocPc5952());
+			TiposTrib.add(getDocPis());
+			TiposTrib.add(getDocCofins());
+			TiposTrib.add(getDocCsll());
+			TiposTrib.add(getDocDas());
+			TiposTrib.add(getDocIcms());
+			TiposTrib.add(getDocIcmsst());
+			TiposTrib.add(getDocDifal());
+			TiposTrib.add(getDocIss());
 			
 			setTdm(new Organizacao(1,"TDM","TDM",TiposTdm));
 			setSepd(new Organizacao(2,"SEPD","SEPD",TiposSepd));
@@ -175,7 +179,22 @@ public class Fiscal {
 			setSn(new Organizacao(8,"Simples Nacional","SN",TiposSn));
 			setGia(new Organizacao(9,"GIA","GIA",TiposGia));
 			setMcal(new Organizacao(10,"Memoria de Calculo","MCAL",TiposMcal));
-			setTrib(new Organizacao(11,"Impostos/Contribuicoes","TRIB",TiposTrib));	
+			setTrib(new Organizacao(11,"Impostos/Contribuicoes","TRIB",TiposTrib));
+			
+			setOrganizacoes(new ArrayList<Organizacao>());
+			getOrganizacoes().add(getTdm());
+			getOrganizacoes().add(getSepd());
+			getOrganizacoes().add(getXml());
+			getOrganizacoes().add(getSpdc());
+			getOrganizacoes().add(getSpdf());
+			getOrganizacoes().add(getDcla());
+			getOrganizacoes().add(getDub());
+			getOrganizacoes().add(getSn());
+			getOrganizacoes().add(getGia());
+			getOrganizacoes().add(getMcal());
+			getOrganizacoes().add(getTrib());
+			
+			setFiscal(new Unidade(4,"Fiscal","FS",getOrganizacoes()));
 	}
 //-----------------------------------------------------------------------------------------------
 		
@@ -973,5 +992,21 @@ public class Fiscal {
 		 */
 		public void setDub(Organizacao dub) {
 			this.dub = dub;
+		}
+
+		public ArrayList<Organizacao> getOrganizacoes() {
+			return organizacoes;
+		}
+
+		public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
+			this.organizacoes = organizacoes;
+		}
+
+		public Unidade getFiscal() {
+			return fiscal;
+		}
+
+		public void setFiscal(Unidade fiscal) {
+			this.fiscal = fiscal;
 		}	
 }

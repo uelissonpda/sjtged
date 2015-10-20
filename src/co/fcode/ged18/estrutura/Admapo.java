@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
+import co.fcode.ged18.Unidade;
 
 public class Admapo {
 //-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
@@ -46,6 +47,9 @@ public class Admapo {
 		
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
+		private ArrayList<Organizacao> organizacoes;
+		private Unidade admapo;
+		
 		public Admapo(){
 			setDocMens(new TipoDocumento(1,"Mensal","MENS"));
 			setDocTrim(new TipoDocumento(2,"Trimestral","TRIM"));
@@ -66,28 +70,36 @@ public class Admapo {
 			setTiposExtr(new ArrayList<TipoDocumento>());
 			setTiposNfr(new ArrayList<TipoDocumento>());
 			
-			TiposCom.add(DocMens);
-			TiposCom.add(DocTrim);
-			TiposCom.add(DocOutr);
+			TiposCom.add(getDocMens());
+			TiposCom.add(getDocTrim());
+			TiposCom.add(getDocOutr());
 			
-			TiposDoc.add(DocFisc);
-			TiposDoc.add(DocAlug);
-			TiposDoc.add(DocCont);
-			TiposDoc.add(DocCont);
-			TiposDoc.add(DocDp);
+			TiposDoc.add(getDocFisc());
+			TiposDoc.add(getDocAlug());
+			TiposDoc.add(getDocCont());
+			TiposDoc.add(getDocCont());
+			TiposDoc.add(getDocDp());
 			
-			TiposExtr.add(DocBanc);
-			TiposExtr.add(DocInvt);
-			TiposExtr.add(DocCcre);
+			TiposExtr.add(getDocBanc());
+			TiposExtr.add(getDocInvt());
+			TiposExtr.add(getDocCcre());
 			
-			TiposNfr.add(DocNfrj);
-			TiposNfr.add(DocNfsp);
-			TiposNfr.add(DocNfoe);
+			TiposNfr.add(getDocNfrj());
+			TiposNfr.add(getDocNfsp());
+			TiposNfr.add(getDocNfoe());
 			
 			setCom(new Organizacao(1,"Comunicados","COM",TiposCom));
 			setDoc(new Organizacao(2,"Documentos","DOC",TiposDoc));
 			setExtr(new Organizacao(3,"Extratos","EXTR",TiposExtr));
 			setNfr(new Organizacao(4,"Notas Com Retencao","NFR",TiposNfr));
+			
+			setOrganizacoes(new ArrayList<Organizacao>());
+			getOrganizacoes().add(getCom());
+			getOrganizacoes().add(getDoc());
+			getOrganizacoes().add(getExtr());
+			getOrganizacoes().add(getNfr());
+			
+			setAdmapo(new Unidade(0,"Admapo","AD",getOrganizacoes()));
 		}
 //----------------------------------------------------------------------------------------------
 		public ArrayList<TipoDocumento> getTiposNfr() {
@@ -256,5 +268,17 @@ public class Admapo {
 
 		public void setNfr(Organizacao nfr) {
 			this.nfr = nfr;
+		}
+		public ArrayList<Organizacao> getOrganizacoes() {
+			return organizacoes;
+		}
+		public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
+			this.organizacoes = organizacoes;
+		}
+		public Unidade getAdmapo() {
+			return admapo;
+		}
+		public void setAdmapo(Unidade admapo) {
+			this.admapo = admapo;
 		}	
 }

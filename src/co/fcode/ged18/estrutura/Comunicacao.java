@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
+import co.fcode.ged18.Unidade;
 
 public class Comunicacao {
 //-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
@@ -42,6 +43,9 @@ public class Comunicacao {
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
+			private ArrayList<Organizacao> organizacoes;
+			private Unidade comunicacao;
+			
 			public Comunicacao(){
 				setDocAdm(new TipoDocumento(1, "Admapo", "ADM"));
 				setDocCont(new TipoDocumento(2, "Contabil", "CONT"));
@@ -57,53 +61,63 @@ public class Comunicacao {
 				setTiposMmot(new ArrayList<TipoDocumento>());
 				setTiposMr(new ArrayList<TipoDocumento>());
 				
-				TiposCext.add(DocAdm);
-				TiposCext.add(DocCont);
-				TiposCext.add(DocDp);
-				TiposCext.add(DocDir);
-				TiposCext.add(DocFisc);
-				TiposCext.add(DocSoc);
+				TiposCext.add(getDocAdm());
+				TiposCext.add(getDocCont());
+				TiposCext.add(getDocDp());
+				TiposCext.add(getDocDir());
+				TiposCext.add(getDocFisc());
+				TiposCext.add(getDocSoc());
 				
-				TiposEmen.add(DocAdm);
-				TiposEmen.add(DocCont);
-				TiposEmen.add(DocDp);
-				TiposEmen.add(DocDir);
-				TiposEmen.add(DocFisc);
-				TiposEmen.add(DocSoc);
+				TiposEmen.add(getDocAdm());
+				TiposEmen.add(getDocCont());
+				TiposEmen.add(getDocDp());
+				TiposEmen.add(getDocDir());
+				TiposEmen.add(getDocFisc());
+				TiposEmen.add(getDocSoc());
 				
-				TiposEmre.add(DocAdm);
-				TiposEmre.add(DocCont);
-				TiposEmre.add(DocDp);
-				TiposEmre.add(DocDir);
-				TiposEmre.add(DocFisc);
-				TiposEmre.add(DocSoc);
+				TiposEmre.add(getDocAdm());
+				TiposEmre.add(getDocCont());
+				TiposEmre.add(getDocDp());
+				TiposEmre.add(getDocDir());
+				TiposEmre.add(getDocFisc());
+				TiposEmre.add(getDocSoc());
 				
-				TiposInti.add(DocAdm);
-				TiposInti.add(DocCont);
-				TiposInti.add(DocDp);
-				TiposInti.add(DocDir);
-				TiposInti.add(DocFisc);
-				TiposInti.add(DocSoc);
+				TiposInti.add(getDocAdm());
+				TiposInti.add(getDocCont());
+				TiposInti.add(getDocDp());
+				TiposInti.add(getDocDir());
+				TiposInti.add(getDocFisc());
+				TiposInti.add(getDocSoc());
 				
-				TiposMmot.add(DocAdm);
-				TiposMmot.add(DocCont);
-				TiposMmot.add(DocDp);
-				TiposMmot.add(DocDir);
-				TiposMmot.add(DocFisc);
+				TiposMmot.add(getDocAdm());
+				TiposMmot.add(getDocCont());
+				TiposMmot.add(getDocDp());
+				TiposMmot.add(getDocDir());
+				TiposMmot.add(getDocFisc());
 				
-				TiposMr.add(DocAdm);
-				TiposMr.add(DocCont);
-				TiposMr.add(DocDp);
-				TiposMr.add(DocDir);
-				TiposMr.add(DocFisc);
-				TiposMr.add(DocSoc);
+				TiposMr.add(getDocAdm());
+				TiposMr.add(getDocCont());
+				TiposMr.add(getDocDp());
+				TiposMr.add(getDocDir());
+				TiposMr.add(getDocFisc());
+				TiposMr.add(getDocSoc());
 				
 				setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 				setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
 				setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
-				setInti(new Organizacao(4,"Intimicoes/Notificacoes","INTI",TiposInti));
-				setMmot(new Organizacao(5,"Memorandos/Orientacoes Tecnincas","MMOT",TiposMmot));
+				setInti(new Organizacao(4,"Intimicoes/Notificacoes","INTI",TiposInti)); // TODO: ERRO: Não Pode conter "/" no Nome
+				setMmot(new Organizacao(5,"Memorandos/Orientacoes Tecnincas","MMOT",TiposMmot)); // TODO: ERRO: Não Pode conter "/" no Nome
 				setMr(new Organizacao(6,"Memoria de Reuniao","MR",TiposMr));
+				
+				setOrganizacoes(new ArrayList<Organizacao>());
+				getOrganizacoes().add(getCext());
+				getOrganizacoes().add(getEmen());
+				getOrganizacoes().add(getEmre());
+				getOrganizacoes().add(getInti());
+				getOrganizacoes().add(getMmot());
+				getOrganizacoes().add(getMr());
+				
+				setComunicacao(new Unidade(1,"Comunicação","CM",getOrganizacoes()));
 			}
 //-------------------------------------------------------------------------------------------
 public ArrayList<TipoDocumento> getTiposMr() {
@@ -261,5 +275,17 @@ public ArrayList<TipoDocumento> getTiposCext() {
 
 			public void setCext(Organizacao cext) {
 				this.cext = cext;
+			}
+			public ArrayList<Organizacao> getOrganizacoes() {
+				return organizacoes;
+			}
+			public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
+				this.organizacoes = organizacoes;
+			}
+			public Unidade getComunicacao() {
+				return comunicacao;
+			}
+			public void setComunicacao(Unidade comunicacao) {
+				this.comunicacao = comunicacao;
 			}
 }

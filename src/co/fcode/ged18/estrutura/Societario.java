@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
+import co.fcode.ged18.Unidade;
 
 public class Societario {
 //-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
@@ -74,37 +75,53 @@ public class Societario {
 		private ArrayList<TipoDocumento> TiposDvrs; // TIPOS DIVERSOS
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
+		
+		private ArrayList<Organizacao> organizacoes;
+		private Unidade soc;
 			
 		public Societario(){
-			setDocCnpj(new TipoDocumento(1,"CNPJ","CNPJ"));
-			setDocCertbx(new TipoDocumento(2, "CERTIDÃO DE BAIXA", "CERTBX"));
-			setDocInsest(new TipoDocumento(3, "INSCRIÇÃO ESTADUAL", "INSEST"));
-			setDocLdexcb(new TipoDocumento(4, "CERTIDÃO DE BAIXA DA INSCRIÇÃO ESTADUAL", "LDEXCB"));
-			setDocCertcb(new TipoDocumento(5, "CERTIF DE APROVACAO DO CORPO DE BOMBEIROS", "CERTCB"));
-			setDocAlvara(new TipoDocumento(6, "ALVARA", "ALVARA"));
-			setDocFincad(new TipoDocumento(7, "FICHA DE INFORMACOES CADASTRAIS", "FINCAD"));
-			setDocBxiss(new TipoDocumento(8, "MEMORANDO DE BAIXA ISS", "BXISS"));
-			setDocBxalv(new TipoDocumento(9, "BAIXA DO ALVARA", "BXALV"));
-			setDocSanipj(new TipoDocumento(10, "TERMO DE LICENCA DE FUNCIONAMENTO SANITARIO", "SANIPJ"));
-			setDocCis(new TipoDocumento(11, "CERTIFICADO DE INSPECAO SANITARIA", "CIS"));
-			setDocSanipf(new TipoDocumento(12, "TERMO DE ASSENTIMENTO SANITARIO", "SANIPF"));
-			setDocSmtr(new TipoDocumento(13, "CERTIDAO DE ASSESSIBILIDADE", "SMTR"));
-			setDocSmo(new TipoDocumento(14, "DECLARACAO DE REBAIXAMENTO DE MEIO FIO", "SMO"));
-			setDocCinstc(new TipoDocumento(15, "CERTIDAO DE INSTALACAO COMERCIAL", "CINSCT"));
-			setDocHabite(new TipoDocumento(16, "HABITE-SE", "HABITE"));
-			setDocCtrans(new TipoDocumento(17, "CERTIDAO DE TRANSFORMACAO DE USO", "CTRANS"));
-			setDocSmac(new TipoDocumento(18, "REQUERIMENTO DE MEIO AMBIENTE", "SMAC"));
-			setDocPlpubl(new TipoDocumento(19, "PLANTA DE AUTORIZACAO DE PUBLICIDADE", "PLPUBL"));
-			setDocTxmeca(new TipoDocumento(20, "TAXA DE MESAS E CADEIRAS", "TXMECA"));
-			setDocTxpubl(new TipoDocumento(21, "TAXA DE PUBLICIDADE ", "TXPUBL"));
-			setDocIptu(new TipoDocumento(22, "IPTU", "IPTU"));
-			setDocConloc(new TipoDocumento(23, "CONTRATO DE LOCACAO ", "CONLOC"));
-			setDocCpf(new TipoDocumento(24, "CPF DOS SOCIOS", "CPF"));
-			setDocRg(new TipoDocumento(25, "RG DOS SOCIOS", "RG"));
-			setDocCompre(new TipoDocumento(26, "COMPROVANTE DE RESIDENCIA DOS SOCIOS", "COMPRE"));
-			setDocRegpro(new TipoDocumento(27, "REGISTRO PROFISSIONAL", "REGPRO"));
-			setDocPcv(new TipoDocumento(28, "PROMESSA DE COMPRA E VENDA", "PCV"));
-			setDocNit(new TipoDocumento(29, "NUMERO DE INSCRICAO DO TRABALHADOR/SOCIO", ""));
+			setDocConsoc(new TipoDocumento(1,"Contrato Social",""));
+			setDocAltcon(new TipoDocumento(2,"Alteração Contratual",""));
+			setDocDist(new TipoDocumento(3,"Distrato",""));
+			setDocAta(new TipoDocumento(4,"Ata de Reunião-Assembleia",""));
+			setDocReqemp(new TipoDocumento(5,"Requerimento de Empresário",""));
+			setDocEnq(new TipoDocumento(6,"Enquadramento",""));
+			setDocDesenq(new TipoDocumento(7,"Desenquadramento",""));
+			setDocReenq(new TipoDocumento(8,"Reequadramento",""));
+			setDocBalreg(new TipoDocumento(9,"Balanço Registrado",""));
+			setDocProinc(new TipoDocumento(10,"Protocolo e Justificação",""));
+			setDocParal(new TipoDocumento(11,"Paralisação",""));
+			setDocLavpal(new TipoDocumento(12,"Laudo de Avaliação do Patrimônio Líquido",""));
+			setDocEstat(new TipoDocumento(13,"Estatuto",""));
+			setDocCnpj(new TipoDocumento(14,"CNPJ","CNPJ"));
+			setDocCertbx(new TipoDocumento(15, "Certidão de Baixa", "CERTBX"));
+			setDocInsest(new TipoDocumento(16, "Inscrição Estadual", "INSEST"));
+			setDocLdexcb(new TipoDocumento(17, "CERTIDÃO DE BAIXA DA INSCRIÇÃO ESTADUAL", "LDEXCB")); // TODO: Usar padrão de Escrita
+			setDocCertcb(new TipoDocumento(18, "CERTIF DE APROVACAO DO CORPO DE BOMBEIROS", "CERTCB")); // TODO: Usar padrão de Escrita
+			setDocAlvara(new TipoDocumento(19, "Alvará", "ALVARA"));
+			setDocFincad(new TipoDocumento(20, "FICHA DE INFORMACOES CADASTRAIS", "FINCAD")); // TODO: Usar padrão de Escrita
+			setDocBxiss(new TipoDocumento(21, "MEMORANDO DE BAIXA ISS", "BXISS")); // TODO: Usar padrão de Escrita
+			setDocBxalv(new TipoDocumento(22, "Baixa do Alvará", "BXALV"));
+			setDocSanipj(new TipoDocumento(23, "TERMO DE LICENCA DE FUNCIONAMENTO SANITARIO", "SANIPJ")); // TODO: Usar padrão de Escrita
+			setDocCis(new TipoDocumento(24, "CERTIFICADO DE INSPECAO SANITARIA", "CIS")); // TODO: Usar padrão de Escrita
+			setDocSanipf(new TipoDocumento(25, "TERMO DE ASSENTIMENTO SANITARIO", "SANIPF")); // TODO: Usar padrão de Escrita
+			setDocSmtr(new TipoDocumento(26, "CERTIDAO DE ASSESSIBILIDADE", "SMTR")); // TODO: Usar padrão de Escrita
+			setDocSmo(new TipoDocumento(27, "DECLARACAO DE REBAIXAMENTO DE MEIO FIO", "SMO")); // TODO: Usar padrão de Escrita
+			setDocCinstc(new TipoDocumento(27, "CERTIDAO DE INSTALACAO COMERCIAL", "CINSCT")); // TODO: Usar padrão de Escrita
+			setDocHabite(new TipoDocumento(28, "HABITE-SE", "HABITE")); // TODO: Usar padrão de Escrita
+			setDocCtrans(new TipoDocumento(29, "CERTIDAO DE TRANSFORMACAO DE USO", "CTRANS")); // TODO: Usar padrão de Escrita
+			setDocSmac(new TipoDocumento(30, "REQUERIMENTO DE MEIO AMBIENTE", "SMAC")); // TODO: Usar padrão de Escrita
+			setDocPlpubl(new TipoDocumento(31, "PLANTA DE AUTORIZACAO DE PUBLICIDADE", "PLPUBL")); // TODO: Usar padrão de Escrita
+			setDocTxmeca(new TipoDocumento(32, "TAXA DE MESAS E CADEIRAS", "TXMECA")); // TODO: Usar padrão de Escrita
+			setDocTxpubl(new TipoDocumento(33, "TAXA DE PUBLICIDADE ", "TXPUBL")); // TODO: Usar padrão de Escrita
+			setDocIptu(new TipoDocumento(34, "IPTU", "IPTU")); // TODO: Usar padrão de Escrita
+			setDocConloc(new TipoDocumento(35, "CONTRATO DE LOCACAO ", "CONLOC")); // TODO: Usar padrão de Escrita
+			setDocCpf(new TipoDocumento(36, "CPF DOS SOCIOS", "CPF")); // TODO: Usar padrão de Escrita
+			setDocRg(new TipoDocumento(37, "RG DOS SOCIOS", "RG")); // TODO: Usar padrão de Escrita
+			setDocCompre(new TipoDocumento(38, "COMPROVANTE DE RESIDENCIA DOS SOCIOS", "COMPRE")); // TODO: Usar padrão de Escrita
+			setDocRegpro(new TipoDocumento(39, "REGISTRO PROFISSIONAL", "REGPRO")); // TODO: Usar padrão de Escrita
+			setDocPcv(new TipoDocumento(40, "PROMESSA DE COMPRA E VENDA", "PCV")); // TODO: Usar padrão de Escrita
+			setDocNit(new TipoDocumento(41, "NUMERO DE INSCRICAO DO TRABALHADOR/SOCIO", "")); // TODO: Usar padrão de Escrita
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -112,60 +129,67 @@ public class Societario {
 			setTiposMun(new ArrayList<TipoDocumento>());
 			setTiposDvrs(new ArrayList<TipoDocumento>());
 			
-			TiposAtos.add(DocConsoc);
-			TiposAtos.add(DocAltcon);
-			TiposAtos.add(DocDist);
-			TiposAtos.add(DocAta);
-			TiposAtos.add(DocReqemp);
-			TiposAtos.add(DocEnq);
-			TiposAtos.add(DocReenq);
-			TiposAtos.add(DocBalreg);
-			TiposAtos.add(DocProinc);
-			TiposAtos.add(DocParal);
-			TiposAtos.add(DocLavpal);
-			TiposAtos.add(DocEstat);
+			TiposAtos.add(getDocConsoc());
+			TiposAtos.add(getDocAltcon());
+			TiposAtos.add(getDocDist());
+			TiposAtos.add(getDocAta());
+			TiposAtos.add(getDocReqemp());
+			TiposAtos.add(getDocBalreg());
+			TiposAtos.add(getDocProinc());
+			TiposAtos.add(getDocParal());
+			TiposAtos.add(getDocLavpal());
+			TiposAtos.add(getDocEstat());
 			
-			TiposFed.add(DocCnpj);
-			TiposFed.add(DocCertbx);
+			TiposFed.add(getDocCnpj());
+			TiposFed.add(getDocCertbx());
 			
-			TiposEst.add(DocInsest);
-			TiposEst.add(DocParal);
-			TiposEst.add(DocCertbx);
-			TiposEst.add(DocLdexcb);
-			TiposEst.add(DocCertcb);
+			TiposEst.add(getDocInsest());
+			TiposEst.add(getDocParal());
+			TiposEst.add(getDocCertbx());
+			TiposEst.add(getDocLdexcb());
+			TiposEst.add(getDocCertcb());
 			
-			TiposMun.add(DocAlvara);
-			TiposMun.add(DocFincad);
-			TiposMun.add(DocParal);
-			TiposMun.add(DocBxiss);
-			TiposMun.add(DocBxalv);
-			TiposMun.add(DocSanipj);
-			TiposMun.add(DocCis);
-			TiposMun.add(DocSanipf);
-			TiposMun.add(DocSmtr);
-			TiposMun.add(DocSmo);
-			TiposMun.add(DocCinstc);
-			TiposMun.add(DocHabite);
-			TiposMun.add(DocCtrans);
-			TiposMun.add(DocSmac);
-			TiposMun.add(DocPlpubl);
-			TiposMun.add(DocTxmeca);
-			TiposMun.add(DocTxpubl);
-			TiposMun.add(DocIptu);
+			TiposMun.add(getDocAlvara());
+			TiposMun.add(getDocFincad());
+			TiposMun.add(getDocParal());
+			TiposMun.add(getDocBxiss());
+			TiposMun.add(getDocBxalv());
+			TiposMun.add(getDocSanipj());
+			TiposMun.add(getDocCis());
+			TiposMun.add(getDocSanipf());
+			TiposMun.add(getDocSmtr());
+			TiposMun.add(getDocSmo());
+			TiposMun.add(getDocCinstc());
+			TiposMun.add(getDocHabite());
+			TiposMun.add(getDocCtrans());
+			TiposMun.add(getDocSmac());
+			TiposMun.add(getDocPlpubl());
+			TiposMun.add(getDocTxmeca());
+			TiposMun.add(getDocTxpubl());
+			TiposMun.add(getDocIptu());
 			
-			TiposDvrs.add(DocConloc);
-			TiposDvrs.add(DocCpf);
-			TiposDvrs.add(DocRg);
-			TiposDvrs.add(DocCompre);
-			TiposDvrs.add(DocRegpro);
-			TiposDvrs.add(DocPcv);
-			TiposDvrs.add(DocNit);
+			TiposDvrs.add(getDocConloc());
+			TiposDvrs.add(getDocCpf());
+			TiposDvrs.add(getDocRg());
+			TiposDvrs.add(getDocCompre());
+			TiposDvrs.add(getDocRegpro());
+			TiposDvrs.add(getDocPcv());
+			TiposDvrs.add(getDocNit());
 			
-			setAtos(new Organizacao(1,"ATOS","ATOS",TiposAtos));
+			setAtos(new Organizacao(1,"Atos","ATOS",TiposAtos));
 			setFed(new Organizacao(2,"Federal","FED",TiposFed));
 			setEst(new Organizacao(3,"Estadual","EST",TiposEst));
 			setMun(new Organizacao(4,"Municipal","MUN",TiposMun));
 			setDvrs(new Organizacao(5,"Diversos","DVRS",TiposDvrs));
+			
+			setOrganizacoes(new ArrayList<Organizacao>());
+			getOrganizacoes().add(getAtos());
+			getOrganizacoes().add(getFed());
+			getOrganizacoes().add(getEst());
+			getOrganizacoes().add(getMun());
+			getOrganizacoes().add(getDvrs());
+			
+			setSoc(new Unidade(5,"Societário","SC",getOrganizacoes()));
 		}
 //------------------------------------------------------------------------------------------------
 /**
@@ -760,5 +784,17 @@ public class Societario {
 		 */
 		public void setAtos(Organizacao atos) {
 			Atos = atos;
+		}
+		public ArrayList<Organizacao> getOrganizacoes() {
+			return organizacoes;
+		}
+		public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
+			this.organizacoes = organizacoes;
+		}
+		public Unidade getSoc() {
+			return soc;
+		}
+		public void setSoc(Unidade soc) {
+			this.soc = soc;
 		}	
 }
