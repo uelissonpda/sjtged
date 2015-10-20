@@ -101,7 +101,7 @@ public class Comunicacao {
 				setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 				setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
 				setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
-				setInti(new Organizacao(4,"Intimições/Notificações","INTI",TiposInti));
+				setInti(new Organizacao(4,"Intimações/Notificações","INTI",TiposInti));
 				setMmot(new Organizacao(5,"Memorandos/Orientações Técnicas","MMOT",TiposMmot));
 				setMr(new Organizacao(6,"Memória de Reunião","MR",TiposMr));
 			}
