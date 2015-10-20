@@ -54,7 +54,7 @@ public class Admapo {
 			setDocAlug(new TipoDocumento(5, "Aluguel", "ALUG"));
 			setDocCont(new TipoDocumento(6, "Contabilidade", "CONT"));
 			setDocDp(new TipoDocumento(7, "Departamento Pessoal", "DP"));
-			setDocBanc(new TipoDocumento(8, "Bancarios", "BANC"));
+			setDocBanc(new TipoDocumento(8, "Bancários", "BANC"));
 			setDocInvt(new TipoDocumento(9, "Investimentos", "INVT"));
 			setDocCcre(new TipoDocumento(10, "Cartão de Credito", "CCRE"));
 			setDocNfrj(new TipoDocumento(11, "Nota Fiscal RJ", "NFRJ"));
@@ -87,7 +87,7 @@ public class Admapo {
 			setCom(new Organizacao(1,"Comunicados","COM",TiposCom));
 			setDoc(new Organizacao(2,"Documentos","DOC",TiposDoc));
 			setExtr(new Organizacao(3,"Extratos","EXTR",TiposExtr));
-			setNfr(new Organizacao(4,"Notas Com Retenção","NFR",TiposNfr));
+			setNfr(new Organizacao(4,"Notas com Retenção","NFR",TiposNfr));
 		}
 //----------------------------------------------------------------------------------------------
 		public ArrayList<TipoDocumento> getTiposNfr() {
