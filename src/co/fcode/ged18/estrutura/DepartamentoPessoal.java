@@ -61,6 +61,78 @@ public class DepartamentoPessoal {
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 	
 	public DepartamentoPessoal(){
+		setDocAdmiss(new TipoDocumento(1,"Admissao","ADMISS"));
+		setDocQuitac(new TipoDocumento(2,"Folhas","FOLHAS"));
+		setDocGfip(new TipoDocumento(3,"Gfip","GFIP"));
+		setDocDarf(new TipoDocumento(4,"Darf","DARF"));
+		setDocGps(new TipoDocumento(5,"Gps","GPS"));
+		setDocCaged(new TipoDocumento(6,"Caged","CAGED"));
+		setDocCompvt(new TipoDocumento(7,"Compra de VT","COMPVT"));
+		setDocPonto(new TipoDocumento(8, "Ponto","PONTO"));
+		setDocFerias(new TipoDocumento(9,"Ferias","FERIAS"));
+		setDocGrcsu(new TipoDocumento(10,"Guias Sindicais","GRCSU"));
+		setDocAssist(new TipoDocumento(11,"Guias Assistenciais","ASSIST"));
+		setDocConfed(new TipoDocumento(12,"Guias Confederativas","CONFED"));
+		setDocProlab(new TipoDocumento(13,"Prolabore","PROLAB"));
+		setDocPatron(new TipoDocumento(14,"Patronal","PATRON"));
+		setDocPis(new TipoDocumento(15,"PIS sobre folha","PIS"));
+		setDocDirf(new TipoDocumento(16,"Dirf","DIRF"));
+		setDocRais(new TipoDocumento(17,"Rais","RAIS"));
+		setDocInfrend(new TipoDocumento(18,"Informes de Rendimentos","INFREND"));
+		setDocProces(new TipoDocumento(19,"Processsos","PROCES"));
+		setDocAudito(new TipoDocumento(20,"Auditoriais","AUDITO"));
+		setDocReproc(new TipoDocumento(21,"Controle de Reprocessos","REPROC"));
+		setDocCnd(new TipoDocumento(22,"CND","CND"));
+		setDocCrf(new TipoDocumento(23,"CRF","CRF"));
+		setDocCndtra(new TipoDocumento(24,"CND Trabalhista","CNDTRA"));
+		setDocDeclar(new TipoDocumento(25,"Declaracoes","DECLAR"));
+		setDocDataba(new TipoDocumento(26,"Dissidio com Data Base","DATABA"));
+		setDocPrepos(new TipoDocumento(27,"Carta de Preposto","PREPOS"));
+		setDocComext(new TipoDocumento(28,"Comunicado Externo","COMEXT"));
+		setDocPartic(new TipoDocumento(29,"Particularidades Empresas","PARTIC"));
+		setDocRecalc(new TipoDocumento(30,"Recalculos","RECALC"));
+		
+		setTiposRot(new ArrayList<TipoDocumento>());
+		setTiposObac(new ArrayList<TipoDocumento>());
+		setTiposDvrs(new ArrayList<TipoDocumento>());
+		
+		TiposRot.add(DocAdmiss);
+		TiposRot.add(DocQuitac);
+		TiposRot.add(DocFolhas);
+		TiposRot.add(DocGfip);
+		TiposRot.add(DocDarf);
+		TiposRot.add(DocGps);
+		TiposRot.add(DocCaged);
+		TiposRot.add(DocCompvt);
+		TiposRot.add(DocPonto);
+		TiposRot.add(DocFerias);
+		TiposRot.add(DocGrcsu);
+		TiposRot.add(DocAssist);
+		TiposRot.add(DocProlab);
+		TiposRot.add(DocPatron);
+		TiposRot.add(DocPis);
+		
+		TiposObac.add(DocDirf);
+		TiposObac.add(DocRais);
+		TiposObac.add(DocInfrend);
+		
+		TiposDvrs.add(DocProces);
+		TiposDvrs.add(DocAudito);
+		TiposDvrs.add(DocReproc);
+		TiposDvrs.add(DocCnd);
+		TiposDvrs.add(DocCrf);
+		TiposDvrs.add(DocCrf);
+		TiposDvrs.add(DocCndtra);
+		TiposDvrs.add(DocDeclar);
+		TiposDvrs.add(DocDataba);
+		TiposDvrs.add(DocPrepos);
+		TiposDvrs.add(DocComext);
+		TiposDvrs.add(DocPartic);
+		TiposDvrs.add(DocRecalc);
+		
+		setRot(new Organizacao(1, "Rotinas", "ROT", TiposRot));
+		setObac(new Organizacao(2, "Obrigacoes Acessorias", "OBAC", TiposObac));
+		setDvrs(new Organizacao(3,"Diversos","DVRS",TiposDvrs));
 	}
 //------------------------------------------------------------------------------------------------	
 /**
