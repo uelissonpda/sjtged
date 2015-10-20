@@ -76,35 +76,35 @@ public class Societario {
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
 		public Societario(){
-			setDocCnpj(new TipoDocumento(1,"CNPJ","CNPJ"));
-			setDocCertbx(new TipoDocumento(2, "CERTIDÃO DE BAIXA", "CERTBX"));
-			setDocInsest(new TipoDocumento(3, "INSCRIÇÃO ESTADUAL", "INSEST"));
-			setDocLdexcb(new TipoDocumento(4, "CERTIDÃO DE BAIXA DA INSCRIÇÃO ESTADUAL", "LDEXCB"));
-			setDocCertcb(new TipoDocumento(5, "CERTIF DE APROVACAO DO CORPO DE BOMBEIROS", "CERTCB"));
-			setDocAlvara(new TipoDocumento(6, "ALVARA", "ALVARA"));
-			setDocFincad(new TipoDocumento(7, "FICHA DE INFORMACOES CADASTRAIS", "FINCAD"));
-			setDocBxiss(new TipoDocumento(8, "MEMORANDO DE BAIXA ISS", "BXISS"));
-			setDocBxalv(new TipoDocumento(9, "BAIXA DO ALVARA", "BXALV"));
-			setDocSanipj(new TipoDocumento(10, "TERMO DE LICENCA DE FUNCIONAMENTO SANITARIO", "SANIPJ"));
-			setDocCis(new TipoDocumento(11, "CERTIFICADO DE INSPECAO SANITARIA", "CIS"));
-			setDocSanipf(new TipoDocumento(12, "TERMO DE ASSENTIMENTO SANITARIO", "SANIPF"));
-			setDocSmtr(new TipoDocumento(13, "CERTIDAO DE ASSESSIBILIDADE", "SMTR"));
-			setDocSmo(new TipoDocumento(14, "DECLARACAO DE REBAIXAMENTO DE MEIO FIO", "SMO"));
-			setDocCinstc(new TipoDocumento(15, "CERTIDAO DE INSTALACAO COMERCIAL", "CINSCT"));
-			setDocHabite(new TipoDocumento(16, "HABITE-SE", "HABITE"));
-			setDocCtrans(new TipoDocumento(17, "CERTIDAO DE TRANSFORMACAO DE USO", "CTRANS"));
-			setDocSmac(new TipoDocumento(18, "REQUERIMENTO DE MEIO AMBIENTE", "SMAC"));
-			setDocPlpubl(new TipoDocumento(19, "PLANTA DE AUTORIZACAO DE PUBLICIDADE", "PLPUBL"));
-			setDocTxmeca(new TipoDocumento(20, "TAXA DE MESAS E CADEIRAS", "TXMECA"));
-			setDocTxpubl(new TipoDocumento(21, "TAXA DE PUBLICIDADE ", "TXPUBL"));
-			setDocIptu(new TipoDocumento(22, "IPTU", "IPTU"));
-			setDocConloc(new TipoDocumento(23, "CONTRATO DE LOCACAO ", "CONLOC"));
-			setDocCpf(new TipoDocumento(24, "CPF DOS SOCIOS", "CPF"));
-			setDocRg(new TipoDocumento(25, "RG DOS SOCIOS", "RG"));
-			setDocCompre(new TipoDocumento(26, "COMPROVANTE DE RESIDENCIA DOS SOCIOS", "COMPRE"));
-			setDocRegpro(new TipoDocumento(27, "REGISTRO PROFISSIONAL", "REGPRO"));
-			setDocPcv(new TipoDocumento(28, "PROMESSA DE COMPRA E VENDA", "PCV"));
-			setDocNit(new TipoDocumento(29, "NUMERO DE INSCRICAO DO TRABALHADOR/SOCIO", ""));
+			setDocCnpj(new TipoDocumento(1,"Cnpj","CNPJ"));
+			setDocCertbx(new TipoDocumento(2, "Certidão de Baixa", "CERTBX"));
+			setDocInsest(new TipoDocumento(3, "Inscrição Estadual", "INSEST"));
+			setDocLdexcb(new TipoDocumento(4, "Certidão de Baixa de Inscrição Estadual", "LDEXCB"));
+			setDocCertcb(new TipoDocumento(5, "Certificado de Aprovação do Corpo de Bombeiros", "CERTCB"));
+			setDocAlvara(new TipoDocumento(6, "Alvará", "ALVARA"));
+			setDocFincad(new TipoDocumento(7, "Ficha de Informações Cadastrais", "FINCAD"));
+			setDocBxiss(new TipoDocumento(8, "Memorando de Baixa Iss", "BXISS"));
+			setDocBxalv(new TipoDocumento(9, "Baixa do Alvará", "BXALV"));
+			setDocSanipj(new TipoDocumento(10, "Termo de Licensa de Funcionamento Sanitário", "SANIPJ"));
+			setDocCis(new TipoDocumento(11, "Certificado de Inspeção Sanitária", "CIS"));
+			setDocSanipf(new TipoDocumento(12, "Termo de Assentimento Sanitário", "SANIPF"));
+			setDocSmtr(new TipoDocumento(13, "Certidão de Acessibilidade", "SMTR"));
+			setDocSmo(new TipoDocumento(14, "Declaração de Rebaixamento de Meio Fio", "SMO"));
+			setDocCinstc(new TipoDocumento(15, "Certidão de Instalação Comercial", "CINSCT"));
+			setDocHabite(new TipoDocumento(16, "Habite-se", "HABITE"));
+			setDocCtrans(new TipoDocumento(17, "Certidão de Transformação de Uso", "CTRANS"));
+			setDocSmac(new TipoDocumento(18, "Requerimento de Meio Ambiente", "SMAC"));
+			setDocPlpubl(new TipoDocumento(19, "Planta de Autorização de Publicidade", "PLPUBL"));
+			setDocTxmeca(new TipoDocumento(20, "Taxa de Mesas e Cadeiras", "TXMECA"));
+			setDocTxpubl(new TipoDocumento(21, "Taxa de Publicidade", "TXPUBL"));
+			setDocIptu(new TipoDocumento(22, "Iptu", "IPTU"));
+			setDocConloc(new TipoDocumento(23, "Contrato de Locação", "CONLOC"));
+			setDocCpf(new TipoDocumento(24, "Cpf dos Sócios", "CPF"));
+			setDocRg(new TipoDocumento(25, "Rg dos Sócios", "RG"));
+			setDocCompre(new TipoDocumento(26, "Comprovante de Residência dos Sócios", "COMPRE"));
+			setDocRegpro(new TipoDocumento(27, "Registro Profissional", "REGPRO"));
+			setDocPcv(new TipoDocumento(28, "Promessa de Compra e Venda", "PCV"));
+			setDocNit(new TipoDocumento(29, "Número de Inscrição do Trabalhador/Sócio", ""));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -161,7 +161,7 @@ public class Societario {
 			TiposDvrs.add(DocPcv);
 			TiposDvrs.add(DocNit);
 			
-			setAtos(new Organizacao(1,"ATOS","ATOS",TiposAtos));
+			setAtos(new Organizacao(1,"Atos","ATOS",TiposAtos));
 			setFed(new Organizacao(2,"Federal","FED",TiposFed));
 			setEst(new Organizacao(3,"Estadual","EST",TiposEst));
 			setMun(new Organizacao(4,"Municipal","MUN",TiposMun));
