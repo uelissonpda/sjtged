@@ -55,22 +55,22 @@ public class Contabil {
 			
 			public Contabil(){
 				setDocTbp(new TipoDocumento(1, "Termo Balanço Patrimonial","TBP"));
-				setDocDre(new TipoDocumento(2, "Demonstracao do Resultado do Exercicio", "DRE"));
-				setDocTdre(new TipoDocumento(3, "Termo Demonstracao do Resultado do Exercicio", "TDRE"));
+				setDocDre(new TipoDocumento(2, "Demonstração do Resultado do Exercício", "DRE"));
+				setDocTdre(new TipoDocumento(3, "Termo Demonstração do Resultado do Exercício", "TDRE"));
 				setDocBm(new TipoDocumento(4, "Balancete Mensal", "BM"));
 				setDocBt(new TipoDocumento(5, "Balancetes Trimestrais", "Balancetes Anual"));
-				setDocDlpa(new TipoDocumento(6, "Demonstracao de Lucros ou Prejuizos Acumulados", "Dlpa"));
-				setDocDmpl(new TipoDocumento(7, "Demonstracao da Mutacao do Pratimonio Liquido", "Dmpl"));
-				setDocDfc(new TipoDocumento(8, "Demonstracao dos Fluxos de Caixa", "Dfc"));
+				setDocDlpa(new TipoDocumento(6, "Demonstração de Lucros ou Prejuízos Acumulados", "Dlpa"));
+				setDocDmpl(new TipoDocumento(7, "Demonstração da Mutação do Pratimônio Líquido", "Dmpl"));
+				setDocDfc(new TipoDocumento(8, "Demonstração dos Fluxos de Caixa", "Dfc"));
 				setDocNe(new TipoDocumento(9, "Notas Explicativas", "NE"));
-				setDocIndliq(new TipoDocumento(10, "Indices de Liquidez", "INDLIQ"));
+				setDocIndliq(new TipoDocumento(10, "Índices de Liquidez", "INDLIQ"));
 				setDocRcentr(new TipoDocumento(11, "Recibo de Entrega", "RCENTR"));
 				setDocReqnto(new TipoDocumento(12, "Requerimento", "Reqnto"));
 				setDocTermos(new TipoDocumento(13, "Termos de Abertura e Encerramento", "TERMOS"));
-				setDocCopseg(new TipoDocumento(14, "Copia SEG ARQ Transmitido", "COPSEG"));
+				setDocCopseg(new TipoDocumento(14, "Cópia SEG Arquivo Transmitido", "COPSEG"));
 				setDocTxpaga(new TipoDocumento(15, "Taxa Paga", "TXPAGA"));
-				setDocAutent(new TipoDocumento(16, "Termo Autenticacao", "AUTENT"));
-				setDocDiario(new TipoDocumento(17, "Diario", "DIARIO"));
+				setDocAutent(new TipoDocumento(16, "Termo Autenticação", "AUTENT"));
+				setDocDiario(new TipoDocumento(17, "Diário", "DIARIO"));
 				
 				setTiposBlnc(new ArrayList<TipoDocumento>());
 				setTiposDre(new ArrayList<TipoDocumento>());
@@ -104,11 +104,11 @@ public class Contabil {
 				TiposEcd.add(DocBp);
 				TiposEcd.add(DocDre);
 				
-				setBlnc(new Organizacao(1,"Balancos","BLNC",TiposBlnc));
-				setDre(new Organizacao(2,"Demonstracao Resultado de Exercicio","DRE",TiposDre));
+				setBlnc(new Organizacao(1,"Balanços","BLNC",TiposBlnc));
+				setDre(new Organizacao(2,"Demonstração Resultado de Exercício","DRE",TiposDre));
 				setBlct(new Organizacao(3, "Balancetes", "BLCT", TiposBlct));
-				setDcon(new Organizacao(4,"Demonstrativos Contabeis", "DCON", TiposDcon));
-				setEcd(new Organizacao(5,"Escrituracao Contabil Fiscal","ECD",TiposEcd));
+				setDcon(new Organizacao(4,"Demonstrativos Contábeis", "DCON", TiposDcon));
+				setEcd(new Organizacao(5,"Escrituração Contábil Fiscal","ECD",TiposEcd));
 			}
 //------------------------------------------------------------------------------------------------
 			/**
