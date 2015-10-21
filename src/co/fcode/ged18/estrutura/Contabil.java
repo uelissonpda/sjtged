@@ -10,7 +10,7 @@ import co.fcode.ged18.TipoDocumento;
 public class Contabil {
 //-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
 	
-			private Organizacao blnç; // BALANÇOS
+			private Organizacao blnc; // BALANÇOS
 			private Organizacao dre;  // DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO
 			private Organizacao blct; // TIPOS BALANCETES
 			private Organizacao dcon; // TIPOS DEMONSTRATIVOS CONTÁBEIS
@@ -45,7 +45,7 @@ public class Contabil {
 			
 //-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 			
-			private ArrayList<TipoDocumento> TiposBlnç; // TIPOS BALANÇOS
+			private ArrayList<TipoDocumento> TiposBlnc; // TIPOS BALANÇOS
 			private ArrayList<TipoDocumento> TiposDre;  // TIPOS DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO
 			private ArrayList<TipoDocumento> TiposBlct; // TIPOS BALANCETES
 			private ArrayList<TipoDocumento> TiposDcon; // TIPOS DEMONSTRATIVOS CONTÁBEIS
@@ -160,16 +160,16 @@ public class Contabil {
 				TiposDre = tiposDre;
 			}
 /**
-			 * @return the tiposBlnç
+			 * @return the tiposBlnc
 			 */
-			public ArrayList<TipoDocumento> getTiposBlnç() {
-				return TiposBlnç;
+			public ArrayList<TipoDocumento> getTiposBlnc() {
+				return TiposBlnc;
 			}
 			/**
-			 * @param tiposBlnç the tiposBlnç to set
+			 * @param tiposBlnc the tiposBlnc to set
 			 */
-			public void setTiposBlnç(ArrayList<TipoDocumento> tiposBlnç) {
-				TiposBlnç = tiposBlnç;
+			public void setTiposBlnc(ArrayList<TipoDocumento> tiposBlnc) {
+				TiposBlnc = tiposBlnc;
 			}
 //-------------------------------------------------------------------------------------------------
 			public TipoDocumento getDocDiario() {
@@ -319,11 +319,11 @@ public class Contabil {
 				this.dre = dre;
 			}
 
-			public Organizacao getBlnç() {
-				return blnç;
+			public Organizacao getBlnc() {
+				return blnc;
 			}
 
-			public void setBlnç(Organizacao blnç) {
-				this.blnç = blnç;
+			public void setBlnc(Organizacao blnc) {
+				this.blnc = blnc;
 			}	
 	}
