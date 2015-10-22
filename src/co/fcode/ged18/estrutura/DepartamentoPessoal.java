@@ -65,8 +65,8 @@ public class DepartamentoPessoal {
 	private Unidade dp;
 	
 	public DepartamentoPessoal(){
-		setDocAdmiss(new TipoDocumento(1,"Admissao","ADMISS"));
-		setDocQuitac(new TipoDocumento(1,"Quitação", ""));  // TODO: Com Erro
+		setDocAdmiss(new TipoDocumento(1,"Admissão","ADMISS"));
+		setDocQuitac(new TipoDocumento(1,"Quitação", "QUITAC"));
 		setDocFolhas(new TipoDocumento(2,"Folhas","FOLHAS"));
 		setDocGfip(new TipoDocumento(3,"Gfip","GFIP"));
 		setDocDarf(new TipoDocumento(4,"Darf","DARF"));
@@ -74,7 +74,7 @@ public class DepartamentoPessoal {
 		setDocCaged(new TipoDocumento(6,"Caged","CAGED"));
 		setDocCompvt(new TipoDocumento(7,"Compra de VT","COMPVT"));
 		setDocPonto(new TipoDocumento(8, "Ponto","PONTO"));
-		setDocFerias(new TipoDocumento(9,"Ferias","FERIAS"));
+		setDocFerias(new TipoDocumento(9,"Férias","FERIAS"));
 		setDocGrcsu(new TipoDocumento(10,"Guias Sindicais","GRCSU"));
 		setDocAssist(new TipoDocumento(11,"Guias Assistenciais","ASSIST"));
 		setDocConfed(new TipoDocumento(12,"Guias Confederativas","CONFED"));
@@ -90,12 +90,12 @@ public class DepartamentoPessoal {
 		setDocCnd(new TipoDocumento(22,"CND","CND"));
 		setDocCrf(new TipoDocumento(23,"CRF","CRF"));
 		setDocCndtra(new TipoDocumento(24,"CND Trabalhista","CNDTRA"));
-		setDocDeclar(new TipoDocumento(25,"Declaracoes","DECLAR"));
-		setDocDataba(new TipoDocumento(26,"Dissidio com Data Base","DATABA"));
+		setDocDeclar(new TipoDocumento(25,"Declarações","DECLAR"));
+		setDocDataba(new TipoDocumento(26,"Dissídio com Data Base","DATABA"));
 		setDocPrepos(new TipoDocumento(27,"Carta de Preposto","PREPOS"));
 		setDocComext(new TipoDocumento(28,"Comunicado Externo","COMEXT"));
 		setDocPartic(new TipoDocumento(29,"Particularidades Empresas","PARTIC"));
-		setDocRecalc(new TipoDocumento(30,"Recalculos","RECALC"));
+		setDocRecalc(new TipoDocumento(30,"Recálculos","RECALC"));
 		
 		setTiposRot(new ArrayList<TipoDocumento>());
 		setTiposObac(new ArrayList<TipoDocumento>());
@@ -136,7 +136,7 @@ public class DepartamentoPessoal {
 		TiposDvrs.add(getDocRecalc());
 		
 		setRot(new Organizacao(1, "Rotinas", "ROT", TiposRot));
-		setObac(new Organizacao(2, "Obrigacoes Acessorias", "OBAC", TiposObac));
+		setObac(new Organizacao(2, "Obrigações Acessórias", "OBAC", TiposObac));
 		setDvrs(new Organizacao(3,"Diversos", "DVRS",TiposDvrs));
 		
 		setOrganizacoes(new ArrayList<Organizacao>());

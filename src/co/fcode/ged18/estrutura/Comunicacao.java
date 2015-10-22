@@ -48,11 +48,11 @@ public class Comunicacao {
 			
 			public Comunicacao(){
 				setDocAdm(new TipoDocumento(1, "Admapo", "ADM"));
-				setDocCont(new TipoDocumento(2, "Contabil", "CONT"));
+				setDocCont(new TipoDocumento(2, "Contábil", "CONT"));
 				setDocDp(new TipoDocumento(3, "Departamento Pessoal", "DP"));
-				setDocDir(new TipoDocumento(4, "Direcao", "DIR"));
+				setDocDir(new TipoDocumento(4, "Direção", "DIR"));
 				setDocFisc(new TipoDocumento(5, "Fiscal", "FISC"));
-				setDocSoc(new TipoDocumento(6, "Societario", "SOC"));
+				setDocSoc(new TipoDocumento(6, "Societário", "SOC"));
 				
 				setTiposCext(new ArrayList<TipoDocumento>());
 				setTiposEmen(new ArrayList<TipoDocumento>());
@@ -105,9 +105,9 @@ public class Comunicacao {
 				setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 				setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
 				setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
-				setInti(new Organizacao(4,"Intimicoes/Notificacoes","INTI",TiposInti)); // TODO: ERRO: Não Pode conter "/" no Nome
-				setMmot(new Organizacao(5,"Memorandos/Orientacoes Tecnincas","MMOT",TiposMmot)); // TODO: ERRO: Não Pode conter "/" no Nome
-				setMr(new Organizacao(6,"Memoria de Reuniao","MR",TiposMr));
+				setInti(new Organizacao(4,"Intimições-Notificações","INTI",TiposInti));
+				setMmot(new Organizacao(5,"Memorandos-Orientaçõe Técnincas","MMOT",TiposMmot));
+				setMr(new Organizacao(6,"Memoria de Reunião","MR",TiposMr));
 				
 				setOrganizacoes(new ArrayList<Organizacao>());
 				getOrganizacoes().add(getCext());

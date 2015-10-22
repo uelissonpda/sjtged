@@ -96,32 +96,32 @@ public class Societario {
 			setDocCnpj(new TipoDocumento(14,"CNPJ","CNPJ"));
 			setDocCertbx(new TipoDocumento(15, "Certidão de Baixa", "CERTBX"));
 			setDocInsest(new TipoDocumento(16, "Inscrição Estadual", "INSEST"));
-			setDocLdexcb(new TipoDocumento(17, "CERTIDÃO DE BAIXA DA INSCRIÇÃO ESTADUAL", "LDEXCB")); // TODO: Usar padrão de Escrita
-			setDocCertcb(new TipoDocumento(18, "CERTIF DE APROVACAO DO CORPO DE BOMBEIROS", "CERTCB")); // TODO: Usar padrão de Escrita
+			setDocLdexcb(new TipoDocumento(17, "Certidão de Baixa de Inscrição Estadual", "LDEXCB"));
+			setDocCertcb(new TipoDocumento(18, "Certificado de Aprovação do Corpo de Bombeiros", "CERTCB"));
 			setDocAlvara(new TipoDocumento(19, "Alvará", "ALVARA"));
-			setDocFincad(new TipoDocumento(20, "FICHA DE INFORMACOES CADASTRAIS", "FINCAD")); // TODO: Usar padrão de Escrita
-			setDocBxiss(new TipoDocumento(21, "MEMORANDO DE BAIXA ISS", "BXISS")); // TODO: Usar padrão de Escrita
+			setDocFincad(new TipoDocumento(20, "Ficha de Informações Cadastrais", "FINCAD"));
+			setDocBxiss(new TipoDocumento(21, "Memorando de Baixa Iss", "BXISS"));
 			setDocBxalv(new TipoDocumento(22, "Baixa do Alvará", "BXALV"));
-			setDocSanipj(new TipoDocumento(23, "TERMO DE LICENCA DE FUNCIONAMENTO SANITARIO", "SANIPJ")); // TODO: Usar padrão de Escrita
-			setDocCis(new TipoDocumento(24, "CERTIFICADO DE INSPECAO SANITARIA", "CIS")); // TODO: Usar padrão de Escrita
-			setDocSanipf(new TipoDocumento(25, "TERMO DE ASSENTIMENTO SANITARIO", "SANIPF")); // TODO: Usar padrão de Escrita
-			setDocSmtr(new TipoDocumento(26, "CERTIDAO DE ASSESSIBILIDADE", "SMTR")); // TODO: Usar padrão de Escrita
-			setDocSmo(new TipoDocumento(27, "DECLARACAO DE REBAIXAMENTO DE MEIO FIO", "SMO")); // TODO: Usar padrão de Escrita
-			setDocCinstc(new TipoDocumento(27, "CERTIDAO DE INSTALACAO COMERCIAL", "CINSCT")); // TODO: Usar padrão de Escrita
-			setDocHabite(new TipoDocumento(28, "HABITE-SE", "HABITE")); // TODO: Usar padrão de Escrita
-			setDocCtrans(new TipoDocumento(29, "CERTIDAO DE TRANSFORMACAO DE USO", "CTRANS")); // TODO: Usar padrão de Escrita
-			setDocSmac(new TipoDocumento(30, "REQUERIMENTO DE MEIO AMBIENTE", "SMAC")); // TODO: Usar padrão de Escrita
-			setDocPlpubl(new TipoDocumento(31, "PLANTA DE AUTORIZACAO DE PUBLICIDADE", "PLPUBL")); // TODO: Usar padrão de Escrita
-			setDocTxmeca(new TipoDocumento(32, "TAXA DE MESAS E CADEIRAS", "TXMECA")); // TODO: Usar padrão de Escrita
-			setDocTxpubl(new TipoDocumento(33, "TAXA DE PUBLICIDADE ", "TXPUBL")); // TODO: Usar padrão de Escrita
-			setDocIptu(new TipoDocumento(34, "IPTU", "IPTU")); // TODO: Usar padrão de Escrita
-			setDocConloc(new TipoDocumento(35, "CONTRATO DE LOCACAO ", "CONLOC")); // TODO: Usar padrão de Escrita
-			setDocCpf(new TipoDocumento(36, "CPF DOS SOCIOS", "CPF")); // TODO: Usar padrão de Escrita
-			setDocRg(new TipoDocumento(37, "RG DOS SOCIOS", "RG")); // TODO: Usar padrão de Escrita
-			setDocCompre(new TipoDocumento(38, "COMPROVANTE DE RESIDENCIA DOS SOCIOS", "COMPRE")); // TODO: Usar padrão de Escrita
-			setDocRegpro(new TipoDocumento(39, "REGISTRO PROFISSIONAL", "REGPRO")); // TODO: Usar padrão de Escrita
-			setDocPcv(new TipoDocumento(40, "PROMESSA DE COMPRA E VENDA", "PCV")); // TODO: Usar padrão de Escrita
-			setDocNit(new TipoDocumento(41, "NUMERO DE INSCRICAO DO TRABALHADOR/SOCIO", "")); // TODO: Usar padrão de Escrita
+			setDocSanipj(new TipoDocumento(23, "Termo de Licensa de Funcionamento Sanitário", "SANIPJ"));
+			setDocCis(new TipoDocumento(24, "Certificado de Inspeção Sanitária", "CIS"));
+			setDocSanipf(new TipoDocumento(25, "Termo de Assentimento Sanitário", "SANIPF"));
+			setDocSmtr(new TipoDocumento(26, "Certidão de Acessibilidade", "SMTR"));
+			setDocSmo(new TipoDocumento(27, "Declaração de Rebaixamento de Meio Fio", "SMO"));
+			setDocCinstc(new TipoDocumento(28, "Certidão de Instalação Comercial", "CINSCT"));
+			setDocHabite(new TipoDocumento(29, "Habite-se", "HABITE"));
+			setDocCtrans(new TipoDocumento(30, "Certidão de Transformação de Uso", "CTRANS"));
+			setDocSmac(new TipoDocumento(31, "Requerimento de Meio Ambiente", "SMAC"));
+			setDocPlpubl(new TipoDocumento(32, "Planta de Autorização de Publicidade", "PLPUBL"));
+			setDocTxmeca(new TipoDocumento(33, "Taxa de Mesas e Cadeiras", "TXMECA"));
+			setDocTxpubl(new TipoDocumento(34, "Taxa de Publicidade", "TXPUBL"));
+			setDocIptu(new TipoDocumento(35, "Iptu", "IPTU"));
+			setDocConloc(new TipoDocumento(36, "Contrato de Locação", "CONLOC"));
+			setDocCpf(new TipoDocumento(37, "Cpf dos Sócios", "CPF"));
+			setDocRg(new TipoDocumento(38, "Rg dos Sócios", "RG"));
+			setDocCompre(new TipoDocumento(39, "Comprovante de Residência dos Sócios", "COMPRE"));
+			setDocRegpro(new TipoDocumento(40, "Registro Profissional", "REGPRO"));
+			setDocPcv(new TipoDocumento(41, "Promessa de Compra e Venda", "PCV"));
+			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador/Sócio", ""));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());

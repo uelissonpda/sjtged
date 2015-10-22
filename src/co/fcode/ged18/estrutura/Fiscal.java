@@ -84,23 +84,24 @@ public class Fiscal {
 			setDocTdm(new TipoDocumento(1, "Tdm", "TDM"));
 			setDocAutliv(new TipoDocumento(2, "Sepd","SEPD")); // TODO: Com Erro
 			setDocXmle(new TipoDocumento(3,"XML Entrada","XMLE"));
-			setDocXmls(new TipoDocumento(4,"XML Saida","XMLS"));
+			setDocXmls(new TipoDocumento(4,"XML Saída","XMLS"));
 			setDocXmliss(new TipoDocumento(5,"XML Iss","XMLISS"));
-			setDocDecl(new TipoDocumento(6,"Declaracao","DECL"));
+			setDocDecl(new TipoDocumento(6,"Declaração","DECL"));
 			setDocArqtxt(new TipoDocumento(7,"Arquivo TXT","ARQTXT"));
 			setDocRecent(new TipoDocumento(8,"Recibo de Entrega","RECENT"));
-			setDocMemapu(new TipoDocumento(9,"Apuracao","MEMAPU"));
+			setDocMemapu(new TipoDocumento(9,"Apuração","MEMAPU"));
 			setDocExtrat(new TipoDocumento(10,"Extrato","EXTRAT"));
 			setDocEsplho(new TipoDocumento(11,"Espelho","ESPLHO"));
 			setDocPiscof(new TipoDocumento(12,"PIS e COFINS","PISCOF"));
 			setDocCnefes(new TipoDocumento(13,"Cnefes","CNEFES"));
-			setDocTomret(new TipoDocumento(14,"Tomadores/Retencoes","")); // TODO: ERRO: Não Pode conter "/" no Nome
+			setDocTomret(new TipoDocumento(14,"Tomadores-Retenções",""));
 			setDocSn(new TipoDocumento(15,"Simples Nacional","SN"));
-			setDocIrcsll(new TipoDocumento(16,"IRPJ/CSLL","IRCSLL")); // TODO: ERRO: Não Pode conter "/" no Nome
-			setDocIr1708(new TipoDocumento(17,"IFFF 1708","Ir1708"));
+
+			setDocIrcsll(new TipoDocumento(16,"IRPJ-CSLL","IRCSLL"));
+			setDocIr1708(new TipoDocumento(17,"IRRF 1708","Ir1708"));
 			setDocIr3280(new TipoDocumento(18,"IRRF 3280","Ir3280"));
 			setDocIr3208(new TipoDocumento(19,"IRRF 3208","Ir3208"));
-			setDocPc5952(new TipoDocumento(20,"PIS/COFINS/CSLL 5952","PC5952")); // TODO: ERRO: Não Pode conter "/" no Nome
+			setDocPc5952(new TipoDocumento(20,"PIS-COFINS-CSLL 5952","PC5952"));
 			setDocPis(new TipoDocumento(21,"PIS","PIS"));
 			setDocCofins(new TipoDocumento(22,"COFINS","COFINS"));
 			setDocIrpj(new TipoDocumento(23,"IRPJ","IRPJ"));
@@ -169,17 +170,17 @@ public class Fiscal {
 			TiposTrib.add(getDocDifal());
 			TiposTrib.add(getDocIss());
 			
-			setTdm(new Organizacao(1,"TDM","TDM",TiposTdm));
-			setSepd(new Organizacao(2,"SEPD","SEPD",TiposSepd));
-			setXml(new Organizacao(3,"XML","XMLA",TiposXml));
-			setSpdc(new Organizacao(4,"SPED Contribuicoes","SPDC",TiposSpdc));
-			setSpdf(new Organizacao(5,"SPED Fiscal","SPDF",TiposSpdf));
-			setDcla(new Organizacao(6,"DECLAN","DCLA",TiposDcla));
-			setDub(new Organizacao(7,"DUB","DUB",TiposDub));
+			setTdm(new Organizacao(1,"Tdm","TDM",TiposTdm));
+			setSepd(new Organizacao(2,"Sepd","SEPD",TiposSepd));
+			setXml(new Organizacao(3,"Xml","XMLA",TiposXml));
+			setSpdc(new Organizacao(4,"Sped Contribuições","SPDC",TiposSpdc));
+			setSpdf(new Organizacao(5,"Sped Fiscal","SPDF",TiposSpdf));
+			setDcla(new Organizacao(6,"Declan","DCLA",TiposDcla));
+			setDub(new Organizacao(7,"Dub","DUB",TiposDub));
 			setSn(new Organizacao(8,"Simples Nacional","SN",TiposSn));
 			setGia(new Organizacao(9,"GIA","GIA",TiposGia));
-			setMcal(new Organizacao(10,"Memoria de Calculo","MCAL",TiposMcal));
-			setTrib(new Organizacao(11,"Impostos/Contribuicoes","TRIB",TiposTrib));
+			setMcal(new Organizacao(10,"Memória de Cálculo","MCAL",TiposMcal));
+			setTrib(new Organizacao(11,"Impostos-Contribuições","TRIB",TiposTrib));
 			
 			setOrganizacoes(new ArrayList<Organizacao>());
 			getOrganizacoes().add(getTdm());

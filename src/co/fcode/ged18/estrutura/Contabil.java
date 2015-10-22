@@ -58,25 +58,28 @@ public class Contabil {
 			private Unidade contabil;
 			
 			public Contabil(){
-				setDocBp(new TipoDocumento(1,"Balanço Patrimonial","BP")); // TODO: Com Erro!
-				setDocTbp(new TipoDocumento(1, "Termo Balanço Patrimonial","TBP"));
-				setDocDre(new TipoDocumento(2, "Demonstracao do Resultado do Exercicio", "DRE"));
-				setDocTdre(new TipoDocumento(3, "Termo Demonstracao do Resultado do Exercicio", "TDRE"));
-				setDocBm(new TipoDocumento(4, "Balancete Mensal", "BM"));
-				setDocBt(new TipoDocumento(5, "Balancetes Trimestrais", "Balancetes Anual"));
-				setDocBa(new TipoDocumento(5,"Balancetes Anuais","BA")); // TODO: Com Erro!
-				setDocDlpa(new TipoDocumento(6, "Demonstracao de Lucros ou Prejuizos Acumulados", "Dlpa"));
-				setDocDmpl(new TipoDocumento(7, "Demonstracao da Mutacao do Pratimonio Liquido", "Dmpl"));
-				setDocDfc(new TipoDocumento(8, "Demonstracao dos Fluxos de Caixa", "Dfc"));
-				setDocNe(new TipoDocumento(9, "Notas Explicativas", "NE"));
-				setDocIndliq(new TipoDocumento(10, "Indices de Liquidez", "INDLIQ"));
-				setDocRcentr(new TipoDocumento(11, "Recibo de Entrega", "RCENTR"));
-				setDocReqnto(new TipoDocumento(12, "Requerimento", "Reqnto"));
-				setDocTermos(new TipoDocumento(13, "Termos de Abertura e Encerramento", "TERMOS"));
-				setDocCopseg(new TipoDocumento(14, "Copia SEG ARQ Transmitido", "COPSEG"));
-				setDocTxpaga(new TipoDocumento(15, "Taxa Paga", "TXPAGA"));
-				setDocAutent(new TipoDocumento(16, "Termo Autenticacao", "AUTENT"));
-				setDocDiario(new TipoDocumento(17, "Diario", "DIARIO"));
+				setDocBp(new TipoDocumento(1,"Balanço Patrimonial","BP"));
+				setDocTbp(new TipoDocumento(2, "Termo Balanço Patrimonial","TBP"));
+				setDocDre(new TipoDocumento(3, "Demonstração do Resultado do Exercício", "DRE"));
+				setDocTdre(new TipoDocumento(4, "Termo Demonstração do Resultado do Exercício", "TDRE"));
+				setDocBm(new TipoDocumento(5, "Balancete Mensal", "BM"));
+				setDocBt(new TipoDocumento(6, "Balancetes Trimestrais", "BT"));
+				setDocBa(new TipoDocumento(7,"Balancetes Anuais","BA"));
+				setDocDlpa(new TipoDocumento(8, "Demonstracao de Lucros ou Prejuizos Acumulados", "Dlpa"));
+				setDocDmpl(new TipoDocumento(9, "Demonstracao da Mutacao do Pratimonio Liquido", "Dmpl"));
+				setDocDfc(new TipoDocumento(10, "Demonstracao dos Fluxos de Caixa", "Dfc"));
+				setDocDlpa(new TipoDocumento(11, "Demonstração de Lucros ou Prejuízos Acumulados", "Dlpa"));
+				setDocDmpl(new TipoDocumento(12, "Demonstração da Mutação do Pratimônio Líquido", "Dmpl"));
+				setDocDfc(new TipoDocumento(13, "Demonstração dos Fluxos de Caixa", "Dfc"));
+				setDocNe(new TipoDocumento(14, "Notas Explicativas", "NE"));
+				setDocIndliq(new TipoDocumento(15, "Índices de Liquidez", "INDLIQ"));
+				setDocRcentr(new TipoDocumento(16, "Recibo de Entrega", "RCENTR"));
+				setDocReqnto(new TipoDocumento(17, "Requerimento", "Reqnto"));
+				setDocTermos(new TipoDocumento(18, "Termos de Abertura e Encerramento", "TERMOS"));
+				setDocCopseg(new TipoDocumento(19, "Cópia SEG Arquivo Transmitido", "COPSEG"));
+				setDocTxpaga(new TipoDocumento(20, "Taxa Paga", "TXPAGA"));
+				setDocAutent(new TipoDocumento(21, "Termo Autenticação", "AUTENT"));
+				setDocDiario(new TipoDocumento(22, "Diário", "DIARIO"));
 				
 				setTiposBlnc(new ArrayList<TipoDocumento>());
 				setTiposDre(new ArrayList<TipoDocumento>());
@@ -111,7 +114,7 @@ public class Contabil {
 				TiposEcd.add(getDocDre());
 				
 				setBlnc(new Organizacao(1,"Balanços","BLNC",TiposBlnc));
-				setDre(new Organizacao(2,"Demonstrção Resultado de Exercício","DRE",TiposDre));
+				setDre(new Organizacao(2,"Demonstração Resultado de Exercício","DRE",TiposDre));
 				setBlct(new Organizacao(3, "Balancetes", "BLCT", TiposBlct));
 				setDcon(new Organizacao(4,"Demonstrativos Contábeis", "DCON", TiposDcon));
 				setEcd(new Organizacao(5,"Escrituração Contábil Fiscal","ECD",TiposEcd));
@@ -175,13 +178,17 @@ public class Contabil {
 				TiposDre = tiposDre;
 			}
 /**
+<<<<<<< HEAD
 			 * @return the tiposblnc
+=======
+			 * @return the tiposBlnc
+>>>>>>> origin/master
 			 */
 			public ArrayList<TipoDocumento> getTiposBlnc() {
 				return TiposBlnc;
 			}
 			/**
-			 * @param tiposBlnç the tiposBlnç to set
+			 * @param tiposBlnc the tiposBlnc to set
 			 */
 			public void setTiposBlnc(ArrayList<TipoDocumento> tiposBlnc) {
 				TiposBlnc = tiposBlnc;
@@ -352,5 +359,5 @@ public class Contabil {
 			}
 			public void setContabil(Unidade contabil) {
 				this.contabil = contabil;
-			}	
+			}
 	}
