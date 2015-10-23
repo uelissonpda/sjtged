@@ -60,6 +60,7 @@ public class Comunicacao {
 				setTiposInti(new ArrayList<TipoDocumento>());
 				setTiposMmot(new ArrayList<TipoDocumento>());
 				setTiposMr(new ArrayList<TipoDocumento>());
+				setTiposProten(new ArrayList<TipoDocumento>());
 				
 				TiposCext.add(getDocAdm());
 				TiposCext.add(getDocCont());
@@ -102,12 +103,15 @@ public class Comunicacao {
 				TiposMr.add(getDocFisc());
 				TiposMr.add(getDocSoc());
 				
+				TiposProten.add(getDocAdm()); //PROTOCOLO DE ENTREGA
+				
 				setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 				setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
 				setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
 				setInti(new Organizacao(4,"Intimições-Notificações","INTI",TiposInti));
 				setMmot(new Organizacao(5,"Memorandos-Orientaçõe Técnincas","MMOT",TiposMmot));
 				setMr(new Organizacao(6,"Memoria de Reunião","MR",TiposMr));
+				setProten(new Organizacao(7,"Protoloco de Entrega","PROTEN",TiposProten));
 				
 				setOrganizacoes(new ArrayList<Organizacao>());
 				getOrganizacoes().add(getCext());
@@ -116,6 +120,7 @@ public class Comunicacao {
 				getOrganizacoes().add(getInti());
 				getOrganizacoes().add(getMmot());
 				getOrganizacoes().add(getMr());
+				getOrganizacoes().add(getProten());
 				
 				setComunicacao(new Unidade(1,"Comunicação","CM",getOrganizacoes()));
 			}
@@ -287,5 +292,17 @@ public ArrayList<TipoDocumento> getTiposCext() {
 			}
 			public void setComunicacao(Unidade comunicacao) {
 				this.comunicacao = comunicacao;
+			}
+			public Organizacao getProten() {
+				return proten;
+			}
+			public void setProten(Organizacao proten) {
+				this.proten = proten;
+			}
+			public ArrayList<TipoDocumento> getTiposProten() {
+				return TiposProten;
+			}
+			public void setTiposProten(ArrayList<TipoDocumento> tiposProten) {
+				TiposProten = tiposProten;
 			}
 }
