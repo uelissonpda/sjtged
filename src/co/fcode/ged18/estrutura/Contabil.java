@@ -65,9 +65,9 @@ public class Contabil {
 				setDocBm(new TipoDocumento(5, "Balancete Mensal", "BM"));
 				setDocBt(new TipoDocumento(6, "Balancetes Trimestrais", "BT"));
 				setDocBa(new TipoDocumento(7,"Balancetes Anuais","BA"));
-				setDocDlpa(new TipoDocumento(8, "Demonstracao de Lucros ou Prejuizos Acumulados", "Dlpa"));
-				setDocDmpl(new TipoDocumento(9, "Demonstracao da Mutacao do Pratimonio Liquido", "Dmpl"));
-				setDocDfc(new TipoDocumento(10, "Demonstracao dos Fluxos de Caixa", "Dfc"));
+				setDocDlpa(new TipoDocumento(8, "Demonstração de Lucros ou Prejuízos Acumulados", "Dlpa"));
+				setDocDmpl(new TipoDocumento(9, "Demonstração da Mutacao do Pratimonio Líquido", "Dmpl"));
+				setDocDfc(new TipoDocumento(10, "Demonstração dos Fluxos de Caixa", "Dfc"));
 				setDocDlpa(new TipoDocumento(11, "Demonstração de Lucros ou Prejuízos Acumulados", "Dlpa"));
 				setDocDmpl(new TipoDocumento(12, "Demonstração da Mutação do Pratimônio Líquido", "Dmpl"));
 				setDocDfc(new TipoDocumento(13, "Demonstração dos Fluxos de Caixa", "Dfc"));
