@@ -17,7 +17,8 @@ public class Comunicacao {
 			private Organizacao inti; // INTIMAÇÕES/NOTIFICAÇÕES
 			private Organizacao mmot; // MEMORANDOS/ORIENTAÇÕES TÉCNICAS
 			private Organizacao mr;   // MEMÓRIA DE REUNIÃO
-
+			private Organizacao proten; // PROTOCOLOS ENTREGUES
+			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 
 //-------------------VARIÁVEIS TIPOS DE DOCUMENTOS-------------------//
@@ -39,7 +40,8 @@ public class Comunicacao {
 			private ArrayList<TipoDocumento> TiposEmre; // E-MAIL RECEBIDOS
 			private ArrayList<TipoDocumento> TiposInti; // TIPOS INTIMAÇÕES/NOTIFICAÇÕES
 			private ArrayList<TipoDocumento> TiposMmot; // TIPOS MEMORANDOS/ORIENTAÇÕES TÉCNICAS
-			private ArrayList<TipoDocumento> TiposMr;   // TIPOS MEMÓRIA DE REUNIÃO			
+			private ArrayList<TipoDocumento> TiposMr;   // TIPOS MEMÓRIA DE REUNIÃO	
+			private ArrayList<TipoDocumento> TiposProten; // TIPOS PROTOCOLOS DE ENTREGA
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
@@ -103,15 +105,19 @@ public class Comunicacao {
 				TiposMr.add(getDocFisc());
 				TiposMr.add(getDocSoc());
 				
-				TiposProten.add(getDocAdm()); //PROTOCOLO DE ENTREGA
+				TiposProten.add(getDocAdm());
+				//TiposProten.add(getDocCont());
+				//TiposProten.add(getDocDp());
+				//TiposProten.add(getDocDir());
+				//TiposProten.add(getDocFisc());
 				
 				setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 				setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
 				setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
-				setInti(new Organizacao(4,"Intimições-Notificações","INTI",TiposInti));
-				setMmot(new Organizacao(5,"Memorandos-Orientaçõe Técnincas","MMOT",TiposMmot));
-				setMr(new Organizacao(6,"Memoria de Reunião","MR",TiposMr));
-				setProten(new Organizacao(7,"Protoloco de Entrega","PROTEN",TiposProten));
+				setInti(new Organizacao(4,"Intimações-Notificações","INTI",TiposInti));
+				setMmot(new Organizacao(5,"Memorandos-Orientações Técnicas","MMOT",TiposMmot));
+				setMr(new Organizacao(6,"Memória de Reunião","MR",TiposMr));
+				setProten(new Organizacao(7, "Protocolo de Entrega","PROTEN",TiposProten));
 				
 				setOrganizacoes(new ArrayList<Organizacao>());
 				getOrganizacoes().add(getCext());
