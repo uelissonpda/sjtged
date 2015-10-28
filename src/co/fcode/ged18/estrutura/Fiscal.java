@@ -82,7 +82,7 @@ public class Fiscal {
 			
 		public Fiscal(){
 			setDocTdm(new TipoDocumento(1, "Tdm", "TDM"));
-			setDocAutliv(new TipoDocumento(2, "Sepd","SEPD")); // TODO: Com Erro
+			setDocAutliv(new TipoDocumento(2, "Sepd","SEPD"));
 			setDocXmle(new TipoDocumento(3,"XML Entrada","XMLE"));
 			setDocXmls(new TipoDocumento(4,"XML Saída","XMLS"));
 			setDocXmliss(new TipoDocumento(5,"XML Iss","XMLISS"));
