@@ -60,7 +60,7 @@ public class Admapo {
 			setDocDp(new TipoDocumento(7, "Departamento Pessoal", "DP"));
 			setDocBanc(new TipoDocumento(8, "Bancários", "BANC"));
 			setDocInvt(new TipoDocumento(9, "Investimentos", "INVT"));
-			setDocCcre(new TipoDocumento(10, "Cartão de Credito", "CCRE"));
+			setDocCcre(new TipoDocumento(10, "Cartão de Crédito", "CCRE"));
 			setDocNfrj(new TipoDocumento(11, "Nota Fiscal RJ", "NFRJ"));
 			setDocNfsp(new TipoDocumento(12, "Nota Fiscal SP", "NFSP"));
 			setDocNfoe(new TipoDocumento(13, "Nota Fiscal Outros Estados", "NFOE"));
