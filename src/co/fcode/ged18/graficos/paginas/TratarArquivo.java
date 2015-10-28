@@ -62,7 +62,7 @@ public class TratarArquivo extends JDesktopPane{
 	JLabel lblOrgUnidade = new JLabel("Assunto");
 	JLabel lblTipoDoc = new JLabel("Tipo");
 	JLabel lblCompetencia = new JLabel("Competência");
-	JLabel lblNfe = new JLabel("NFe");
+	JLabel lblNfe = new JLabel("NFe ou Número");
 		
 	JTextArea text = new JTextArea();
 	JScrollPane text2 = new JScrollPane(text);
@@ -116,6 +116,7 @@ public class TratarArquivo extends JDesktopPane{
 			
 			pessoaFis.setBounds(340, nomeEmpresa.getY(), 20, 20);
 			add(pessoaFis);
+			pessoaFis.setEnabled(false);
 			
 			// Selecionar Unidade
 			lblUnidade.setBounds(30, nomeEmpresa.getY()+35, 90, 25);
@@ -164,6 +165,7 @@ public class TratarArquivo extends JDesktopPane{
 			add(lblCompetencia);
 			MaskFormatter dateMask = new MaskFormatter("######");
 			competencia = new JFormattedTextField(dateMask);
+			competencia.setToolTipText("Formato Padrão: DDMMAA");
 			competencia.setBounds(lblCompetencia.getX(), lblCompetencia.getY()+30, 100, 25);
 			add(competencia);
 			
@@ -266,7 +268,7 @@ public class TratarArquivo extends JDesktopPane{
 				JOptionPane.showMessageDialog(null, "O número da empresa não pode estar em branco.", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
 			else if(competencia.getText().equals("      ")){
-				JOptionPane.showMessageDialog(null, "A competência não pode estar em branco.", "Erro", JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "A competência não pode estar em branco. Formato Padrão: DDMMAA", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
 			else {
 				/* Criação de Diretório, caso não existam*/
