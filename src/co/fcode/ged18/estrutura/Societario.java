@@ -121,7 +121,7 @@ public class Societario {
 			setDocCompre(new TipoDocumento(39, "Comprovante de Residência dos Sócios", "COMPRE"));
 			setDocRegpro(new TipoDocumento(40, "Registro Profissional", "REGPRO"));
 			setDocPcv(new TipoDocumento(41, "Promessa de Compra e Venda", "PCV"));
-			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador/Sócio", ""));
+			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador-Sócio", ""));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
