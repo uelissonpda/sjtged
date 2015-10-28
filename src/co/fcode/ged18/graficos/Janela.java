@@ -13,7 +13,7 @@ public class Janela extends JFrame{
 	public Janela(String nome, Dimension tamanho){
 		this.setTitle(nome);
 		this.setSize(tamanho);
-		this.setUndecorated(true);
+	//	this.setUndecorated(true);  BOTÕES PADRÃO JANELA E COMANDO MOVER HABILITADOS
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
