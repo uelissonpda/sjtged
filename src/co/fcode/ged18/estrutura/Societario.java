@@ -3,7 +3,10 @@ package co.fcode.ged18.estrutura;
 *@author UANJOS*
 ***************/
 import java.util.ArrayList;
+import java.util.Collections;
 
+import co.fcode.ged18.ComparadorOrganizacao;
+import co.fcode.ged18.ComparadorTipoDocumento;
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
 import co.fcode.ged18.Unidade;
@@ -63,6 +66,7 @@ public class Societario {
 		private TipoDocumento DocRegpro; // REGISTRO PROFISSIONAL 
 		private TipoDocumento DocPcv;    // PROMESSA DE COMPRA E VENDA
 		private TipoDocumento DocNit;    // NIT - NUMERO DE INSCRIÇÃO DO TRABALHADOR/SÓCIO
+		private TipoDocumento DocEnquad; // ENQUADRAMENTO
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -122,6 +126,7 @@ public class Societario {
 			setDocRegpro(new TipoDocumento(40, "Registro Profissional", "REGPRO"));
 			setDocPcv(new TipoDocumento(41, "Promessa de Compra e Venda", "PCV"));
 			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador-Sócio", ""));
+			setDocEnquad(new TipoDocumento(43, "Enquadramento", "ENQUAD"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -139,6 +144,7 @@ public class Societario {
 			TiposAtos.add(getDocParal());
 			TiposAtos.add(getDocLavpal());
 			TiposAtos.add(getDocEstat());
+			TiposAtos.add(getDocEnquad());
 			
 			TiposFed.add(getDocCnpj());
 			TiposFed.add(getDocCertbx());
@@ -190,6 +196,15 @@ public class Societario {
 			getOrganizacoes().add(getDvrs());
 			
 			setSoc(new Unidade(5,"Societário","SC",getOrganizacoes()));
+			
+			/* Organização dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+			Collections.sort(getTiposAtos(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposDvrs(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposEst(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposFed(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposMun(), new ComparadorTipoDocumento());
+			
+			Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 		}
 //------------------------------------------------------------------------------------------------
 /**
@@ -264,6 +279,12 @@ public class Societario {
 		 */
 		public void setDocNit(TipoDocumento docNit) {
 			DocNit = docNit;
+		}
+		public TipoDocumento getDocEnquad() {
+			return DocEnquad;
+		}
+		public void setDocEnquad(TipoDocumento docEnquad) {
+			DocEnquad = docEnquad;
 		}
 /**
 		 * @return the docPcv
