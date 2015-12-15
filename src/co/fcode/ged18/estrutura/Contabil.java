@@ -3,7 +3,10 @@ package co.fcode.ged18.estrutura;
 *@author UANJOS*
 ***************/
 import java.util.ArrayList;
+import java.util.Collections;
 
+import co.fcode.ged18.ComparadorOrganizacao;
+import co.fcode.ged18.ComparadorTipoDocumento;
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
 import co.fcode.ged18.Unidade;
@@ -312,6 +315,29 @@ public class Contabil {
 				getOrganizacoes().add(getLvcx());
 				
 				setContabil(new Unidade(2,"Contábil","CT",getOrganizacoes()));
+				
+				/* Organização dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+				Collections.sort(getTiposBlct(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposBlnc(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDasn(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDcon(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDctf(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDfis(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDipj(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDirf(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDmed(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDmob(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDre(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposEcd(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposEcfs(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposEfdr(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposIbge(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposIntv(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposLvcx(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposLvdi(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposLvrz(), new ComparadorTipoDocumento());
+				
+				Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 			}
 //------------------------------------------------------------------------------------------------
 			public ArrayList<TipoDocumento> getTiposEcd() {
