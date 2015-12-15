@@ -1,7 +1,10 @@
 package co.fcode.ged18.estrutura;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+import co.fcode.ged18.ComparadorOrganizacao;
+import co.fcode.ged18.ComparadorTipoDocumento;
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
 import co.fcode.ged18.Unidade;
@@ -196,6 +199,21 @@ public class Fiscal {
 			getOrganizacoes().add(getTrib());
 			
 			setFiscal(new Unidade(4,"Fiscal","FS",getOrganizacoes()));
+			
+			/* Organização dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+			Collections.sort(getTiposDcla(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposDub(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposGia(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposMcal(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposSepd(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposSn(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposSpdc(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposSpdf(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposTdm(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposTrib(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposXml(), new ComparadorTipoDocumento());
+			
+			Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 	}
 //-----------------------------------------------------------------------------------------------
 		
