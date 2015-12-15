@@ -1,7 +1,10 @@
 package co.fcode.ged18.estrutura;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+import co.fcode.ged18.ComparadorOrganizacao;
+import co.fcode.ged18.ComparadorTipoDocumento;
 import co.fcode.ged18.Organizacao;
 import co.fcode.ged18.TipoDocumento;
 import co.fcode.ged18.Unidade;
@@ -145,6 +148,13 @@ public class DepartamentoPessoal {
 		getOrganizacoes().add(getDvrs());
 		
 		setDp(new Unidade(3,"Depto. Pessoal","DP",getOrganizacoes()));
+		
+		/* Organização dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+		Collections.sort(getTiposDvrs(), new ComparadorTipoDocumento());
+		Collections.sort(getTiposObac(), new ComparadorTipoDocumento());
+		Collections.sort(getTiposRot(), new ComparadorTipoDocumento());
+		
+		Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 	}
 //------------------------------------------------------------------------------------------------	
 /**
