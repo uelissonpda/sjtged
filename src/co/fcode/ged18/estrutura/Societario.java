@@ -5,11 +5,7 @@ package co.fcode.ged18.estrutura;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import co.fcode.ged18.ComparadorOrganizacao;
-import co.fcode.ged18.ComparadorTipoDocumento;
-import co.fcode.ged18.Organizacao;
-import co.fcode.ged18.TipoDocumento;
-import co.fcode.ged18.Unidade;
+import co.fcode.ged18.*;
 
 public class Societario {
 //-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
