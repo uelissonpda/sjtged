@@ -5,10 +5,10 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import javax.swing.Box;
-import javax.swing.JDesktopPane;
 import javax.swing.JMenuBar;
 import javax.swing.JTabbedPane;
 
+import co.fcode.ged18.graficos.paginas.Pesquisa;
 import co.fcode.ged18.graficos.paginas.TratarArquivo;
 import co.fcode.sjtged.sistema.FuncoesExtras;
 
@@ -51,11 +51,10 @@ public class MenuPrincipal extends JMenuBar{
 			jtp.removeAll();
 			Janela.tp.setText(b2.getText());
 			
-			jtp.addTab("Pesquisa de Documentos", new JDesktopPane());
+			jtp.addTab("Pesquisa de Documentos", new Pesquisa());
 			jtp.setIconAt(0, FuncoesExtras.buscarIcone("img/zoom.png"));
 		});
 		this.add(b2);
-		b2.setEnabled(false);
 		
 		this.add(Box.createHorizontalGlue());
 	}
