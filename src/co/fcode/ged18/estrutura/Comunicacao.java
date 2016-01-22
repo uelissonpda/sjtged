@@ -28,6 +28,7 @@ public class Comunicacao {
 	private TipoDocumento DocDir; // DIREÇÃO
 	private TipoDocumento DocFisc;// FISCAL
 	private TipoDocumento DocSoc; // SOCIETÁRIO
+	rivate TipoDocumento DocTes; // TESOURARIA
 			
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -54,7 +55,8 @@ public class Comunicacao {
 			setDocDir(new TipoDocumento(4, "Direção", "DIR"));
 			setDocFisc(new TipoDocumento(5, "Fiscal", "FISC"));
 			setDocSoc(new TipoDocumento(6, "Societário", "SOC"));
-						
+			setDocTes(new TipoDocumento(7, "Tesouraria", "TES"));
+			
 			setTiposCext(new ArrayList<TipoDocumento>());
 			setTiposEmen(new ArrayList<TipoDocumento>());
 			setTiposEmre(new ArrayList<TipoDocumento>());
@@ -110,6 +112,7 @@ public class Comunicacao {
 			TiposProten.add(getDocDir());
 			TiposProten.add(getDocFisc());
 			TiposProten.add(getDocSoc());
+			TiposProten.add(getDocTes());
 			
 			setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 			setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
@@ -186,6 +189,13 @@ public class Comunicacao {
 				TiposCext = tiposCext;
 			}
 //-----------------------------------------------------------------------------------------------
+			public TipoDocumento getDocTes() {
+				return DocTes;
+			}
+
+			public void setDocTes(TipoDocumento docTes) {
+				DocTes = docTes;
+			}
 			public TipoDocumento getDocSoc() {
 				return DocSoc;
 			}
