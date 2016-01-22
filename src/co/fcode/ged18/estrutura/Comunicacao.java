@@ -109,6 +109,7 @@ public class Comunicacao {
 			TiposProten.add(getDocDp());
 			TiposProten.add(getDocDir());
 			TiposProten.add(getDocFisc());
+			TiposProten.add(getDocSoc());
 			
 			setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 			setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
