@@ -97,6 +97,7 @@ public class Comunicacao {
 			TiposMmot.add(getDocCont());
 			TiposMmot.add(getDocDp());
 			TiposMmot.add(getDocDir());
+			TiposMmot.add(getDocSoc());
 			TiposMmot.add(getDocFisc());
 			
 			TiposMr.add(getDocAdm());
