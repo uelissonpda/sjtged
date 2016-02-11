@@ -28,7 +28,7 @@ public class Comunicacao {
 	private TipoDocumento DocDir; // DIREÇÃO
 	private TipoDocumento DocFisc;// FISCAL
 	private TipoDocumento DocSoc; // SOCIETÁRIO
-	rivate TipoDocumento DocTes; // TESOURARIA
+	private TipoDocumento DocTes; // TESOURARIA
 			
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
