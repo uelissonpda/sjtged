@@ -17,6 +17,7 @@ public class Comunicacao {
 	private Organizacao mmot; // MEMORANDOS/ORIENTAÇÕES TÉCNICAS
 	private Organizacao mr;   // MEMÓRIA DE REUNIÃO
 	private Organizacao proten; // PROTOCOLOS ENTREGUES
+	private Organizacao Emnc; // E-MAILS NÃO CONFORMES
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 
@@ -29,6 +30,7 @@ public class Comunicacao {
 	private TipoDocumento DocFisc;// FISCAL
 	private TipoDocumento DocSoc; // SOCIETÁRIO
 	private TipoDocumento DocTes; // TESOURARIA
+	private TipoDocumento DocFin; // FINANCEIRO
 			
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -42,6 +44,7 @@ public class Comunicacao {
 	private ArrayList<TipoDocumento> TiposMmot; // TIPOS MEMORANDOS/ORIENTAÇÕES TÉCNICAS
 	private ArrayList<TipoDocumento> TiposMr;   // TIPOS MEMÓRIA DE REUNIÃO				
 	private ArrayList<TipoDocumento> TiposProten; // TIPOS PROTOCOLOS DE ENTREGA
+	private ArrayList<TipoDocumento> TiposEmnc; // TIPOS E-MAILS NÃO CONFORMES
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
@@ -56,6 +59,7 @@ public class Comunicacao {
 			setDocFisc(new TipoDocumento(5, "Fiscal", "FISC"));
 			setDocSoc(new TipoDocumento(6, "Societário", "SOC"));
 			setDocTes(new TipoDocumento(7, "Tesouraria", "TES"));
+			setDocFin(new TipoDocumento(8, "Financeiro", "FIN"));
 			
 			setTiposCext(new ArrayList<TipoDocumento>());
 			setTiposEmen(new ArrayList<TipoDocumento>());
@@ -64,6 +68,7 @@ public class Comunicacao {
 			setTiposMmot(new ArrayList<TipoDocumento>());
 			setTiposMr(new ArrayList<TipoDocumento>());
 			setTiposProten(new ArrayList<TipoDocumento>());
+			setTiposEmnc(new ArrayList<TipoDocumento>());
 			
 			TiposCext.add(getDocAdm());
 			TiposCext.add(getDocCont());
@@ -78,6 +83,7 @@ public class Comunicacao {
 			TiposEmen.add(getDocDir());
 			TiposEmen.add(getDocFisc());
 			TiposEmen.add(getDocSoc());
+			TiposEmen.add(getDocFin());
 			
 			TiposEmre.add(getDocAdm());
 			TiposEmre.add(getDocCont());
@@ -85,6 +91,7 @@ public class Comunicacao {
 			TiposEmre.add(getDocDir());
 			TiposEmre.add(getDocFisc());
 			TiposEmre.add(getDocSoc());
+			TiposEmre.add(getDocFin());
 			
 			TiposInti.add(getDocAdm());
 			TiposInti.add(getDocCont());
@@ -92,7 +99,7 @@ public class Comunicacao {
 			TiposInti.add(getDocDir());
 			TiposInti.add(getDocFisc());
 			TiposInti.add(getDocSoc());
-			
+				
 			TiposMmot.add(getDocAdm());
 			TiposMmot.add(getDocCont());
 			TiposMmot.add(getDocDp());
@@ -106,6 +113,7 @@ public class Comunicacao {
 			TiposMr.add(getDocDir());
 			TiposMr.add(getDocFisc());
 			TiposMr.add(getDocSoc());
+			TiposMr.add(getDocFin());
 			
 			TiposProten.add(getDocAdm());
 			TiposProten.add(getDocCont());
@@ -115,6 +123,8 @@ public class Comunicacao {
 			TiposProten.add(getDocSoc());
 			TiposProten.add(getDocTes());
 			
+			TiposEmnc.add(getDocFin());
+			
 			setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 			setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
 			setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
@@ -122,6 +132,7 @@ public class Comunicacao {
 			setMmot(new Organizacao(5,"Memorandos-Orientações Técnicas","MMOT",TiposMmot));
 			setMr(new Organizacao(6,"Memória de Reunião","MR",TiposMr));
 			setProten(new Organizacao(7, "Protocolo de Entrega","PROTEN",TiposProten));
+			setEmnc(new Organizacao(8, "E-mail Não Conforme","EMNC", TiposEmnc));
 							
 			setOrganizacoes(new ArrayList<Organizacao>());
 			getOrganizacoes().add(getCext());
@@ -131,6 +142,7 @@ public class Comunicacao {
 			getOrganizacoes().add(getMmot());
 			getOrganizacoes().add(getMr());
 			getOrganizacoes().add(getProten());
+			getOrganizacoes().add(getEmnc());
 			
 			setComunicacao(new Unidade(1,"Comunicação","CM",getOrganizacoes()));
 			
@@ -143,13 +155,21 @@ public class Comunicacao {
 			Collections.sort(getTiposMmot(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposMr(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposProten(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposEmnc(), new ComparadorTipoDocumento());
 			
 			Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 	}
 //-------------------------------------------------------------------------------------------
+		
+		public ArrayList<TipoDocumento> getTiposEmnc() {
+						return TiposEmnc;
+		}
+		public void setTiposEmnc(ArrayList<TipoDocumento> tiposEmnc) {
+						TiposEmnc = tiposEmnc;
+		}
 		public ArrayList<TipoDocumento> getTiposProten() {
 						return TiposProten;
-					}
+		}
 		public void setTiposProten(ArrayList<TipoDocumento> tiposProten) {
 						TiposProten = tiposProten;
 					}
@@ -190,6 +210,16 @@ public class Comunicacao {
 				TiposCext = tiposCext;
 			}
 //-----------------------------------------------------------------------------------------------
+			
+			public TipoDocumento getDocFin() {
+				return DocFin;
+			}
+
+			public void setDocFin(TipoDocumento docFin) {
+				DocFin = docFin;
+			}
+
+			
 			public TipoDocumento getDocTes() {
 				return DocTes;
 			}
@@ -268,7 +298,17 @@ public class Comunicacao {
 			public void setDocAdm(TipoDocumento docAdm) {
 				DocAdm = docAdm;
 			}
-//-----------------------------------------------------------------------------------------------
+
+
+			//-----------------------------------------------------------------------------------------------
+			public Organizacao getEmnc() {
+				return Emnc;
+			}
+
+			public void setEmnc(Organizacao emnc) {
+				Emnc = emnc;
+			}
+			
 			public Organizacao getProten() {
 				return proten;
 			}
