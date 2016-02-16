@@ -41,7 +41,7 @@ public class TratarArquivo extends JDesktopPane{
 	
 	String query = "select NmEmpresa,CdEmpresa from wphd.Empresa";
 	StringBuffer caminho = new StringBuffer("Y:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
-	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug
+	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug Windows
 	//StringBuffer caminho = new StringBuffer("Users/insidemybrain/PJ - PESSOA JURÍDICA/"); // @debug Mac
 	
 	JComboBox<String> comboUnidade = new JComboBox<String>();
