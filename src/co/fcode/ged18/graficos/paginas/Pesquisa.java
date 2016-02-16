@@ -40,7 +40,8 @@ public class Pesquisa extends JDesktopPane{
 	
 	String query = "select NmEmpresa,CdEmpresa from wphd.Empresa";
 	StringBuffer caminho = new StringBuffer("Y:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
-	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug
+	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug Windows
+	//StringBuffer caminho = new StringBuffer("Users/insidemybrain/PJ - PESSOA JURÍDICA/"); // @debug Mac
 	
 	JComboBox<String> comboUnidade = new JComboBox<String>();
 	JComboBox<String> comboOrganizacao = new JComboBox<String>();
@@ -349,7 +350,6 @@ public class Pesquisa extends JDesktopPane{
 		    } else {
 		    	nomeEmpresa.setText("");
 		    	btnRenomear.setEnabled(false);
-		    	JOptionPane.showMessageDialog(null, "A empresa não existe", "Erro", JOptionPane.ERROR_MESSAGE);
 		    }
 		}
 		catch (Exception e1){ JOptionPane.showMessageDialog(null, "A empresa não existe", "Erro", JOptionPane.ERROR_MESSAGE); }

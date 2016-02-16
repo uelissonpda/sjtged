@@ -19,7 +19,7 @@ import co.fcode.ged18.graficos.MenuPrincipal;
 public class SJTGED extends JFrame{
 	
 	String nomePrograma = "SJTGED";
-	String versao = "v0.1.9";
+	String versao = "v0.2";
 	
 	public static void main(String args[]){
 		try { UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()); } 
