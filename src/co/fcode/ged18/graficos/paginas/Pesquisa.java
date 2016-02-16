@@ -243,52 +243,23 @@ public class Pesquisa extends JDesktopPane{
 				if(rs.next()){ codEmpresa = rs.getString("CdEmpresa"); }
 			}
 			catch (SQLException e1) { e1.printStackTrace(); }
-		
-			String unidadeTxt = comboUnidade.getSelectedItem().toString();
-			String orgUnidadeTxt = comboOrganizacao.getSelectedItem().toString();
-			String tipoDocTxt = comboDocumento.getSelectedItem().toString();
 			
-			if(pessoaFis.isSelected()) codEmpresa = "PF";
-			if(nomeEmpresa.getText().equals("")){
-				JOptionPane.showMessageDialog(null, "A empresa não existe!", "Erro", JOptionPane.ERROR_MESSAGE);
-			}
-			else if(numEmpresa.getText().equals("")){
-				JOptionPane.showMessageDialog(null, "O número da empresa não pode estar em branco.", "Erro", JOptionPane.ERROR_MESSAGE);
-			}
-			else if(competencia.getText().equals("      ")){
-				/* Criação de Diretório, caso não existam*/
+			if(comboUnidade.getSelectedIndex() == -1 || comboOrganizacao.getSelectedIndex() == -1 || comboDocumento.getSelectedIndex() == -1){
+				JOptionPane.showMessageDialog(null, "Nenhum documento selecionado. A pasta da empresa será aberta.", "Aviso", JOptionPane.WARNING_MESSAGE);
+				/* Criação de Diretórios, caso não existam*/
 				// Y:/EMPRESAS/NumeroDaEmpresa
 				File empresaDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText());
 				if(!empresaDiretorio.exists()){
 					try { empresaDiretorio.mkdir(); }
 					catch(SecurityException se){}
 				}
-				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade
-				File unidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt);
-				if(!unidadeDiretorio.exists()){
-					try { unidadeDiretorio.mkdir();}
-					catch(SecurityException se){}
-				}
-				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao
-				File orgUnidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt);
-				if(!orgUnidadeDiretorio.exists()){
-					try { orgUnidadeDiretorio.mkdir();}
-					catch(SecurityException se){}
-				}
-				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao/comboDocumento
-				File tipoDocDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt+"/"+tipoDocTxt);
-				if(!tipoDocDiretorio.exists()){
-					try { tipoDocDiretorio.mkdir();}
-					catch(SecurityException se){}
-				}
-				
 				JFileChooser jfc = new JFileChooser();
-				jfc.setCurrentDirectory(new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt+"/"+tipoDocTxt));
+				jfc.setCurrentDirectory(new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"));
 				jfc.setDialogTitle("Selecione um arquivo");
 				jfc.setVisible(true);
 				if(jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
 					int opcao = JOptionPane.showConfirmDialog(null,
-							"<html>O <b>"+tipoDocTxt+"</b> da Empresa "+nomeEmpresa.getText()+" existe!<br>"
+							"<html>O documento da Empresa "+nomeEmpresa.getText()+" existe!<br>"
 									+ "<i>Você deseja abrí-lo?","Atenção",JOptionPane.YES_NO_OPTION);
 						if(opcao == JOptionPane.YES_OPTION){
 							try {
@@ -299,54 +270,111 @@ public class Pesquisa extends JDesktopPane{
 						}
 				}
 			}
+			
 			else {
-				/* Criação de Diretório, caso não existam*/
-				// Y:/EMPRESAS/NumeroDaEmpresa
-				File empresaDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText());
-				if(!empresaDiretorio.exists()){
-					try { empresaDiretorio.mkdir(); }
-					catch(SecurityException se){}
-				}
-				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade
-				File unidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt);
-				if(!unidadeDiretorio.exists()){
-					try { unidadeDiretorio.mkdir();}
-					catch(SecurityException se){}
-				}
-				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao
-				File orgUnidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt);
-				if(!orgUnidadeDiretorio.exists()){
-					try { orgUnidadeDiretorio.mkdir();}
-					catch(SecurityException se){}
-				}
-				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao/comboDocumento
-				File tipoDocDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt+"/"+tipoDocTxt);
-				if(!tipoDocDiretorio.exists()){
-					try { tipoDocDiretorio.mkdir();}
-					catch(SecurityException se){}
-				}
+				String unidadeTxt = comboUnidade.getSelectedItem().toString();
+				String orgUnidadeTxt = comboOrganizacao.getSelectedItem().toString();
+				String tipoDocTxt = comboDocumento.getSelectedItem().toString();
 				
-				StringBuffer nomeArquivo = new StringBuffer("");
-				nomeArquivo.append(codEmpresa);
-				nomeArquivo.append("_");
-				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getSigla());
-				nomeArquivo.append("_");
-				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
-						get(comboOrganizacao.getSelectedIndex()).getSigla());
-				nomeArquivo.append("_");
-				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
-						get(comboOrganizacao.getSelectedIndex()).getDocumentos().get(comboDocumento.getSelectedIndex()).getSigla());
-				nomeArquivo.append("_");
-				if(!nfe.getText().equals("         ")){
-					nomeArquivo.append(nfe.getText());
+				if(pessoaFis.isSelected()) codEmpresa = "PF";
+				if(nomeEmpresa.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "A empresa não existe!", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+				else if(numEmpresa.getText().equals("")){
+					JOptionPane.showMessageDialog(null, "O número da empresa não pode estar em branco.", "Erro", JOptionPane.ERROR_MESSAGE);
+				}
+				else if(competencia.getText().equals("      ")){
+					/* Criação de Diretórios, caso não existam*/
+					// Y:/EMPRESAS/NumeroDaEmpresa
+					File empresaDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText());
+					if(!empresaDiretorio.exists()){
+						try { empresaDiretorio.mkdir(); }
+						catch(SecurityException se){}
+					}
+					// Y:/EMPRESAS/NumeroDaEmpresa/Unidade
+					File unidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt);
+					if(!unidadeDiretorio.exists()){
+						try { unidadeDiretorio.mkdir();}
+						catch(SecurityException se){}
+					}
+					// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao
+					File orgUnidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt);
+					if(!orgUnidadeDiretorio.exists()){
+						try { orgUnidadeDiretorio.mkdir();}
+						catch(SecurityException se){}
+					}
+					// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao/comboDocumento
+					File tipoDocDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt+"/"+tipoDocTxt);
+					if(!tipoDocDiretorio.exists()){
+						try { tipoDocDiretorio.mkdir();}
+						catch(SecurityException se){}
+					}
+					
+					JFileChooser jfc = new JFileChooser();
+					jfc.setCurrentDirectory(new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt+"/"+tipoDocTxt));
+					jfc.setDialogTitle("Selecione um arquivo");
+					jfc.setVisible(true);
+					if(jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+						int opcao = JOptionPane.showConfirmDialog(null,
+								"<html>O <b>"+tipoDocTxt+"</b> da Empresa "+nomeEmpresa.getText()+" existe!<br>"
+										+ "<i>Você deseja abrí-lo?","Atenção",JOptionPane.YES_NO_OPTION);
+							if(opcao == JOptionPane.YES_OPTION){
+								try {
+									Desktop.getDesktop().open(jfc.getSelectedFile());
+								} catch (IOException e) {
+									e.printStackTrace();
+								}
+							}
+					}
+				}
+				else {
+					/* Criação de Diretório, caso não existam*/
+					// Y:/EMPRESAS/NumeroDaEmpresa
+					File empresaDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText());
+					if(!empresaDiretorio.exists()){
+						try { empresaDiretorio.mkdir(); }
+						catch(SecurityException se){}
+					}
+					// Y:/EMPRESAS/NumeroDaEmpresa/Unidade
+					File unidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt);
+					if(!unidadeDiretorio.exists()){
+						try { unidadeDiretorio.mkdir();}
+						catch(SecurityException se){}
+					}
+					// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao
+					File orgUnidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt);
+					if(!orgUnidadeDiretorio.exists()){
+						try { orgUnidadeDiretorio.mkdir();}
+						catch(SecurityException se){}
+					}
+					// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao/comboDocumento
+					File tipoDocDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt+"/"+tipoDocTxt);
+					if(!tipoDocDiretorio.exists()){
+						try { tipoDocDiretorio.mkdir();}
+						catch(SecurityException se){}
+					}
+					
+					StringBuffer nomeArquivo = new StringBuffer("");
+					nomeArquivo.append(codEmpresa);
 					nomeArquivo.append("_");
-				}
-				nomeArquivo.append(competencia.getText());
-				nomeArquivo.append(".");
-				nomeArquivo.append(tipo.getText().toLowerCase());
-				
-				File arqNovo = null;
-		
+					nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getSigla());
+					nomeArquivo.append("_");
+					nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
+							get(comboOrganizacao.getSelectedIndex()).getSigla());
+					nomeArquivo.append("_");
+					nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
+							get(comboOrganizacao.getSelectedIndex()).getDocumentos().get(comboDocumento.getSelectedIndex()).getSigla());
+					nomeArquivo.append("_");
+					if(!nfe.getText().equals("         ")){
+						nomeArquivo.append(nfe.getText());
+						nomeArquivo.append("_");
+					}
+					nomeArquivo.append(competencia.getText());
+					nomeArquivo.append(".");
+					nomeArquivo.append(tipo.getText().toLowerCase());
+					
+					File arqNovo = null;
+			
 					if(orgUnidadeTxt.equals("")){
 						arqNovo = new File(
 							caminho+codEmpresa+" - "+
@@ -364,7 +392,7 @@ public class Pesquisa extends JDesktopPane{
 							nomeArquivo);
 					}
 					//System.out.println(arqNovo.getAbsolutePath());
-		 				
+			 				
 					if(!arqNovo.exists()){
 						JOptionPane.showMessageDialog(null, "Arquivo NÃO existe!");
 					} else {
@@ -379,7 +407,8 @@ public class Pesquisa extends JDesktopPane{
 							}
 						}
 					}
-			}
+				}
+		}
 	}
 
 	public void BuscarEmpresa(String numeroEmpresa){

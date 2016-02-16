@@ -1,13 +1,20 @@
 package co.fcode.ged18.graficos.paginas;
 
 import java.awt.Color;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -137,6 +144,7 @@ public class TratarArquivo extends JDesktopPane{
 			comboUnidade.setBounds(30, lblUnidade.getY()+30, 190, 25);
 			comboUnidade.setToolTipText("Selecione a Unidade");
 			comboUnidade.addActionListener (e -> OrganizarUnidade(comboUnidade.getSelectedIndex()));
+			comboUnidade.setSelectedIndex(0);
 			add(comboUnidade);
 			
 			// Selecionar Organização de Unidade
@@ -148,6 +156,7 @@ public class TratarArquivo extends JDesktopPane{
 			comboOrganizacao.setToolTipText("Selecione a Organização da Unidade");
 			comboOrganizacao.setEnabled(false);
 			comboOrganizacao.addActionListener(e -> OrganizarDocumentos(comboUnidade.getSelectedIndex(),comboOrganizacao.getSelectedIndex()));
+			comboOrganizacao.setSelectedIndex(0);
 			add(comboOrganizacao);
 			
 			// Tipo de Documento
@@ -159,6 +168,7 @@ public class TratarArquivo extends JDesktopPane{
 			comboDocumento.setToolTipText("Selecione o Tipo de Documento");
 			comboDocumento.addActionListener(event -> btnRenomear.setEnabled(true));
 			comboDocumento.setEnabled(false);
+			comboDocumento.setSelectedIndex(0);
 			add(comboDocumento);
 			
 			// ----- Competencia
@@ -272,7 +282,7 @@ public class TratarArquivo extends JDesktopPane{
 				JOptionPane.showMessageDialog(null, "A competência não pode estar em branco. Formato Padrão: DDMMAA", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
 			else {
-				/* Criação de Diretório, caso não existam*/
+				/* Criação de Diretórios, caso não existam*/
 				// Y:/EMPRESAS/NumeroDaEmpresa
 				File empresaDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText());
 				if(!empresaDiretorio.exists()){
@@ -350,9 +360,18 @@ public class TratarArquivo extends JDesktopPane{
 							JOptionPane.showMessageDialog(null, "Arquivo sobrescrito!");
 						}
 					}
+					Writer output;
+					try {
+						output = new FileWriter("ged.csv", true);
+						output.append(codEmpresa+";"+unidadeTxt+";"+orgUnidadeTxt+";"+tipoDocTxt
+								+";"+competencia.getText()+";"+nfe.getText()+";"+LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))+"\n");
+						output.close();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					text.setText("Jogue os arquivos aqui!\n");
+					btnRenomear.setEnabled(false);
 			}
-			text.setText("Jogue os arquivos aqui!\n");
-			btnRenomear.setEnabled(false);
 		}
 	}
 
@@ -360,7 +379,6 @@ public class TratarArquivo extends JDesktopPane{
 		try{
 			ResultSet rs = stmt.executeQuery(query+" WHERE CdEmpresa='"+numeroEmpresa+"'");
 		    if(rs.next()){
-		    	btnRenomear.setEnabled(true);
 		    	nomeEmpresa.setText(rs.getString("NmEmpresa").replaceAll("/", ""));
 		    } else {
 		    	nomeEmpresa.setText("");
