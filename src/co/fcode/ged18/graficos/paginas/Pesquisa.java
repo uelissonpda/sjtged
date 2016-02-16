@@ -380,7 +380,6 @@ public class Pesquisa extends JDesktopPane{
 						}
 					}
 			}
-			btnRenomear.setEnabled(false);
 	}
 
 	public void BuscarEmpresa(String numeroEmpresa){
