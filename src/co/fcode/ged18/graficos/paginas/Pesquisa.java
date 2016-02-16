@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JDesktopPane;
+import javax.swing.JFileChooser;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -255,7 +256,48 @@ public class Pesquisa extends JDesktopPane{
 				JOptionPane.showMessageDialog(null, "O número da empresa não pode estar em branco.", "Erro", JOptionPane.ERROR_MESSAGE);
 			}
 			else if(competencia.getText().equals("      ")){
-				JOptionPane.showMessageDialog(null, "A competência não pode estar em branco. Formato Padrão: DDMMAA", "Erro", JOptionPane.ERROR_MESSAGE);
+				/* Criação de Diretório, caso não existam*/
+				// Y:/EMPRESAS/NumeroDaEmpresa
+				File empresaDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText());
+				if(!empresaDiretorio.exists()){
+					try { empresaDiretorio.mkdir(); }
+					catch(SecurityException se){}
+				}
+				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade
+				File unidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt);
+				if(!unidadeDiretorio.exists()){
+					try { unidadeDiretorio.mkdir();}
+					catch(SecurityException se){}
+				}
+				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao
+				File orgUnidadeDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt);
+				if(!orgUnidadeDiretorio.exists()){
+					try { orgUnidadeDiretorio.mkdir();}
+					catch(SecurityException se){}
+				}
+				// Y:/EMPRESAS/NumeroDaEmpresa/Unidade/comboOrganizacao/comboDocumento
+				File tipoDocDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt+"/"+tipoDocTxt);
+				if(!tipoDocDiretorio.exists()){
+					try { tipoDocDiretorio.mkdir();}
+					catch(SecurityException se){}
+				}
+				
+				JFileChooser jfc = new JFileChooser();
+				jfc.setCurrentDirectory(new File(caminho+codEmpresa+" - "+nomeEmpresa.getText()+"/"+unidadeTxt+"/"+orgUnidadeTxt+"/"+tipoDocTxt));
+				jfc.setDialogTitle("Selecione um arquivo");
+				jfc.setVisible(true);
+				if(jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
+					int opcao = JOptionPane.showConfirmDialog(null,
+							"<html>O <b>"+tipoDocTxt+"</b> da Empresa "+nomeEmpresa.getText()+" existe!<br>"
+									+ "<i>Você deseja abrí-lo?","Atenção",JOptionPane.YES_NO_OPTION);
+						if(opcao == JOptionPane.YES_OPTION){
+							try {
+								Desktop.getDesktop().open(jfc.getSelectedFile());
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+				}
 			}
 			else {
 				/* Criação de Diretório, caso não existam*/
