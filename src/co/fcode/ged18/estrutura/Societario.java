@@ -63,6 +63,7 @@ public class Societario {
 		private TipoDocumento DocPcv;    // PROMESSA DE COMPRA E VENDA
 		private TipoDocumento DocNit;    // NIT - NUMERO DE INSCRIÇÃO DO TRABALHADOR/SÓCIO
 		private TipoDocumento DocEnquad; // ENQUADRAMENTO
+		private TipoDocumento DocProtoc; // PROTOCOLO
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -123,6 +124,7 @@ public class Societario {
 			setDocPcv(new TipoDocumento(41, "Promessa de Compra e Venda", "PCV"));
 			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador-Sócio", ""));
 			setDocEnquad(new TipoDocumento(43, "Enquadramento", "ENQUAD"));
+			setDocProtoc(new TipoDocumento(44, "Protocolo", "PROTOC"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -144,12 +146,14 @@ public class Societario {
 			
 			TiposFed.add(getDocCnpj());
 			TiposFed.add(getDocCertbx());
+			TiposFed.add(getDocProtoc());
 			
 			TiposEst.add(getDocInsest());
 			TiposEst.add(getDocParal());
 			TiposEst.add(getDocCertbx());
 			TiposEst.add(getDocLdexcb());
 			TiposEst.add(getDocCertcb());
+			TiposEst.add(getDocProtoc());
 			
 			TiposMun.add(getDocAlvara());
 			TiposMun.add(getDocFincad());
@@ -169,6 +173,7 @@ public class Societario {
 			TiposMun.add(getDocTxmeca());
 			TiposMun.add(getDocTxpubl());
 			TiposMun.add(getDocIptu());
+			TiposMun.add(getDocProtoc());
 			
 			TiposDvrs.add(getDocConloc());
 			TiposDvrs.add(getDocCpf());
@@ -263,10 +268,16 @@ public class Societario {
 		public void setTiposAtos(ArrayList<TipoDocumento> tiposAtos) {
 			TiposAtos = tiposAtos;
 		}
+
 //------------------------------------------------------------------------------------------------
-/**
-		 * @return the docNit
-		 */
+
+		public TipoDocumento getDocProtoc() {
+			return DocProtoc;
+		}
+		public void setDocProtoc(TipoDocumento docProtoc) {
+			DocProtoc = docProtoc;
+		}
+		
 		public TipoDocumento getDocNit() {
 			return DocNit;
 		}
