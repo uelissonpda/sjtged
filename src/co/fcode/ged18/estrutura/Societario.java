@@ -64,6 +64,7 @@ public class Societario {
 		private TipoDocumento DocNit;    // NIT - NUMERO DE INSCRIÇÃO DO TRABALHADOR/SÓCIO
 		private TipoDocumento DocEnquad; // ENQUADRAMENTO
 		private TipoDocumento DocProtoc; // PROTOCOLO
+		private TipoDocumento DocQdrsoc;  // QUADRO SOCIETÁRIO
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -125,6 +126,7 @@ public class Societario {
 			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador-Sócio", ""));
 			setDocEnquad(new TipoDocumento(43, "Enquadramento", "ENQUAD"));
 			setDocProtoc(new TipoDocumento(44, "Protocolo", "PROTOC"));
+			setDocQdrsoc(new TipoDocumento(45, "Quadro Societário", "Qdrsoc"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -147,6 +149,7 @@ public class Societario {
 			TiposFed.add(getDocCnpj());
 			TiposFed.add(getDocCertbx());
 			TiposFed.add(getDocProtoc());
+			TiposFed.add(getDocQdrsoc());
 			
 			TiposEst.add(getDocInsest());
 			TiposEst.add(getDocParal());
@@ -271,6 +274,12 @@ public class Societario {
 
 //------------------------------------------------------------------------------------------------
 
+		public TipoDocumento getDocQdrsoc() {
+			return DocQdrsoc;
+		}
+		public void setDocQdrsoc(TipoDocumento docQdrsoc) {
+			DocQdrsoc = docQdrsoc;
+		}
 		public TipoDocumento getDocProtoc() {
 			return DocProtoc;
 		}
