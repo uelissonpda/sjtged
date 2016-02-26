@@ -25,7 +25,7 @@ public class Societario {
 		private TipoDocumento DocDist;   // DISTRATO
 		private TipoDocumento DocAta;    // ATA DE REUNIÃO/ASSEMBLÉIA
 		private TipoDocumento DocReqemp; // REQUERIMENTO DE EMPRESÁRIO
-		private TipoDocumento DocEnq;    // ENQUADRAMENTO
+		private TipoDocumento DocEnquad; // ENQUADRAMENTO
 		private TipoDocumento DocDesenq; // DESENQUADRAMENTO 
 		private TipoDocumento DocReenq;  // REENQUADRAMENTO
 		private TipoDocumento DocBalreg; // BALANÇO REGISTRADO
@@ -62,7 +62,6 @@ public class Societario {
 		private TipoDocumento DocRegpro; // REGISTRO PROFISSIONAL 
 		private TipoDocumento DocPcv;    // PROMESSA DE COMPRA E VENDA
 		private TipoDocumento DocNit;    // NIT - NUMERO DE INSCRIÇÃO DO TRABALHADOR/SÓCIO
-		private TipoDocumento DocEnquad; // ENQUADRAMENTO
 		private TipoDocumento DocProtoc; // PROTOCOLO
 		private TipoDocumento DocQdrsoc;  // QUADRO SOCIETÁRIO
 			
@@ -82,19 +81,19 @@ public class Societario {
 		private Unidade soc;
 			
 		public Societario(){
-			setDocConsoc(new TipoDocumento(1,"Contrato Social",""));
-			setDocAltcon(new TipoDocumento(2,"Alteração Contratual",""));
-			setDocDist(new TipoDocumento(3,"Distrato",""));
-			setDocAta(new TipoDocumento(4,"Ata de Reunião-Assembleia",""));
-			setDocReqemp(new TipoDocumento(5,"Requerimento de Empresário",""));
-			setDocEnq(new TipoDocumento(6,"Enquadramento",""));
-			setDocDesenq(new TipoDocumento(7,"Desenquadramento",""));
-			setDocReenq(new TipoDocumento(8,"Reequadramento",""));
-			setDocBalreg(new TipoDocumento(9,"Balanço Registrado",""));
-			setDocProinc(new TipoDocumento(10,"Protocolo e Justificação",""));
-			setDocParal(new TipoDocumento(11,"Paralisação",""));
-			setDocLavpal(new TipoDocumento(12,"Laudo de Avaliação do Patrimônio Líquido",""));
-			setDocEstat(new TipoDocumento(13,"Estatuto",""));
+			setDocConsoc(new TipoDocumento(1,"Contrato Social","CONSOC"));
+			setDocAltcon(new TipoDocumento(2,"Alteração Contratual","ALTCON"));
+			setDocDist(new TipoDocumento(3,"Distrato","DIST"));
+			setDocAta(new TipoDocumento(4,"Ata de Reunião-Assembleia","ATA"));
+			setDocReqemp(new TipoDocumento(5,"Requerimento de Empresário","REQEMP"));
+			setDocEnquad(new TipoDocumento(6, "Enquadramento", "ENQUAD"));
+			setDocDesenq(new TipoDocumento(7,"Desenquadramento","DESENQ"));
+			setDocReenq(new TipoDocumento(8,"Reequadramento","REENQ"));
+			setDocBalreg(new TipoDocumento(9,"Balanço Registrado","BALREG"));
+			setDocProinc(new TipoDocumento(10,"Protocolo e Justificação","PROINC"));
+			setDocParal(new TipoDocumento(11,"Paralisação","PARAL"));
+			setDocLavpal(new TipoDocumento(12,"Laudo de Avaliação do Patrimônio Líquido","LAVPAL"));
+			setDocEstat(new TipoDocumento(13,"Estatuto","ESTAT"));
 			setDocCnpj(new TipoDocumento(14,"CNPJ","CNPJ"));
 			setDocCertbx(new TipoDocumento(15, "Certidão de Baixa", "CERTBX"));
 			setDocInsest(new TipoDocumento(16, "Inscrição Estadual", "INSEST"));
@@ -123,10 +122,9 @@ public class Societario {
 			setDocCompre(new TipoDocumento(39, "Comprovante de Residência dos Sócios", "COMPRE"));
 			setDocRegpro(new TipoDocumento(40, "Registro Profissional", "REGPRO"));
 			setDocPcv(new TipoDocumento(41, "Promessa de Compra e Venda", "PCV"));
-			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador-Sócio", ""));
-			setDocEnquad(new TipoDocumento(43, "Enquadramento", "ENQUAD"));
-			setDocProtoc(new TipoDocumento(44, "Protocolo", "PROTOC"));
-			setDocQdrsoc(new TipoDocumento(45, "Quadro Societário", "Qdrsoc"));
+			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador-Sócio", "NIT"));
+			setDocProtoc(new TipoDocumento(43, "Protocolo", "PROTOC"));
+			setDocQdrsoc(new TipoDocumento(44, "Quadro Societário", "Qdrsoc"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -680,18 +678,7 @@ public class Societario {
 		public void setDocDesenq(TipoDocumento docDesenq) {
 			DocDesenq = docDesenq;
 		}
-/**
-		 * @return the docEnq
-		 */
-		public TipoDocumento getDocEnq() {
-			return DocEnq;
-		}
-		/**
-		 * @param docEnq the docEnq to set
-		 */
-		public void setDocEnq(TipoDocumento docEnq) {
-			DocEnq = docEnq;
-		}
+
 /**
 		 * @return the docReqemp
 		 */
