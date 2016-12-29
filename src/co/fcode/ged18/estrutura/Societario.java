@@ -4,7 +4,6 @@ package co.fcode.ged18.estrutura;
 ***************/
 import java.util.ArrayList;
 import java.util.Collections;
-
 import co.fcode.ged18.*;
 
 public class Societario {
@@ -15,6 +14,8 @@ public class Societario {
 		private Organizacao Est;  // ESTADUAL
 		private Organizacao Mun;  // MUNICIPAL
 		private Organizacao Dvrs; // DIVERSOS
+		private Organizacao Certd;// CERTIDÕES
+		private Organizacao DocJu;// DOCUMENTOS JUDICIAIS
 
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 
@@ -41,7 +42,7 @@ public class Societario {
 		private TipoDocumento DocAlvara; // ALVARÁ
 		private TipoDocumento DocFincad; // FICHA DE INFORMAÇÕES CADASTRAIS
 		private TipoDocumento DocBxiss;  // MEMORANDO DE BAIXA ISS
-		private TipoDocumento DocBxalv;  // BAIXA DO ALVARÁ
+		private TipoDocumento DocBxalv;  // ALVARÁ BAIXADO
 		private TipoDocumento DocSanipj; // TERMO DE LICENÇA DE FUNCIONAMENTO SANITÁRIO
 		private TipoDocumento DocCis;    // CERTIFICADO DE INSPEÇÃO SANITÁRIA
 		private TipoDocumento DocSanipf; // TERMO DE ASSENTIMENTO SANITÁRIO
@@ -51,7 +52,8 @@ public class Societario {
 		private TipoDocumento DocHabite; // HABITE-SE 
 		private TipoDocumento DocCtrans; // CERTIDÃO DE TRANSFORMAÇÃO DE USO
 		private TipoDocumento DocSmac;   // REQUERIMENTO DE MEIO AMBIENTE 
-		private TipoDocumento DocPlpubl; // PLANTA DE AUTORIZAÇÃO DE PUBLICIDADE 
+		private TipoDocumento DocPlpubl; // PLANTA DE AUTORIZAÇÃO DE PUBLICIDADE: Baixada
+		private TipoDocumento DocPlpuba; // PLANTA DE AUTORIZAÇÃO DE PUBLICIDADE: Autorizada
 		private TipoDocumento DocTxmeca; // TAXA DE MESAS E CADEIRAS 
 		private TipoDocumento DocTxpubl; // TAXA DE PUBLICIDADE 
 		private TipoDocumento DocIptu;   // IPTU 
@@ -63,7 +65,29 @@ public class Societario {
 		private TipoDocumento DocPcv;    // PROMESSA DE COMPRA E VENDA
 		private TipoDocumento DocNit;    // NIT - NUMERO DE INSCRIÇÃO DO TRABALHADOR/SÓCIO
 		private TipoDocumento DocProtoc; // PROTOCOLO
-		private TipoDocumento DocQdrsoc;  // QUADRO SOCIETÁRIO
+		private TipoDocumento DocQdrsoc; // QUADRO SOCIETÁRIO
+		private TipoDocumento DocLbomb;  // LAUDO DE EXIGÊNCIAS DO CORPO DE BOMBEIROS
+		private TipoDocumento DocProarq; // PROJETO ARQUITETÔNICO APROVADO
+		private TipoDocumento DocCartrn; // CARTA DE RENÚNCIA
+		private TipoDocumento Doctermpo; // TERMO DE POSSE
+		private TipoDocumento DocCtint;  // CERTIDÃO INTEIRO TEOR - JUCERJA
+		private TipoDocumento DocSimp; // CERTIDÃO SIMPLIFICADA - JUCERJA
+		private TipoDocumento DocNegiss; // CERTIDÃO NEGATIVA ISS
+		private TipoDocumento DocNdae; // CERTIDÃO NEG. DIVIDA ATIVA DO ESTADO
+		private TipoDocumento DocNdam; // CERTIDÃO NEG. DIVIDA ATIVA DO MUNICÍPIO
+		private TipoDocumento DocCftc; // CERTIDÃO DE FEITOS TRABALHISTAS - CND
+		private TipoDocumento DocNicmsc; // CERTIDÃO NEG. ICMS - CONTRIBUINTE
+		private TipoDocumento DocNicmsn; // CERTIDÃO NEG. ICMS - NÃO CONTRIBUINTE
+		private TipoDocumento DocNcduin; // CERTIDÃO NEGATIVA CONJUNTA DE TRIBUTOS FEDERAIS|DIVIDA ATIVA DA UNIÃO|INSS
+		private TipoDocumento DocInecf; // INFORMAÇÕES ECF
+		private TipoDocumento DocRCC; //  RCC
+		private TipoDocumento DocIntima; // INTIMAÇÃO
+		private TipoDocumento DocNotif; // NOTIFICAÇÃO
+		private TipoDocumento DocCitac; // CITAÇÃO
+		private TipoDocumento DocPenho; // PENHORA
+		private TipoDocumento DocOficio; // OFÍCIO
+		private TipoDocumento DocManda; // MANDADO
+				
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -74,6 +98,8 @@ public class Societario {
 		private ArrayList<TipoDocumento> TiposEst; // TIPOS ESTADUAL
 		private ArrayList<TipoDocumento> TiposMun; // TIPOS MUNICIPAL
 		private ArrayList<TipoDocumento> TiposDvrs; // TIPOS DIVERSOS
+		private ArrayList<TipoDocumento> TiposCertd; // TIPOS CERTIDÕES
+		private ArrayList<TipoDocumento> TiposDocJu; // TIPOS DOCUMENTOS JUDICIAIS
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -102,7 +128,7 @@ public class Societario {
 			setDocAlvara(new TipoDocumento(19, "Alvará", "ALVARA"));
 			setDocFincad(new TipoDocumento(20, "Ficha de Informações Cadastrais", "FINCAD"));
 			setDocBxiss(new TipoDocumento(21, "Memorando de Baixa Iss", "BXISS"));
-			setDocBxalv(new TipoDocumento(22, "Baixa do Alvará", "BXALV"));
+			setDocBxalv(new TipoDocumento(22, "Alvará Baixado", "BXALV"));
 			setDocSanipj(new TipoDocumento(23, "Termo de Licensa de Funcionamento Sanitário", "SANIPJ"));
 			setDocCis(new TipoDocumento(24, "Certificado de Inspeção Sanitária", "CIS"));
 			setDocSanipf(new TipoDocumento(25, "Termo de Assentimento Sanitário", "SANIPF"));
@@ -112,7 +138,7 @@ public class Societario {
 			setDocHabite(new TipoDocumento(29, "Habite-se", "HABITE"));
 			setDocCtrans(new TipoDocumento(30, "Certidão de Transformação de Uso", "CTRANS"));
 			setDocSmac(new TipoDocumento(31, "Requerimento de Meio Ambiente", "SMAC"));
-			setDocPlpubl(new TipoDocumento(32, "Planta de Autorização de Publicidade", "PLPUBL"));
+			setDocPlpubl(new TipoDocumento(32, "Publicidade Baixada", "PLPUBL"));
 			setDocTxmeca(new TipoDocumento(33, "Taxa de Mesas e Cadeiras", "TXMECA"));
 			setDocTxpubl(new TipoDocumento(34, "Taxa de Publicidade", "TXPUBL"));
 			setDocIptu(new TipoDocumento(35, "Iptu", "IPTU"));
@@ -124,13 +150,37 @@ public class Societario {
 			setDocPcv(new TipoDocumento(41, "Promessa de Compra e Venda", "PCV"));
 			setDocNit(new TipoDocumento(42, "Número de Inscrição do Trabalhador-Sócio", "NIT"));
 			setDocProtoc(new TipoDocumento(43, "Protocolo", "PROTOC"));
-			setDocQdrsoc(new TipoDocumento(44, "Quadro Societário", "Qdrsoc"));
+			setDocQdrsoc(new TipoDocumento(44, "Quadro Societário", "QDRSOC"));
+			setDocPlpuba(new TipoDocumento(45, "Publicidade Aprovada", "PLPUBL"));
+			setDocLbomb(new TipoDocumento(46, "Laudo de Exigências do Corpo de Bombeiros","LBOMB"));
+			setDocProarq(new TipoDocumento(47,"Projeto Arquitetônico Aprovado","PROARQ"));
+			setDocCartrn(new TipoDocumento(48, "Carta de Renúncia","CARTRN"));
+			setDoctermpo(new TipoDocumento(49, "Termo de Posse","TERMPO"));
+			setDocCtint(new TipoDocumento(50, "Certidão Inteiro Teor - JUCERJA","CTINT"));
+			setDocSimp(new TipoDocumento(51, "Certidão Simplificada - JUCERJA","SIMP"));
+			setDocNegiss(new TipoDocumento(52, "Certidão Negativa ISS","NEGISS"));
+			setDocNdae(new TipoDocumento(53, "Certidão Neg. Divida Ativa do Estado","NDAE"));
+			setDocNdam(new TipoDocumento(54, "Certidão Neg. Divida Ativa do Município","NDAM"));
+			setDocCftc(new TipoDocumento(55, "Certidão de Feitos Trabalhistas - CND","CFTC"));
+			setDocNicmsc(new TipoDocumento(56, "Certidão Neg. ICMS - Contribuinte","NICMSC"));
+			setDocNicmsn(new TipoDocumento(57, "Certidão Neg. ICMS - Não contribuinte","NICMSN"));
+			setDocNcduin(new TipoDocumento(58, "Certidão Negativa Conjunta de Tributos Federais-Divida Ativa da União-INSS","NCDUIN"));
+			setDocInecf(new TipoDocumento(59, "Informações ECF", "INECF"));
+			setDocRCC(new TipoDocumento(60, "RCC", "RCC"));
+			setDocNotif(new TipoDocumento(61, "Notificações", "NOTIF"));
+			setDocCitac(new TipoDocumento(62, "Citação", "CITAC"));
+			setDocPenho(new TipoDocumento(63, "Penhora", "PENHO"));
+			setDocOficio(new TipoDocumento(64, "Ofício", "OFICIO"));
+			setDocManda(new TipoDocumento(65, "Mandado", "MANDA"));
+			
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
 			setTiposEst(new ArrayList<TipoDocumento>());
 			setTiposMun(new ArrayList<TipoDocumento>());
 			setTiposDvrs(new ArrayList<TipoDocumento>());
+			setTiposCertd(new ArrayList<TipoDocumento>());
+			setTiposDocJu(new ArrayList<TipoDocumento>());
 			
 			TiposAtos.add(getDocConsoc());
 			TiposAtos.add(getDocAltcon());
@@ -143,6 +193,8 @@ public class Societario {
 			TiposAtos.add(getDocLavpal());
 			TiposAtos.add(getDocEstat());
 			TiposAtos.add(getDocEnquad());
+			TiposAtos.add(getDocCartrn());
+			TiposAtos.add(getDoctermpo());			
 			
 			TiposFed.add(getDocCnpj());
 			TiposFed.add(getDocCertbx());
@@ -155,6 +207,9 @@ public class Societario {
 			TiposEst.add(getDocLdexcb());
 			TiposEst.add(getDocCertcb());
 			TiposEst.add(getDocProtoc());
+			TiposEst.add(getDocLbomb());
+			TiposEst.add(getDocProarq());
+			TiposEst.add(getDocInecf());
 			
 			TiposMun.add(getDocAlvara());
 			TiposMun.add(getDocFincad());
@@ -171,11 +226,12 @@ public class Societario {
 			TiposMun.add(getDocCtrans());
 			TiposMun.add(getDocSmac());
 			TiposMun.add(getDocPlpubl());
+			TiposMun.add(getDocPlpuba());
 			TiposMun.add(getDocTxmeca());
 			TiposMun.add(getDocTxpubl());
 			TiposMun.add(getDocIptu());
 			TiposMun.add(getDocProtoc());
-			
+						
 			TiposDvrs.add(getDocConloc());
 			TiposDvrs.add(getDocCpf());
 			TiposDvrs.add(getDocRg());
@@ -183,12 +239,32 @@ public class Societario {
 			TiposDvrs.add(getDocRegpro());
 			TiposDvrs.add(getDocPcv());
 			TiposDvrs.add(getDocNit());
+			TiposDvrs.add(getDocRCC());
+			
+			TiposCertd.add(getDocCtint());
+			TiposCertd.add(getDocSimp());
+			TiposCertd.add(getDocNegiss());
+			TiposCertd.add(getDocNdae());
+			TiposCertd.add(getDocNdam());
+			TiposCertd.add(getDocCftc());
+			TiposCertd.add(getDocNicmsc());
+			TiposCertd.add(getDocNicmsn());
+			TiposCertd.add(getDocNcduin());
+			
+			TiposDocJu.add(getDocAlvara());
+			TiposDocJu.add(getDocCitac());
+			TiposDocJu.add(getDocPenho());
+			TiposDocJu.add(getDocOficio());
+			TiposDocJu.add(getDocManda());
+					
 			
 			setAtos(new Organizacao(1,"Atos","ATOS",TiposAtos));
 			setFed(new Organizacao(2,"Federal","FED",TiposFed));
 			setEst(new Organizacao(3,"Estadual","EST",TiposEst));
 			setMun(new Organizacao(4,"Municipal","MUN",TiposMun));
 			setDvrs(new Organizacao(5,"Diversos","DVRS",TiposDvrs));
+			setCertd(new Organizacao(6, "Certidões","CERTD", TiposCertd));
+			setDocJu(new Organizacao(7,"Documentos Judiciais","DOCJU", TiposDocJu));
 			
 			setOrganizacoes(new ArrayList<Organizacao>());
 			getOrganizacoes().add(getAtos());
@@ -196,6 +272,8 @@ public class Societario {
 			getOrganizacoes().add(getEst());
 			getOrganizacoes().add(getMun());
 			getOrganizacoes().add(getDvrs());
+			getOrganizacoes().add(getCertd());
+			getOrganizacoes().add(getDocJu());
 			
 			setSoc(new Unidade(5,"Societário","SC",getOrganizacoes()));
 			
@@ -205,37 +283,38 @@ public class Societario {
 			Collections.sort(getTiposEst(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposFed(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposMun(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposDvrs(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposCertd(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposDocJu(), new ComparadorTipoDocumento());
 			
 			Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 		}
 //------------------------------------------------------------------------------------------------
-/**
-		 * @return the tiposDvrs
-		 */
+		
 		public ArrayList<TipoDocumento> getTiposDvrs() {
 			return TiposDvrs;
 		}
-		/**
-		 * @param tiposDvrs the tiposDvrs to set
-		 */
+		
 		public void setTiposDvrs(ArrayList<TipoDocumento> tiposDvrs) {
 			TiposDvrs = tiposDvrs;
 		}
-/**
-		 * @return the tiposMun
-		 */
+		
+		public ArrayList<TipoDocumento> getTiposCertd() {
+			return TiposCertd;
+		}
+		public void setTiposCertd(ArrayList<TipoDocumento> tiposCertd) {
+			TiposCertd = tiposCertd;
+		}
+		
+		
 		public ArrayList<TipoDocumento> getTiposMun() {
 			return TiposMun;
 		}
-		/**
-		 * @param tiposMun the tiposMun to set
-		 */
+		
 		public void setTiposMun(ArrayList<TipoDocumento> tiposMun) {
 			TiposMun = tiposMun;
 		}
-/**
-		 * @return the tiposEst
-		 */
+
 		public ArrayList<TipoDocumento> getTiposEst() {
 			return TiposEst;
 		}
@@ -269,9 +348,167 @@ public class Societario {
 		public void setTiposAtos(ArrayList<TipoDocumento> tiposAtos) {
 			TiposAtos = tiposAtos;
 		}
+		
+		public Organizacao getDocJu() {
+			return DocJu;
+		}
 
+		public void setDocJu(Organizacao docJu) {
+			DocJu = docJu;
+		}
+		
 //------------------------------------------------------------------------------------------------
+		
+		public TipoDocumento getDocManda() {
+			return DocManda;
+		}
 
+		public void setDocManda(TipoDocumento docManda) {
+			DocManda = docManda;
+		}
+
+		public TipoDocumento getDocOficio() {
+			return DocOficio;
+		}
+
+		public void setDocOficio(TipoDocumento docOficio) {
+			DocOficio = docOficio;
+		}
+
+		public TipoDocumento getDocPenho() {
+			return DocPenho;
+		}
+
+		public void setDocPenho(TipoDocumento docPenho) {
+			DocPenho = docPenho;
+		}
+
+		public TipoDocumento getDocCitac() {
+			return DocCitac;
+		}
+
+		public void setDocCitac(TipoDocumento docCitac) {
+			DocCitac = docCitac;
+		}
+
+		public TipoDocumento getDocNotif() {
+			return DocNotif;
+		}
+
+		public void setDocNotif(TipoDocumento docNotif) {
+			DocNotif = docNotif;
+		}
+
+		public TipoDocumento getDocIntima() {
+			return DocIntima;
+		}
+
+		public void setDocIntima(TipoDocumento docIntima) {
+			DocIntima = docIntima;
+		}
+
+		public TipoDocumento getDocRCC() {
+			return DocRCC;
+		}
+
+		public void setDocRCC(TipoDocumento docRCC) {
+			DocRCC = docRCC;
+		}
+
+		public TipoDocumento getDocNcduin() {
+			return DocNcduin;
+		}
+		
+			public TipoDocumento getDocInecf() {
+			return DocInecf;
+		}
+
+		public void setDocInecf(TipoDocumento docInecf) {
+			DocInecf = docInecf;
+		}
+
+			public void setDocNcduin(TipoDocumento docNcduin) {
+				DocNcduin = docNcduin;
+		}
+		public TipoDocumento getDocNicmsn() {
+			return DocNicmsn;
+		}
+		public void setDocNicmsn(TipoDocumento docNicmsn) {
+			DocNicmsn = docNicmsn;
+		}
+		public TipoDocumento getDocNicmsc() {
+			return DocNicmsc;
+		}
+		public void setDocNicmsc(TipoDocumento docNicmsc) {
+			DocNicmsc = docNicmsc;
+		}
+		public TipoDocumento getDocCftc() {
+			return DocCftc;
+		}
+		public void setDocCftc(TipoDocumento docCftc) {
+			DocCftc = docCftc;
+		}
+		public TipoDocumento getDocNdam() {
+			return DocNdam;
+		}
+		public void setDocNdam(TipoDocumento docNdam) {
+			DocNdam = docNdam;
+		}
+		public TipoDocumento getDocNdae() {
+			return DocNdae;
+		}
+		public void setDocNdae(TipoDocumento docNdae) {
+			DocNdae = docNdae;
+		}
+		public TipoDocumento getDocNegiss() {
+			return DocNegiss;
+		}
+		public void setDocNegiss(TipoDocumento docNegiss) {
+			DocNegiss = docNegiss;
+		}
+		public TipoDocumento getDocSimp() {
+			return DocSimp;
+		}
+		public void setDocSimp(TipoDocumento docSimp) {
+			DocSimp = docSimp;
+		}
+		public TipoDocumento getDocCtint() {
+			return DocCtint;
+		}
+		public void setDocCtint(TipoDocumento docCtint) {
+			DocCtint = docCtint;
+		}
+		public TipoDocumento getDoctermpo() {
+			return Doctermpo;
+		}
+		public void setDoctermpo(TipoDocumento doctermpo) {
+			Doctermpo = doctermpo;
+		}
+		public TipoDocumento getDocCartrn() {
+			return DocCartrn;
+		}
+		public void setDocCartrn(TipoDocumento docCartrn) {
+			DocCartrn = docCartrn;
+		}
+		
+		public TipoDocumento getDocProarq() {
+			return DocProarq;
+		}
+		public void setDocProarq(TipoDocumento docProarq) {
+			DocProarq = docProarq;
+		}
+		public TipoDocumento getDocLbomb() {
+			return DocLbomb;
+		}
+		public void setDocLbomb(TipoDocumento docLbomb) {
+			DocLbomb = docLbomb;
+		}
+		public TipoDocumento getDocPlpuba() {
+			return DocPlpuba;
+		}
+		public void setDocPlpuba(TipoDocumento docPlpuba) {
+			DocPlpuba = docPlpuba;
+		}
 		public TipoDocumento getDocQdrsoc() {
 			return DocQdrsoc;
 		}
@@ -740,16 +977,27 @@ public class Societario {
 			DocConsoc = docConsoc;
 		}
 //-------------------------------------------------------------------------------------------------
-		/**
-		 * @return the dvrs
-		 */
+
+		public ArrayList<TipoDocumento> getTiposDocJu() {
+			return TiposDocJu;
+		}
+
+		public void setTiposDocJu(ArrayList<TipoDocumento> tiposDocJu) {
+			TiposDocJu = tiposDocJu;
+		}
+		
+		public Organizacao getCertd() {
+			return Certd;
+		}
+		
+		public void setCertd(Organizacao certd) {
+			Certd = certd;
+		}
+		
 		public Organizacao getDvrs() {
 			return Dvrs;
 		}
 
-		/**
-		 * @param dvrs the dvrs to set
-		 */
 		public void setDvrs(Organizacao dvrs) {
 			Dvrs = dvrs;
 		}
