@@ -22,6 +22,8 @@ public class Fiscal {
 		private Organizacao mcal; // MEMÓRIA DE CÁLCULO
 		private Organizacao trib; // IMPOSTOS/CONTRIBUIÇÕES
 		private Organizacao parc; // PARCELAMENTO
+		private Organizacao mun; // PARCELAMENTO
+		
 		
 
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -61,6 +63,7 @@ public class Fiscal {
 		private TipoDocumento DocEstado; //
 		private TipoDocumento DocMunici; //
 		private TipoDocumento DocCodace; //
+		private TipoDocumento DocCepom; // INSCRIÇÃO CEPOM
 		
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -79,6 +82,7 @@ public class Fiscal {
 		private ArrayList<TipoDocumento> TiposMcal; // TIPOS MEMÓRIA DE CÁLCULO
 		private ArrayList<TipoDocumento> TiposTrib; // TIPOS IMPOSTOS/CONTRIBUIÇÕES
 		private ArrayList<TipoDocumento> TiposParc; // TIPOS PARCELAMENTOS
+		private ArrayList<TipoDocumento> TiposMun; // TIPOS CEPOM
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -120,6 +124,8 @@ public class Fiscal {
 			setDocEstado(new TipoDocumento(31,"Estadual","ESTADO"));
 			setDocMunici(new TipoDocumento(32,"Municipal","MUNICI"));
 			setDocCodace(new TipoDocumento(33,"Código de Acesso","CODACE"));
+			setDocCepom(new TipoDocumento(34, "Inscrição CEPOM", "CEPOM"));
+			
 			
 			setTiposTdm(new ArrayList<TipoDocumento>());
 			setTiposDcla(new ArrayList<TipoDocumento>());
@@ -133,6 +139,7 @@ public class Fiscal {
 			setTiposSpdf(new ArrayList<TipoDocumento>());
 			setTiposXml(new ArrayList<TipoDocumento>());
 			setTiposParc(new ArrayList<TipoDocumento>());
+			setTiposMun(new ArrayList<TipoDocumento>());
 			
 			TiposTdm.add(getDocTdm());
 			
@@ -185,6 +192,8 @@ public class Fiscal {
 			TiposParc.add(getDocEstado());
 			TiposParc.add(getDocMunici());
 			
+			TiposMun.add(getDocCepom());
+			
 			setTdm(new Organizacao(1,"Tdm","TDM",TiposTdm));
 			setSepd(new Organizacao(2,"Sepd","SEPD",TiposSepd));
 			setXml(new Organizacao(3,"Xml","XMLA",TiposXml));
@@ -197,6 +206,7 @@ public class Fiscal {
 			setMcal(new Organizacao(10,"Memória de Cálculo","MCAL",TiposMcal));
 			setTrib(new Organizacao(11,"Impostos-Contribuições","TRIB",TiposTrib));
 			setParc(new Organizacao(12,"Parcelamento","PARC",TiposParc));
+			setMun(new Organizacao(13,"Municipal","MUN",TiposMun));
 			
 			setOrganizacoes(new ArrayList<Organizacao>());
 			getOrganizacoes().add(getTdm());
@@ -211,6 +221,7 @@ public class Fiscal {
 			getOrganizacoes().add(getMcal());
 			getOrganizacoes().add(getTrib());
 			getOrganizacoes().add(getParc());
+			getOrganizacoes().add(getMun());
 			
 			setFiscal(new Unidade(4,"Fiscal","FS",getOrganizacoes()));
 			
@@ -232,6 +243,14 @@ public class Fiscal {
 	}
 //-----------------------------------------------------------------------------------------------
 		
+		public ArrayList<TipoDocumento> getTiposMun() {
+			return TiposMun;
+		}
+
+		public void setTiposMun(ArrayList<TipoDocumento> tiposMun) {
+			TiposMun = tiposMun;
+		}
+
 /**
 		 * @return the tiposTrib
 		 */
@@ -417,6 +436,14 @@ public class Fiscal {
 //-----------------------------------------------------------------------------------------------		
 		
 
+		public TipoDocumento getDocCepom() {
+			return DocCepom;
+		}
+
+		public void setDocCepom(TipoDocumento docCepom) {
+			DocCepom = docCepom;
+		}
+		
 		public TipoDocumento getDocCodace() {
 			return DocCodace;
 		}
@@ -917,6 +944,14 @@ public class Fiscal {
 
 		//-----------------------------------------------------------------------------------------------
 		
+		public Organizacao getMun() {
+			return mun;
+		}
+
+		public void setMun(Organizacao mun) {
+			this.mun = mun;
+		}
+
 		public Organizacao getParc() {
 			return parc;
 		}
