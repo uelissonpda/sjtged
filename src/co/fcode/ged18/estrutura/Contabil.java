@@ -269,22 +269,22 @@ public class Contabil {
 				TiposLvcx.add(getDocTelvcx());
 				
 				setBlnc(new Organizacao(1,"Balanços","BLNC",TiposBlnc));
-				setDre(new Organizacao(2,"Demonstração Resultado de Exercício","DRE",TiposDre));
+				setDre(new Organizacao(2,"DRE","DRE",TiposDre));
 				setBlct(new Organizacao(3,"Balancetes", "BLCT", TiposBlct));
-				setDcon(new Organizacao(4,"Demonstrativos Contábeis", "DCON", TiposDcon));
-				setEcd(new Organizacao(5,"Escrituração Contábil Fiscal","ECD",TiposEcd));
-				setDctf(new Organizacao(6,"Declaração Débitos Créditos Tributários Federais","DCTF",TiposDctf));
-				setDmed(new Organizacao(7,"Declaração de Serviços Médicos","DMED",TiposDmed));
-				setDmob(new Organizacao(8,"Declaração Informações Atividades Imobiliárias","DMOB",TiposDmob));
-				setDirf(new Organizacao(9,"Declaração Imposto Renda Retido na Fonte","DIRF",TiposDirf));
-				setDasn(new Organizacao(10,"Declaração Anual do Simples Nacional","DASN",TiposDasn));
-				setDfis(new Organizacao(11,"Declaração Informações Socioeconômicas e Fiscais ","DFIS",TiposDfis));
-				setIbge(new Organizacao(12,"Instituto Brasileiro de Geografia e Estatística","IBGE",TiposIbge));
-				setEcfs(new Organizacao(13,"Escriturações Contábeis Fiscais","ECFS",TiposEcfs));
-				setEfdr(new Organizacao(14,"Escrituração Fiscal Digital das Retenções","EFDR",TiposEfdr));
-				setDipj(new Organizacao(15,"Declaração Informações Econômico-Fiscais P.J.","DIPJ",TiposDipj));
-				setIntv(new Organizacao(16,"Declaração Simplificada da P.J.","INTV",TiposIntv));
-				setLvdi(new Organizacao(17,"Escrituração Contábil Fiscal ","LVDI",TiposLvdi));
+				setDcon(new Organizacao(4,"DCON", "DCON", TiposDcon));
+				setEcd(new Organizacao(5,"ECD","ECD",TiposEcd));
+				setDctf(new Organizacao(6,"DCTF","DCTF",TiposDctf));
+				setDmed(new Organizacao(7,"DMED","DMED",TiposDmed));
+				setDmob(new Organizacao(8,"DMOB","DMOB",TiposDmob));
+				setDirf(new Organizacao(9,"DIRF","DIRF",TiposDirf));
+				setDasn(new Organizacao(10,"DASN","DASN",TiposDasn));
+				setDfis(new Organizacao(11,"DFIS ","DFIS",TiposDfis));
+				setIbge(new Organizacao(12,"IBGE","IBGE",TiposIbge));
+				setEcfs(new Organizacao(13,"ECFS","ECFS",TiposEcfs));
+				setEfdr(new Organizacao(14,"EFDR","EFDR",TiposEfdr));
+				setDipj(new Organizacao(15,"DIPJ","DIPJ",TiposDipj));
+				setIntv(new Organizacao(16,"INTV","INTV",TiposIntv));
+				setLvdi(new Organizacao(17,"LVDI ","LVDI",TiposLvdi));
 				setLvrz(new Organizacao(18,"Livro Razão","LVRZ",TiposLvrz));
 				setLvcx(new Organizacao(19,"Livro Caixa","LVCX",TiposLvcx));
 				
