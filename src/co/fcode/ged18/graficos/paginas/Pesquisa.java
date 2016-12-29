@@ -10,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -23,7 +22,6 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.MaskFormatter;
-
 import co.fcode.ged18.Unidade;
 import co.fcode.ged18.estrutura.Admapo;
 import co.fcode.ged18.estrutura.Comunicacao;
@@ -87,7 +85,7 @@ public class Pesquisa extends JDesktopPane{
 			conn = DriverManager.getConnection(Database.urlAlterdata,Database.userDBAlterdata,Database.passDBAlterdata);
 			stmt = conn.createStatement();
 			
-			// ----- Nï¿½mero da Empresa
+			// ----- Número da Empresa
 			lblNumeroE.setBounds(30, 5, 110, 14);
 			add(lblNumeroE);
 			
@@ -104,7 +102,7 @@ public class Pesquisa extends JDesktopPane{
 			});
 			add(numEmpresa);
 			
-			// ----- Extensão do Arquiv
+			// ----- Extensão do Arquivo
 			lblTipo.setBounds(lblNumeroE.getWidth()+30, lblNumeroE.getY(), 190, 20);
 			add(lblTipo);
 							
@@ -419,7 +417,7 @@ public class Pesquisa extends JDesktopPane{
 		    	nomeEmpresa.setText(rs.getString("NmEmpresa").replaceAll("/", ""));
 		    } else {
 		    	nomeEmpresa.setText("");
-		    	btnRenomear.setEnabled(false);
+			btnRenomear.setEnabled(false);
 		    }
 		}
 		catch (Exception e1){ JOptionPane.showMessageDialog(null, "A empresa não existe", "Erro", JOptionPane.ERROR_MESSAGE); }
