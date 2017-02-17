@@ -8,82 +8,82 @@ import java.util.Collections;
 import co.fcode.ged18.*;
 
 public class Contabil {
-//-------------------VARI√ÅVEIS TIPOS DE ORGANIZA√á√ÉO-------------------//
+//-------------------VARI¡VEIS TIPOS DE ORGANIZA«√O-------------------//
 	
-			private Organizacao blnc; // BALAN√áOS
-			private Organizacao dre;  // DEMONSTRA√á√ÉO DO RESULTADO DO EXERC√çCIO
+			private Organizacao blnc; // BALAN«OS
+			private Organizacao dre;  // DEMONSTRA«√O DO RESULTADO DO EXERCÕCIO
 			private Organizacao blct; // TIPOS BALANCETES
-			private Organizacao dcon; // TIPOS DEMONSTRATIVOS CONT√ÅBEIS
-			private Organizacao ecd;  // ESCRITURA√á√ÉO CONT√ÅBIL DIGITAL
-			private Organizacao dctf;  // APOIO CONT√ÅBIL
-			private Organizacao dmed;  // APOIO CONT√ÅBIL
-			private Organizacao dmob;  // APOIO CONT√ÅBIL
-			private Organizacao dirf;  // APOIO CONT√ÅBIL
-			private Organizacao dasn;  // APOIO CONT√ÅBIL
-			private Organizacao dfis;  // APOIO CONT√ÅBIL
-			private Organizacao ibge;  // APOIO CONT√ÅBIL
-			private Organizacao ecfs;  // APOIO CONT√ÅBIL
-			private Organizacao efdr;  // APOIO CONT√ÅBIL
-			private Organizacao dipj;  // APOIO CONT√ÅBIL
-			private Organizacao intv;  // APOIO CONT√ÅBIL
-			private Organizacao lvdi;  // APOIO CONT√ÅBIL
-			private Organizacao lvrz;  // APOIO CONT√ÅBIL
-			private Organizacao lvcx;  // APOIO CONT√ÅBIL
+			private Organizacao dcon; // TIPOS DEMONSTRATIVOS CONT¡BEIS
+			private Organizacao ecd;  // ESCRITURA«√O CONT¡BIL DIGITAL
+			private Organizacao dctf;  // APOIO CONT¡BIL
+			private Organizacao dmed;  // APOIO CONT¡BIL
+			private Organizacao dmob;  // APOIO CONT¡BIL
+			private Organizacao dirf;  // APOIO CONT¡BIL
+			private Organizacao dasn;  // APOIO CONT¡BIL
+			private Organizacao dfis;  // APOIO CONT¡BIL
+			private Organizacao ibge;  // APOIO CONT¡BIL
+			private Organizacao ecfs;  // APOIO CONT¡BIL
+			private Organizacao efdr;  // APOIO CONT¡BIL
+			private Organizacao dipj;  // APOIO CONT¡BIL
+			private Organizacao intv;  // APOIO CONT¡BIL
+			private Organizacao lvdi;  // APOIO CONT¡BIL
+			private Organizacao lvrz;  // APOIO CONT¡BIL
+			private Organizacao lvcx;  // APOIO CONT¡BIL
 			
 
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 
-//-------------------VARI√ÅVEIS TIPOS DE DOCUMENTOS-------------------//
+//-------------------VARI¡VEIS TIPOS DE DOCUMENTOS-------------------//
 			
-			private TipoDocumento DocBp;     // BALAN√áO PATRIMONIAL
-			private TipoDocumento DocTbp;    // TERMO BALAN√áO PATRIMONIAL
-			private TipoDocumento DocDre; 	 // DEMONSTRA√á√ÉO DO RESULTADO DO EXERC√çCIO
-			private TipoDocumento DocTdre;   // TERMO DEMONSTRA√á√ÉO DO RESULTADO DO EXERC√çCIO
+			private TipoDocumento DocBp;     // BALAN«O PATRIMONIAL
+			private TipoDocumento DocTbp;    // TERMO BALAN«O PATRIMONIAL
+			private TipoDocumento DocDre; 	 // DEMONSTRA«√O DO RESULTADO DO EXERCÕCIO
+			private TipoDocumento DocTdre;   // TERMO DEMONSTRA«√O DO RESULTADO DO EXERCÕCIO
 			private TipoDocumento DocBm;     // BALANCETE MENSAL
 			private TipoDocumento DocBt;     // BALANCETES TRIMESTRAIS
 			private TipoDocumento DocBa;     // BALANCETES ANUAL
-			private TipoDocumento DocDlpa;   // DEMONSTRA√á√ÉO DE LUCROS OU PREJU√çZOS ACUMULADOS
-			private TipoDocumento DocDmpl;   // DEMONSTRA√á√ÉO DA MUTA√á√ÉO DO PATRIM√îNIO L√çQUIDO
-			private TipoDocumento DocDfc;    // DEMONSTRA√á√ÉO DOS FLUXOS DE CAIXA
+			private TipoDocumento DocDlpa;   // DEMONSTRA«√O DE LUCROS OU PREJUÕZOS ACUMULADOS
+			private TipoDocumento DocDmpl;   // DEMONSTRA«√O DA MUTA«√O DO PATRIM‘NIO LÕQUIDO
+			private TipoDocumento DocDfc;    // DEMONSTRA«√O DOS FLUXOS DE CAIXA
 			private TipoDocumento DocNe;     // NOTAS EXPLICATIVAS
-			private TipoDocumento DocIndliq; // √çNDICES DE LIQUIDEZ
+			private TipoDocumento DocIndliq; // ÕNDICES DE LIQUIDEZ
 			private TipoDocumento DocRcentr; // RECIBO DE ENTREGA
 			private TipoDocumento DocReqnto; // REQUERIMENTO
 			private TipoDocumento DocTermos; // TERMOS DE ABERTURA E ENCERRAMENTO
 			private TipoDocumento DocCopseg; // COPIA SEG ARQ TRASMITIDO
 			private TipoDocumento DocTxpaga; // TAXA PAGA
-			private TipoDocumento DocAutent; // TERMO AUTENTICA√á√ÉO
+			private TipoDocumento DocAutent; // TERMO AUTENTICA«√O
 			private TipoDocumento DocDiario; // DIARIO
-			private TipoDocumento DocSfecac; // SITUA√á√ÉO FISCAL
+			private TipoDocumento DocSfecac; // SITUA«√O FISCAL
 			private TipoDocumento DocRedctf; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcdctf; // DECLARA√á√ÉO
+			private TipoDocumento DocDcdctf; // DECLARA«√O
 			private TipoDocumento DocRedmed; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcdmed; // DECLARA√á√ÉO
+			private TipoDocumento DocDcdmed; // DECLARA«√O
 			private TipoDocumento DocRedmob; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcdmob; // DECLARA√á√ÉO
+			private TipoDocumento DocDcdmob; // DECLARA«√O
 			private TipoDocumento DocRedirf; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcdirf; // DECLARA√á√ÉO
+			private TipoDocumento DocDcdirf; // DECLARA«√O
 			private TipoDocumento DocRedasn; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcdasn; // DECLARA√á√ÉO
+			private TipoDocumento DocDcdasn; // DECLARA«√O
 			private TipoDocumento DocRedfis; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcdfis; // DECLARA√á√ÉO
+			private TipoDocumento DocDcdfis; // DECLARA«√O
 			private TipoDocumento DocReibge; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcibge; // DECLARA√á√ÉO
+			private TipoDocumento DocDcibge; // DECLARA«√O
 			private TipoDocumento DocReecfs; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcecfs; // DECLARA√á√ÉO
+			private TipoDocumento DocDcecfs; // DECLARA«√O
 			private TipoDocumento DocReefdr; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcefdr; // DECLARA√á√ÉO
+			private TipoDocumento DocDcefdr; // DECLARA«√O
 			private TipoDocumento DocRedipj; // RECIBO DE ENTREGA
-			private TipoDocumento DocDcdipj; // DECLARA√á√ÉO
-			private TipoDocumento DocDcintv; // DECLARA√á√ÉO
+			private TipoDocumento DocDcdipj; // DECLARA«√O
+			private TipoDocumento DocDcintv; // DECLARA«√O
 			private TipoDocumento DocPlcnts; // PLANO DE CONTAS
-			private TipoDocumento DocBlnclv; // BALAN√áO
-			private TipoDocumento DocTmblnc; // TERMO DO BALAN√áO
+			private TipoDocumento DocBlnclv; // BALAN«O
+			private TipoDocumento DocTmblnc; // TERMO DO BALAN«O
 			private TipoDocumento DocTemdre; // TERMO DA DRE
-			private TipoDocumento DocCdrprj; // CERTID√ÉO DE REGULARIDADE PROFISSIONAL
+			private TipoDocumento DocCdrprj; // CERTID√O DE REGULARIDADE PROFISSIONAL
 			private TipoDocumento DocTalvdi; // TERMO DE ABERTURA
 			private TipoDocumento DocTelvdi; // TERMO DE ENCERRAMENTO
-			private TipoDocumento DocLvrzge; // RAZ√ÉO GERAL
+			private TipoDocumento DocLvrzge; // RAZ√O GERAL
 			private TipoDocumento DocTalvrz; // TERMOS DE ABERTURA
 			private TipoDocumento DocTelvrz; // TERMOS DE ENCERRAMENTO
 			private TipoDocumento DocLcaixa; // CAIXA
@@ -91,94 +91,94 @@ public class Contabil {
 			private TipoDocumento DocTelvcx; // TERMOS DE ENCERRAMENTO
 			 
 						
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 			
 //-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 			
-			private ArrayList<TipoDocumento> TiposBlnc; // TIPOS BALAN√áOS
-			private ArrayList<TipoDocumento> TiposDre;  // TIPOS DEMONSTRA√á√ÉO DO RESULTADO DO EXERC√çCIO
+			private ArrayList<TipoDocumento> TiposBlnc; // TIPOS BALAN«OS
+			private ArrayList<TipoDocumento> TiposDre;  // TIPOS DEMONSTRA«√O DO RESULTADO DO EXERCÕCIO
 			private ArrayList<TipoDocumento> TiposBlct; // TIPOS BALANCETES
-			private ArrayList<TipoDocumento> TiposDcon; // TIPOS DEMONSTRATIVOS CONT√ÅBEIS
-			private ArrayList<TipoDocumento> TiposEcd;  // TIPOS ESCRITURA√á√ÉO CONT√ÅBIL DIGITAL
-			private ArrayList<TipoDocumento> TiposDctf;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposDmed;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposDmob;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposDirf;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposDasn;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposDfis;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposIbge;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposEcfs;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposEfdr;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposDipj;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposIntv;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposLvdi;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposLvrz;  // APOIO CONT√ÅBIL
-			private ArrayList<TipoDocumento> TiposLvcx;  // APOIO CONT√ÅBIL
+			private ArrayList<TipoDocumento> TiposDcon; // TIPOS DEMONSTRATIVOS CONT¡BEIS
+			private ArrayList<TipoDocumento> TiposEcd;  // TIPOS ESCRITURA«√O CONT¡BIL DIGITAL
+			private ArrayList<TipoDocumento> TiposDctf;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposDmed;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposDmob;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposDirf;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposDasn;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposDfis;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposIbge;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposEcfs;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposEfdr;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposDipj;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposIntv;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposLvdi;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposLvrz;  // APOIO CONT¡BIL
+			private ArrayList<TipoDocumento> TiposLvcx;  // APOIO CONT¡BIL
 			
 			
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 			
 			private ArrayList<Organizacao> organizacoes;
 			private Unidade contabil;
 			
 			public Contabil(){
-				setDocBp(new TipoDocumento(1,"Balan√ßo Patrimonial","BP"));
-				setDocTbp(new TipoDocumento(2, "Termo Balan√ßo Patrimonial","TBP"));
-				setDocDre(new TipoDocumento(3, "Demonstra√ß√£o do Resultado do Exerc√≠cio", "DRE"));
-				setDocTdre(new TipoDocumento(4, "Termo Demonstra√ß√£o do Resultado do Exerc√≠cio", "TDRE"));
+				setDocBp(new TipoDocumento(1,"BalanÁo Patrimonial","BP"));
+				setDocTbp(new TipoDocumento(2, "Termo BalanÁo Patrimonial","TBP"));
+				setDocDre(new TipoDocumento(3, "DemonstraÁ„o do Resultado do ExercÌcio", "DRE"));
+				setDocTdre(new TipoDocumento(4, "Termo DemonstraÁ„o do Resultado do ExercÌcio", "TDRE"));
 				setDocBm(new TipoDocumento(5, "Balancete Mensal", "BM"));
 				setDocBt(new TipoDocumento(6, "Balancetes Trimestrais", "BT"));
 				setDocBa(new TipoDocumento(7,"Balancetes Anuais","BA"));
-				setDocDlpa(new TipoDocumento(8, "Demonstra√ß√£o de Lucros ou Preju√≠zos Acumulados", "Dlpa"));
-				setDocDmpl(new TipoDocumento(9, "Demonstra√ß√£o da Mutacao do Pratimonio L√≠quido", "Dmpl"));
-				setDocDfc(new TipoDocumento(10, "Demonstra√ß√£o dos Fluxos de Caixa", "Dfc"));
-				setDocDlpa(new TipoDocumento(11, "Demonstra√ß√£o de Lucros ou Preju√≠zos Acumulados", "Dlpa"));
-				setDocDmpl(new TipoDocumento(12, "Demonstra√ß√£o da Muta√ß√£o do Pratim√¥nio L√≠quido", "Dmpl"));
-				setDocDfc(new TipoDocumento(13, "Demonstra√ß√£o dos Fluxos de Caixa", "Dfc"));
+				setDocDlpa(new TipoDocumento(8, "DemonstraÁ„o de Lucros ou PrejuÌzos Acumulados", "Dlpa"));
+				setDocDmpl(new TipoDocumento(9, "DemonstraÁ„o da Mutacao do Pratimonio LÌquido", "Dmpl"));
+				setDocDfc(new TipoDocumento(10, "DemonstraÁ„o dos Fluxos de Caixa", "Dfc"));
+				setDocDlpa(new TipoDocumento(11, "DemonstraÁ„o de Lucros ou PrejuÌzos Acumulados", "Dlpa"));
+				setDocDmpl(new TipoDocumento(12, "DemonstraÁ„o da MutaÁ„o do PratimÙnio LÌquido", "Dmpl"));
+				setDocDfc(new TipoDocumento(13, "DemonstraÁ„o dos Fluxos de Caixa", "Dfc"));
 				setDocNe(new TipoDocumento(14, "Notas Explicativas", "NE"));
-				setDocIndliq(new TipoDocumento(15, "√çndices de Liquidez", "INDLIQ"));
+				setDocIndliq(new TipoDocumento(15, "Õndices de Liquidez", "INDLIQ"));
 				setDocRcentr(new TipoDocumento(16, "Recibo de Entrega", "RCENTR"));
 				setDocReqnto(new TipoDocumento(17, "Requerimento", "Reqnto"));
 				setDocTermos(new TipoDocumento(18, "Termos de Abertura e Encerramento", "TERMOS"));
-				setDocCopseg(new TipoDocumento(19, "C√≥pia SEG Arquivo Transmitido", "COPSEG"));
+				setDocCopseg(new TipoDocumento(19, "CÛpia SEG Arquivo Transmitido", "COPSEG"));
 				setDocTxpaga(new TipoDocumento(20, "Taxa Paga", "TXPAGA"));
-				setDocAutent(new TipoDocumento(21, "Termo Autentica√ß√£o", "AUTENT"));
-				setDocDiario(new TipoDocumento(22, "Di√°rio", "DIARIO"));
+				setDocAutent(new TipoDocumento(21, "Termo AutenticaÁ„o", "AUTENT"));
+				setDocDiario(new TipoDocumento(22, "Di·rio", "DIARIO"));
 				
-				setDocDcefdr(new TipoDocumento(23,"Declara√ß√£o","DCEFDR"));
+				setDocDcefdr(new TipoDocumento(23,"DeclaraÁ„o","DCEFDR"));
 				setDocRedipj(new TipoDocumento(24,"Recibo de Entrega","REDIPJ"));
-				setDocDcdipj(new TipoDocumento(25,"Declara√ß√£o","DCDIPJ"));
-				setDocDcintv(new TipoDocumento(26,"Declara√ß√£o","DCINTV"));
+				setDocDcdipj(new TipoDocumento(25,"DeclaraÁ„o","DCDIPJ"));
+				setDocDcintv(new TipoDocumento(26,"DeclaraÁ„o","DCINTV"));
 				setDocPlcnts(new TipoDocumento(27,"Plano de Contas","PLCNTS"));
-				setDocBlnclv(new TipoDocumento(28,"Balan√ßo","BLNCLV"));
-				setDocTmblnc(new TipoDocumento(29,"Termo do Balan√ßo","TMBLNC"));
+				setDocBlnclv(new TipoDocumento(28,"BalanÁo","BLNCLV"));
+				setDocTmblnc(new TipoDocumento(29,"Termo do BalanÁo","TMBLNC"));
 				setDocTemdre(new TipoDocumento(30,"Termo da DRE","TEMDRE"));
-				setDocCdrprj(new TipoDocumento(31,"Certid√£o de Regularidade Profissional","CDRPRJ"));
+				setDocCdrprj(new TipoDocumento(31,"Certid„o de Regularidade Profissional","CDRPRJ"));
 				setDocTalvdi(new TipoDocumento(32,"Termo de Abertura","TALVDI"));
 				setDocTelvdi(new TipoDocumento(33,"Termo de Encerramento","TELVDI"));
-				setDocLvrzge(new TipoDocumento(34,"Raz√£o Geral","LVRZGE"));
+				setDocLvrzge(new TipoDocumento(34,"Raz„o Geral","LVRZGE"));
 				setDocTalvrz(new TipoDocumento(35,"Termos de Abertura","TALVRZ"));
 				setDocTelvrz(new TipoDocumento(36,"Termos de Encerramento","TELVRZ"));				
 				setDocLcaixa(new TipoDocumento(37,"Caixa","LCAIXA"));
 				setDocTalvcx(new TipoDocumento(38,"Termos de Abertura","TALVCX"));
 				setDocTelvcx(new TipoDocumento(39,"Termos de Encerramento","TELVCX"));
-				setDocSfecac(new TipoDocumento(40,"Situa√ß√£o Fiscal","SFECAC"));
+				setDocSfecac(new TipoDocumento(40,"SituaÁ„o Fiscal","SFECAC"));
 				setDocRedctf(new TipoDocumento(41,"Recibo de Entrega","REDCTF"));
-				setDocDcdctf(new TipoDocumento(42,"Declara√ß√£o","DCDCTF"));
+				setDocDcdctf(new TipoDocumento(42,"DeclaraÁ„o","DCDCTF"));
 				setDocRedmed(new TipoDocumento(43,"Recibo de Entrega","REDMED"));
-				setDocDcdmed(new TipoDocumento(44,"Declara√ß√£o","DCDMED"));
+				setDocDcdmed(new TipoDocumento(44,"DeclaraÁ„o","DCDMED"));
 				setDocRedmob(new TipoDocumento(45,"Recibo de Entrega","REDMOB"));
-				setDocDcdmob(new TipoDocumento(46,"Declara√ß√£o","DCDMOB"));
+				setDocDcdmob(new TipoDocumento(46,"DeclaraÁ„o","DCDMOB"));
 				setDocRedirf(new TipoDocumento(47,"Recibo de Entrega","REDIRF"));
-				setDocDcdirf(new TipoDocumento(48,"Declara√ß√£o","DCDIRF"));
+				setDocDcdirf(new TipoDocumento(48,"DeclaraÁ„o","DCDIRF"));
 				setDocRedasn(new TipoDocumento(49,"Recibo de Entrega","REDASN"));
-				setDocDcdasn(new TipoDocumento(50,"Declara√ß√£o","DCDASN"));
+				setDocDcdasn(new TipoDocumento(50,"DeclaraÁ„o","DCDASN"));
 				setDocRedfis(new TipoDocumento(51,"Recibo de Entrega","REDFIS"));
-				setDocDcdfis(new TipoDocumento(52,"Declara√ß√£o","DCDFIS"));
+				setDocDcdfis(new TipoDocumento(52,"DeclaraÁ„o","DCDFIS"));
 				setDocReibge(new TipoDocumento(53,"Recibo de Entrega","REIBGE"));
-				setDocDcibge(new TipoDocumento(54,"Declara√ß√£o","DCIBGE"));
+				setDocDcibge(new TipoDocumento(54,"DeclaraÁ„o","DCIBGE"));
 				setDocReecfs(new TipoDocumento(55,"Recibo de Entrega","REECFS"));
-				setDocDcecfs(new TipoDocumento(56,"Declara√ß√£o","DCECFS"));
+				setDocDcecfs(new TipoDocumento(56,"DeclaraÁ„o","DCECFS"));
 				setDocReefdr(new TipoDocumento(57,"Recibo de Entrega","REEFDR"));
 			
 				
@@ -268,7 +268,7 @@ public class Contabil {
 				TiposLvcx.add(getDocTalvcx());
 				TiposLvcx.add(getDocTelvcx());
 				
-				setBlnc(new Organizacao(1,"Balan√ßos","BLNC",TiposBlnc));
+				setBlnc(new Organizacao(1,"BalanÁos","BLNC",TiposBlnc));
 				setDre(new Organizacao(2,"DRE","DRE",TiposDre));
 				setBlct(new Organizacao(3,"Balancetes", "BLCT", TiposBlct));
 				setDcon(new Organizacao(4,"DCON", "DCON", TiposDcon));
@@ -285,7 +285,7 @@ public class Contabil {
 				setDipj(new Organizacao(15,"DIPJ","DIPJ",TiposDipj));
 				setIntv(new Organizacao(16,"INTV","INTV",TiposIntv));
 				setLvdi(new Organizacao(17,"LVDI ","LVDI",TiposLvdi));
-				setLvrz(new Organizacao(18,"Livro Raz√£o","LVRZ",TiposLvrz));
+				setLvrz(new Organizacao(18,"Livro Raz„o","LVRZ",TiposLvrz));
 				setLvcx(new Organizacao(19,"Livro Caixa","LVCX",TiposLvcx));
 				
 				
@@ -310,9 +310,9 @@ public class Contabil {
 				getOrganizacoes().add(getLvrz());
 				getOrganizacoes().add(getLvcx());
 				
-				setContabil(new Unidade(2,"Cont√°bil","CT",getOrganizacoes()));
+				setContabil(new Unidade(2,"Cont·bil","CT",getOrganizacoes()));
 				
-				/* Organiza√ß√£o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+				/* OrganizaÁ„o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
 				Collections.sort(getTiposBlct(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposBlnc(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposDasn(), new ComparadorTipoDocumento());
@@ -375,7 +375,7 @@ public class Contabil {
 			public void setTiposBlnc(ArrayList<TipoDocumento> tiposBlnc) {
 				TiposBlnc = tiposBlnc;
 			}
-//---------------------ARRAYLIST APOIO CONT√ÅBIL--------------------------------------------------
+//---------------------ARRAYLIST APOIO CONT¡BIL--------------------------------------------------
 			public ArrayList<TipoDocumento> getTiposDctf() {
 				return TiposDctf;
 			}
@@ -462,7 +462,7 @@ public class Contabil {
 				TiposLvcx = tiposLvcx;
 			}
 			
-//---------------------TIPOS DE DOC. APOIO CONT√ÅBIL----------------------------------------------
+//---------------------TIPOS DE DOC. APOIO CONT¡BIL----------------------------------------------
 			public TipoDocumento getDocSfecac() {
 				return DocSfecac;
 			}
@@ -789,7 +789,7 @@ public class Contabil {
 			public void setDocBp(TipoDocumento docBp) {
 				DocBp = docBp;
 			}
-//-----------------------------ORGANIZA√á√ÉO APOIO CONT√ÅBIL------------------------------------------
+//-----------------------------ORGANIZA«√O APOIO CONT¡BIL------------------------------------------
 			
 			public Organizacao getDctf() {
 				return dctf;

@@ -8,18 +8,18 @@ import co.fcode.ged18.*;
 *@author UANJOS*
 ***************/
 public class DepartamentoPessoal {
-//-------------------VARI√ÅVEIS TIPOS DE ORGANIZA√á√ÉO-------------------//
+//-------------------VARI¡VEIS TIPOS DE ORGANIZA«√O-------------------//
 	
 	private Organizacao rot;  // ROTINAS
-	private Organizacao obac; // OBRIGA√á√ïES ACESS√ìRIAS
+	private Organizacao obac; // OBRIGA«’ES ACESS”RIAS
 	private Organizacao dvrs; // DIVERSOS
 
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 
-//-------------------VARI√ÅVEIS TIPOS DE DOCUMENTOS-------------------//
+//-------------------VARI¡VEIS TIPOS DE DOCUMENTOS-------------------//
 	
-	private TipoDocumento DocAdmiss; // ADMISS√ÉO
-	private TipoDocumento DocQuitac; // QUITA√á√ÉO
+	private TipoDocumento DocAdmiss; // ADMISS√O
+	private TipoDocumento DocQuitac; // QUITA«√O
 	private TipoDocumento DocFolhas; // FOLHAS
 	private TipoDocumento DocGfip;   // GFIP
 	private TipoDocumento DocDarf;   // DARF
@@ -27,7 +27,7 @@ public class DepartamentoPessoal {
 	private TipoDocumento DocCaged;  // CAGED
 	private TipoDocumento DocCompvt; // COMPVT
 	private TipoDocumento DocPonto;  // PONTO
-	private TipoDocumento DocFerias; // F√âRIAS
+	private TipoDocumento DocFerias; // F…RIAS
 	private TipoDocumento DocGrcsu;  // GUIAS SINDICAIS
 	private TipoDocumento DocAssist; // GUIAS ASSISTENCIAIS
 	private TipoDocumento DocConfed; // GUIAS CONFEDERATIVAS
@@ -43,29 +43,29 @@ public class DepartamentoPessoal {
 	private TipoDocumento DocCnd;    // CND
 	private TipoDocumento DocCrf;    // CRF
 	private TipoDocumento DocCndtra;// CND TRABALHISTA
-	private TipoDocumento DocDeclar; // DECLARA√á√ïES
+	private TipoDocumento DocDeclar; // DECLARA«’ES
 	private TipoDocumento DocDataba; // DISSIDIO COM DATA BASE
 	private TipoDocumento DocPrepos; // CARTA DE PREPOSTO
 	private TipoDocumento DocComext; // COMUNICADO EXTERNO
 	private TipoDocumento DocPartic; // PARTICULARIDARES EMPRESAS
 	private TipoDocumento DocRecalc; // RECALCULOS
 	
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 	
 //-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 	
 	private ArrayList<TipoDocumento> TiposRot;  // TIPOS ROTINA
-	private ArrayList<TipoDocumento> TiposObac; // TIPOS OBRIGA√á√ïES ACESS√ìRIAS
+	private ArrayList<TipoDocumento> TiposObac; // TIPOS OBRIGA«’ES ACESS”RIAS
 	private ArrayList<TipoDocumento> TiposDvrs; // TIPOS DOCUMENTOS DIVERSOS
 	
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 	
 	private ArrayList<Organizacao> organizacoes;
 	private Unidade dp;
 	
 	public DepartamentoPessoal(){
-		setDocAdmiss(new TipoDocumento(1,"Admiss√£o","ADMISS"));
-		setDocQuitac(new TipoDocumento(1,"Quita√ß√£o", "QUITAC"));
+		setDocAdmiss(new TipoDocumento(1,"Admiss„o","ADMISS"));
+		setDocQuitac(new TipoDocumento(1,"QuitaÁ„o", "QUITAC"));
 		setDocFolhas(new TipoDocumento(2,"Folhas","FOLHAS"));
 		setDocGfip(new TipoDocumento(3,"Gfip","GFIP"));
 		setDocDarf(new TipoDocumento(4,"Darf","DARF"));
@@ -73,7 +73,7 @@ public class DepartamentoPessoal {
 		setDocCaged(new TipoDocumento(6,"Caged","CAGED"));
 		setDocCompvt(new TipoDocumento(7,"Compra de VT","COMPVT"));
 		setDocPonto(new TipoDocumento(8, "Ponto","PONTO"));
-		setDocFerias(new TipoDocumento(9,"F√©rias","FERIAS"));
+		setDocFerias(new TipoDocumento(9,"FÈrias","FERIAS"));
 		setDocGrcsu(new TipoDocumento(10,"Guias Sindicais","GRCSU"));
 		setDocAssist(new TipoDocumento(11,"Guias Assistenciais","ASSIST"));
 		setDocConfed(new TipoDocumento(12,"Guias Confederativas","CONFED"));
@@ -89,12 +89,12 @@ public class DepartamentoPessoal {
 		setDocCnd(new TipoDocumento(22,"CND","CND"));
 		setDocCrf(new TipoDocumento(23,"CRF","CRF"));
 		setDocCndtra(new TipoDocumento(24,"CND Trabalhista","CNDTRA"));
-		setDocDeclar(new TipoDocumento(25,"Declara√ß√µes","DECLAR"));
-		setDocDataba(new TipoDocumento(26,"Diss√≠dio com Data Base","DATABA"));
+		setDocDeclar(new TipoDocumento(25,"DeclaraÁıes","DECLAR"));
+		setDocDataba(new TipoDocumento(26,"DissÌdio com Data Base","DATABA"));
 		setDocPrepos(new TipoDocumento(27,"Carta de Preposto","PREPOS"));
 		setDocComext(new TipoDocumento(28,"Comunicado Externo","COMEXT"));
 		setDocPartic(new TipoDocumento(29,"Particularidades Empresas","PARTIC"));
-		setDocRecalc(new TipoDocumento(30,"Rec√°lculos","RECALC"));
+		setDocRecalc(new TipoDocumento(30,"Rec·lculos","RECALC"));
 		
 		setTiposRot(new ArrayList<TipoDocumento>());
 		setTiposObac(new ArrayList<TipoDocumento>());
@@ -135,7 +135,7 @@ public class DepartamentoPessoal {
 		TiposDvrs.add(getDocRecalc());
 		
 		setRot(new Organizacao(1, "Rotinas", "ROT", TiposRot));
-		setObac(new Organizacao(2, "Obriga√ß√µes Acess√≥rias", "OBAC", TiposObac));
+		setObac(new Organizacao(2, "ObrigaÁıes AcessÛrias", "OBAC", TiposObac));
 		setDvrs(new Organizacao(3,"Diversos", "DVRS",TiposDvrs));
 		
 		setOrganizacoes(new ArrayList<Organizacao>());
@@ -145,7 +145,7 @@ public class DepartamentoPessoal {
 		
 		setDp(new Unidade(3,"Depto. Pessoal","DP",getOrganizacoes()));
 		
-		/* Organiza√ß√£o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+		/* OrganizaÁ„o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
 		Collections.sort(getTiposDvrs(), new ComparadorTipoDocumento());
 		Collections.sort(getTiposObac(), new ComparadorTipoDocumento());
 		Collections.sort(getTiposRot(), new ComparadorTipoDocumento());

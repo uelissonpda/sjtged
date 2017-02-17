@@ -1,7 +1,7 @@
 package co.fcode.ged18.graficos.paginas;
 
 import java.awt.Color;
-import java.io.BufferedWriter;
+//import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,8 +14,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
-
+//import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -47,6 +46,7 @@ public class TratarArquivo extends JDesktopPane{
 	Statement stmt;
 	
 	String query = "select NmEmpresa,CdEmpresa from wphd.Empresa";
+	//StringBuffer caminho = new StringBuffer("A:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
 	StringBuffer caminho = new StringBuffer("Y:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
 	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug Windows
 	//StringBuffer caminho = new StringBuffer("Users/insidemybrain/PJ - PESSOA JURÍDICA/"); // @debug Mac
@@ -95,7 +95,7 @@ public class TratarArquivo extends JDesktopPane{
 			conn = DriverManager.getConnection(Database.urlAlterdata,Database.userDBAlterdata,Database.passDBAlterdata);
 			stmt = conn.createStatement();
 			
-			// ----- Nï¿½mero da Empresa
+			// ----- Número da Empresa
 			lblNumeroE.setBounds(30, 90, 110, 14);
 			add(lblNumeroE);
 			
@@ -147,7 +147,7 @@ public class TratarArquivo extends JDesktopPane{
 			comboUnidade.setSelectedIndex(0);
 			add(comboUnidade);
 			
-			// Selecionar Organização de Unidade
+			// Selecionar OrganizaÃ§Ã£o de Unidade
 			lblOrgUnidade.setBounds(30, comboUnidade.getY()+30, 190, 25);
 			lblOrgUnidade.setIcon(FuncoesExtras.buscarIcone("img/inbox.png"));
 			add(lblOrgUnidade);
@@ -310,18 +310,18 @@ public class TratarArquivo extends JDesktopPane{
 				
 				StringBuffer nomeArquivo = new StringBuffer("");
 				nomeArquivo.append(codEmpresa);
-				nomeArquivo.append("_");
+				nomeArquivo.append("-");
 				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getSigla());
-				nomeArquivo.append("_");
+				nomeArquivo.append("-");
 				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
 						get(comboOrganizacao.getSelectedIndex()).getSigla());
-				nomeArquivo.append("_");
+				nomeArquivo.append("-");
 				nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
 						get(comboOrganizacao.getSelectedIndex()).getDocumentos().get(comboDocumento.getSelectedIndex()).getSigla());
-				nomeArquivo.append("_");
+				nomeArquivo.append("-");
 				if(!nfe.getText().equals("         ")){
 					nomeArquivo.append(nfe.getText());
-					nomeArquivo.append("_");
+					nomeArquivo.append("-");
 				}
 				nomeArquivo.append(competencia.getText());
 				nomeArquivo.append(".");

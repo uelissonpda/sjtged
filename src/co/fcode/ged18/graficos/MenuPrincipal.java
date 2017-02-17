@@ -37,7 +37,7 @@ public class MenuPrincipal extends JMenuBar{
 			jtp.removeAll();
 			Janela.tp.setText(b1.getText());
 			
-			jtp.addTab("InformaÃ§Ãµes", new TratarArquivo());
+			jtp.addTab("Informações", new TratarArquivo());
 			jtp.setIconAt(0, FuncoesExtras.buscarIcone("img/document.png"));
 			
 		});

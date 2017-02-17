@@ -8,56 +8,56 @@ import java.util.Collections;
 import co.fcode.ged18.*;
 
 public class Comunicacao {
-//-------------------VARI√ÅVEIS TIPOS DE ORGANIZA√á√ÉO-------------------//
+//-------------------VARI¡VEIS TIPOS DE ORGANIZA«√O-------------------//
 	
 	private Organizacao cext; // COMUNICADOS EXTERNOS
 	private Organizacao emen; // E-MAILS ENVIADOS
 	private Organizacao emre; // E-MAIL RECEBIDOS
-	private Organizacao inti; // INTIMA√á√ïES/NOTIFICA√á√ïES
-	private Organizacao mmot; // MEMORANDOS/ORIENTA√á√ïES T√âCNICAS
-	private Organizacao mr;   // MEM√ìRIA DE REUNI√ÉO
+	private Organizacao inti; // INTIMA«’ES/NOTIFICA«’ES
+	private Organizacao mmot; // MEMORANDOS/ORIENTA«’ES T…CNICAS
+	private Organizacao mr;   // MEM”RIA DE REUNI√O
 	private Organizacao proten; // PROTOCOLOS ENTREGUES
-	private Organizacao Emnc; // E-MAILS N√ÉO CONFORMES
+	private Organizacao Emnc; // E-MAILS N√O CONFORMES
 			
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 
-//-------------------VARI√ÅVEIS TIPOS DE DOCUMENTOS-------------------//
+//-------------------VARI¡VEIS TIPOS DE DOCUMENTOS-------------------//
 			
 	private TipoDocumento DocAdm; // ADMAPO
 	private TipoDocumento DocCont;// CONTABIL
 	private TipoDocumento DocDp;  // DEPARTAMENTO PESSOAL
-	private TipoDocumento DocDir; // DIRE√á√ÉO
+	private TipoDocumento DocDir; // DIRE«√O
 	private TipoDocumento DocFisc;// FISCAL
-	private TipoDocumento DocSoc; // SOCIET√ÅRIO
+	private TipoDocumento DocSoc; // SOCIET¡RIO
 	private TipoDocumento DocTes; // TESOURARIA
 	private TipoDocumento DocFin; // FINANCEIRO
 			
 			
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 		
 //-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 			
 	private ArrayList<TipoDocumento> TiposCext; // COMUNICADOS EXTERNOS
 	private ArrayList<TipoDocumento> TiposEmen; // E-MAILS ENVIADOS
 	private ArrayList<TipoDocumento> TiposEmre; // E-MAIL RECEBIDOS
-	private ArrayList<TipoDocumento> TiposInti; // TIPOS INTIMA√á√ïES/NOTIFICA√á√ïES
-	private ArrayList<TipoDocumento> TiposMmot; // TIPOS MEMORANDOS/ORIENTA√á√ïES T√âCNICAS
-	private ArrayList<TipoDocumento> TiposMr;   // TIPOS MEM√ìRIA DE REUNI√ÉO				
+	private ArrayList<TipoDocumento> TiposInti; // TIPOS INTIMA«’ES/NOTIFICA«’ES
+	private ArrayList<TipoDocumento> TiposMmot; // TIPOS MEMORANDOS/ORIENTA«’ES T…CNICAS
+	private ArrayList<TipoDocumento> TiposMr;   // TIPOS MEM”RIA DE REUNI√O				
 	private ArrayList<TipoDocumento> TiposProten; // TIPOS PROTOCOLOS DE ENTREGA
-	private ArrayList<TipoDocumento> TiposEmnc; // TIPOS E-MAILS N√ÉO CONFORMES
+	private ArrayList<TipoDocumento> TiposEmnc; // TIPOS E-MAILS N√O CONFORMES
 			
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 			
 	private ArrayList<Organizacao> organizacoes;
 	private Unidade comunicacao;
 			
 	public Comunicacao(){
 			setDocAdm(new TipoDocumento(1, "Admapo", "ADM"));
-			setDocCont(new TipoDocumento(2, "Cont√°bil", "CONT"));
+			setDocCont(new TipoDocumento(2, "Cont·bil", "CONT"));
 			setDocDp(new TipoDocumento(3, "Departamento Pessoal", "DP"));
-			setDocDir(new TipoDocumento(4, "Dire√ß√£o", "DIR"));
+			setDocDir(new TipoDocumento(4, "DireÁ„o", "DIR"));
 			setDocFisc(new TipoDocumento(5, "Fiscal", "FISC"));
-			setDocSoc(new TipoDocumento(6, "Societ√°rio", "SOC"));
+			setDocSoc(new TipoDocumento(6, "Societ·rio", "SOC"));
 			setDocTes(new TipoDocumento(7, "Tesouraria", "TES"));
 			setDocFin(new TipoDocumento(8, "Financeiro", "FIN"));
 			
@@ -128,11 +128,11 @@ public class Comunicacao {
 			setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 			setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
 			setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
-			setInti(new Organizacao(4,"Intima√ß√µes-Notifica√ß√µes","INTI",TiposInti));
-			setMmot(new Organizacao(5,"Memorandos-Orienta√ß√µes T√©cnicas","MMOT",TiposMmot));
-			setMr(new Organizacao(6,"Mem√≥ria de Reuni√£o","MR",TiposMr));
+			setInti(new Organizacao(4,"IntimaÁıes-NotificaÁıes","INTI",TiposInti));
+			setMmot(new Organizacao(5,"Memorandos-OrientaÁıes TÈcnicas","MMOT",TiposMmot));
+			setMr(new Organizacao(6,"MemÛria de Reuni„o","MR",TiposMr));
 			setProten(new Organizacao(7, "Protocolo de Entrega","PROTEN",TiposProten));
-			setEmnc(new Organizacao(8, "E-mail N√£o Conforme","EMNC", TiposEmnc));
+			setEmnc(new Organizacao(8, "E-mail N„o Conforme","EMNC", TiposEmnc));
 							
 			setOrganizacoes(new ArrayList<Organizacao>());
 			getOrganizacoes().add(getCext());
@@ -144,10 +144,10 @@ public class Comunicacao {
 			getOrganizacoes().add(getProten());
 			getOrganizacoes().add(getEmnc());
 			
-			setComunicacao(new Unidade(1,"Comunica√ß√£o","CM",getOrganizacoes()));
+			setComunicacao(new Unidade(1,"ComunicaÁ„o","CM",getOrganizacoes()));
 			
 			
-			/* Organiza√ß√£o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+			/* OrganizaÁ„o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
 			Collections.sort(getTiposCext(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposEmen(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposEmre(), new ComparadorTipoDocumento());

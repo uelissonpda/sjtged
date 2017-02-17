@@ -39,8 +39,8 @@ public class Pesquisa extends JDesktopPane{
 	
 	String query = "select NmEmpresa,CdEmpresa from wphd.Empresa";
 	StringBuffer caminho = new StringBuffer("Y:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
-	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug Windows
-	//StringBuffer caminho = new StringBuffer("Users/insidemybrain/PJ - PESSOA JURÍDICA/"); // @debug Mac
+	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÃ�DICA/"); // @debug Windows
+	//StringBuffer caminho = new StringBuffer("Users/insidemybrain/PJ - PESSOA JURÃ�DICA/"); // @debug Mac
 	
 	JComboBox<String> comboUnidade = new JComboBox<String>();
 	JComboBox<String> comboOrganizacao = new JComboBox<String>();
@@ -137,7 +137,7 @@ public class Pesquisa extends JDesktopPane{
 			unidades.add(fs.getFiscal());
 			unidades.add(sc.getSoc());
 			
-			/* Adição das Unidades na ComboBox */
+			/* AdiÃ§Ã£o das Unidades na ComboBox */
 			unidades.forEach(u -> comboUnidade.addItem(u.getNomeCompleto()));
 			comboUnidade.setBounds(30, lblUnidade.getY()+30, 190, 25);
 			comboUnidade.setToolTipText("Selecione a Unidade");
@@ -282,7 +282,7 @@ public class Pesquisa extends JDesktopPane{
 					JOptionPane.showMessageDialog(null, "O número da empresa não pode estar em branco.", "Erro", JOptionPane.ERROR_MESSAGE);
 				}
 				else if(competencia.getText().equals("      ")){
-					/* Criação de Diretórios, caso não existam*/
+					/* CriaÃ§Ã£o de DiretÃ³rios, caso nÃ£o existam*/
 					// Y:/EMPRESAS/NumeroDaEmpresa
 					File empresaDiretorio = new File(caminho+codEmpresa+" - "+nomeEmpresa.getText());
 					if(!empresaDiretorio.exists()){
@@ -315,7 +315,7 @@ public class Pesquisa extends JDesktopPane{
 					if(jfc.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
 						int opcao = JOptionPane.showConfirmDialog(null,
 								"<html>O <b>"+tipoDocTxt+"</b> da Empresa "+nomeEmpresa.getText()+" existe!<br>"
-										+ "<i>Você deseja abrí-lo?","Atenção",JOptionPane.YES_NO_OPTION);
+										+ "<i>Voce deseja abrí-lo?","Atenção",JOptionPane.YES_NO_OPTION);
 							if(opcao == JOptionPane.YES_OPTION){
 								try {
 									Desktop.getDesktop().open(jfc.getSelectedFile());
@@ -417,7 +417,7 @@ public class Pesquisa extends JDesktopPane{
 		    	nomeEmpresa.setText(rs.getString("NmEmpresa").replaceAll("/", ""));
 		    } else {
 		    	nomeEmpresa.setText("");
-			btnRenomear.setEnabled(false);
+		    	btnRenomear.setEnabled(false);
 		    }
 		}
 		catch (Exception e1){ JOptionPane.showMessageDialog(null, "A empresa não existe", "Erro", JOptionPane.ERROR_MESSAGE); }

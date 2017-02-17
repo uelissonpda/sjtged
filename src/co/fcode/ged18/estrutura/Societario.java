@@ -7,89 +7,91 @@ import java.util.Collections;
 import co.fcode.ged18.*;
 
 public class Societario {
-//-------------------VARI√ÅVEIS TIPOS DE ORGANIZA√á√ÉO-------------------//
+//-------------------VARI¡VEIS TIPOS DE ORGANIZA«√O-------------------//
 	
 		private Organizacao Atos; // ATOS
 		private Organizacao Fed;  // FEDERAL
 		private Organizacao Est;  // ESTADUAL
 		private Organizacao Mun;  // MUNICIPAL
 		private Organizacao Dvrs; // DIVERSOS
-		private Organizacao Certd;// CERTID√ïES
+		private Organizacao Certd;// CERTID’ES
 		private Organizacao DocJu;// DOCUMENTOS JUDICIAIS
 
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 
-//-------------------VARI√ÅVEIS TIPOS DE DOCUMENTOS-------------------//
+//-------------------VARI¡VEIS TIPOS DE DOCUMENTOS-------------------//
 			
 		private TipoDocumento DocConsoc; // CONTRATO SOCIAL 
-		private TipoDocumento DocAltcon; // ALTERA√á√ÉO CONTRATUAL
+		private TipoDocumento DocAltcon; // ALTERA«√O CONTRATUAL
 		private TipoDocumento DocDist;   // DISTRATO
-		private TipoDocumento DocAta;    // ATA DE REUNI√ÉO/ASSEMBL√âIA
-		private TipoDocumento DocReqemp; // REQUERIMENTO DE EMPRES√ÅRIO
+		private TipoDocumento DocAta;    // ATA DE REUNI√O/ASSEMBL…IA
+		private TipoDocumento DocReqemp; // REQUERIMENTO DE EMPRES¡RIO
 		private TipoDocumento DocEnquad; // ENQUADRAMENTO
 		private TipoDocumento DocDesenq; // DESENQUADRAMENTO 
 		private TipoDocumento DocReenq;  // REENQUADRAMENTO
-		private TipoDocumento DocBalreg; // BALAN√áO REGISTRADO
-		private TipoDocumento DocProinc; // PROTOCOLO E JUSTIFICA√á√ÉO 
-		private TipoDocumento DocParal;  // PARALISA√á√ÉO
-		private TipoDocumento DocLavpal; // LAUDO DE AVALIA√á√ÉO DO PATRIM√îNIO L√çQUIDO
+		private TipoDocumento DocBalreg; // BALAN«O REGISTRADO
+		private TipoDocumento DocProinc; // PROTOCOLO E JUSTIFICA«√O 
+		private TipoDocumento DocParal;  // PARALISA«√O
+		private TipoDocumento DocLavpal; // LAUDO DE AVALIA«√O DO PATRIM‘NIO LÕQUIDO
 		private TipoDocumento DocEstat;  // ESTATUTO 
 		private TipoDocumento DocCnpj;   // CNPJ
-		private TipoDocumento DocCertbx; // CERTID√ÉO DE BAIXA
-		private TipoDocumento DocInsest; // INSCRI√á√ÉO ESTADUAL
-		private TipoDocumento DocLdexcb; // CERTID√ÉO DE BAIXA DA INSCRI√á√ÉO ESTADUAL
-		private TipoDocumento DocCertcb; // CERTIF DE APROVA√á√ÉO DO CORPO DE BOMBEIROS
-		private TipoDocumento DocAlvara; // ALVAR√Å
-		private TipoDocumento DocFincad; // FICHA DE INFORMA√á√ïES CADASTRAIS
+		private TipoDocumento DocCertbx; // CERTID√O DE BAIXA
+		private TipoDocumento DocInsest; // INSCRI«√O ESTADUAL
+		private TipoDocumento DocLdexcb; // CERTID√O DE BAIXA DA INSCRI«√O ESTADUAL
+		private TipoDocumento DocCertcb; // CERTIF DE APROVA«√O DO CORPO DE BOMBEIROS
+		private TipoDocumento DocAlvara; // ALVAR¡
+		private TipoDocumento DocFincad; // FICHA DE INFORMA«’ES CADASTRAIS
 		private TipoDocumento DocBxiss;  // MEMORANDO DE BAIXA ISS
-		private TipoDocumento DocBxalv;  // ALVAR√Å BAIXADO
-		private TipoDocumento DocSanipj; // TERMO DE LICEN√áA DE FUNCIONAMENTO SANIT√ÅRIO
-		private TipoDocumento DocCis;    // CERTIFICADO DE INSPE√á√ÉO SANIT√ÅRIA
-		private TipoDocumento DocSanipf; // TERMO DE ASSENTIMENTO SANIT√ÅRIO
-		private TipoDocumento DocSmtr;   // CERTID√ÉO DE ASSESSIBILIDADE 
-		private TipoDocumento DocSmo;    // DECLARA√á√ÉO DE REBAIXAMENTO DE MEIO FIO
-		private TipoDocumento DocCinstc; // CERTID√ÉO DE INSTALA√á√ÉO COMERCIAL
+		private TipoDocumento DocBxalv;  // ALVAR¡ BAIXADO
+		private TipoDocumento DocSanipj; // TERMO DE LICEN«A DE FUNCIONAMENTO SANIT¡RIO
+		private TipoDocumento DocCis;    // CERTIFICADO DE INSPE«√O SANIT¡RIA
+		private TipoDocumento DocSanipf; // TERMO DE ASSENTIMENTO SANIT¡RIO
+		private TipoDocumento DocSmtr;   // CERTID√O DE ASSESSIBILIDADE 
+		private TipoDocumento DocSmo;    // DECLARA«√O DE REBAIXAMENTO DE MEIO FIO
+		private TipoDocumento DocCinstc; // CERTID√O DE INSTALA«√O COMERCIAL
 		private TipoDocumento DocHabite; // HABITE-SE 
-		private TipoDocumento DocCtrans; // CERTID√ÉO DE TRANSFORMA√á√ÉO DE USO
+		private TipoDocumento DocCtrans; // CERTID√O DE TRANSFORMA«√O DE USO
 		private TipoDocumento DocSmac;   // REQUERIMENTO DE MEIO AMBIENTE 
-		private TipoDocumento DocPlpubl; // PLANTA DE AUTORIZA√á√ÉO DE PUBLICIDADE: Baixada
-		private TipoDocumento DocPlpuba; // PLANTA DE AUTORIZA√á√ÉO DE PUBLICIDADE: Autorizada
+		private TipoDocumento DocPlpubl; // PLANTA DE AUTORIZA«√O DE PUBLICIDADE: Baixada
+		private TipoDocumento DocPlpuba; // PLANTA DE AUTORIZA«√O DE PUBLICIDADE: Autorizada
 		private TipoDocumento DocTxmeca; // TAXA DE MESAS E CADEIRAS 
 		private TipoDocumento DocTxpubl; // TAXA DE PUBLICIDADE 
 		private TipoDocumento DocIptu;   // IPTU 
-		private TipoDocumento DocConloc; // CONTRATO DE LOCA√á√ÉO 
-		private TipoDocumento DocCpf;    // CPF DOS S√ìCIOS
-		private TipoDocumento DocRg;     // RG DOS S√ìCIOS
-		private TipoDocumento DocCompre; // COMPROVANTE DE RESID√äNCIA DOS S√ìCIOS
+		private TipoDocumento DocConloc; // CONTRATO DE LOCA«√O 
+		private TipoDocumento DocCpf;    // CPF DOS S”CIOS
+		private TipoDocumento DocRg;     // RG DOS S”CIOS
+		private TipoDocumento DocCompre; // COMPROVANTE DE RESID NCIA DOS S”CIOS
 		private TipoDocumento DocRegpro; // REGISTRO PROFISSIONAL 
 		private TipoDocumento DocPcv;    // PROMESSA DE COMPRA E VENDA
-		private TipoDocumento DocNit;    // NIT - NUMERO DE INSCRI√á√ÉO DO TRABALHADOR/S√ìCIO
+		private TipoDocumento DocNit;    // NIT - NUMERO DE INSCRI«√O DO TRABALHADOR/S”CIO
 		private TipoDocumento DocProtoc; // PROTOCOLO
-		private TipoDocumento DocQdrsoc; // QUADRO SOCIET√ÅRIO
-		private TipoDocumento DocLbomb;  // LAUDO DE EXIG√äNCIAS DO CORPO DE BOMBEIROS
-		private TipoDocumento DocProarq; // PROJETO ARQUITET√îNICO APROVADO
-		private TipoDocumento DocCartrn; // CARTA DE REN√öNCIA
+		private TipoDocumento DocQdrsoc; // QUADRO SOCIET¡RIO
+		private TipoDocumento DocLbomb;  // LAUDO DE EXIG NCIAS DO CORPO DE BOMBEIROS
+		private TipoDocumento DocProarq; // PROJETO ARQUITET‘NICO APROVADO
+		private TipoDocumento DocCartrn; // CARTA DE REN⁄NCIA
 		private TipoDocumento Doctermpo; // TERMO DE POSSE
-		private TipoDocumento DocCtint;  // CERTID√ÉO INTEIRO TEOR - JUCERJA
-		private TipoDocumento DocSimp; // CERTID√ÉO SIMPLIFICADA - JUCERJA
-		private TipoDocumento DocNegiss; // CERTID√ÉO NEGATIVA ISS
-		private TipoDocumento DocNdae; // CERTID√ÉO NEG. DIVIDA ATIVA DO ESTADO
-		private TipoDocumento DocNdam; // CERTID√ÉO NEG. DIVIDA ATIVA DO MUNIC√çPIO
-		private TipoDocumento DocCftc; // CERTID√ÉO DE FEITOS TRABALHISTAS - CND
-		private TipoDocumento DocNicmsc; // CERTID√ÉO NEG. ICMS - CONTRIBUINTE
-		private TipoDocumento DocNicmsn; // CERTID√ÉO NEG. ICMS - N√ÉO CONTRIBUINTE
-		private TipoDocumento DocNcduin; // CERTID√ÉO NEGATIVA CONJUNTA DE TRIBUTOS FEDERAIS|DIVIDA ATIVA DA UNI√ÉO|INSS
-		private TipoDocumento DocInecf; // INFORMA√á√ïES ECF
+		private TipoDocumento DocCtint;  // CERTID√O INTEIRO TEOR - JUCERJA
+		private TipoDocumento DocSimp; // CERTID√O SIMPLIFICADA - JUCERJA
+		private TipoDocumento DocNegiss; // CERTID√O NEGATIVA ISS
+		private TipoDocumento DocNdae; // CERTID√O NEG. DIVIDA ATIVA DO ESTADO
+		private TipoDocumento DocNdam; // CERTID√O NEG. DIVIDA ATIVA DO MUNICÕPIO
+		private TipoDocumento DocCftc; // CERTID√O DE FEITOS TRABALHISTAS - CND
+		private TipoDocumento DocNicmsc; // CERTID√O NEG. ICMS - CONTRIBUINTE
+		private TipoDocumento DocNicmsn; // CERTID√O NEG. ICMS - N√O CONTRIBUINTE
+		private TipoDocumento DocNcduin; // CERTID√O NEGATIVA CONJUNTA DE TRIBUTOS FEDERAIS|DIVIDA ATIVA DA UNI√O|INSS
+		private TipoDocumento DocInecf; // INFORMA«’ES ECF
 		private TipoDocumento DocRCC; //  RCC
-		private TipoDocumento DocIntima; // INTIMA√á√ÉO
-		private TipoDocumento DocNotif; // NOTIFICA√á√ÉO
-		private TipoDocumento DocCitac; // CITA√á√ÉO
+		private TipoDocumento DocIntima; // INTIMA«√O
+		private TipoDocumento DocNotif; // NOTIFICA«√O
+		private TipoDocumento DocCitac; // CITA«√O
 		private TipoDocumento DocPenho; // PENHORA
-		private TipoDocumento DocOficio; // OF√çCIO
+		private TipoDocumento DocOficio; // OFÕCIO
 		private TipoDocumento DocManda; // MANDADO
+		private TipoDocumento DocPdbxie; // PEDIDO DE BAIXA DE INSCRI«√O ESTADUAL
+		private TipoDocumento DocJucerj; // PROCURA«√O JUCERJA
 				
 			
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 		
 //-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 			
@@ -98,80 +100,82 @@ public class Societario {
 		private ArrayList<TipoDocumento> TiposEst; // TIPOS ESTADUAL
 		private ArrayList<TipoDocumento> TiposMun; // TIPOS MUNICIPAL
 		private ArrayList<TipoDocumento> TiposDvrs; // TIPOS DIVERSOS
-		private ArrayList<TipoDocumento> TiposCertd; // TIPOS CERTID√ïES
+		private ArrayList<TipoDocumento> TiposCertd; // TIPOS CERTID’ES
 		private ArrayList<TipoDocumento> TiposDocJu; // TIPOS DOCUMENTOS JUDICIAIS
 			
-//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+//-----------------------FIM DA DECLARA«√O----------------------------//
 		
 		private ArrayList<Organizacao> organizacoes;
 		private Unidade soc;
 			
 		public Societario(){
 			setDocConsoc(new TipoDocumento(1,"Contrato Social","CONSOC"));
-			setDocAltcon(new TipoDocumento(2,"Altera√ß√£o Contratual","ALTCON"));
+			setDocAltcon(new TipoDocumento(2,"AlteraÁ„o Contratual","ALTCON"));
 			setDocDist(new TipoDocumento(3,"Distrato","DIST"));
-			setDocAta(new TipoDocumento(4,"Ata de Reuni√£o-Assembleia","ATA"));
-			setDocReqemp(new TipoDocumento(5,"Requerimento de Empres√°rio","REQEMP"));
+			setDocAta(new TipoDocumento(4,"Ata de Reuni„o-Assembleia","ATA"));
+			setDocReqemp(new TipoDocumento(5,"Requerimento de Empres·rio","REQEMP"));
 			setDocEnquad(new TipoDocumento(6, "Enquadramento", "ENQUAD"));
 			setDocDesenq(new TipoDocumento(7,"Desenquadramento","DESENQ"));
 			setDocReenq(new TipoDocumento(8,"Reequadramento","REENQ"));
-			setDocBalreg(new TipoDocumento(9,"Balan√ßo Registrado","BALREG"));
-			setDocProinc(new TipoDocumento(10,"Protocolo e Justifica√ß√£o","PROINC"));
-			setDocParal(new TipoDocumento(11,"Paralisa√ß√£o","PARAL"));
-			setDocLavpal(new TipoDocumento(12,"Laudo de Avalia√ß√£o do Patrim√¥nio L√≠quido","LAVPAL"));
+			setDocBalreg(new TipoDocumento(9,"BalanÁo Registrado","BALREG"));
+			setDocProinc(new TipoDocumento(10,"Protocolo e JustificaÁ„o","PROINC"));
+			setDocParal(new TipoDocumento(11,"ParalisaÁ„o","PARAL"));
+			setDocLavpal(new TipoDocumento(12,"Laudo de AvaliaÁ„o do PatrimÙnio LÌquido","LAVPAL"));
 			setDocEstat(new TipoDocumento(13,"Estatuto","ESTAT"));
 			setDocCnpj(new TipoDocumento(14,"CNPJ","CNPJ"));
-			setDocCertbx(new TipoDocumento(15, "Certid√£o de Baixa", "CERTBX"));
-			setDocInsest(new TipoDocumento(16, "Inscri√ß√£o Estadual", "INSEST"));
-			setDocLdexcb(new TipoDocumento(17, "Certid√£o de Baixa de Inscri√ß√£o Estadual", "LDEXCB"));
-			setDocCertcb(new TipoDocumento(18, "Certificado de Aprova√ß√£o do Corpo de Bombeiros", "CERTCB"));
-			setDocAlvara(new TipoDocumento(19, "Alvar√°", "ALVARA"));
-			setDocFincad(new TipoDocumento(20, "Ficha de Informa√ß√µes Cadastrais", "FINCAD"));
+			setDocCertbx(new TipoDocumento(15, "Certid„o de Baixa", "CERTBX"));
+			setDocInsest(new TipoDocumento(16, "InscriÁ„o Estadual", "INSEST"));
+			setDocLdexcb(new TipoDocumento(17, "Certid„o de Baixa de InscriÁ„o Estadual", "LDEXCB"));
+			setDocCertcb(new TipoDocumento(18, "Certificado de AprovaÁ„o do Corpo de Bombeiros", "CERTCB"));
+			setDocAlvara(new TipoDocumento(19, "Alvar·", "ALVARA"));
+			setDocFincad(new TipoDocumento(20, "Ficha de InformaÁıes Cadastrais", "FINCAD"));
 			setDocBxiss(new TipoDocumento(21, "Memorando de Baixa Iss", "BXISS"));
-			setDocBxalv(new TipoDocumento(22, "Alvar√° Baixado", "BXALV"));
-			setDocSanipj(new TipoDocumento(23, "Termo de Licensa de Funcionamento Sanit√°rio", "SANIPJ"));
-			setDocCis(new TipoDocumento(24, "Certificado de Inspe√ß√£o Sanit√°ria", "CIS"));
-			setDocSanipf(new TipoDocumento(25, "Termo de Assentimento Sanit√°rio", "SANIPF"));
-			setDocSmtr(new TipoDocumento(26, "Certid√£o de Acessibilidade", "SMTR"));
-			setDocSmo(new TipoDocumento(27, "Declara√ß√£o de Rebaixamento de Meio Fio", "SMO"));
-			setDocCinstc(new TipoDocumento(28, "Certid√£o de Instala√ß√£o Comercial", "CINSCT"));
+			setDocBxalv(new TipoDocumento(22, "Alvar· Baixado", "BXALV"));
+			setDocSanipj(new TipoDocumento(23, "Termo de Licensa de Funcionamento Sanit·rio", "SANIPJ"));
+			setDocCis(new TipoDocumento(24, "Certificado de InspeÁ„o Sanit·ria", "CIS"));
+			setDocSanipf(new TipoDocumento(25, "Termo de Assentimento Sanit·rio", "SANIPF"));
+			setDocSmtr(new TipoDocumento(26, "Certid„o de Acessibilidade", "SMTR"));
+			setDocSmo(new TipoDocumento(27, "DeclaraÁ„o de Rebaixamento de Meio Fio", "SMO"));
+			setDocCinstc(new TipoDocumento(28, "Certid„o de InstalaÁ„o Comercial", "CINSCT"));
 			setDocHabite(new TipoDocumento(29, "Habite-se", "HABITE"));
-			setDocCtrans(new TipoDocumento(30, "Certid√£o de Transforma√ß√£o de Uso", "CTRANS"));
+			setDocCtrans(new TipoDocumento(30, "Certid„o de TransformaÁ„o de Uso", "CTRANS"));
 			setDocSmac(new TipoDocumento(31, "Requerimento de Meio Ambiente", "SMAC"));
 			setDocPlpubl(new TipoDocumento(32, "Publicidade Baixada", "PLPUBL"));
 			setDocTxmeca(new TipoDocumento(33, "Taxa de Mesas e Cadeiras", "TXMECA"));
 			setDocTxpubl(new TipoDocumento(34, "Taxa de Publicidade", "TXPUBL"));
 			setDocIptu(new TipoDocumento(35, "Iptu", "IPTU"));
-			setDocConloc(new TipoDocumento(36, "Contrato de Loca√ß√£o", "CONLOC"));
-			setDocCpf(new TipoDocumento(37, "Cpf dos S√≥cios", "CPF"));
-			setDocRg(new TipoDocumento(38, "Rg dos S√≥cios", "RG"));
-			setDocCompre(new TipoDocumento(39, "Comprovante de Resid√™ncia dos S√≥cios", "COMPRE"));
+			setDocConloc(new TipoDocumento(36, "Contrato de LocaÁ„o", "CONLOC"));
+			setDocCpf(new TipoDocumento(37, "Cpf dos SÛcios", "CPF"));
+			setDocRg(new TipoDocumento(38, "Rg dos SÛcios", "RG"));
+			setDocCompre(new TipoDocumento(39, "Comprovante de ResidÍncia dos SÛcios", "COMPRE"));
 			setDocRegpro(new TipoDocumento(40, "Registro Profissional", "REGPRO"));
 			setDocPcv(new TipoDocumento(41, "Promessa de Compra e Venda", "PCV"));
-			setDocNit(new TipoDocumento(42, "N√∫mero de Inscri√ß√£o do Trabalhador-S√≥cio", "NIT"));
+			setDocNit(new TipoDocumento(42, "N˙mero de InscriÁ„o do Trabalhador-SÛcio", "NIT"));
 			setDocProtoc(new TipoDocumento(43, "Protocolo", "PROTOC"));
-			setDocQdrsoc(new TipoDocumento(44, "Quadro Societ√°rio", "QDRSOC"));
+			setDocQdrsoc(new TipoDocumento(44, "Quadro Societ·rio", "QDRSOC"));
 			setDocPlpuba(new TipoDocumento(45, "Publicidade Aprovada", "PLPUBL"));
-			setDocLbomb(new TipoDocumento(46, "Laudo de Exig√™ncias do Corpo de Bombeiros","LBOMB"));
-			setDocProarq(new TipoDocumento(47,"Projeto Arquitet√¥nico Aprovado","PROARQ"));
-			setDocCartrn(new TipoDocumento(48, "Carta de Ren√∫ncia","CARTRN"));
+			setDocLbomb(new TipoDocumento(46, "Laudo de ExigÍncias do Corpo de Bombeiros","LBOMB"));
+			setDocProarq(new TipoDocumento(47,"Projeto ArquitetÙnico Aprovado","PROARQ"));
+			setDocCartrn(new TipoDocumento(48, "Carta de Ren˙ncia","CARTRN"));
 			setDoctermpo(new TipoDocumento(49, "Termo de Posse","TERMPO"));
-			setDocCtint(new TipoDocumento(50, "Certid√£o Inteiro Teor - JUCERJA","CTINT"));
-			setDocSimp(new TipoDocumento(51, "Certid√£o Simplificada - JUCERJA","SIMP"));
-			setDocNegiss(new TipoDocumento(52, "Certid√£o Negativa ISS","NEGISS"));
-			setDocNdae(new TipoDocumento(53, "Certid√£o Neg. Divida Ativa do Estado","NDAE"));
-			setDocNdam(new TipoDocumento(54, "Certid√£o Neg. Divida Ativa do Munic√≠pio","NDAM"));
-			setDocCftc(new TipoDocumento(55, "Certid√£o de Feitos Trabalhistas - CND","CFTC"));
-			setDocNicmsc(new TipoDocumento(56, "Certid√£o Neg. ICMS - Contribuinte","NICMSC"));
-			setDocNicmsn(new TipoDocumento(57, "Certid√£o Neg. ICMS - N√£o contribuinte","NICMSN"));
-			setDocNcduin(new TipoDocumento(58, "Certid√£o Negativa Conjunta de Tributos Federais-Divida Ativa da Uni√£o-INSS","NCDUIN"));
-			setDocInecf(new TipoDocumento(59, "Informa√ß√µes ECF", "INECF"));
+			setDocCtint(new TipoDocumento(50, "Certid„o Inteiro Teor - JUCERJA","CTINT"));
+			setDocSimp(new TipoDocumento(51, "Certid„o Simplificada - JUCERJA","SIMP"));
+			setDocNegiss(new TipoDocumento(52, "Certid„o Negativa ISS","NEGISS"));
+			setDocNdae(new TipoDocumento(53, "Certid„o Neg. Divida Ativa do Estado","NDAE"));
+			setDocNdam(new TipoDocumento(54, "Certid„o Neg. Divida Ativa do MunicÌpio","NDAM"));
+			setDocCftc(new TipoDocumento(55, "Certid„o de Feitos Trabalhistas - CND","CFTC"));
+			setDocNicmsc(new TipoDocumento(56, "Certid„o Neg. ICMS - Contribuinte","NICMSC"));
+			setDocNicmsn(new TipoDocumento(57, "Certid„o Neg. ICMS - N„o contribuinte","NICMSN"));
+			setDocNcduin(new TipoDocumento(58, "Certid„o Negativa Conjunta de Tributos Federais-Divida Ativa da Uni„o-INSS","NCDUIN"));
+			setDocInecf(new TipoDocumento(59, "InformaÁıes ECF", "INECF"));
 			setDocRCC(new TipoDocumento(60, "RCC", "RCC"));
-			setDocNotif(new TipoDocumento(61, "Notifica√ß√µes", "NOTIF"));
-			setDocCitac(new TipoDocumento(62, "Cita√ß√£o", "CITAC"));
+			setDocNotif(new TipoDocumento(61, "NotificaÁıes", "NOTIF"));
+			setDocCitac(new TipoDocumento(62, "CitaÁ„o", "CITAC"));
 			setDocPenho(new TipoDocumento(63, "Penhora", "PENHO"));
-			setDocOficio(new TipoDocumento(64, "Of√≠cio", "OFICIO"));
+			setDocOficio(new TipoDocumento(64, "OfÌcio", "OFICIO"));
 			setDocManda(new TipoDocumento(65, "Mandado", "MANDA"));
+			setDocPdbxie(new TipoDocumento(66, "Pedido de Baixa de InscriÁ„o Estadual", "PDBXIE"));
+			setDocJucerj(new TipoDocumento(67, "ProcuraÁ„o Jucerja", "JUCERJ"));
 			
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
@@ -194,7 +198,8 @@ public class Societario {
 			TiposAtos.add(getDocEstat());
 			TiposAtos.add(getDocEnquad());
 			TiposAtos.add(getDocCartrn());
-			TiposAtos.add(getDoctermpo());			
+			TiposAtos.add(getDoctermpo());
+			TiposAtos.add(getDocJucerj());
 			
 			TiposFed.add(getDocCnpj());
 			TiposFed.add(getDocCertbx());
@@ -210,6 +215,7 @@ public class Societario {
 			TiposEst.add(getDocLbomb());
 			TiposEst.add(getDocProarq());
 			TiposEst.add(getDocInecf());
+			TiposEst.add(getDocPdbxie());
 			
 			TiposMun.add(getDocAlvara());
 			TiposMun.add(getDocFincad());
@@ -263,7 +269,7 @@ public class Societario {
 			setEst(new Organizacao(3,"Estadual","EST",TiposEst));
 			setMun(new Organizacao(4,"Municipal","MUN",TiposMun));
 			setDvrs(new Organizacao(5,"Diversos","DVRS",TiposDvrs));
-			setCertd(new Organizacao(6, "Certid√µes","CERTD", TiposCertd));
+			setCertd(new Organizacao(6, "Certidıes","CERTD", TiposCertd));
 			setDocJu(new Organizacao(7,"Documentos Judiciais","DOCJU", TiposDocJu));
 			
 			setOrganizacoes(new ArrayList<Organizacao>());
@@ -275,9 +281,9 @@ public class Societario {
 			getOrganizacoes().add(getCertd());
 			getOrganizacoes().add(getDocJu());
 			
-			setSoc(new Unidade(5,"Societ√°rio","SC",getOrganizacoes()));
+			setSoc(new Unidade(5,"Societ·rio","SC",getOrganizacoes()));
 			
-			/* Organiza√ß√£o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+			/* OrganizaÁ„o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
 			Collections.sort(getTiposAtos(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposDvrs(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposEst(), new ComparadorTipoDocumento());
@@ -349,16 +355,25 @@ public class Societario {
 			TiposAtos = tiposAtos;
 		}
 		
-		public Organizacao getDocJu() {
-			return DocJu;
-		}
-
-		public void setDocJu(Organizacao docJu) {
-			DocJu = docJu;
-		}
-		
+	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocJucerj() {
+			return DocJucerj;
+		}
+
+		public void setDocJucerj(TipoDocumento docJucerj) {
+			DocJucerj = docJucerj;
+		}
+
+		public TipoDocumento getDocPdbxie() {
+			return DocPdbxie;
+		}
+
+		public void setDocPdbxie(TipoDocumento docPdbxie) {
+			DocPdbxie = docPdbxie;
+		}
+
 		public TipoDocumento getDocManda() {
 			return DocManda;
 		}
@@ -993,6 +1008,15 @@ public class Societario {
 		public void setCertd(Organizacao certd) {
 			Certd = certd;
 		}
+		
+		public Organizacao getDocJu() {
+			return DocJu;
+		}
+
+		public void setDocJu(Organizacao docJu) {
+			DocJu = docJu;
+		}
+		
 		
 		public Organizacao getDvrs() {
 			return Dvrs;

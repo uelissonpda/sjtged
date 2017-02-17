@@ -10,16 +10,16 @@ import java.util.Collections;
 import co.fcode.ged18.*;
 
 public class Admapo {
-	//-------------------VARI√ÅVEIS TIPOS DE ORGANIZA√á√ÉO-------------------//
+	//-------------------VARI¡VEIS TIPOS DE ORGANIZA«√O-------------------//
 		
 			private Organizacao com;  // COMUNICADOS
 			private Organizacao doc;  // DOCUMENTOS
 			private Organizacao extr; // EXTRATOS
-			private Organizacao nfr; // NOTAS COM RETEN√á√ÉO
+			private Organizacao nfr; // NOTAS COM RETEN«√O
 
-	//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+	//-----------------------FIM DA DECLARA«√O----------------------------//
 
-	//-------------------VARI√ÅVEIS TIPOS DE DOCUMENTOS-------------------//
+	//-------------------VARI¡VEIS TIPOS DE DOCUMENTOS-------------------//
 			
 			private TipoDocumento DocMens; // MENSAL
 			private TipoDocumento DocTrim; // TRIMESTRAL
@@ -28,23 +28,23 @@ public class Admapo {
 			private TipoDocumento DocAlug; // ALUGUEL
 			private TipoDocumento DocCont; // CONTABILIDADE
 			private TipoDocumento DocDp;   // DEPARTAMENTO PESSOAL
-			private TipoDocumento DocBanc; // BANC√ÅRIOS
+			private TipoDocumento DocBanc; // BANC¡RIOS
 			private TipoDocumento DocInvt; // INVESTIMENTOS
-			private TipoDocumento DocCcre; // CART√ÉO DE CR√âDITO
+			private TipoDocumento DocCcre; // CART√O DE CR…DITO
 			private TipoDocumento DocNfrj; // NOTA FISCAL RJ
-			private TipoDocumento DocNfsp; // NOTA FISCAL S√ÉO PAULO
+			private TipoDocumento DocNfsp; // NOTA FISCAL S√O PAULO
 			private TipoDocumento DocNfoe; // NOTA FISCAL OUTROS ESTADOS
 			
-	//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+	//-----------------------FIM DA DECLARA«√O----------------------------//
 			
 	//-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 			
 			private ArrayList<TipoDocumento> TiposCom; // TIPOS COMUNICADOS
 			private ArrayList<TipoDocumento> TiposDoc; // TIPOS DOCUMENTOS
 			private ArrayList<TipoDocumento> TiposExtr;// TIPOS EXTRATOS
-			private ArrayList<TipoDocumento> TiposNfr; // TIPOS NOTAS COM RETEN√á√ÉO
+			private ArrayList<TipoDocumento> TiposNfr; // TIPOS NOTAS COM RETEN«√O
 			
-	//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
+	//-----------------------FIM DA DECLARA«√O----------------------------//
 			
 			private ArrayList<Organizacao> organizacoes;
 			private Unidade admapo;
@@ -57,9 +57,9 @@ public class Admapo {
 				setDocAlug(new TipoDocumento(5, "Aluguel", "ALUG"));
 				setDocCont(new TipoDocumento(6, "Contabilidade", "CONT"));
 				setDocDp(new TipoDocumento(7, "Departamento Pessoal", "DP"));
-				setDocBanc(new TipoDocumento(8, "Banc√°rios", "BANC"));
+				setDocBanc(new TipoDocumento(8, "Banc·rios", "BANC"));
 				setDocInvt(new TipoDocumento(9, "Investimentos", "INVT"));
-				setDocCcre(new TipoDocumento(10, "Cart√£o de Cr√©dito", "CCRE"));
+				setDocCcre(new TipoDocumento(10, "Cart„o de CrÈdito", "CCRE"));
 				setDocNfrj(new TipoDocumento(11, "Nota Fiscal RJ", "NFRJ"));
 				setDocNfsp(new TipoDocumento(12, "Nota Fiscal SP", "NFSP"));
 				setDocNfoe(new TipoDocumento(13, "Nota Fiscal Outros Estados", "NFOE"));
@@ -90,7 +90,7 @@ public class Admapo {
 				setCom(new Organizacao(1,"Comunicados","COM",TiposCom));
 				setDoc(new Organizacao(2,"Documentos","DOC",TiposDoc));
 				setExtr(new Organizacao(3,"Extratos","EXTR",TiposExtr));
-				setNfr(new Organizacao(4,"Notas com Reten√ß√£o","NFR",TiposNfr));
+				setNfr(new Organizacao(4,"Notas com RetenÁ„o","NFR",TiposNfr));
 				
 				setOrganizacoes(new ArrayList<Organizacao>());
 				getOrganizacoes().add(getCom());
@@ -100,7 +100,7 @@ public class Admapo {
 				
 				setAdmapo(new Unidade(0,"Admapo","AD",getOrganizacoes()));
 				
-				/* Organiza√ß√£o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+				/* OrganizaÁ„o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
 				Collections.sort(getTiposCom(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposDoc(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposExtr(), new ComparadorTipoDocumento());
