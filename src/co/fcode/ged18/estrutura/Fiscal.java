@@ -8,42 +8,42 @@ import co.fcode.ged18.*;
 *@author UANJOS*
 ***************/
 public class Fiscal {
-//-------------------VARI¡VEIS TIPOS DE ORGANIZA«√O-------------------//
+//-------------------VARI√ÅVEIS TIPOS DE ORGANIZA√á√ÉO-------------------// 
 	
 		private Organizacao tdm;  // 
 		private Organizacao sepd; // 
 		private Organizacao xml;  // 
-		private Organizacao spdc; // SPED CONTRIBUI«’ES
+		private Organizacao spdc; // SPED CONTRIBUI√á√ïES
 		private Organizacao spdf; // SPED FISCAL
 		private Organizacao dcla; // DECLAN
 		private Organizacao dub;  // 
 		private Organizacao sn;   // SIMPLES NACIONAL
 		private Organizacao gia;  // 
-		private Organizacao mcal; // MEM”RIA DE C¡LCULO
-		private Organizacao trib; // IMPOSTOS/CONTRIBUI«’ES
+		private Organizacao mcal; // MEM√ìRIA DE C√ÅLCULO
+		private Organizacao trib; // IMPOSTOS/CONTRIBUI√á√ïES
 		private Organizacao parc; // PARCELAMENTO
 		private Organizacao mun; // PARCELAMENTO
 		
 		
 
-//-----------------------FIM DA DECLARA«√O----------------------------//
+//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
 
-//-------------------VARI¡VEIS TIPOS DE DOCUMENTOS-------------------//
+//-------------------VARI√ÅVEIS TIPOS DE DOCUMENTOS-------------------//
 			
 		private TipoDocumento DocTdm;    // 
 		private TipoDocumento DocAutliv; //
 		private TipoDocumento DocXmle;   // XML Entrada
-		private TipoDocumento DocXmls;   // XML SaÌda
+		private TipoDocumento DocXmls;   // XML Sa√≠da
 		private TipoDocumento DocXmliss; // 
-		private TipoDocumento DocDecl;   // DECLARA«√O
+		private TipoDocumento DocDecl;   // DECLARA√á√ÉO
 		private TipoDocumento DocArqtxt; // Arquivo TXT
 		private TipoDocumento DocRecent; // RECIBO DE ENTREGA
-		private TipoDocumento DocMemapu; // APURA«√O
+		private TipoDocumento DocMemapu; // APURA√á√ÉO
 		private TipoDocumento DocExtrat; // EXTRATO
 		private TipoDocumento DocEsplho; // ESPELHO
 		private TipoDocumento DocPiscof; // Pis e Cofins
 		private TipoDocumento DocCnefes; // 
-		private TipoDocumento DocTomret; // Tomadores/retenÁıes
+		private TipoDocumento DocTomret; // Tomadores/reten√ß√µes
 		private TipoDocumento DocSn;     // Simples Nacional
 		private TipoDocumento DocIrcsll; // IRPJ /CSLL 
 		private TipoDocumento DocIr1708; // 
@@ -63,28 +63,28 @@ public class Fiscal {
 		private TipoDocumento DocEstado; //
 		private TipoDocumento DocMunici; //
 		private TipoDocumento DocCodace; //
-		private TipoDocumento DocCepom; // INSCRI«√O CEPOM
+		private TipoDocumento DocCepom; // INSCRI√á√ÉO CEPOM
 		
 			
-//-----------------------FIM DA DECLARA«√O----------------------------//
+//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
 			
 //-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 		
 		private ArrayList<TipoDocumento> TiposTdm;  // TIPOS 
 		private ArrayList<TipoDocumento> TiposSepd; // TIPOS 
 		private ArrayList<TipoDocumento> TiposXml;  // TIPOS 
-		private ArrayList<TipoDocumento> TiposSpdc; // TIPOS SPED CONT¡BIL
+		private ArrayList<TipoDocumento> TiposSpdc; // TIPOS SPED CONT√ÅBIL
 		private ArrayList<TipoDocumento> TiposSpdf; // TIPOS SPED FISCAL
 		private ArrayList<TipoDocumento> TiposDcla; // TIPOS DECLAN
 		private ArrayList<TipoDocumento> TiposDub;  // TIPOS 
 		private ArrayList<TipoDocumento> TiposSn;   // TIPOS SIMPLES NACIONAL
 		private ArrayList<TipoDocumento> TiposGia;  // TIPOS 
-		private ArrayList<TipoDocumento> TiposMcal; // TIPOS MEM”RIA DE C¡LCULO
-		private ArrayList<TipoDocumento> TiposTrib; // TIPOS IMPOSTOS/CONTRIBUI«’ES
+		private ArrayList<TipoDocumento> TiposMcal; // TIPOS MEM√ìRIA DE C√ÅLCULO
+		private ArrayList<TipoDocumento> TiposTrib; // TIPOS IMPOSTOS/CONTRIBUI√á√ïES
 		private ArrayList<TipoDocumento> TiposParc; // TIPOS PARCELAMENTOS
 		private ArrayList<TipoDocumento> TiposMun; // TIPOS CEPOM
 			
-//-----------------------FIM DA DECLARA«√O----------------------------//
+//-----------------------FIM DA DECLARA√á√ÉO----------------------------//
 		
 		private ArrayList<Organizacao> organizacoes;
 		private Unidade fiscal;
@@ -93,17 +93,17 @@ public class Fiscal {
 			setDocTdm(new TipoDocumento(1, "Tdm", "TDM"));
 			setDocAutliv(new TipoDocumento(2, "Sepd","SEPD"));
 			setDocXmle(new TipoDocumento(3,"XML Entrada","XMLE"));
-			setDocXmls(new TipoDocumento(4,"XML SaÌda","XMLS"));
+			setDocXmls(new TipoDocumento(4,"XML Sa√≠da","XMLS"));
 			setDocXmliss(new TipoDocumento(5,"XML Iss","XMLISS"));
-			setDocDecl(new TipoDocumento(6,"DeclaraÁ„o","DECL"));
+			setDocDecl(new TipoDocumento(6,"Declara√ß√£o","DECL"));
 			setDocArqtxt(new TipoDocumento(7,"Arquivo TXT","ARQTXT"));
 			setDocRecent(new TipoDocumento(8,"Recibo de Entrega","RECENT"));
-			setDocMemapu(new TipoDocumento(9,"ApuraÁ„o","MEMAPU"));
+			setDocMemapu(new TipoDocumento(9,"Apura√ß√£o","MEMAPU"));
 			setDocExtrat(new TipoDocumento(10,"Extrato","EXTRAT"));
 			setDocEsplho(new TipoDocumento(11,"Espelho","ESPLHO"));
 			setDocPiscof(new TipoDocumento(12,"PIS e COFINS","PISCOF"));
 			setDocCnefes(new TipoDocumento(13,"Cnefes","CNEFES"));
-			setDocTomret(new TipoDocumento(14,"Tomadores-RetenÁıes",""));
+			setDocTomret(new TipoDocumento(14,"Tomadores-Reten√ß√µes",""));
 			setDocSn(new TipoDocumento(15,"Simples Nacional","SN"));
 
 			setDocIrcsll(new TipoDocumento(16,"IRPJ-CSLL","IRCSLL"));
@@ -123,8 +123,8 @@ public class Fiscal {
 			setDocFedera(new TipoDocumento(30,"Federal","FEDERA"));
 			setDocEstado(new TipoDocumento(31,"Estadual","ESTADO"));
 			setDocMunici(new TipoDocumento(32,"Municipal","MUNICI"));
-			setDocCodace(new TipoDocumento(33,"CÛdigo de Acesso","CODACE"));
-			setDocCepom(new TipoDocumento(34, "InscriÁ„o CEPOM", "CEPOM"));
+			setDocCodace(new TipoDocumento(33,"C√≥digo de Acesso","CODACE"));
+			setDocCepom(new TipoDocumento(34, "Inscri√ß√£o CEPOM", "CEPOM"));
 			
 			
 			setTiposTdm(new ArrayList<TipoDocumento>());
@@ -197,14 +197,14 @@ public class Fiscal {
 			setTdm(new Organizacao(1,"Tdm","TDM",TiposTdm));
 			setSepd(new Organizacao(2,"Sepd","SEPD",TiposSepd));
 			setXml(new Organizacao(3,"Xml","XMLA",TiposXml));
-			setSpdc(new Organizacao(4,"Sped ContribuiÁıes","SPDC",TiposSpdc));
+			setSpdc(new Organizacao(4,"Sped Contribui√ß√µes","SPDC",TiposSpdc));
 			setSpdf(new Organizacao(5,"Sped Fiscal","SPDF",TiposSpdf));
 			setDcla(new Organizacao(6,"Declan","DCLA",TiposDcla));
 			setDub(new Organizacao(7,"Dub","DUB",TiposDub));
 			setSn(new Organizacao(8,"Simples Nacional","SN",TiposSn));
 			setGia(new Organizacao(9,"GIA","GIA",TiposGia));
-			setMcal(new Organizacao(10,"MemÛria de C·lculo","MCAL",TiposMcal));
-			setTrib(new Organizacao(11,"Impostos-ContribuiÁıes","TRIB",TiposTrib));
+			setMcal(new Organizacao(10,"Mem√≥ria de C√°lculo","MCAL",TiposMcal));
+			setTrib(new Organizacao(11,"Impostos-Contribui√ß√µes","TRIB",TiposTrib));
 			setParc(new Organizacao(12,"Parcelamento","PARC",TiposParc));
 			setMun(new Organizacao(13,"Municipal","MUN",TiposMun));
 			
@@ -225,7 +225,7 @@ public class Fiscal {
 			
 			setFiscal(new Unidade(4,"Fiscal","FS",getOrganizacoes()));
 			
-			/* OrganizaÁ„o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
+			/* Organiza√ß√£o dos Arrays em Ordem Crescente! - Fellipe Pimentel */
 			Collections.sort(getTiposDcla(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposDub(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposGia(), new ComparadorTipoDocumento());
