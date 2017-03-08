@@ -1,4 +1,4 @@
-package co.fcode.ged18.graficos.paginas;
+package co.fcode.ged18.graficos.paginas; 
 
 import java.awt.Color;
 import java.awt.Desktop;
