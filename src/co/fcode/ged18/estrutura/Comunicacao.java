@@ -8,7 +8,7 @@ import java.util.Collections;
 import co.fcode.ged18.*; 
 
 public class Comunicacao {
-//-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
+//-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------// 
 	
 	private Organizacao cext; // COMUNICADOS EXTERNOS
 	private Organizacao emen; // E-MAILS ENVIADOS
