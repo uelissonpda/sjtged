@@ -175,7 +175,7 @@ public class Societario {
 			setDocOficio(new TipoDocumento(64, "Ofício", "OFICIO"));
 			setDocManda(new TipoDocumento(65, "Mandado", "MANDA"));
 			setDocPdbxie(new TipoDocumento(66, "Pedido de Baixa de Inscrição Estadual", "PDBXIE"));
-			setDocJucerj(new TipoDocumento(67, "Procuração Jucerja", "JUCERJ"));
+			setDocJucerj(new TipoDocumento(67, "Procuração Jucerjaa", "JUCERJ"));
 			
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
