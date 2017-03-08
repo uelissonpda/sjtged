@@ -6,13 +6,13 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 @SuppressWarnings("serial")
-public class Copyright extends JLabel{
+public class Copyright extends JLabel{ 
 
 	public Copyright(){
 		this.setText(
 				"<html>"
 					+ "<div style='padding:3px; margin-right: 10px; font-size:7px;'>"
-						+ "<i><b>::</b></i> Desenvolvido por Fellipe Pimentel © 2015<br>"
+						+ "<i><b>::</b></i> Desenvolvido por Fellipe Pimentel Â© 2015<br>"
 						+ "<div style='margin-left:95px;'><i>www.fcode.co</i></div>"
 						+ "</div>" +
 			   "</html>"
