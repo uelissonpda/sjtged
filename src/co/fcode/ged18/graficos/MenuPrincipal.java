@@ -24,7 +24,7 @@ public class MenuPrincipal extends JMenuBar{
 	public MenuPrincipal(JTabbedPane jtp, Color c){
 		this.setBackground(new Color(66, 66, 66));
 		this.setBorderPainted(false);
-		this.setColor(c);
+		this.setColor(c); 
 		
 		// Janela Add's
 		this.add(Box.createHorizontalGlue());
@@ -37,7 +37,7 @@ public class MenuPrincipal extends JMenuBar{
 			jtp.removeAll();
 			Janela.tp.setText(b1.getText());
 			
-			jtp.addTab("Informações", new TratarArquivo());
+			jtp.addTab("InformaÃ§Ãµes", new TratarArquivo());
 			jtp.setIconAt(0, FuncoesExtras.buscarIcone("img/document.png"));
 			
 		});
