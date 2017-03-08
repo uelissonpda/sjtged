@@ -8,7 +8,7 @@ import java.util.Collections;
 import co.fcode.ged18.*;
 
 public class Contabil {
-//-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------// 
+//-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
 	
 			private Organizacao blnc; // BALANÇOS
 			private Organizacao dre;  // DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO
