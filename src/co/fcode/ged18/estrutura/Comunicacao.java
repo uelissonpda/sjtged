@@ -5,7 +5,7 @@ package co.fcode.ged18.estrutura;
 import java.util.ArrayList; 
 import java.util.Collections;
 
-import co.fcode.ged18.*;
+import co.fcode.ged18.*; 
 
 public class Comunicacao {
 //-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
