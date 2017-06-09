@@ -125,7 +125,6 @@ public class DepartamentoPessoal {
 		TiposDvrs.add(getDocReproc());
 		TiposDvrs.add(getDocCnd());
 		TiposDvrs.add(getDocCrf());
-		TiposDvrs.add(getDocCrf());
 		TiposDvrs.add(getDocCndtra());
 		TiposDvrs.add(getDocDeclar());
 		TiposDvrs.add(getDocDataba());

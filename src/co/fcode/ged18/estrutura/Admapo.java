@@ -76,7 +76,6 @@ public class Admapo {
 				TiposDoc.add(getDocFisc());
 				TiposDoc.add(getDocAlug());
 				TiposDoc.add(getDocCont());
-				TiposDoc.add(getDocCont());
 				TiposDoc.add(getDocDp());
 				
 				TiposExtr.add(getDocBanc());

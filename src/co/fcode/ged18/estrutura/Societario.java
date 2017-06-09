@@ -89,6 +89,8 @@ public class Societario {
 		private TipoDocumento DocManda; // MANDADO
 		private TipoDocumento DocPdbxie; // PEDIDO DE BAIXA DE INSCRIÇÃO ESTADUAL
 		private TipoDocumento DocJucerj; // PROCURAÇÃO JUCERJA
+		private TipoDocumento DocCnhsoc; // CNH OS SÓCIOS
+		private TipoDocumento DocCecaso; // CERTIDÃO DE CASAMENTO DOS SÓCIOS
 				
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -175,7 +177,9 @@ public class Societario {
 			setDocOficio(new TipoDocumento(64, "Ofício", "OFICIO"));
 			setDocManda(new TipoDocumento(65, "Mandado", "MANDA"));
 			setDocPdbxie(new TipoDocumento(66, "Pedido de Baixa de Inscrição Estadual", "PDBXIE"));
-			setDocJucerj(new TipoDocumento(67, "Procuração Jucerjaa", "JUCERJ"));
+			setDocJucerj(new TipoDocumento(67, "Procuração Jucerja", "JUCERJ"));
+			setDocCnhsoc(new TipoDocumento(68, "CNH dos Sócios","CNHSOC"));
+			setDocCecaso(new TipoDocumento(69, "Certidão de Casamento dos Sócios", "CECASO"));
 			
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
@@ -246,6 +250,8 @@ public class Societario {
 			TiposDvrs.add(getDocPcv());
 			TiposDvrs.add(getDocNit());
 			TiposDvrs.add(getDocRCC());
+			TiposDvrs.add(getDocCnhsoc());
+			TiposDvrs.add(getDocCecaso());
 			
 			TiposCertd.add(getDocCtint());
 			TiposCertd.add(getDocSimp());
@@ -358,6 +364,22 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocCecaso() {
+			return DocCecaso;
+		}
+
+		public void setDocCecaso(TipoDocumento docCecaso) {
+			DocCecaso = docCecaso;
+		}
+
+		public TipoDocumento getDocCnhsoc() {
+			return DocCnhsoc;
+		}
+
+		public void setDocCnhsoc(TipoDocumento docCnhsoc) {
+			DocCnhsoc = docCnhsoc;
+		}
+
 		public TipoDocumento getDocJucerj() {
 			return DocJucerj;
 		}
