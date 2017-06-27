@@ -91,6 +91,7 @@ public class Societario {
 		private TipoDocumento DocJucerj; // PROCURAÇÃO JUCERJA
 		private TipoDocumento DocCnhsoc; // CNH OS SÓCIOS
 		private TipoDocumento DocCecaso; // CERTIDÃO DE CASAMENTO DOS SÓCIOS
+		private TipoDocumento DocCoprse; // CONTRATO DE PRESTAÇÃO DE SERVIÇO
 				
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -180,7 +181,7 @@ public class Societario {
 			setDocJucerj(new TipoDocumento(67, "Procuração Jucerja", "JUCERJ"));
 			setDocCnhsoc(new TipoDocumento(68, "CNH dos Sócios","CNHSOC"));
 			setDocCecaso(new TipoDocumento(69, "Certidão de Casamento dos Sócios", "CECASO"));
-			
+			setDocCoprse(new TipoDocumento(70, "Certificado de Prestação de Serviço", "COPRSE"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -268,6 +269,7 @@ public class Societario {
 			TiposDocJu.add(getDocPenho());
 			TiposDocJu.add(getDocOficio());
 			TiposDocJu.add(getDocManda());
+			TiposDocJu.add(getDocCoprse());
 					
 			
 			setAtos(new Organizacao(1,"Atos","ATOS",TiposAtos));
@@ -364,6 +366,14 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocCoprse() {
+			return DocCoprse;
+		}
+
+		public void setDocCoprse(TipoDocumento docCoprse) {
+			DocCoprse = docCoprse;
+		}
+
 		public TipoDocumento getDocCecaso() {
 			return DocCecaso;
 		}
