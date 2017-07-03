@@ -20,13 +20,34 @@ public class Juridico {
 	private Organizacao inpi;	// INPI
 	private Organizacao cart;	// CARTÓRIO
 	private Organizacao cont;	// CONTRATOS
-	private Organizacao div;	// DIVERSPS
+	private Organizacao div;	// DIVERSOS
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//	
 	
 //-------------------VARIÁVEIS TIPOS DE DOCUMENTOS--------------------//
 	
 	private TipoDocumento DocRecla;	// RECLAMAÇÃO
+	private TipoDocumento DocPare; // PARECER
+	private TipoDocumento DocApos; // APOSENTADORIA
+	private TipoDocumento DocDiv; // DIVERSOS
+	private TipoDocumento DocCive; // CÍVEL
+	private TipoDocumento DocSuce; // SUCESSÕES
+	private TipoDocumento DocFam; // FAMÍLIA
+	private TipoDocumento DocJec; // JUIZADO ESPECIAL
+	private TipoDocumento DocExec; // EXECUÇÃO
+	private TipoDocumento DocFazf; // FAZENDA FEDERAL
+	private TipoDocumento DocPgfn; // PGFN
+	private TipoDocumento DocFaze; // FAZENDA ESTADUAL
+	private TipoDocumento DocPge; // PGE
+	private TipoDocumento DocPref; // PREFEITURA
+	private TipoDocumento DocPgm; // PGM
+	private TipoDocumento DocMarc; // MARCAS
+    private TipoDocumento DocDivo; // DIVORCIO
+    private TipoDocumento DocTest; // TESTAMENTO
+    private TipoDocumento DocDoaç; // DOAÇÃO
+    private TipoDocumento DocComv; // COMPRA VENDA DE IMÓVEL
+    private TipoDocumento DocProt; // PROTESTO DE TÍTULOS
+    private TipoDocumento DocPsc; // PRESTAÇÃO DE SERVIÇO CONTÁBIL SJT
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 	
@@ -50,10 +71,35 @@ public class Juridico {
 	
 	public Juridico() {
 		setDocRecla(new TipoDocumento(1, "Reclamação", "RECLA"));
+		setDocPare(new TipoDocumento(2, "Parecer", "PARE"));
+		setDocApos(new TipoDocumento(3, "Aposentadoria", "APOS"));
+		setDocDiv(new TipoDocumento(4, "Diversos", "DIV"));
+		setDocCive(new TipoDocumento(5, "Cível", "CIVE"));
+		setDocSuce(new TipoDocumento(6, "Suecssões", "SUCE"));
+		setDocFam(new TipoDocumento(7, "Família", "FAM"));
+		setDocJec(new TipoDocumento(8, "Juizado Especial", "JEC"));
+		setDocExec(new TipoDocumento(9, "Execução", "EXEC"));
+		setDocFazf(new TipoDocumento(10, "Fazenda Federal", "FAZF"));
+		setDocPgfn(new TipoDocumento(11, "PGFN", "PGFN"));
+		setDocFaze(new TipoDocumento(12, "Fazenda Estadual", "FAZE"));
+		setDocPge(new TipoDocumento(13, "PGE", "PGE"));
+		setDocPref(new TipoDocumento(14, "Prefeitura", "PREF"));
+		setDocPgm(new TipoDocumento(15, "PGM", "PGM"));
+		setDocMarc(new TipoDocumento(16, "Marcas", "MARC"));
+		setDocSuce(new TipoDocumento(17, "Sucessões", "SUCE"));
+		setDocDivo(new TipoDocumento(18, "Divorcio", "DIVO"));
+		setDocTest(new TipoDocumento(19, "Testamento", "TEST"));
+		setDocDoaç(new TipoDocumento(20, "Doação", "DOAÇ"));
+		setDocComv(new TipoDocumento(21, "Compra Venda de Imóvel", "COMV"));
+		setDocProt(new TipoDocumento(22, "Protesto de Títulos", "PROT"));
+		setDocPsc(new TipoDocumento(23, "Prestação de Serviço Contábil SJT", "SJT"));
+		setDocDiv(new TipoDocumento(24, "Diversos", "DIV"));
+		setDocDiv(new TipoDocumento(25, "Diversos", "DIV"));
 		
 		setTiposTrab(new ArrayList<TipoDocumento>());
 		setTiposTjrj(new ArrayList<TipoDocumento>());
 		setTiposJf(new ArrayList<TipoDocumento>());
+		setTiposRfb(new ArrayList<TipoDocumento>());
 		setTiposEst(new ArrayList<TipoDocumento>());
 		setTiposMun(new ArrayList<TipoDocumento>());
 		setTiposInpi(new ArrayList<TipoDocumento>());
@@ -61,7 +107,40 @@ public class Juridico {
 		setTiposCont(new ArrayList<TipoDocumento>());
 		setTiposDiv(new ArrayList<TipoDocumento>());
 		
-		TiposTrab.add(getDocRecla());		
+		TiposTrab.add(getDocRecla());
+		TiposTrab.add(getDocPare());
+		TiposTrab.add(getDocApos());
+		TiposTrab.add(getDocDiv());
+		
+		TiposTjrj.add(getDocCive());
+		TiposTjrj.add(getDocSuce());
+		TiposTjrj.add(getDocFam());
+		TiposTjrj.add(getDocJec());
+		
+		TiposJf.add(getDocExec());
+		
+		TiposRfb.add(getDocFazf());
+		TiposRfb.add(getDocPgfn());
+		
+		TiposEst.add(getDocFaze());
+		TiposEst.add(getDocPge());
+		
+		TiposMun.add(getDocPref());
+		TiposMun.add(getDocPgm());
+		
+		TiposInpi.add(getDocMarc());
+		
+		TiposCart.add(getDocSuce());
+		TiposCart.add(getDocDivo());
+		TiposCart.add(getDocTest());
+		TiposCart.add(getDocDoaç());
+		TiposCart.add(getDocComv());
+		TiposCart.add(getDocProt());
+		
+		TiposCont.add(getDocPsc());
+		TiposCont.add(getDocDiv());
+		
+		TiposDiv.add(getDocDiv());
 		
 		setTrab(new Organizacao(1, "Trabalhista", "Trab", TiposTrab));
 		setTjrj(new Organizacao(2, "Tribunal de Justiça RJ", "TJRJ", TiposTjrj));
@@ -207,7 +286,217 @@ public class Juridico {
 	}
 
 //---------------------------------------------------------------------------------------------------		
-	
+
+	public TipoDocumento getDocPsc() {
+		return DocPsc;
+	}
+
+
+	public void setDocPsc(TipoDocumento docPsc) {
+		DocPsc = docPsc;
+	}
+
+
+	public TipoDocumento getDocProt() {
+		return DocProt;
+	}
+
+
+	public void setDocProt(TipoDocumento docProt) {
+		DocProt = docProt;
+	}
+
+
+	public TipoDocumento getDocComv() {
+		return DocComv;
+	}
+
+
+	public void setDocComv(TipoDocumento docComv) {
+		DocComv = docComv;
+	}
+
+
+	public TipoDocumento getDocDoaç() {
+		return DocDoaç;
+	}
+
+
+	public void setDocDoaç(TipoDocumento docDoaç) {
+		DocDoaç = docDoaç;
+	}
+
+
+	public TipoDocumento getDocTest() {
+		return DocTest;
+	}
+
+
+	public void setDocTest(TipoDocumento docTest) {
+		DocTest = docTest;
+	}
+
+
+	public TipoDocumento getDocDivo() {
+		return DocDivo;
+	}
+
+
+	public void setDocDivo(TipoDocumento docDivo) {
+		DocDivo = docDivo;
+	}
+
+
+	public TipoDocumento getDocMarc() {
+		return DocMarc;
+	}
+
+
+	public void setDocMarc(TipoDocumento docMarc) {
+		DocMarc = docMarc;
+	}
+
+
+	public TipoDocumento getDocPgm() {
+		return DocPgm;
+	}
+
+
+	public void setDocPgm(TipoDocumento docPgm) {
+		DocPgm = docPgm;
+	}
+
+
+	public TipoDocumento getDocPref() {
+		return DocPref;
+	}
+
+
+	public void setDocPref(TipoDocumento docPref) {
+		DocPref = docPref;
+	}
+
+
+	public TipoDocumento getDocPge() {
+		return DocPge;
+	}
+
+
+	public void setDocPge(TipoDocumento docPge) {
+		DocPge = docPge;
+	}
+
+
+	public TipoDocumento getDocFaze() {
+		return DocFaze;
+	}
+
+
+	public void setDocFaze(TipoDocumento docFaze) {
+		DocFaze = docFaze;
+	}
+
+
+	public TipoDocumento getDocPgfn() {
+		return DocPgfn;
+	}
+
+
+	public void setDocPgfn(TipoDocumento docPgfn) {
+		DocPgfn = docPgfn;
+	}
+
+
+	public TipoDocumento getDocFazf() {
+		return DocFazf;
+	}
+
+
+	public void setDocFazf(TipoDocumento docFazf) {
+		DocFazf = docFazf;
+	}
+
+
+	public TipoDocumento getDocExec() {
+		return DocExec;
+	}
+
+
+	public void setDocExec(TipoDocumento docExec) {
+		DocExec = docExec;
+	}
+
+
+	public TipoDocumento getDocJec() {
+		return DocJec;
+	}
+
+
+	public void setDocJec(TipoDocumento docJec) {
+		DocJec = docJec;
+	}
+
+
+	public TipoDocumento getDocFam() {
+		return DocFam;
+	}
+
+
+	public void setDocFam(TipoDocumento docFam) {
+		DocFam = docFam;
+	}
+
+
+	public TipoDocumento getDocSuce() {
+		return DocSuce;
+	}
+
+
+	public void setDocSuce(TipoDocumento docSuce) {
+		DocSuce = docSuce;
+	}
+
+
+	public TipoDocumento getDocCive() {
+		return DocCive;
+	}
+
+
+	public void setDocCive(TipoDocumento docCive) {
+		DocCive = docCive;
+	}
+
+
+	public TipoDocumento getDocDiv() {
+		return DocDiv;
+	}
+
+
+	public void setDocDiv(TipoDocumento docDiv) {
+		DocDiv = docDiv;
+	}
+
+
+	public TipoDocumento getDocApos() {
+		return DocApos;
+	}
+
+
+	public void setDocApos(TipoDocumento docApos) {
+		DocApos = docApos;
+	}
+
+
+	public TipoDocumento getDocPare() {
+		return DocPare;
+	}
+
+
+	public void setDocPare(TipoDocumento docPare) {
+		DocPare = docPare;
+	}
+
+
 	public TipoDocumento getDocRecla() {
 		return DocRecla;
 	}
