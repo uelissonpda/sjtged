@@ -275,16 +275,19 @@ public class Admapo {
 			public void setNfr(Organizacao nfr) {
 				this.nfr = nfr;
 			}
-			public ArrayList<Organizacao> getOrganizacoes() {
-				return organizacoes;
-			}
-			public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
-				this.organizacoes = organizacoes;
-			}
+
 			public Unidade getAdmapo() {
 				return admapo;
 			}
 			public void setAdmapo(Unidade admapo) {
 				this.admapo = admapo;
-			}	
+			}
+			
+			public ArrayList<Organizacao> getOrganizacoes() {
+				return organizacoes;
+			}
+			
+			public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
+				this.organizacoes = organizacoes;
+			}
 }

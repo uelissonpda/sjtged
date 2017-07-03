@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+
 //import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -24,7 +25,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField; 
+import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.MaskFormatter;
@@ -35,6 +36,7 @@ import co.fcode.ged18.estrutura.Comunicacao;
 import co.fcode.ged18.estrutura.Contabil;
 import co.fcode.ged18.estrutura.DepartamentoPessoal;
 import co.fcode.ged18.estrutura.Fiscal;
+import co.fcode.ged18.estrutura.Juridico;
 import co.fcode.ged18.estrutura.Societario;
 import co.fcode.sjtged.sistema.Database;
 import co.fcode.sjtged.sistema.FileDrop;
@@ -82,6 +84,7 @@ public class TratarArquivo extends JDesktopPane{
 	DepartamentoPessoal dp = new DepartamentoPessoal();
 	Fiscal fs = new Fiscal();
 	Societario sc = new Societario();
+	Juridico jr = new Juridico();
 	
 	ArrayList<Unidade> unidades = new ArrayList<Unidade>();
 	
@@ -138,6 +141,7 @@ public class TratarArquivo extends JDesktopPane{
 			unidades.add(dp.getDp());
 			unidades.add(fs.getFiscal());
 			unidades.add(sc.getSoc());
+			unidades.add(jr.getJuridico());
 			
 			/* Adição das Unidades na ComboBox */
 			unidades.forEach(u -> comboUnidade.addItem(u.getNomeCompleto()));
@@ -147,7 +151,7 @@ public class TratarArquivo extends JDesktopPane{
 			comboUnidade.setSelectedIndex(0);
 			add(comboUnidade);
 			
-			// Selecionar OrganizaÃ§Ã£o de Unidade
+			// Selecionar Organização de Unidade
 			lblOrgUnidade.setBounds(30, comboUnidade.getY()+30, 190, 25);
 			lblOrgUnidade.setIcon(FuncoesExtras.buscarIcone("img/inbox.png"));
 			add(lblOrgUnidade);
