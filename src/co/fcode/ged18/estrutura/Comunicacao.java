@@ -31,6 +31,7 @@ public class Comunicacao {
 	private TipoDocumento DocSoc; // SOCIETÁRIO
 	private TipoDocumento DocTes; // TESOURARIA
 	private TipoDocumento DocFin; // FINANCEIRO
+	private TipoDocumento DocTi;  // INFORMATICA
 			
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -60,6 +61,7 @@ public class Comunicacao {
 			setDocSoc(new TipoDocumento(6, "Societário", "SOC"));
 			setDocTes(new TipoDocumento(7, "Tesouraria", "TES"));
 			setDocFin(new TipoDocumento(8, "Financeiro", "FIN"));
+			setDocTi(new TipoDocumento(9, "T.I.", "T.I."));
 			
 			setTiposCext(new ArrayList<TipoDocumento>());
 			setTiposEmen(new ArrayList<TipoDocumento>());
@@ -76,6 +78,7 @@ public class Comunicacao {
 			TiposCext.add(getDocDir());
 			TiposCext.add(getDocFisc());
 			TiposCext.add(getDocSoc());
+			TiposCext.add(getDocTi());
 			
 			TiposEmen.add(getDocAdm());
 			TiposEmen.add(getDocCont());
@@ -84,6 +87,7 @@ public class Comunicacao {
 			TiposEmen.add(getDocFisc());
 			TiposEmen.add(getDocSoc());
 			TiposEmen.add(getDocFin());
+			TiposEmen.add(getDocTi());
 			
 			TiposEmre.add(getDocAdm());
 			TiposEmre.add(getDocCont());
@@ -92,6 +96,7 @@ public class Comunicacao {
 			TiposEmre.add(getDocFisc());
 			TiposEmre.add(getDocSoc());
 			TiposEmre.add(getDocFin());
+			TiposEmre.add(getDocTi());
 			
 			TiposInti.add(getDocAdm());
 			TiposInti.add(getDocCont());
@@ -106,6 +111,7 @@ public class Comunicacao {
 			TiposMmot.add(getDocDir());
 			TiposMmot.add(getDocSoc());
 			TiposMmot.add(getDocFisc());
+			TiposMmot.add(getDocTi());
 			
 			TiposMr.add(getDocAdm());
 			TiposMr.add(getDocCont());
@@ -114,6 +120,7 @@ public class Comunicacao {
 			TiposMr.add(getDocFisc());
 			TiposMr.add(getDocSoc());
 			TiposMr.add(getDocFin());
+			TiposMr.add(getDocTi());
 			
 			TiposProten.add(getDocAdm());
 			TiposProten.add(getDocCont());
@@ -122,6 +129,7 @@ public class Comunicacao {
 			TiposProten.add(getDocFisc());
 			TiposProten.add(getDocSoc());
 			TiposProten.add(getDocTes());
+			TiposProten.add(getDocTi());
 			
 			TiposEmnc.add(getDocFin());
 			
@@ -211,6 +219,14 @@ public class Comunicacao {
 			}
 //-----------------------------------------------------------------------------------------------
 			
+			public TipoDocumento getDocTi() {
+				return DocTi;
+			}
+
+			public void setDocTi(TipoDocumento docTi) {
+				DocTi = docTi;
+			}
+
 			public TipoDocumento getDocFin() {
 				return DocFin;
 			}
