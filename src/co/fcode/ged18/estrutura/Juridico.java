@@ -21,6 +21,7 @@ public class Juridico {
 	private Organizacao cart;	// CARTÓRIO
 	private Organizacao cont;	// CONTRATOS
 	private Organizacao div;	// DIVERSOS
+	private Organizacao Cfc;   // CONSELHO FEDERAL DE CONTABILIDADE
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//	
 	
@@ -48,6 +49,7 @@ public class Juridico {
     private TipoDocumento DocComv; // COMPRA VENDA DE IMÓVEL
     private TipoDocumento DocProt; // PROTESTO DE TÍTULOS
     private TipoDocumento DocPsc; // PRESTAÇÃO DE SERVIÇO CONTÁBIL SJT
+    private TipoDocumento DocCra; // CARTA RESPONSABILIDADE ADMINISTRAÇÃO
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 	
@@ -63,6 +65,7 @@ public class Juridico {
 	private ArrayList<TipoDocumento> TiposCart;	// TIPOS CARTÓRIO
 	private ArrayList<TipoDocumento> TiposCont;	// TIPOS CONTRATOS
 	private ArrayList<TipoDocumento> TiposDiv;	// TIPOS DIVERSOS
+	private ArrayList<TipoDocumento> TiposCfc; // TIPOS CONSELHO FEDERAL DE CONTABILIDADE
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//	
 	
@@ -94,7 +97,7 @@ public class Juridico {
 		setDocProt(new TipoDocumento(22, "Protesto de Títulos", "PROT"));
 		setDocPsc(new TipoDocumento(23, "Prestação de Serviço Contábil SJT", "SJT"));
 		setDocDiv(new TipoDocumento(24, "Diversos", "DIV"));
-		setDocDiv(new TipoDocumento(25, "Diversos", "DIV"));
+		setDocCra(new TipoDocumento(25, "Carta Responsabilidade Administração", "CRA"));
 		
 		setTiposTrab(new ArrayList<TipoDocumento>());
 		setTiposTjrj(new ArrayList<TipoDocumento>());
@@ -106,6 +109,7 @@ public class Juridico {
 		setTiposCart(new ArrayList<TipoDocumento>());
 		setTiposCont(new ArrayList<TipoDocumento>());
 		setTiposDiv(new ArrayList<TipoDocumento>());
+		setTiposCfc(new ArrayList<TipoDocumento>());
 		
 		TiposTrab.add(getDocRecla());
 		TiposTrab.add(getDocPare());
@@ -142,6 +146,8 @@ public class Juridico {
 		
 		TiposDiv.add(getDocDiv());
 		
+		TiposCfc.add(getDocCra());
+		
 		setTrab(new Organizacao(1, "Trabalhista", "Trab", TiposTrab));
 		setTjrj(new Organizacao(2, "Tribunal de Justiça RJ", "TJRJ", TiposTjrj));
 		setJf(new Organizacao(3, "Justiça Federal", "JF", TiposJf));
@@ -152,6 +158,7 @@ public class Juridico {
 		setCart(new Organizacao(8, "Cartório", "CART", TiposCart));
 		setCont(new Organizacao(9, "Contratos", "CONT", TiposCont));
 		setDiv(new Organizacao(10, "Diversos", "Div", TiposDiv));
+		setCfc(new Organizacao(11, "Conselho Federal Contabilidade", "Cfc", TiposCfc));
 		
 		setOrganizacoes(new ArrayList<Organizacao>());
 		getOrganizacoes().add(getTrab());
@@ -164,6 +171,7 @@ public class Juridico {
 		getOrganizacoes().add(getCart());
 		getOrganizacoes().add(getCont());
 		getOrganizacoes().add(getDiv());
+		getOrganizacoes().add(getCfc());
 		
 		
 		setJuridico(new Unidade(6, "Jurídico", "JR", getOrganizacoes()));
@@ -505,7 +513,37 @@ public class Juridico {
 		DocRecla = docRecla;
 	}
 	
-//---------------------------------------------------------------------------------------------------
+public TipoDocumento getDocCra() {
+		return DocCra;
+	}
+
+
+	public void setDocCra(TipoDocumento docCra) {
+		DocCra = docCra;
+	}
+
+
+public ArrayList<TipoDocumento> getTiposCfc() {
+		return TiposCfc;
+	}
+
+
+	public void setTiposCfc(ArrayList<TipoDocumento> tiposCfc) {
+		TiposCfc = tiposCfc;
+	}
+
+
+	public Organizacao getCfc() {
+		return Cfc;
+	}
+
+
+	public void setCfc(Organizacao cfc) {
+		Cfc = cfc;
+	}
+
+
+	//---------------------------------------------------------------------------------------------------
 	public Organizacao getDiv() {
 		return div;
 	}

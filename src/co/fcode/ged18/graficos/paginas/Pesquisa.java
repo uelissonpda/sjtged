@@ -29,6 +29,7 @@ import co.fcode.ged18.estrutura.Contabil;
 import co.fcode.ged18.estrutura.DepartamentoPessoal;
 import co.fcode.ged18.estrutura.Fiscal;
 import co.fcode.ged18.estrutura.Societario;
+import co.fcode.ged18.estrutura.Juridico;
 import co.fcode.sjtged.sistema.Database;
 import co.fcode.sjtged.sistema.FuncoesExtras;
 
@@ -61,7 +62,7 @@ public class Pesquisa extends JDesktopPane{
 	JLabel lblOrgUnidade = new JLabel("Assunto");
 	JLabel lblTipoDoc = new JLabel("Tipo");
 	JLabel lblCompetencia = new JLabel("Competência");
-	JLabel lblNfe = new JLabel("NFe ou Número");
+	JLabel lblNfe = new JLabel("NFe, Numero ou Ano");
 		
 	JTextField tipo = new JTextField();
 	JLabel lblTipo = new JLabel("Extensão do Arquivo:");
@@ -72,6 +73,7 @@ public class Pesquisa extends JDesktopPane{
 	DepartamentoPessoal dp = new DepartamentoPessoal();
 	Fiscal fs = new Fiscal();
 	Societario sc = new Societario();
+	Juridico jr = new Juridico();
 	
 	ArrayList<Unidade> unidades = new ArrayList<Unidade>();
 	
@@ -136,6 +138,7 @@ public class Pesquisa extends JDesktopPane{
 			unidades.add(dp.getDp());
 			unidades.add(fs.getFiscal());
 			unidades.add(sc.getSoc());
+			unidades.add(jr.getJuridico());
 			
 			/* AdiÃ§Ã£o das Unidades na ComboBox */
 			unidades.forEach(u -> comboUnidade.addItem(u.getNomeCompleto()));

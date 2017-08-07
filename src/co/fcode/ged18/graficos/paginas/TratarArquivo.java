@@ -72,7 +72,7 @@ public class TratarArquivo extends JDesktopPane{
 	JLabel lblOrgUnidade = new JLabel("Assunto");
 	JLabel lblTipoDoc = new JLabel("Tipo");
 	JLabel lblCompetencia = new JLabel("Competência");
-	JLabel lblNfe = new JLabel("NFe ou Número");
+	JLabel lblNfe = new JLabel("NFe, Número ou Ano");
 		
 	JTextArea text = new JTextArea();
 	JScrollPane text2 = new JScrollPane(text);
