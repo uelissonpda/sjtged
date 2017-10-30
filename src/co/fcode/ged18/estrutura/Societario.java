@@ -35,7 +35,7 @@ public class Societario {
 		private TipoDocumento DocLavpal; // LAUDO DE AVALIAÇÃO DO PATRIMÔNIO LÍQUIDO
 		private TipoDocumento DocEstat;  // ESTATUTO 
 		private TipoDocumento DocCnpj;   // CNPJ
-		private TipoDocumento DocCertbx; // CERTIDÃO DE BAIXA
+		private TipoDocumento DocSinale; // SINALEIRA
 		private TipoDocumento DocInsest; // INSCRIÇÃO ESTADUAL
 		private TipoDocumento DocLdexcb; // CERTIDÃO DE BAIXA DA INSCRIÇÃO ESTADUAL
 		private TipoDocumento DocCertcb; // CERTIF DE APROVAÇÃO DO CORPO DE BOMBEIROS
@@ -75,7 +75,6 @@ public class Societario {
 		private TipoDocumento DocNegiss; // CERTIDÃO NEGATIVA ISS
 		private TipoDocumento DocNdae; // CERTIDÃO NEG. DIVIDA ATIVA DO ESTADO
 		private TipoDocumento DocNdam; // CERTIDÃO NEG. DIVIDA ATIVA DO MUNICÍPIO
-		private TipoDocumento DocCftc; // CERTIDÃO DE FEITOS TRABALHISTAS - CND
 		private TipoDocumento DocNicmsc; // CERTIDÃO NEG. ICMS - CONTRIBUINTE
 		private TipoDocumento DocNicmsn; // CERTIDÃO NEG. ICMS - NÃO CONTRIBUINTE
 		private TipoDocumento DocNcduin; // CERTIDÃO NEGATIVA CONJUNTA DE TRIBUTOS FEDERAIS|DIVIDA ATIVA DA UNIÃO|INSS
@@ -92,6 +91,8 @@ public class Societario {
 		private TipoDocumento DocCnhsoc; // CNH OS SÓCIOS
 		private TipoDocumento DocCecaso; // CERTIDÃO DE CASAMENTO DOS SÓCIOS
 		private TipoDocumento DocCoprse; // CONTRATO DE PRESTAÇÃO DE SERVIÇO
+		private TipoDocumento DocAutome; // AUTORIZAÇÃO DE MESAS E CADEIRAS
+		private TipoDocumento DocPlmeca; // PLANTA DE MESAS E CADEIRAS
 				
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -126,7 +127,7 @@ public class Societario {
 			setDocLavpal(new TipoDocumento(12,"Laudo de Avaliação do Patrimônio Líquido","LAVPAL"));
 			setDocEstat(new TipoDocumento(13,"Estatuto","ESTAT"));
 			setDocCnpj(new TipoDocumento(14,"CNPJ","CNPJ"));
-			setDocCertbx(new TipoDocumento(15, "Certidão de Baixa", "CERTBX"));
+			setDocSinale(new TipoDocumento(15, "Certidão de Baixa", "CERTBX"));
 			setDocInsest(new TipoDocumento(16, "Inscrição Estadual", "INSEST"));
 			setDocLdexcb(new TipoDocumento(17, "Certidão de Baixa de Inscrição Estadual", "LDEXCB"));
 			setDocCertcb(new TipoDocumento(18, "Certificado de Aprovação do Corpo de Bombeiros", "CERTCB"));
@@ -166,7 +167,8 @@ public class Societario {
 			setDocNegiss(new TipoDocumento(52, "Certidão Negativa ISS","NEGISS"));
 			setDocNdae(new TipoDocumento(53, "Certidão Neg. Divida Ativa do Estado","NDAE"));
 			setDocNdam(new TipoDocumento(54, "Certidão Neg. Divida Ativa do Município","NDAM"));
-			setDocCftc(new TipoDocumento(55, "Certidão de Feitos Trabalhistas - CND","CFTC"));
+			
+			
 			setDocNicmsc(new TipoDocumento(56, "Certidão Neg. ICMS - Contribuinte","NICMSC"));
 			setDocNicmsn(new TipoDocumento(57, "Certidão Neg. ICMS - Não contribuinte","NICMSN"));
 			setDocNcduin(new TipoDocumento(58, "Certidão Negativa Conjunta de Tributos Federais-Divida Ativa da União-INSS","NCDUIN"));
@@ -182,6 +184,8 @@ public class Societario {
 			setDocCnhsoc(new TipoDocumento(68, "CNH dos Sócios","CNHSOC"));
 			setDocCecaso(new TipoDocumento(69, "Certidão de Casamento dos Sócios", "CECASO"));
 			setDocCoprse(new TipoDocumento(70, "Certificado de Prestação de Serviço", "COPRSE"));
+			setDocAutome(new TipoDocumento(71, "Autorização de Mesas e Cadeiras", "AUTOME"));
+			setDocPlmeca(new TipoDocumento(72, "Planta de Mesas e Cadeiras", "PLMECA"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -207,13 +211,11 @@ public class Societario {
 			TiposAtos.add(getDocJucerj());
 			
 			TiposFed.add(getDocCnpj());
-			TiposFed.add(getDocCertbx());
 			TiposFed.add(getDocProtoc());
 			TiposFed.add(getDocQdrsoc());
 			
 			TiposEst.add(getDocInsest());
 			TiposEst.add(getDocParal());
-			TiposEst.add(getDocCertbx());
 			TiposEst.add(getDocLdexcb());
 			TiposEst.add(getDocCertcb());
 			TiposEst.add(getDocProtoc());
@@ -242,6 +244,9 @@ public class Societario {
 			TiposMun.add(getDocTxpubl());
 			TiposMun.add(getDocIptu());
 			TiposMun.add(getDocProtoc());
+			TiposMun.add(getDocAutome());
+			TiposMun.add(getDocPlmeca());
+			TiposMun.add(getDocSinale());
 						
 			TiposDvrs.add(getDocConloc());
 			TiposDvrs.add(getDocCpf());
@@ -259,7 +264,6 @@ public class Societario {
 			TiposCertd.add(getDocNegiss());
 			TiposCertd.add(getDocNdae());
 			TiposCertd.add(getDocNdam());
-			TiposCertd.add(getDocCftc());
 			TiposCertd.add(getDocNicmsc());
 			TiposCertd.add(getDocNicmsn());
 			TiposCertd.add(getDocNcduin());
@@ -489,12 +493,7 @@ public class Societario {
 		public void setDocNicmsc(TipoDocumento docNicmsc) {
 			DocNicmsc = docNicmsc;
 		}
-		public TipoDocumento getDocCftc() {
-			return DocCftc;
-		}
-		public void setDocCftc(TipoDocumento docCftc) {
-			DocCftc = docCftc;
-		}
+		
 		public TipoDocumento getDocNdam() {
 			return DocNdam;
 		}
@@ -857,14 +856,14 @@ public class Societario {
 /**
 		 * @return the docCertbx
 		 */
-		public TipoDocumento getDocCertbx() {
-			return DocCertbx;
+		public TipoDocumento getDocSinale() {
+			return DocSinale;
 		}
 		/**
 		 * @param docCertbx the docCertbx to set
 		 */
-		public void setDocCertbx(TipoDocumento docCertbx) {
-			DocCertbx = docCertbx;
+		public void setDocSinale(TipoDocumento docSinale) {
+			DocSinale = docSinale;
 		}
 /**
 		 * @return the docCnpj
@@ -1033,6 +1032,22 @@ public class Societario {
 			TiposDocJu = tiposDocJu;
 		}
 		
+		public TipoDocumento getDocAutome() {
+			return DocAutome;
+		}
+
+		public void setDocAutome(TipoDocumento docAutome) {
+			DocAutome = docAutome;
+		}
+
+		public TipoDocumento getDocPlmeca() {
+			return DocPlmeca;
+		}
+
+		public void setDocPlmeca(TipoDocumento docPlmeca) {
+			DocPlmeca = docPlmeca;
+		}
+
 		public Organizacao getCertd() {
 			return Certd;
 		}

@@ -10,9 +10,9 @@ import co.fcode.ged18.*;
 public class DepartamentoPessoal {
 //-------------------VARIÁVEIS TIPOS DE ORGANIZAÇÃO-------------------//
 	
-	private Organizacao rot;  // ROTINAS
-	private Organizacao obac; // OBRIGAÇÕES ACESSÓRIAS
+	//private Organizacao rot;  // ROTINAS
 	private Organizacao dvrs; // DIVERSOS
+	private Organizacao rais; // RAIS
 
 //-----------------------FIM DA DECLARAÇÃO----------------------------// 
 
@@ -34,29 +34,23 @@ public class DepartamentoPessoal {
 	private TipoDocumento DocProlab; // PROLABORE
 	private TipoDocumento DocPatron; // PATRONAL
 	private TipoDocumento DocPis;    // PIS SOBRE FOLHA
-	private TipoDocumento DocDirf;   // DIRF
+	private TipoDocumento DocRecibo; // RECIBO DE ENTREGA
 	private TipoDocumento DocRais;   // RAIS
 	private TipoDocumento DocInfrend;// INFORMES DE RENDIMENTOS
-	private TipoDocumento DocProces; // PROCESSOS
-	private TipoDocumento DocAudito; // AUDITORIAS
-	private TipoDocumento DocReproc; // CONTROLE DE REPROCESSOS
-	private TipoDocumento DocCnd;    // CND
+	private TipoDocumento DocProces; // PROCESSOS TRABALHISTAS
 	private TipoDocumento DocCrf;    // CRF
 	private TipoDocumento DocCndtra;// CND TRABALHISTA
 	private TipoDocumento DocDeclar; // DECLARAÇÕES
-	private TipoDocumento DocDataba; // DISSIDIO COM DATA BASE
-	private TipoDocumento DocPrepos; // CARTA DE PREPOSTO
-	private TipoDocumento DocComext; // COMUNICADO EXTERNO
-	private TipoDocumento DocPartic; // PARTICULARIDARES EMPRESAS
-	private TipoDocumento DocRecalc; // RECALCULOS
+	private TipoDocumento DocConven; // DISSIDIO COM DATA BASE
+	private TipoDocumento DocParcel; // PARCELAMENTOS
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 	
 //-------------------LISTA DE TIPOS DE DOCUMENTOS---------------------//
 	
 	private ArrayList<TipoDocumento> TiposRot;  // TIPOS ROTINA
-	private ArrayList<TipoDocumento> TiposObac; // TIPOS OBRIGAÇÕES ACESSÓRIAS
 	private ArrayList<TipoDocumento> TiposDvrs; // TIPOS DOCUMENTOS DIVERSOS
+	private ArrayList<TipoDocumento> TiposRais; // TIPOS RAIS
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 	
@@ -80,27 +74,22 @@ public class DepartamentoPessoal {
 		setDocProlab(new TipoDocumento(13,"Prolabore","PROLAB"));
 		setDocPatron(new TipoDocumento(14,"Patronal","PATRON"));
 		setDocPis(new TipoDocumento(15,"PIS sobre folha","PIS"));
-		setDocDirf(new TipoDocumento(16,"Dirf","DIRF"));
+		setDocDeclar(new TipoDocumento(16,"Declarações","DECLAR"));
 		setDocRais(new TipoDocumento(17,"Rais","RAIS"));
 		setDocInfrend(new TipoDocumento(18,"Informes de Rendimentos","INFREND"));
-		setDocProces(new TipoDocumento(19,"Processsos","PROCES"));
-		setDocAudito(new TipoDocumento(20,"Auditoriais","AUDITO"));
-		setDocReproc(new TipoDocumento(21,"Controle de Reprocessos","REPROC"));
-		setDocCnd(new TipoDocumento(22,"CND","CND"));
+		setDocProces(new TipoDocumento(19,"Processos Trabalhistas","PROCES"));
+		setDocParcel(new TipoDocumento(20, "Parcelamentos", "PARCEL"));
+		setDocRecibo(new TipoDocumento(21, "Recibo de Entrega", "Recibo"));
 		setDocCrf(new TipoDocumento(23,"CRF","CRF"));
 		setDocCndtra(new TipoDocumento(24,"CND Trabalhista","CNDTRA"));
 		setDocDeclar(new TipoDocumento(25,"Declarações","DECLAR"));
-		setDocDataba(new TipoDocumento(26,"Dissídio com Data Base","DATABA"));
-		setDocPrepos(new TipoDocumento(27,"Carta de Preposto","PREPOS"));
-		setDocComext(new TipoDocumento(28,"Comunicado Externo","COMEXT"));
-		setDocPartic(new TipoDocumento(29,"Particularidades Empresas","PARTIC"));
-		setDocRecalc(new TipoDocumento(30,"Recálculos","RECALC"));
+		setDocConven(new TipoDocumento(26,"Convenção Coletiva","CONVEN"));
 		
-		setTiposRot(new ArrayList<TipoDocumento>());
-		setTiposObac(new ArrayList<TipoDocumento>());
+		//setTiposRot(new ArrayList<TipoDocumento>());
 		setTiposDvrs(new ArrayList<TipoDocumento>());
+		setTiposRais(new ArrayList<TipoDocumento>());
 		
-		TiposRot.add(getDocAdmiss());
+		/*TiposRot.add(getDocAdmiss());
 		TiposRot.add(getDocQuitac());
 		TiposRot.add(getDocFolhas());
 		TiposRot.add(getDocGfip());
@@ -114,40 +103,33 @@ public class DepartamentoPessoal {
 		TiposRot.add(getDocAssist());
 		TiposRot.add(getDocProlab());
 		TiposRot.add(getDocPatron());
-		TiposRot.add(getDocPis());
-		
-		TiposObac.add(getDocDirf());
-		TiposObac.add(getDocRais());
-		TiposObac.add(getDocInfrend());
+		TiposRot.add(getDocPis());*/
 		
 		TiposDvrs.add(getDocProces());
-		TiposDvrs.add(getDocAudito());
-		TiposDvrs.add(getDocReproc());
-		TiposDvrs.add(getDocCnd());
 		TiposDvrs.add(getDocCrf());
 		TiposDvrs.add(getDocCndtra());
 		TiposDvrs.add(getDocDeclar());
-		TiposDvrs.add(getDocDataba());
-		TiposDvrs.add(getDocPrepos());
-		TiposDvrs.add(getDocComext());
-		TiposDvrs.add(getDocPartic());
-		TiposDvrs.add(getDocRecalc());
+		TiposDvrs.add(getDocConven());
+		TiposDvrs.add(getDocParcel());
 		
-		setRot(new Organizacao(1, "Rotinas", "ROT", TiposRot));
-		setObac(new Organizacao(2, "Obrigações Acessórias", "OBAC", TiposObac));
-		setDvrs(new Organizacao(3,"Diversos", "DVRS",TiposDvrs));
+		TiposRais.add(getDocDeclar());
+		TiposRais.add(getDocRecibo());
+				
+		//setRot(new Organizacao(1, "Rotinas", "ROT", TiposRot));
+		setRais(new Organizacao(2, "RAIS", "RAIS", TiposRais));
+		setDvrs(new Organizacao(3, "Diversos", "DVRS", TiposDvrs));
 		
 		setOrganizacoes(new ArrayList<Organizacao>());
-		getOrganizacoes().add(getRot());
-		getOrganizacoes().add(getObac());
+		//getOrganizacoes().add(getRot());
 		getOrganizacoes().add(getDvrs());
+		getOrganizacoes().add(getRais());
 		
 		setDp(new Unidade(3,"Depto. Pessoal","DP",getOrganizacoes()));
 		
 		/* Organização dos Arrays em Ordem Crescente! - Fellipe Pimentel */
 		Collections.sort(getTiposDvrs(), new ComparadorTipoDocumento());
-		Collections.sort(getTiposObac(), new ComparadorTipoDocumento());
-		Collections.sort(getTiposRot(), new ComparadorTipoDocumento());
+		//Collections.sort(getTiposRot(), new ComparadorTipoDocumento());
+		Collections.sort(getTiposRais(), new ComparadorTipoDocumento());
 		
 		Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 	}
@@ -180,89 +162,24 @@ public class DepartamentoPessoal {
 		TiposRot = tiposRot;
 	}
 
-/**
-	 * @return the docRecalc
-	 */
-	public TipoDocumento getDocRecalc() {
-		return DocRecalc;
-	}
-
-/**
- * @return the tiposObac
- */
-public ArrayList<TipoDocumento> getTiposObac() {
-	return TiposObac;
-}
-
-/**
- * @param tiposObac the tiposObac to set
- */
-public void setTiposObac(ArrayList<TipoDocumento> tiposObac) {
-	TiposObac = tiposObac;
-}
 
 //--------------------------------------------------------------------------------------------------
-	/**
-	 * @param docRecalc the docRecalc to set
-	 */
-	public void setDocRecalc(TipoDocumento docRecalc) {
-		DocRecalc = docRecalc;
-	}
-
-/**
-	 * @return the docPartic
-	 */
-	public TipoDocumento getDocPartic() {
-		return DocPartic;
-	}
-
-	/**
-	 * @param docPartic the docPartic to set
-	 */
-	public void setDocPartic(TipoDocumento docPartic) {
-		DocPartic = docPartic;
-	}
-
-/**
-	 * @return the docComext
-	 */
-	public TipoDocumento getDocComext() {
-		return DocComext;
-	}
-
-	/**
-	 * @param docComext the docComext to set
-	 */
-	public void setDocComext(TipoDocumento docComext) {
-		DocComext = docComext;
-	}
-
-/**
-	 * @return the docPrepos
-	 */
-	public TipoDocumento getDocPrepos() {
-		return DocPrepos;
-	}
-
-	/**
-	 * @param docPrepos the docPrepos to set
-	 */
-	public void setDocPrepos(TipoDocumento docPrepos) {
-		DocPrepos = docPrepos;
-	}
-
-/**
-	 * @return the docDataba
-	 */
-	public TipoDocumento getDocDataba() {
-		return DocDataba;
+	
+	public ArrayList<TipoDocumento> getTiposRais() {
+	return TiposRais;
+}
+public void setTiposRais(ArrayList<TipoDocumento> tiposRais) {
+	TiposRais = tiposRais;
+}
+	public TipoDocumento getDocConven() {
+		return DocConven;
 	}
 
 	/**
 	 * @param docDataba the docDataba to set
 	 */
-	public void setDocDataba(TipoDocumento docDataba) {
-		DocDataba = docDataba;
+	public void setDocConven(TipoDocumento docConven) {
+		DocConven = docConven;
 	}
 
 /**
@@ -292,24 +209,7 @@ public void setTiposObac(ArrayList<TipoDocumento> tiposObac) {
 	public void setDocCndtra(TipoDocumento docCndtra) {
 		DocCndtra = docCndtra;
 	}
-
-/**
-	 * @return the docCnd
-	 */
-	public TipoDocumento getDocCnd() {
-		return DocCnd;
-	}
-
-	/**
-	 * @param docCnd the docCnd to set
-	 */
-	public void setDocCnd(TipoDocumento docCnd) {
-		DocCnd = docCnd;
-	}
-
-/**
-	 * @return the docCrf
-	 */
+	
 	public TipoDocumento getDocCrf() {
 		return DocCrf;
 	}
@@ -319,22 +219,6 @@ public void setTiposObac(ArrayList<TipoDocumento> tiposObac) {
 	 */
 	public void setDocCrf(TipoDocumento docCrf) {
 		DocCrf = docCrf;
-	}
-
-	public TipoDocumento getDocReproc() {
-		return DocReproc;
-	}
-
-	public void setDocReproc(TipoDocumento docReproc) {
-		DocReproc = docReproc;
-	}
-
-	public TipoDocumento getDocAudito() {
-		return DocAudito;
-	}
-
-	public void setDocAudito(TipoDocumento docAudito) {
-		DocAudito = docAudito;
 	}
 
 	public TipoDocumento getDocProces() {
@@ -359,14 +243,6 @@ public void setTiposObac(ArrayList<TipoDocumento> tiposObac) {
 
 	public void setDocRais(TipoDocumento docRais) {
 		DocRais = docRais;
-	}
-
-	public TipoDocumento getDocDirf() {
-		return DocDirf;
-	}
-
-	public void setDocDirf(TipoDocumento docDirf) {
-		DocDirf = docDirf;
 	}
 
 	public TipoDocumento getDocPis() {
@@ -525,7 +401,13 @@ public void setTiposObac(ArrayList<TipoDocumento> tiposObac) {
 		DocAdmiss = docAdmiss;
 	}
 
-//-----------------------------------------------------------------------------------------------
+public TipoDocumento getDocRecibo() {
+		return DocRecibo;
+	}
+	public void setDocRecibo(TipoDocumento docRecibo) {
+		DocRecibo = docRecibo;
+	}
+	//-----------------------------------------------------------------------------------------------
 	/**
 	 * @return the dvrs
 	 */
@@ -540,40 +422,33 @@ public void setTiposObac(ArrayList<TipoDocumento> tiposObac) {
 		this.dvrs = dvrs;
 	}
 
-	/**
-	 * @return the obac
-	 */
-	public Organizacao getObac() {
-		return obac;
-	}
-
-	/**
-	 * @param obac the obac to set
-	 */
-	public void setObac(Organizacao obac) {
-		this.obac = obac;
-	}
-
-	/**
-	 * @return the rot
-	 */
-	public Organizacao getRot() {
+	/*public Organizacao getRot() {
 		return rot;
 	}
 
-	/**
-	 * @param rot the rot to set
-	 */
+	
 	public void setRot(Organizacao rot) {
 		this.rot = rot;
 	}
-
+*/
+	public Organizacao getRais() {
+		return rais;
+	}
+	public void setRais(Organizacao rais) {
+		this.rais = rais;
+	}
 	public TipoDocumento getDocFerias() {
 		return DocFerias;
 	}
 
 	public void setDocFerias(TipoDocumento docFerias) {
 		DocFerias = docFerias;
+	}
+	public TipoDocumento getDocParcel() {
+		return DocParcel;
+	}
+	public void setDocParcel(TipoDocumento docParcel) {
+		DocParcel = docParcel;
 	}
 	public ArrayList<Organizacao> getOrganizacoes() {
 		return organizacoes;

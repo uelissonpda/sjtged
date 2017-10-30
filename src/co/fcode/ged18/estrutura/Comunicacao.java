@@ -32,6 +32,8 @@ public class Comunicacao {
 	private TipoDocumento DocTes; // TESOURARIA
 	private TipoDocumento DocFin; // FINANCEIRO
 	private TipoDocumento DocTi;  // INFORMATICA
+	private TipoDocumento DocAp;  // APOIO-CONTÁBIL
+	private TipoDocumento DocQld; // QUALIDADE
 			
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -62,6 +64,8 @@ public class Comunicacao {
 			setDocTes(new TipoDocumento(7, "Tesouraria", "TES"));
 			setDocFin(new TipoDocumento(8, "Financeiro", "FIN"));
 			setDocTi(new TipoDocumento(9, "T.I.", "T.I."));
+			setDocAp(new TipoDocumento(10, "Apoio Contábil", "AP"));
+			setDocQld(new TipoDocumento(11, "Qualidade", "QLD"));
 			
 			setTiposCext(new ArrayList<TipoDocumento>());
 			setTiposEmen(new ArrayList<TipoDocumento>());
@@ -79,6 +83,8 @@ public class Comunicacao {
 			TiposCext.add(getDocFisc());
 			TiposCext.add(getDocSoc());
 			TiposCext.add(getDocTi());
+			TiposCext.add(getDocAp());
+			TiposCext.add(getDocQld());
 			
 			TiposEmen.add(getDocAdm());
 			TiposEmen.add(getDocCont());
@@ -88,6 +94,8 @@ public class Comunicacao {
 			TiposEmen.add(getDocSoc());
 			TiposEmen.add(getDocFin());
 			TiposEmen.add(getDocTi());
+			TiposEmen.add(getDocAp());
+			TiposEmen.add(getDocQld());
 			
 			TiposEmre.add(getDocAdm());
 			TiposEmre.add(getDocCont());
@@ -97,6 +105,8 @@ public class Comunicacao {
 			TiposEmre.add(getDocSoc());
 			TiposEmre.add(getDocFin());
 			TiposEmre.add(getDocTi());
+			TiposEmre.add(getDocAp());
+			TiposEmre.add(getDocQld());
 			
 			TiposInti.add(getDocAdm());
 			TiposInti.add(getDocCont());
@@ -104,6 +114,8 @@ public class Comunicacao {
 			TiposInti.add(getDocDir());
 			TiposInti.add(getDocFisc());
 			TiposInti.add(getDocSoc());
+			TiposInti.add(getDocAp());
+			TiposInti.add(getDocQld());
 				
 			TiposMmot.add(getDocAdm());
 			TiposMmot.add(getDocCont());
@@ -112,6 +124,8 @@ public class Comunicacao {
 			TiposMmot.add(getDocSoc());
 			TiposMmot.add(getDocFisc());
 			TiposMmot.add(getDocTi());
+			TiposMmot.add(getDocAp());
+			TiposMmot.add(getDocQld());
 			
 			TiposMr.add(getDocAdm());
 			TiposMr.add(getDocCont());
@@ -121,6 +135,8 @@ public class Comunicacao {
 			TiposMr.add(getDocSoc());
 			TiposMr.add(getDocFin());
 			TiposMr.add(getDocTi());
+			TiposMr.add(getDocAp());
+			TiposMr.add(getDocQld());
 			
 			TiposProten.add(getDocAdm());
 			TiposProten.add(getDocCont());
@@ -130,6 +146,8 @@ public class Comunicacao {
 			TiposProten.add(getDocSoc());
 			TiposProten.add(getDocTes());
 			TiposProten.add(getDocTi());
+			TiposProten.add(getDocAp());
+			TiposProten.add(getDocQld());
 			
 			TiposEmnc.add(getDocFin());
 			
@@ -315,6 +333,22 @@ public class Comunicacao {
 				DocAdm = docAdm;
 			}
 
+
+			public TipoDocumento getDocAp() {
+				return DocAp;
+			}
+
+			public void setDocAp(TipoDocumento docAp) {
+				DocAp = docAp;
+			}
+
+			public TipoDocumento getDocQld() {
+				return DocQld;
+			}
+
+			public void setDocQld(TipoDocumento docQld) {
+				DocQld = docQld;
+			}
 
 			//-----------------------------------------------------------------------------------------------
 			public Organizacao getEmnc() {

@@ -63,6 +63,7 @@ public class Pesquisa extends JDesktopPane{
 	JLabel lblTipoDoc = new JLabel("Tipo");
 	JLabel lblCompetencia = new JLabel("Competência");
 	JLabel lblNfe = new JLabel("NFe, Numero ou Ano");
+	JLabel lblObs = new JLabel("Observação");
 		
 	JTextField tipo = new JTextField();
 	JLabel lblTipo = new JLabel("Extensão do Arquivo:");
@@ -79,6 +80,7 @@ public class Pesquisa extends JDesktopPane{
 	
 	JFormattedTextField competencia;
 	JFormattedTextField nfe;
+	JFormattedTextField obs;
 	
 	public Pesquisa(){
 		try{
@@ -185,6 +187,14 @@ public class Pesquisa extends JDesktopPane{
 			nfe = new JFormattedTextField(nfeMask);
 			nfe.setBounds(competencia.getX()+competencia.getWidth()+20, competencia.getY(), 100, 25);
 			add(nfe);
+			
+			//------- OBS
+			lblObs.setBounds(lblNfe.getX()+lblNfe.getWidth()+20,lblNfe.getY(), 100, 25);
+			add(lblObs);
+			MaskFormatter obsMask = new MaskFormatter("*************");
+			obs = new JFormattedTextField(obsMask);
+			obs.setBounds(nfe.getX()+nfe.getWidth()+15, nfe.getY(), 100, 25);
+			add(obs);
 			
 			// ----- Renomear Arquivo
 			btnRenomear.setBounds(575, 0, 180, 50);
@@ -357,18 +367,18 @@ public class Pesquisa extends JDesktopPane{
 					
 					StringBuffer nomeArquivo = new StringBuffer("");
 					nomeArquivo.append(codEmpresa);
-					nomeArquivo.append("_");
+					nomeArquivo.append("-");
 					nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getSigla());
-					nomeArquivo.append("_");
+					nomeArquivo.append("-");
 					nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
 							get(comboOrganizacao.getSelectedIndex()).getSigla());
-					nomeArquivo.append("_");
+					nomeArquivo.append("-");
 					nomeArquivo.append(unidades.get(comboUnidade.getSelectedIndex()).getOrganizacao().
 							get(comboOrganizacao.getSelectedIndex()).getDocumentos().get(comboDocumento.getSelectedIndex()).getSigla());
-					nomeArquivo.append("_");
+					nomeArquivo.append("-");
 					if(!nfe.getText().equals("         ")){
 						nomeArquivo.append(nfe.getText());
-						nomeArquivo.append("_");
+						nomeArquivo.append("-");
 					}
 					nomeArquivo.append(competencia.getText());
 					nomeArquivo.append(".");

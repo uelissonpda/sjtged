@@ -49,7 +49,7 @@ public class TratarArquivo extends JDesktopPane{
 	
 	String query = "select NmEmpresa,CdEmpresa from wphd.Empresa";
 	//StringBuffer caminho = new StringBuffer("A:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
-	StringBuffer caminho = new StringBuffer("Y:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
+	StringBuffer caminho = new StringBuffer("//SJTINFRA02/SJTGED/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
 	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug Windows
 	//StringBuffer caminho = new StringBuffer("Users/insidemybrain/PJ - PESSOA JURÍDICA/"); // @debug Mac
 	
@@ -73,12 +73,13 @@ public class TratarArquivo extends JDesktopPane{
 	JLabel lblTipoDoc = new JLabel("Tipo");
 	JLabel lblCompetencia = new JLabel("Competência");
 	JLabel lblNfe = new JLabel("NFe, Número ou Ano");
+	JLabel lblObs = new JLabel("Observação");
 		
 	JTextArea text = new JTextArea();
 	JScrollPane text2 = new JScrollPane(text);
 	ArrayList<File> arquivos = new ArrayList<File>();
 	
-	Admapo ad = new Admapo();
+	Admapo ad = new Admapo(); //UNIDADE EXCLUIDA DO TRATAMENTO
 	Comunicacao cm = new Comunicacao();
 	Contabil ct = new Contabil();
 	DepartamentoPessoal dp = new DepartamentoPessoal();
@@ -90,6 +91,7 @@ public class TratarArquivo extends JDesktopPane{
 	
 	JFormattedTextField competencia;
 	JFormattedTextField nfe;
+	JFormattedTextField obs;
 	
 	public TratarArquivo(){
 		try{
@@ -135,7 +137,7 @@ public class TratarArquivo extends JDesktopPane{
 			add(lblUnidade);
 				
 			/* Lista de Unidades */
-			unidades.add(ad.getAdmapo());
+			//unidades.add(ad.getAdmapo());
 			unidades.add(cm.getComunicacao());
 			unidades.add(ct.getContabil());
 			unidades.add(dp.getDp());
@@ -189,8 +191,16 @@ public class TratarArquivo extends JDesktopPane{
 			add(lblNfe);
 			MaskFormatter nfeMask = new MaskFormatter("HHHHHHHHH");
 			nfe = new JFormattedTextField(nfeMask);
-			nfe.setBounds(competencia.getX()+competencia.getWidth()+20, competencia.getY(), 100, 25);
+			nfe.setBounds(competencia.getX()+competencia.getWidth()+23, competencia.getY(), 100, 25);
 			add(nfe);
+			
+			//------- OBS
+			lblObs.setBounds(lblNfe.getX()+lblNfe.getWidth()+20,lblNfe.getY(), 100, 25);
+			add(lblObs);
+			MaskFormatter obsMask = new MaskFormatter("*************");
+			obs = new JFormattedTextField(obsMask);
+			obs.setBounds(nfe.getX()+nfe.getWidth()+15, nfe.getY(), 100, 25);
+			add(obs);
 			
 			// ----- Renomear Arquivo
 			btnRenomear.setBounds(580, 90, 180, 50);
@@ -200,10 +210,10 @@ public class TratarArquivo extends JDesktopPane{
 			
 			pessoaFis.addActionListener(event ->{
 				if(pessoaFis.isSelected()){
-					caminho = new StringBuffer("Y:/CLIENTES/PF - PESSOA FÍSICA/");
+					caminho = new StringBuffer("//SJTINFRA02/SJTGED/CLIENTES/PJ - PESSOA JURÍDICA/");
 					numEmpresa.setText("000");
 				} else {
-					caminho = new StringBuffer("Y:/CLIENTES/PJ - PESSOA JURÍDICA/");
+					caminho = new StringBuffer("//SJTINFRA02/SJTGED/CLIENTES/PJ - PESSOA JURÍDICA/");
 					numEmpresa.setText("");
 				}
 				if(pessoaFis.isSelected()){
@@ -327,7 +337,11 @@ public class TratarArquivo extends JDesktopPane{
 					nomeArquivo.append(nfe.getText());
 					nomeArquivo.append("-");
 				}
-				nomeArquivo.append(competencia.getText());
+				nomeArquivo.append(competencia.getText());				
+				if(!obs.getText().equals("             ")){
+					nomeArquivo.append("-");
+					nomeArquivo.append(obs.getText());
+				}
 				nomeArquivo.append(".");
 				nomeArquivo.append(FuncoesExtras.getFileExtension(arqVelho));
 				

@@ -12,8 +12,8 @@ public class Copyright extends JLabel{
 		this.setText(
 				"<html>"
 					+ "<div style='padding:3px; margin-right: 10px; font-size:7px;'>"
-						+ "<i><b>::</b></i> Desenvolvido por Fellipe Pimentel © 2015<br>"
-						+ "<div style='margin-left:95px;'><i>www.fcode.co</i></div>"
+						+ "<i><b>::</b></i> Desenvolvido por Fellipe Pimentel e Uelisson Anjos © 2017<br>"
+						+ "<div style='margin-left:95px;' align='right'><i>www.fcode.co</i></div>"
 						+ "</div>" +
 			   "</html>"
 				);
