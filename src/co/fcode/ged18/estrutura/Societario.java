@@ -35,6 +35,7 @@ public class Societario {
 		private TipoDocumento DocLavpal; // LAUDO DE AVALIAÇÃO DO PATRIMÔNIO LÍQUIDO
 		private TipoDocumento DocEstat;  // ESTATUTO 
 		private TipoDocumento DocCnpj;   // CNPJ
+		private TipoDocumento DocCertbx;   // CNPJ
 		private TipoDocumento DocSinale; // SINALEIRA
 		private TipoDocumento DocInsest; // INSCRIÇÃO ESTADUAL
 		private TipoDocumento DocLdexcb; // CERTIDÃO DE BAIXA DA INSCRIÇÃO ESTADUAL
@@ -127,7 +128,7 @@ public class Societario {
 			setDocLavpal(new TipoDocumento(12,"Laudo de Avaliação do Patrimônio Líquido","LAVPAL"));
 			setDocEstat(new TipoDocumento(13,"Estatuto","ESTAT"));
 			setDocCnpj(new TipoDocumento(14,"CNPJ","CNPJ"));
-			setDocSinale(new TipoDocumento(15, "Certidão de Baixa", "CERTBX"));
+			setDocCertbx(new TipoDocumento(15, "Certidão de Baixa", "CERTBX"));
 			setDocInsest(new TipoDocumento(16, "Inscrição Estadual", "INSEST"));
 			setDocLdexcb(new TipoDocumento(17, "Certidão de Baixa de Inscrição Estadual", "LDEXCB"));
 			setDocCertcb(new TipoDocumento(18, "Certificado de Aprovação do Corpo de Bombeiros", "CERTCB"));
@@ -167,8 +168,7 @@ public class Societario {
 			setDocNegiss(new TipoDocumento(52, "Certidão Negativa ISS","NEGISS"));
 			setDocNdae(new TipoDocumento(53, "Certidão Neg. Divida Ativa do Estado","NDAE"));
 			setDocNdam(new TipoDocumento(54, "Certidão Neg. Divida Ativa do Município","NDAM"));
-			
-			
+			setDocSinale(new TipoDocumento(55, "Sinaleira", "SINALE"));			
 			setDocNicmsc(new TipoDocumento(56, "Certidão Neg. ICMS - Contribuinte","NICMSC"));
 			setDocNicmsn(new TipoDocumento(57, "Certidão Neg. ICMS - Não contribuinte","NICMSN"));
 			setDocNcduin(new TipoDocumento(58, "Certidão Negativa Conjunta de Tributos Federais-Divida Ativa da União-INSS","NCDUIN"));
@@ -211,11 +211,13 @@ public class Societario {
 			TiposAtos.add(getDocJucerj());
 			
 			TiposFed.add(getDocCnpj());
+			TiposFed.add(getDocCertbx());
 			TiposFed.add(getDocProtoc());
 			TiposFed.add(getDocQdrsoc());
 			
 			TiposEst.add(getDocInsest());
 			TiposEst.add(getDocParal());
+			TiposEst.add(getDocCertbx());
 			TiposEst.add(getDocLdexcb());
 			TiposEst.add(getDocCertcb());
 			TiposEst.add(getDocProtoc());
@@ -1046,6 +1048,14 @@ public class Societario {
 
 		public void setDocPlmeca(TipoDocumento docPlmeca) {
 			DocPlmeca = docPlmeca;
+		}
+
+		public TipoDocumento getDocCertbx() {
+			return DocCertbx;
+		}
+
+		public void setDocCertbx(TipoDocumento docCertbx) {
+			DocCertbx = docCertbx;
 		}
 
 		public Organizacao getCertd() {

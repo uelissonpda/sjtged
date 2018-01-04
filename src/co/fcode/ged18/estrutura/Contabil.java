@@ -13,7 +13,7 @@ public class Contabil {
 			private Organizacao blnc; // BALANÇOS
 			private Organizacao dre;  // DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO
 			private Organizacao blct; // TIPOS BALANCETES
-			private Organizacao dcon; // TIPOS DEMONSTRATIVOS CONTÁBEIS
+			private Organizacao dacon; // TIPOS DEMONSTRATIVOS CONTÁBEIS
 			private Organizacao ecd;  // ESCRITURAÇÃO CONTÁBIL DIGITAL
 			private Organizacao dctf;  // APOIO CONTÁBIL
 			private Organizacao dmed;  // APOIO CONTÁBIL
@@ -89,6 +89,7 @@ public class Contabil {
 			private TipoDocumento DocLcaixa; // CAIXA
 			private TipoDocumento DocTalvcx; // TERMOS DE ABERTURA
 			private TipoDocumento DocTelvcx; // TERMOS DE ENCERRAMENTO
+			private TipoDocumento DocLivDig; // LIVRO DIÁRIO DIGITAL
 			 
 						
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -98,7 +99,7 @@ public class Contabil {
 			private ArrayList<TipoDocumento> TiposBlnc; // TIPOS BALANÇOS
 			private ArrayList<TipoDocumento> TiposDre;  // TIPOS DEMONSTRAÇÃO DO RESULTADO DO EXERCÍCIO
 			private ArrayList<TipoDocumento> TiposBlct; // TIPOS BALANCETES
-			private ArrayList<TipoDocumento> TiposDcon; // TIPOS DEMONSTRATIVOS CONTÁBEIS
+			private ArrayList<TipoDocumento> TiposDacon; // TIPOS DEMONSTRATIVOS CONTÁBEIS
 			private ArrayList<TipoDocumento> TiposEcd;  // TIPOS ESCRITURAÇÃO CONTÁBIL DIGITAL
 			private ArrayList<TipoDocumento> TiposDctf;  // APOIO CONTÁBIL
 			private ArrayList<TipoDocumento> TiposDmed;  // APOIO CONTÁBIL
@@ -143,8 +144,7 @@ public class Contabil {
 				setDocCopseg(new TipoDocumento(19, "Cópia SEG Arquivo Transmitido", "COPSEG"));
 				setDocTxpaga(new TipoDocumento(20, "Taxa Paga", "TXPAGA"));
 				setDocAutent(new TipoDocumento(21, "Termo Autenticação", "AUTENT"));
-				setDocDiario(new TipoDocumento(22, "Diário", "DIARIO"));
-				
+				setDocDiario(new TipoDocumento(22, "Diário", "DIARIO"));				
 				setDocDcefdr(new TipoDocumento(23,"Declaração","DCEFDR"));
 				setDocRedipj(new TipoDocumento(24,"Recibo de Entrega","REDIPJ"));
 				setDocDcdipj(new TipoDocumento(25,"Declaração","DCDIPJ"));
@@ -180,14 +180,14 @@ public class Contabil {
 				setDocReecfs(new TipoDocumento(55,"Recibo de Entrega","REECFS"));
 				setDocDcecfs(new TipoDocumento(56,"Declaração","DCECFS"));
 				setDocReefdr(new TipoDocumento(57,"Recibo de Entrega","REEFDR"));
+				setDocLivDig(new TipoDocumento(58, "Livro Diário Digital", "LIVDIG"));
 			
 				
 				setTiposBlnc(new ArrayList<TipoDocumento>());
 				setTiposDre(new ArrayList<TipoDocumento>());
 				setTiposBlct(new ArrayList<TipoDocumento>());
-				setTiposDcon(new ArrayList<TipoDocumento>());
-				setTiposEcd(new ArrayList<TipoDocumento>());
-				
+				setTiposDacon(new ArrayList<TipoDocumento>());
+				setTiposEcd(new ArrayList<TipoDocumento>());				
 				setTiposDctf(new ArrayList<TipoDocumento>());
 				setTiposDmed(new ArrayList<TipoDocumento>());
 				setTiposDmob(new ArrayList<TipoDocumento>());
@@ -207,16 +207,20 @@ public class Contabil {
 				
 				TiposBlnc.add(getDocBp());
 				TiposBlnc.add(getDocTbp());
+				
 				TiposDre.add(getDocDre());
 				TiposDre.add(getDocTdre());
+				
 				TiposBlct.add(getDocBm());
 				TiposBlct.add(getDocBt());
 				TiposBlct.add(getDocBa());
-				TiposDcon.add(getDocDlpa());
-				TiposDcon.add(getDocDmpl());
-				TiposDcon.add(getDocDfc());
-				TiposDcon.add(getDocNe());
-				TiposDcon.add(getDocIndliq());
+				
+				TiposDacon.add(getDocDlpa());
+				TiposDacon.add(getDocDmpl());
+				TiposDacon.add(getDocDfc());
+				TiposDacon.add(getDocNe());
+				TiposDacon.add(getDocIndliq());
+				
 				TiposEcd.add(getDocRcentr());
 				TiposEcd.add(getDocReqnto());
 				TiposEcd.add(getDocTermos());
@@ -233,25 +237,36 @@ public class Contabil {
 				TiposDctf.add(getDocSfecac());
 				TiposDctf.add(getDocRedctf());
 				TiposDctf.add(getDocDcdctf());
+				
 				TiposDmed.add(getDocRedmed());
 				TiposDmed.add(getDocDcdmed());
+				
 				TiposDmob.add(getDocRedmob());
 				TiposDmob.add(getDocDcdmob());
+				
 				TiposDirf.add(getDocRedirf());
 				TiposDirf.add(getDocDcdirf());
+				
 				TiposDasn.add(getDocRedasn());
 				TiposDasn.add(getDocDcdasn());
+				
 				TiposDfis.add(getDocRedfis());
 				TiposDfis.add(getDocDcdfis());
+				
 				TiposIbge.add(getDocReibge());
 				TiposIbge.add(getDocDcibge());
+				
 				TiposEcfs.add(getDocReecfs());
 				TiposEcfs.add(getDocDcecfs());
+				
 				TiposEfdr.add(getDocReefdr());
 				TiposEfdr.add(getDocDcefdr());
+				
 				TiposDipj.add(getDocRedipj());
 				TiposDipj.add(getDocDcdipj());
+				
 				TiposIntv.add(getDocDcintv());
+				
 				TiposLvdi.add(getDocDiario());
 				TiposLvdi.add(getDocPlcnts());
 				TiposLvdi.add(getDocBlnclv());
@@ -261,6 +276,8 @@ public class Contabil {
 				TiposLvdi.add(getDocCdrprj());
 				TiposLvdi.add(getDocTalvdi());
 				TiposLvdi.add(getDocTelvdi());
+				TiposLvdi.add(getDocLivDig());
+				
 				TiposLvrz.add(getDocLvrzge());
 				TiposLvrz.add(getDocTalvrz());
 				TiposLvrz.add(getDocTelvrz());
@@ -271,7 +288,7 @@ public class Contabil {
 				setBlnc(new Organizacao(1,"Balanços","BLNC",TiposBlnc));
 				setDre(new Organizacao(2,"DRE","DRE",TiposDre));
 				setBlct(new Organizacao(3,"Balancetes", "BLCT", TiposBlct));
-				setDcon(new Organizacao(4,"DCON", "DCON", TiposDcon));
+				setDacon(new Organizacao(4,"DACON", "DACON", TiposDacon));
 				setEcd(new Organizacao(5,"ECD","ECD",TiposEcd));
 				setDctf(new Organizacao(6,"DCTF","DCTF",TiposDctf));
 				setDmed(new Organizacao(7,"DMED","DMED",TiposDmed));
@@ -293,7 +310,7 @@ public class Contabil {
 				getOrganizacoes().add(getBlnc());
 				getOrganizacoes().add(getDre());
 				getOrganizacoes().add(getBlct());
-				getOrganizacoes().add(getDcon());
+				getOrganizacoes().add(getDacon());
 				getOrganizacoes().add(getEcd());
 				getOrganizacoes().add(getDctf());
 				getOrganizacoes().add(getDmed());
@@ -316,7 +333,7 @@ public class Contabil {
 				Collections.sort(getTiposBlct(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposBlnc(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposDasn(), new ComparadorTipoDocumento());
-				Collections.sort(getTiposDcon(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposDacon(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposDctf(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposDfis(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposDipj(), new ComparadorTipoDocumento());
@@ -344,12 +361,12 @@ public class Contabil {
 				TiposEcd = tiposEcd;
 			}
 			
-			public ArrayList<TipoDocumento> getTiposDcon() {
-				return TiposDcon;
+			public ArrayList<TipoDocumento> getTiposDacon() {
+				return TiposDacon;
 			}
 			
-			public void setTiposDcon(ArrayList<TipoDocumento> tiposDcon) {
-				TiposDcon = tiposDcon;
+			public void setTiposDacon(ArrayList<TipoDocumento> tiposDacon) {
+				TiposDacon = tiposDacon;
 			}
 
 			public ArrayList<TipoDocumento> getTiposBlct() {
@@ -462,7 +479,16 @@ public class Contabil {
 				TiposLvcx = tiposLvcx;
 			}
 			
-//---------------------TIPOS DE DOC. APOIO CONTÁBIL----------------------------------------------
+
+			//---------------------TIPOS DE DOC. APOIO CONTÁBIL----------------------------------------------
+			
+			public TipoDocumento getDocLivDig() {
+				return DocLivDig;
+			}
+			public void setDocLivDig(TipoDocumento docLivDig) {
+				DocLivDig = docLivDig;
+			}
+			
 			public TipoDocumento getDocSfecac() {
 				return DocSfecac;
 			}
@@ -906,12 +932,12 @@ public class Contabil {
 				this.ecd = ecd;
 			}
 
-			public Organizacao getDcon() {
-				return dcon;
+			public Organizacao getDacon() {
+				return dacon;
 			}
 
-			public void setDcon(Organizacao dcon) {
-				this.dcon = dcon;
+			public void setDacon(Organizacao dacon) {
+				this.dacon = dacon;
 			}
 
 			public Organizacao getBlct() {
