@@ -94,6 +94,8 @@ public class Societario {
 		private TipoDocumento DocCoprse; // CONTRATO DE PRESTAÇÃO DE SERVIÇO
 		private TipoDocumento DocAutome; // AUTORIZAÇÃO DE MESAS E CADEIRAS
 		private TipoDocumento DocPlmeca; // PLANTA DE MESAS E CADEIRAS
+		private TipoDocumento DocDivers; // DIVERSOS
+		private TipoDocumento DocCei; // CEI
 				
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -186,6 +188,8 @@ public class Societario {
 			setDocCoprse(new TipoDocumento(70, "Certificado de Prestação de Serviço", "COPRSE"));
 			setDocAutome(new TipoDocumento(71, "Autorização de Mesas e Cadeiras", "AUTOME"));
 			setDocPlmeca(new TipoDocumento(72, "Planta de Mesas e Cadeiras", "PLMECA"));
+			setDocDivers(new TipoDocumento(73, "Diversos", "DIVERS"));
+			setDocCei(new TipoDocumento(74, "CEI", "CEI"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -214,6 +218,9 @@ public class Societario {
 			TiposFed.add(getDocCertbx());
 			TiposFed.add(getDocProtoc());
 			TiposFed.add(getDocQdrsoc());
+			TiposFed.add(getDocDivers());
+			TiposFed.add(getDocCei());
+			TiposFed.add(getDocNit());
 			
 			TiposEst.add(getDocInsest());
 			TiposEst.add(getDocParal());
@@ -372,6 +379,22 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocCei() {
+			return DocCei;
+		}
+
+		public void setDocCei(TipoDocumento docCei) {
+			DocCei = docCei;
+		}
+
+		public TipoDocumento getDocDivers() {
+			return DocDivers;
+		}
+
+		public void setDocDivers(TipoDocumento docDivers) {
+			DocDivers = docDivers;
+		}
+
 		public TipoDocumento getDocCoprse() {
 			return DocCoprse;
 		}

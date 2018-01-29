@@ -18,6 +18,7 @@ public class Comunicacao {
 	private Organizacao mr;   // MEMÓRIA DE REUNIÃO
 	private Organizacao proten; // PROTOCOLOS ENTREGUES
 	private Organizacao Emnc; // E-MAILS NÃO CONFORMES
+	private Organizacao Ori; // ORIENTAÇÃO DE ENVIO DE DOCUMENTOS
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 
@@ -34,6 +35,7 @@ public class Comunicacao {
 	private TipoDocumento DocTi;  // INFORMATICA
 	private TipoDocumento DocAp;  // APOIO-CONTÁBIL
 	private TipoDocumento DocQld; // QUALIDADE
+	
 			
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -48,6 +50,7 @@ public class Comunicacao {
 	private ArrayList<TipoDocumento> TiposMr;   // TIPOS MEMÓRIA DE REUNIÃO				
 	private ArrayList<TipoDocumento> TiposProten; // TIPOS PROTOCOLOS DE ENTREGA
 	private ArrayList<TipoDocumento> TiposEmnc; // TIPOS E-MAILS NÃO CONFORMES
+	private ArrayList<TipoDocumento> TiposOri; // TIPOS ORIENTAÇÕES
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 			
@@ -75,6 +78,8 @@ public class Comunicacao {
 			setTiposMr(new ArrayList<TipoDocumento>());
 			setTiposProten(new ArrayList<TipoDocumento>());
 			setTiposEmnc(new ArrayList<TipoDocumento>());
+			setTiposOri(new ArrayList<TipoDocumento>());
+		
 			
 			TiposCext.add(getDocAdm());
 			TiposCext.add(getDocCont());
@@ -151,6 +156,17 @@ public class Comunicacao {
 			
 			TiposEmnc.add(getDocFin());
 			
+			TiposOri.add(getDocAdm());
+			TiposOri.add(getDocCont());
+			TiposOri.add(getDocDp());
+			TiposOri.add(getDocDir());
+			TiposOri.add(getDocFisc());
+			TiposOri.add(getDocSoc());
+			TiposOri.add(getDocFin());
+			TiposOri.add(getDocTi());
+			TiposOri.add(getDocAp());
+			TiposOri.add(getDocQld());
+			
 			setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 			setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
 			setEmre(new Organizacao(3,"Emails Recebidos","EMRE",TiposEmre));
@@ -159,6 +175,7 @@ public class Comunicacao {
 			setMr(new Organizacao(6,"Memória de Reunião","MR",TiposMr));
 			setProten(new Organizacao(7, "Protocolo de Entrega","PROTEN",TiposProten));
 			setEmnc(new Organizacao(8, "E-mail Não Conforme","EMNC", TiposEmnc));
+			setOri(new Organizacao(9, "Orientações de Envio de Documentos", "ORI", TiposOri));
 							
 			setOrganizacoes(new ArrayList<Organizacao>());
 			getOrganizacoes().add(getCext());
@@ -169,6 +186,7 @@ public class Comunicacao {
 			getOrganizacoes().add(getMr());
 			getOrganizacoes().add(getProten());
 			getOrganizacoes().add(getEmnc());
+			getOrganizacoes().add(getOri());
 			
 			setComunicacao(new Unidade(1,"Comunicação","CM",getOrganizacoes()));
 			
@@ -182,6 +200,7 @@ public class Comunicacao {
 			Collections.sort(getTiposMr(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposProten(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposEmnc(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposOri(), new ComparadorTipoDocumento());
 			
 			Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 	}
@@ -232,9 +251,19 @@ public class Comunicacao {
 		public ArrayList<TipoDocumento> getTiposCext() {
 						return TiposCext;
 					}
-			public void setTiposCext(ArrayList<TipoDocumento> tiposCext) {
-				TiposCext = tiposCext;
-			}
+					public void setTiposCext(ArrayList<TipoDocumento> tiposCext) {
+						TiposCext = tiposCext;
+					}
+
+		public ArrayList<TipoDocumento> getTiposOri() {
+						return TiposOri;
+					}
+
+					public void setTiposOri(ArrayList<TipoDocumento> tiposOri) {
+						TiposOri = tiposOri;
+					}
+			
+			
 //-----------------------------------------------------------------------------------------------
 			
 			public TipoDocumento getDocTi() {
@@ -349,8 +378,20 @@ public class Comunicacao {
 			public void setDocQld(TipoDocumento docQld) {
 				DocQld = docQld;
 			}
+			
+			
+//-----------------------------------------------------------------------------------------------
+			
+			
+			public Organizacao getOri() {
+				return Ori;
+			}
 
-			//-----------------------------------------------------------------------------------------------
+			public void setOri(Organizacao ori) {
+				Ori = ori;
+			}
+
+
 			public Organizacao getEmnc() {
 				return Emnc;
 			}
