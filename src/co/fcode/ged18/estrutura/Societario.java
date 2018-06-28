@@ -96,6 +96,7 @@ public class Societario {
 		private TipoDocumento DocPlmeca; // PLANTA DE MESAS E CADEIRAS
 		private TipoDocumento DocDivers; // DIVERSOS
 		private TipoDocumento DocCei; // CEI
+		private TipoDocumento DocTis; // TAXA DE INSPEÇÃO SANITÁRIA
 				
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -190,6 +191,7 @@ public class Societario {
 			setDocPlmeca(new TipoDocumento(72, "Planta de Mesas e Cadeiras", "PLMECA"));
 			setDocDivers(new TipoDocumento(73, "Diversos", "DIVERS"));
 			setDocCei(new TipoDocumento(74, "CEI", "CEI"));
+			setDocTis(new TipoDocumento(75, "Taxa de Inspeção Sanitária", "TIS"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -256,6 +258,7 @@ public class Societario {
 			TiposMun.add(getDocAutome());
 			TiposMun.add(getDocPlmeca());
 			TiposMun.add(getDocSinale());
+			TiposMun.add(getDocTis());
 						
 			TiposDvrs.add(getDocConloc());
 			TiposDvrs.add(getDocCpf());
@@ -379,6 +382,14 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocTis() {
+			return DocTis;
+		}
+
+		public void setDocTis(TipoDocumento docTis) {
+			DocTis = docTis;
+		}
+
 		public TipoDocumento getDocCei() {
 			return DocCei;
 		}
