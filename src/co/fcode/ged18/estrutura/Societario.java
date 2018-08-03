@@ -95,8 +95,9 @@ public class Societario {
 		private TipoDocumento DocAutome; // AUTORIZAÇÃO DE MESAS E CADEIRAS
 		private TipoDocumento DocPlmeca; // PLANTA DE MESAS E CADEIRAS
 		private TipoDocumento DocDivers; // DIVERSOS
-		private TipoDocumento DocCei; // CEI
-		private TipoDocumento DocTis; // TAXA DE INSPEÇÃO SANITÁRIA
+		private TipoDocumento DocCei; 	 // CEI
+		private TipoDocumento DocTis;	 // TAXA DE INSPEÇÃO SANITÁRIA
+		private TipoDocumento DocLdd;	 // LIVRO DIÁRIO DIGITAL
 				
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -192,6 +193,7 @@ public class Societario {
 			setDocDivers(new TipoDocumento(73, "Diversos", "DIVERS"));
 			setDocCei(new TipoDocumento(74, "CEI", "CEI"));
 			setDocTis(new TipoDocumento(75, "Taxa de Inspeção Sanitária", "TIS"));
+			setDocLdd(new TipoDocumento(76, "Livro Diário Digital", "LDD"));
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -215,6 +217,7 @@ public class Societario {
 			TiposAtos.add(getDocCartrn());
 			TiposAtos.add(getDoctermpo());
 			TiposAtos.add(getDocJucerj());
+			TiposAtos.add(getDocLdd());
 			
 			TiposFed.add(getDocCnpj());
 			TiposFed.add(getDocCertbx());
@@ -382,6 +385,14 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocLdd() {
+			return DocLdd;
+		}
+
+		public void setDocLdd(TipoDocumento docLdd) {
+			DocLdd = docLdd;
+		}
+
 		public TipoDocumento getDocTis() {
 			return DocTis;
 		}
