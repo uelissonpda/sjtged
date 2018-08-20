@@ -98,7 +98,7 @@ public class Societario {
 		private TipoDocumento DocCei; 	 // CEI
 		private TipoDocumento DocTis;	 // TAXA DE INSPEÇÃO SANITÁRIA
 		private TipoDocumento DocLdd;	 // LIVRO DIÁRIO DIGITAL
-				
+		private TipoDocumento DocSepd;   // DEFERIMENTO SEPD		
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -194,6 +194,8 @@ public class Societario {
 			setDocCei(new TipoDocumento(74, "CEI", "CEI"));
 			setDocTis(new TipoDocumento(75, "Taxa de Inspeção Sanitária", "TIS"));
 			setDocLdd(new TipoDocumento(76, "Livro Diário Digital", "LDD"));
+			setDocSepd(new TipoDocumento(77, "Deferimento SEPD", "SEPD"));
+		
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
 			setTiposFed(new ArrayList<TipoDocumento>());
@@ -237,6 +239,7 @@ public class Societario {
 			TiposEst.add(getDocProarq());
 			TiposEst.add(getDocInecf());
 			TiposEst.add(getDocPdbxie());
+			TiposEst.add(getDocSepd());
 			
 			TiposMun.add(getDocAlvara());
 			TiposMun.add(getDocFincad());
@@ -387,6 +390,14 @@ public class Societario {
 		
 		public TipoDocumento getDocLdd() {
 			return DocLdd;
+		}
+
+		public TipoDocumento getDocSepd() {
+			return DocSepd;
+		}
+
+		public void setDocSepd(TipoDocumento docSepd) {
+			DocSepd = docSepd;
 		}
 
 		public void setDocLdd(TipoDocumento docLdd) {
