@@ -301,7 +301,7 @@ public class Contabil {
 				setEfdr(new Organizacao(14,"EFDR","EFDR",TiposEfdr));
 				setDipj(new Organizacao(15,"DIPJ","DIPJ",TiposDipj));
 				setIntv(new Organizacao(16,"INTV","INTV",TiposIntv));
-				setLvdi(new Organizacao(17,"LVDI ","LVDI",TiposLvdi));
+				setLvdi(new Organizacao(17,"LVDI","LVDI",TiposLvdi));
 				setLvrz(new Organizacao(18,"Livro Razão","LVRZ",TiposLvrz));
 				setLvcx(new Organizacao(19,"Livro Caixa","LVCX",TiposLvcx));
 				
