@@ -100,6 +100,7 @@ public class Societario {
 		private TipoDocumento DocLdd;	 // LIVRO DIÁRIO DIGITAL
 		private TipoDocumento DocSepd;   // DEFERIMENTO SEPD
 		private TipoDocumento DocReatv;  // REATIVAÇÃO DA SOCIEDADE
+		private TipoDocumento DocProco;  // PROCON
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -197,6 +198,7 @@ public class Societario {
 			setDocLdd(new TipoDocumento(76, "Livro Diário Digital", "LDD"));
 			setDocSepd(new TipoDocumento(77, "Deferimento SEPD", "SEPD"));
 			setDocReatv(new TipoDocumento(78, "Reativação da Sociedade", "REATV)"));
+			setDocProco(new TipoDocumento(78, "PROCON", "PROCO"));
 		
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
@@ -243,6 +245,7 @@ public class Societario {
 			TiposEst.add(getDocInecf());
 			TiposEst.add(getDocPdbxie());
 			TiposEst.add(getDocSepd());
+			TiposEst.add(getDocProco());
 			
 			TiposMun.add(getDocAlvara());
 			TiposMun.add(getDocFincad());
@@ -401,6 +404,14 @@ public class Societario {
 
 		public TipoDocumento getDocReatv() {
 			return DocReatv;
+		}
+
+		public TipoDocumento getDocProco() {
+			return DocProco;
+		}
+
+		public void setDocProco(TipoDocumento docProco) {
+			DocProco = docProco;
 		}
 
 		public void setDocReatv(TipoDocumento docReatv) {
