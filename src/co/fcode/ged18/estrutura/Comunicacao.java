@@ -35,6 +35,8 @@ public class Comunicacao {
 	private TipoDocumento DocTi;  // INFORMATICA
 	private TipoDocumento DocAp;  // APOIO-CONTÁBIL
 	private TipoDocumento DocQld; // QUALIDADE
+	private TipoDocumento DocJur; // QUALIDADE
+	
 	
 			
 			
@@ -69,6 +71,7 @@ public class Comunicacao {
 			setDocTi(new TipoDocumento(9, "T.I.", "T.I."));
 			setDocAp(new TipoDocumento(10, "Apoio Contábil", "AP"));
 			setDocQld(new TipoDocumento(11, "Qualidade", "QLD"));
+			setDocJur(new TipoDocumento(12, "Jurídico","JUR"));
 			
 			setTiposCext(new ArrayList<TipoDocumento>());
 			setTiposEmen(new ArrayList<TipoDocumento>());
@@ -90,6 +93,7 @@ public class Comunicacao {
 			TiposCext.add(getDocTi());
 			TiposCext.add(getDocAp());
 			TiposCext.add(getDocQld());
+			TiposCext.add(getDocJur());
 			
 			TiposEmen.add(getDocAdm());
 			TiposEmen.add(getDocCont());
@@ -101,6 +105,7 @@ public class Comunicacao {
 			TiposEmen.add(getDocTi());
 			TiposEmen.add(getDocAp());
 			TiposEmen.add(getDocQld());
+			TiposEmen.add(getDocJur());
 			
 			TiposEmre.add(getDocAdm());
 			TiposEmre.add(getDocCont());
@@ -112,6 +117,7 @@ public class Comunicacao {
 			TiposEmre.add(getDocTi());
 			TiposEmre.add(getDocAp());
 			TiposEmre.add(getDocQld());
+			TiposEmre.add(getDocJur());
 			
 			TiposInti.add(getDocAdm());
 			TiposInti.add(getDocCont());
@@ -121,6 +127,7 @@ public class Comunicacao {
 			TiposInti.add(getDocSoc());
 			TiposInti.add(getDocAp());
 			TiposInti.add(getDocQld());
+			TiposInti.add(getDocJur());
 				
 			TiposMmot.add(getDocAdm());
 			TiposMmot.add(getDocCont());
@@ -131,6 +138,7 @@ public class Comunicacao {
 			TiposMmot.add(getDocTi());
 			TiposMmot.add(getDocAp());
 			TiposMmot.add(getDocQld());
+			TiposMmot.add(getDocJur());
 			
 			TiposMr.add(getDocAdm());
 			TiposMr.add(getDocCont());
@@ -142,6 +150,7 @@ public class Comunicacao {
 			TiposMr.add(getDocTi());
 			TiposMr.add(getDocAp());
 			TiposMr.add(getDocQld());
+			TiposMr.add(getDocJur());
 			
 			TiposProten.add(getDocAdm());
 			TiposProten.add(getDocCont());
@@ -153,6 +162,7 @@ public class Comunicacao {
 			TiposProten.add(getDocTi());
 			TiposProten.add(getDocAp());
 			TiposProten.add(getDocQld());
+			TiposProten.add(getDocJur());
 			
 			TiposEmnc.add(getDocFin());
 			
@@ -166,6 +176,7 @@ public class Comunicacao {
 			TiposOri.add(getDocTi());
 			TiposOri.add(getDocAp());
 			TiposOri.add(getDocQld());
+			TiposOri.add(getDocJur());
 			
 			setCext(new Organizacao(1, "Comunicados Externos","CEXT",TiposCext));
 			setEmen(new Organizacao(2,"Emails Enviados","EMEN",TiposEmen));
@@ -383,6 +394,14 @@ public class Comunicacao {
 //-----------------------------------------------------------------------------------------------
 			
 			
+			public TipoDocumento getDocJur() {
+				return DocJur;
+			}
+
+			public void setDocJur(TipoDocumento docJur) {
+				DocJur = docJur;
+			}
+
 			public Organizacao getOri() {
 				return Ori;
 			}

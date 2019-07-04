@@ -101,7 +101,9 @@ public class Societario {
 		private TipoDocumento DocSepd;   // DEFERIMENTO SEPD
 		private TipoDocumento DocReatv;  // REATIVAÇÃO DA SOCIEDADE
 		private TipoDocumento DocProco;  // PROCON
-		private TipoDocumento DocCertbi;  // PROCON
+		private TipoDocumento DocCertbi; // PROCON
+		private TipoDocumento DocFicha;	 // FICHA DE INFORMAÇÕES
+		private TipoDocumento DocCertD;	 // CERTIFICADO DE DESPACHO
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -201,6 +203,8 @@ public class Societario {
 			setDocReatv(new TipoDocumento(78, "Reativação da Sociedade", "REATV)"));
 			setDocProco(new TipoDocumento(78, "PROCON", "PROCO"));
 			setDocCertbi(new TipoDocumento(79, "Certidão de Baixa da Inscrição Municipal","CERTBI"));
+			setDocFicha(new TipoDocumento(80, "Ficha de Informações", "FICHA"));
+			setDocCertD(new TipoDocumento(81, "Certificado de Despacho", "CERTD"));
 		
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
@@ -248,6 +252,8 @@ public class Societario {
 			TiposEst.add(getDocPdbxie());
 			TiposEst.add(getDocSepd());
 			TiposEst.add(getDocProco());
+			TiposEst.add(getDocFicha());
+			TiposEst.add(getDocCertD());
 			
 			TiposMun.add(getDocAlvara());
 			TiposMun.add(getDocFincad());
@@ -397,6 +403,22 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocCertD() {
+			return DocCertD;
+		}
+
+		public void setDocCertD(TipoDocumento docCertD) {
+			DocCertD = docCertD;
+		}
+
+		public TipoDocumento getDocFicha() {
+			return DocFicha;
+		}
+
+		public void setDocFicha(TipoDocumento docFicha) {
+			DocFicha = docFicha;
+		}
+
 		public TipoDocumento getDocCertbi() {
 			return DocCertbi;
 		}
