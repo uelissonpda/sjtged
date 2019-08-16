@@ -104,6 +104,8 @@ public class Societario {
 		private TipoDocumento DocCertbi; // PROCON
 		private TipoDocumento DocFicha;	 // FICHA DE INFORMAÇÕES
 		private TipoDocumento DocCertD;	 // CERTIFICADO DE DESPACHO
+		private TipoDocumento DocCoprex; // CONTROLE DE PROCESSO EXTERNO
+		private TipoDocumento DocRgi; 	 // RGI
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -205,6 +207,8 @@ public class Societario {
 			setDocCertbi(new TipoDocumento(79, "Certidão de Baixa da Inscrição Municipal","CERTBI"));
 			setDocFicha(new TipoDocumento(80, "Ficha de Informações", "FICHA"));
 			setDocCertD(new TipoDocumento(81, "Certificado de Despacho", "CERTD"));
+			setDocCoprex(new TipoDocumento(82,"Controle de Processo Externo","COPREX"));
+			setDocCoprex(new TipoDocumento(83,"RGI","RGI"));
 		
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
@@ -291,6 +295,8 @@ public class Societario {
 			TiposDvrs.add(getDocRCC());
 			TiposDvrs.add(getDocCnhsoc());
 			TiposDvrs.add(getDocCecaso());
+			TiposDvrs.add(getDocCoprex());
+			TiposDvrs.add(getDocRgi());
 			
 			TiposCertd.add(getDocCtint());
 			TiposCertd.add(getDocSimp());
@@ -403,6 +409,22 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocRgi() {
+			return DocRgi;
+		}
+
+		public void setDocRgi(TipoDocumento docRgi) {
+			DocRgi = docRgi;
+		}
+
+		public TipoDocumento getDocCoprex() {
+			return DocCoprex;
+		}
+
+		public void setDocCoprex(TipoDocumento docCoprex) {
+			DocCoprex = docCoprex;
+		}
+
 		public TipoDocumento getDocCertD() {
 			return DocCertD;
 		}
