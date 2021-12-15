@@ -21,7 +21,8 @@ public class Juridico {
 	private Organizacao cart;	// CARTÓRIO
 	private Organizacao cont;	// CONTRATOS
 	private Organizacao div;	// DIVERSOS
-	private Organizacao Cfc;   // CONSELHO FEDERAL DE CONTABILIDADE
+	private Organizacao Cfc;    // CONSELHO FEDERAL DE CONTABILIDADE
+	private Organizacao Pe;		// Processo Eletrônico
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//	
 	
@@ -50,6 +51,11 @@ public class Juridico {
     private TipoDocumento DocProt; // PROTESTO DE TÍTULOS
     private TipoDocumento DocPsc; // PRESTAÇÃO DE SERVIÇO CONTÁBIL SJT
     private TipoDocumento DocCra; // CARTA RESPONSABILIDADE ADMINISTRAÇÃO
+    private TipoDocumento DocMaci; // MANDATA DE CITAÇÃO
+    private TipoDocumento DocDesp; // DESPACHO
+    private TipoDocumento DocDeci; // DECISÃO
+    private TipoDocumento DocPeti; // PETIÇÃO INICIAL
+    private TipoDocumento DocArcps; // AVISO PRÉVIO DE RESCISÃO DE CONTRATO DE PRESTAÇÃO DE SERVIÇOS
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 	
@@ -66,6 +72,7 @@ public class Juridico {
 	private ArrayList<TipoDocumento> TiposCont;	// TIPOS CONTRATOS
 	private ArrayList<TipoDocumento> TiposDiv;	// TIPOS DIVERSOS
 	private ArrayList<TipoDocumento> TiposCfc; // TIPOS CONSELHO FEDERAL DE CONTABILIDADE
+	private ArrayList<TipoDocumento> TiposPe; // TIPOS PROCESSO ELETRÔNICO
 	
 //-----------------------FIM DA DECLARAÇÃO----------------------------//	
 	
@@ -98,6 +105,11 @@ public class Juridico {
 		setDocPsc(new TipoDocumento(23, "Prestação de Serviço Contábil SJT", "SJT"));
 		setDocDiv(new TipoDocumento(24, "Diversos", "DIV"));
 		setDocCra(new TipoDocumento(25, "Carta Responsabilidade Administração", "CRA"));
+		setDocMaci(new TipoDocumento(26, "Mandado de Citação", "MACI"));
+		setDocDesp(new TipoDocumento(27, "Despacho", "DESP"));
+		setDocDeci(new TipoDocumento(28, "Decisão", "DECI"));
+		setDocPeti(new TipoDocumento(29, "Petição Inicial", "PETI"));
+		setDocArcps(new TipoDocumento(30, "Aviso Prévio de Rescisão de Contrato de Prestação de Serviços", "ARCPS"));
 		
 		setTiposTrab(new ArrayList<TipoDocumento>());
 		setTiposTjrj(new ArrayList<TipoDocumento>());
@@ -110,6 +122,7 @@ public class Juridico {
 		setTiposCont(new ArrayList<TipoDocumento>());
 		setTiposDiv(new ArrayList<TipoDocumento>());
 		setTiposCfc(new ArrayList<TipoDocumento>());
+		setTiposPe(new ArrayList<TipoDocumento>());
 		
 		TiposTrab.add(getDocRecla());
 		TiposTrab.add(getDocPare());
@@ -143,10 +156,16 @@ public class Juridico {
 		
 		TiposCont.add(getDocPsc());
 		TiposCont.add(getDocDiv());
+		TiposCont.add(getDocArcps());
 		
 		TiposDiv.add(getDocDiv());
 		
 		TiposCfc.add(getDocCra());
+		
+		TiposPe.add(getDocMaci());
+		TiposPe.add(getDocDesp());
+		TiposPe.add(getDocDeci());
+		TiposPe.add(getDocPeti());
 		
 		setTrab(new Organizacao(1, "Trabalhista", "Trab", TiposTrab));
 		setTjrj(new Organizacao(2, "Tribunal de Justiça RJ", "TJRJ", TiposTjrj));
@@ -159,6 +178,7 @@ public class Juridico {
 		setCont(new Organizacao(9, "Contratos", "CONT", TiposCont));
 		setDiv(new Organizacao(10, "Diversos", "Div", TiposDiv));
 		setCfc(new Organizacao(11, "Conselho Federal Contabilidade", "Cfc", TiposCfc));
+		setPe(new Organizacao(12, "Processo Eletrônico", "PE", TiposPe));
 		
 		setOrganizacoes(new ArrayList<Organizacao>());
 		getOrganizacoes().add(getTrab());
@@ -172,6 +192,7 @@ public class Juridico {
 		getOrganizacoes().add(getCont());
 		getOrganizacoes().add(getDiv());
 		getOrganizacoes().add(getCfc());
+		getOrganizacoes().add(getPe());
 		
 		
 		setJuridico(new Unidade(6, "Jurídico", "JR", getOrganizacoes()));
@@ -186,8 +207,7 @@ public class Juridico {
 		Collections.sort(getTiposInpi(), new ComparadorTipoDocumento());
 		Collections.sort(getTiposCart(), new ComparadorTipoDocumento());
 		Collections.sort(getTiposCont(), new ComparadorTipoDocumento());
-		Collections.sort(getTiposDiv(), new ComparadorTipoDocumento());
-		
+		Collections.sort(getTiposDiv(), new ComparadorTipoDocumento());		
 		Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 	}
 	
@@ -207,6 +227,16 @@ public class Juridico {
 	public ArrayList<Organizacao> getOrganizacoes() {
 		return organizacoes;
 	}
+
+	public ArrayList<TipoDocumento> getTiposPe() {
+		return TiposPe;
+	}
+
+
+	public void setTiposPe(ArrayList<TipoDocumento> tiposPe) {
+		TiposPe = tiposPe;
+	}
+
 
 	public void setOrganizacoes(ArrayList<Organizacao> organizacoes) {
 		this.organizacoes = organizacoes;
@@ -294,6 +324,56 @@ public class Juridico {
 	}
 
 //---------------------------------------------------------------------------------------------------		
+
+	public TipoDocumento getDocArcps() {
+		return DocArcps;
+	}
+
+
+	public void setDocArcps(TipoDocumento docArcps) {
+		DocArcps = docArcps;
+	}
+
+
+	public TipoDocumento getDocMaci() {
+		return DocMaci;
+	}
+
+
+	public void setDocMaci(TipoDocumento docMaci) {
+		DocMaci = docMaci;
+	}
+
+
+	public TipoDocumento getDocPeti() {
+		return DocPeti;
+	}
+
+
+	public void setDocPeti(TipoDocumento docPeti) {
+		DocPeti = docPeti;
+	}
+
+
+	public TipoDocumento getDocDeci() {
+		return DocDeci;
+	}
+
+
+	public void setDocDeci(TipoDocumento docDeci) {
+		DocDeci = docDeci;
+	}
+
+
+	public TipoDocumento getDocDesp() {
+		return DocDesp;
+	}
+
+
+	public void setDocDesp(TipoDocumento docDesp) {
+		DocDesp = docDesp;
+	}
+
 
 	public TipoDocumento getDocPsc() {
 		return DocPsc;
@@ -530,6 +610,16 @@ public ArrayList<TipoDocumento> getTiposCfc() {
 
 	public void setTiposCfc(ArrayList<TipoDocumento> tiposCfc) {
 		TiposCfc = tiposCfc;
+	}
+
+
+	public Organizacao getPe() {
+		return Pe;
+	}
+
+
+	public void setPe(Organizacao pe) {
+		Pe = pe;
 	}
 
 

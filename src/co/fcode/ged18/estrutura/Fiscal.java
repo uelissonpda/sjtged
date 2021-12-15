@@ -23,6 +23,7 @@ public class Fiscal {
 		private Organizacao trib; // IMPOSTOS/CONTRIBUIÇÕES
 		private Organizacao parc; // PARCELAMENTO
 		private Organizacao mun; // PARCELAMENTO
+		private Organizacao tr;   // TERMO DE RESPONSABILIDADE
 		
 		
 
@@ -64,6 +65,7 @@ public class Fiscal {
 		private TipoDocumento DocMunici; //
 		private TipoDocumento DocCodace; //
 		private TipoDocumento DocCepom; // INSCRIÇÃO CEPOM
+		private TipoDocumento DocIiss;	 // ISENÇÃO DE ISS
 		
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -83,6 +85,7 @@ public class Fiscal {
 		private ArrayList<TipoDocumento> TiposTrib; // TIPOS IMPOSTOS/CONTRIBUIÇÕES
 		private ArrayList<TipoDocumento> TiposParc; // TIPOS PARCELAMENTOS
 		private ArrayList<TipoDocumento> TiposMun; // TIPOS CEPOM
+		private ArrayList<TipoDocumento> TiposTr; 	// TIPOS TERMO DE RESPONSABILIDADE
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -105,7 +108,6 @@ public class Fiscal {
 			setDocCnefes(new TipoDocumento(13,"Cnefes","CNEFES"));
 			setDocTomret(new TipoDocumento(14,"Tomadores-Retenções",""));
 			setDocSn(new TipoDocumento(15,"Simples Nacional","SN"));
-
 			setDocIrcsll(new TipoDocumento(16,"IRPJ-CSLL","IRCSLL"));
 			setDocIr1708(new TipoDocumento(17,"IRRF 1708","Ir1708"));
 			setDocIr3280(new TipoDocumento(18,"IRRF 3280","Ir3280"));
@@ -125,6 +127,7 @@ public class Fiscal {
 			setDocMunici(new TipoDocumento(32,"Municipal","MUNICI"));
 			setDocCodace(new TipoDocumento(33,"Código de Acesso","CODACE"));
 			setDocCepom(new TipoDocumento(34, "Inscrição CEPOM", "CEPOM"));
+			setDocIiss(new TipoDocumento(35, "Isenção de ISS", "IISS"));
 			
 			
 			setTiposTdm(new ArrayList<TipoDocumento>());
@@ -140,6 +143,7 @@ public class Fiscal {
 			setTiposXml(new ArrayList<TipoDocumento>());
 			setTiposParc(new ArrayList<TipoDocumento>());
 			setTiposMun(new ArrayList<TipoDocumento>());
+			setTiposTr(new ArrayList<TipoDocumento>());
 			
 			TiposTdm.add(getDocTdm());
 			
@@ -194,6 +198,8 @@ public class Fiscal {
 			
 			TiposMun.add(getDocCepom());
 			
+			TiposTr.add(getDocIiss());
+			
 			setTdm(new Organizacao(1,"Tdm","TDM",TiposTdm));
 			setSepd(new Organizacao(2,"Sepd","SEPD",TiposSepd));
 			setXml(new Organizacao(3,"Xml","XMLA",TiposXml));
@@ -207,6 +213,7 @@ public class Fiscal {
 			setTrib(new Organizacao(11,"Impostos-Contribuições","TRIB",TiposTrib));
 			setParc(new Organizacao(12,"Parcelamento","PARC",TiposParc));
 			setMun(new Organizacao(13,"Municipal","MUN",TiposMun));
+			setTr(new Organizacao(14,"Termo de Responsabilidade","TR",TiposTr));
 			
 			setOrganizacoes(new ArrayList<Organizacao>());
 			getOrganizacoes().add(getTdm());
@@ -222,6 +229,7 @@ public class Fiscal {
 			getOrganizacoes().add(getTrib());
 			getOrganizacoes().add(getParc());
 			getOrganizacoes().add(getMun());
+			getOrganizacoes().add(getTr());
 			
 			setFiscal(new Unidade(4,"Fiscal","FS",getOrganizacoes()));
 			
@@ -238,6 +246,7 @@ public class Fiscal {
 			Collections.sort(getTiposTrib(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposXml(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposParc(), new ComparadorTipoDocumento());
+			Collections.sort(getTiposTr(), new ComparadorTipoDocumento());
 			
 			Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 	}
@@ -249,6 +258,14 @@ public class Fiscal {
 
 		public void setTiposMun(ArrayList<TipoDocumento> tiposMun) {
 			TiposMun = tiposMun;
+		}
+
+public ArrayList<TipoDocumento> getTiposTr() {
+			return TiposTr;
+		}
+
+		public void setTiposTr(ArrayList<TipoDocumento> tiposTr) {
+			TiposTr = tiposTr;
 		}
 
 /**
@@ -435,6 +452,14 @@ public class Fiscal {
 
 //-----------------------------------------------------------------------------------------------		
 		
+
+		public TipoDocumento getDocIiss() {
+			return DocIiss;
+		}
+
+		public void setDocIiss(TipoDocumento docIiss) {
+			DocIiss = docIiss;
+		}
 
 		public TipoDocumento getDocCepom() {
 			return DocCepom;
@@ -944,6 +969,14 @@ public class Fiscal {
 
 		//-----------------------------------------------------------------------------------------------
 		
+		public Organizacao getTr() {
+			return tr;
+		}
+
+		public void setTr(Organizacao tr) {
+			this.tr = tr;
+		}
+
 		public Organizacao getMun() {
 			return mun;
 		}

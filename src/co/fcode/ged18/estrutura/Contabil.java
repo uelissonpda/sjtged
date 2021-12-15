@@ -29,6 +29,7 @@ public class Contabil {
 			private Organizacao lvdi;  // APOIO CONTÁBIL
 			private Organizacao lvrz;  // APOIO CONTÁBIL
 			private Organizacao lvcx;  // APOIO CONTÁBIL
+			private Organizacao crc;   // CRC
 			
 
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -90,6 +91,7 @@ public class Contabil {
 			private TipoDocumento DocTalvcx; // TERMOS DE ABERTURA
 			private TipoDocumento DocTelvcx; // TERMOS DE ENCERRAMENTO
 			private TipoDocumento DocLivDig; // LIVRO DIÁRIO DIGITAL
+			private TipoDocumento DocTtrt;	 // TERMO DE TRANSFERÊNCIA DE RESPONSABILIDADE TÉCNICA
 			 
 						
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -115,6 +117,7 @@ public class Contabil {
 			private ArrayList<TipoDocumento> TiposLvdi;  // APOIO CONTÁBIL
 			private ArrayList<TipoDocumento> TiposLvrz;  // APOIO CONTÁBIL
 			private ArrayList<TipoDocumento> TiposLvcx;  // APOIO CONTÁBIL
+			private ArrayList<TipoDocumento> TiposCrc;	 // TIPOS CRC
 			
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
@@ -181,6 +184,7 @@ public class Contabil {
 				setDocDcecfs(new TipoDocumento(56,"Declaração","DCECFS"));
 				setDocReefdr(new TipoDocumento(57,"Recibo de Entrega","REEFDR"));
 				setDocLivDig(new TipoDocumento(58, "Livro Diário Digital", "LIVDIG"));
+				setDocTtrt(new TipoDocumento(59, "Termo de Transferência de Responsabilidade Técnica", "TTRT"));
 			
 				
 				setTiposBlnc(new ArrayList<TipoDocumento>());
@@ -202,6 +206,7 @@ public class Contabil {
 				setTiposLvdi(new ArrayList<TipoDocumento>());
 				setTiposLvrz(new ArrayList<TipoDocumento>());
 				setTiposLvcx(new ArrayList<TipoDocumento>());
+				setTiposCrc(new ArrayList<TipoDocumento>());
 				
 				
 				
@@ -285,6 +290,9 @@ public class Contabil {
 				TiposLvcx.add(getDocTalvcx());
 				TiposLvcx.add(getDocTelvcx());
 				
+				TiposCrc.add(getDocTtrt());
+				
+				
 				setBlnc(new Organizacao(1,"Balanços","BLNC",TiposBlnc));
 				setDre(new Organizacao(2,"DRE","DRE",TiposDre));
 				setBlct(new Organizacao(3,"Balancetes", "BLCT", TiposBlct));
@@ -304,6 +312,7 @@ public class Contabil {
 				setLvdi(new Organizacao(17,"LVDI","LVDI",TiposLvdi));
 				setLvrz(new Organizacao(18,"Livro Razão","LVRZ",TiposLvrz));
 				setLvcx(new Organizacao(19,"Livro Caixa","LVCX",TiposLvcx));
+				setCrc(new Organizacao(20,"CRC","CRC",TiposCrc));
 				
 				
 				setOrganizacoes(new ArrayList<Organizacao>());
@@ -326,6 +335,7 @@ public class Contabil {
 				getOrganizacoes().add(getLvdi());
 				getOrganizacoes().add(getLvrz());
 				getOrganizacoes().add(getLvcx());
+				getOrganizacoes().add(getCrc());
 				
 				setContabil(new Unidade(2,"Contábil","CT",getOrganizacoes()));
 				
@@ -349,6 +359,7 @@ public class Contabil {
 				Collections.sort(getTiposLvcx(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposLvdi(), new ComparadorTipoDocumento());
 				Collections.sort(getTiposLvrz(), new ComparadorTipoDocumento());
+				Collections.sort(getTiposCrc(), new ComparadorTipoDocumento());
 				
 				Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 			}
@@ -482,6 +493,18 @@ public class Contabil {
 
 			//---------------------TIPOS DE DOC. APOIO CONTÁBIL----------------------------------------------
 			
+			public ArrayList<TipoDocumento> getTiposCrc() {
+				return TiposCrc;
+			}
+			public void setTiposCrc(ArrayList<TipoDocumento> tiposCrc) {
+				TiposCrc = tiposCrc;
+			}
+			public TipoDocumento getDocTtrt() {
+				return DocTtrt;
+			}
+			public void setDocTtrt(TipoDocumento docTtrt) {
+				DocTtrt = docTtrt;
+			}
 			public TipoDocumento getDocLivDig() {
 				return DocLivDig;
 			}
@@ -817,6 +840,12 @@ public class Contabil {
 			}
 //-----------------------------ORGANIZAÇÃO APOIO CONTÁBIL------------------------------------------
 			
+			public Organizacao getCrc() {
+				return crc;
+			}
+			public void setCrc(Organizacao crc) {
+				this.crc = crc;
+			}
 			public Organizacao getDctf() {
 				return dctf;
 			}

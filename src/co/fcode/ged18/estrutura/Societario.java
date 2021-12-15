@@ -106,6 +106,12 @@ public class Societario {
 		private TipoDocumento DocCertD;	 // CERTIFICADO DE DESPACHO
 		private TipoDocumento DocCoprex; // CONTROLE DE PROCESSO EXTERNO
 		private TipoDocumento DocRgi; 	 // RGI
+		private TipoDocumento DocCapc;   // CONTROLE DE ANDAMENTO DE PROCESSO CONCLUÍDO
+		private TipoDocumento DocCenas;  // CERTIDÃO DE NASCIMENTO DO SÓCIO
+		private TipoDocumento DocCeip;	 // CERTIDÃO DE ISENÇÃO DE PUBLICIDADE
+		private TipoDocumento DocPc;	 // PROCURAÇÃO DE CARTÓRIO
+		private TipoDocumento DocDl;	 // DISTRATO DE LOCACAO
+		private TipoDocumento DocTxal;	 // TAXA DE ALVARÁ
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -208,7 +214,13 @@ public class Societario {
 			setDocFicha(new TipoDocumento(80, "Ficha de Informações", "FICHA"));
 			setDocCertD(new TipoDocumento(81, "Certificado de Despacho", "CERTD"));
 			setDocCoprex(new TipoDocumento(82,"Controle de Processo Externo","COPREX"));
-			setDocCoprex(new TipoDocumento(83,"RGI","RGI"));
+			setDocRgi(new TipoDocumento(83,"RGI","RGI"));
+			setDocCapc(new TipoDocumento(84,"Controle de Andamento de Processo Concluído","CAPC"));
+			setDocCenas(new TipoDocumento(85,"Certidão de Nascimento do Sócio","CENAS"));
+			setDocCeip(new TipoDocumento(85, "Certidão de Isenção de Publicidade", "CEIP"));
+			setDocPc(new TipoDocumento(86, "Procuração de Cartório", "PC"));
+			setDocDl(new TipoDocumento(87, "Distrato de Locação", "DL"));
+			setDocTxal(new TipoDocumento(88, "Taxa de Alvará", "TXAL"));
 		
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
@@ -284,6 +296,8 @@ public class Societario {
 			TiposMun.add(getDocSinale());
 			TiposMun.add(getDocTis());
 			TiposMun.add(getDocCertbi());
+			TiposMun.add(getDocCeip());
+			TiposMun.add(getDocTxal());
 						
 			TiposDvrs.add(getDocConloc());
 			TiposDvrs.add(getDocCpf());
@@ -297,6 +311,10 @@ public class Societario {
 			TiposDvrs.add(getDocCecaso());
 			TiposDvrs.add(getDocCoprex());
 			TiposDvrs.add(getDocRgi());
+			TiposDvrs.add(getDocCapc());
+			TiposDvrs.add(getDocCenas());
+			TiposDvrs.add(getDocPc());
+			TiposDvrs.add(getDocDl());
 			
 			TiposCertd.add(getDocCtint());
 			TiposCertd.add(getDocSimp());
@@ -342,8 +360,7 @@ public class Societario {
 			Collections.sort(getTiposMun(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposDvrs(), new ComparadorTipoDocumento());
 			Collections.sort(getTiposCertd(), new ComparadorTipoDocumento());
-			Collections.sort(getTiposDocJu(), new ComparadorTipoDocumento());
-			
+			Collections.sort(getTiposDocJu(), new ComparadorTipoDocumento());			
 			Collections.sort(getOrganizacoes(), new ComparadorOrganizacao());
 		}
 //------------------------------------------------------------------------------------------------
@@ -409,6 +426,46 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocTxal() {
+			return DocTxal;
+		}
+
+		public void setDocTxal(TipoDocumento docTxal) {
+			DocTxal = docTxal;
+		}
+
+		public TipoDocumento getDocPc() {
+			return DocPc;
+		}
+
+		public void setDocPc(TipoDocumento docPc) {
+			DocPc = docPc;
+		}
+
+		public TipoDocumento getDocCeip() {
+			return DocCeip;
+		}
+
+		public void setDocCeip(TipoDocumento docCeip) {
+			DocCeip = docCeip;
+		}
+
+		public TipoDocumento getDocCenas() {
+			return DocCenas;
+		}
+
+		public void setDocCenas(TipoDocumento docCenas) {
+			DocCenas = docCenas;
+		}
+
+		public TipoDocumento getDocCapc() {
+			return DocCapc;
+		}
+
+		public void setDocCapc(TipoDocumento docCapc) {
+			DocCapc = docCapc;
+		}
+
 		public TipoDocumento getDocRgi() {
 			return DocRgi;
 		}
@@ -1167,6 +1224,14 @@ public class Societario {
 			TiposDocJu = tiposDocJu;
 		}
 		
+		public TipoDocumento getDocDl() {
+			return DocDl;
+		}
+
+		public void setDocDl(TipoDocumento docDl) {
+			DocDl = docDl;
+		}
+
 		public TipoDocumento getDocAutome() {
 			return DocAutome;
 		}
