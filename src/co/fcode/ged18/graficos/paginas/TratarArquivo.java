@@ -49,7 +49,7 @@ public class TratarArquivo extends JDesktopPane{
 	
 	String query = "select NmEmpresa,CdEmpresa from wphd.Empresa";
 	//StringBuffer caminho = new StringBuffer("A:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
-	StringBuffer caminho = new StringBuffer("//SJTINFRA02/SJTGED/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
+	StringBuffer caminho = new StringBuffer("//SJThyperv01/SJTGED/CLIENTES/PJ - PESSOA JURÍDICA/"); // @production
 	//StringBuffer caminho = new StringBuffer("C:/CLIENTES/PJ - PESSOA JURÍDICA/"); // @debug Windows
 	//StringBuffer caminho = new StringBuffer("Users/insidemybrain/PJ - PESSOA JURÍDICA/"); // @debug Mac
 	
