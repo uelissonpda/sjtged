@@ -35,7 +35,7 @@ public class Societario {
 		private TipoDocumento DocLavpal; // LAUDO DE AVALIAÇÃO DO PATRIMÔNIO LÍQUIDO
 		private TipoDocumento DocEstat;  // ESTATUTO 
 		private TipoDocumento DocCnpj;   // CNPJ
-		private TipoDocumento DocCertbx;   // CNPJ
+		private TipoDocumento DocCertbx; // CNPJ
 		private TipoDocumento DocSinale; // SINALEIRA
 		private TipoDocumento DocInsest; // INSCRIÇÃO ESTADUAL
 		private TipoDocumento DocLdexcb; // CERTIDÃO DE BAIXA DA INSCRIÇÃO ESTADUAL
@@ -112,6 +112,9 @@ public class Societario {
 		private TipoDocumento DocPc;	 // PROCURAÇÃO DE CARTÓRIO
 		private TipoDocumento DocDl;	 // DISTRATO DE LOCACAO
 		private TipoDocumento DocTxal;	 // TAXA DE ALVARÁ
+		private TipoDocumento DocDue;	 // DECLARAÇÃO DE UNIÃO ESTÁVEL
+		private TipoDocumento DocCie;	 // CÉDULA DE IDENTIDADE DO ESTRANGEIRO
+		private TipoDocumento DocIcc;	 // INSCRIÇÃO CONSELHO DE CLASSE
 			
 //-----------------------FIM DA DECLARAÇÃO----------------------------//
 		
@@ -221,6 +224,9 @@ public class Societario {
 			setDocPc(new TipoDocumento(86, "Procuração de Cartório", "PC"));
 			setDocDl(new TipoDocumento(87, "Distrato de Locação", "DL"));
 			setDocTxal(new TipoDocumento(88, "Taxa de Alvará", "TXAL"));
+			setDocDue(new TipoDocumento(89, "Declaração de União Estável", "DUE"));
+			setDocCie(new TipoDocumento(90, "Cédula de Identidade do Estrangeiro", "CIE"));
+			setDocIcc(new TipoDocumento(91, "Inscrição Conselho de Classe", "ICC"));
 		
 			
 			setTiposAtos(new ArrayList<TipoDocumento>());
@@ -247,6 +253,7 @@ public class Societario {
 			TiposAtos.add(getDocJucerj());
 			TiposAtos.add(getDocLdd());
 			TiposAtos.add(getDocReatv());
+			TiposAtos.add(getDocIcc());
 			
 			TiposFed.add(getDocCnpj());
 			TiposFed.add(getDocCertbx());
@@ -315,6 +322,8 @@ public class Societario {
 			TiposDvrs.add(getDocCenas());
 			TiposDvrs.add(getDocPc());
 			TiposDvrs.add(getDocDl());
+			TiposDvrs.add(getDocDue());
+			TiposDvrs.add(getDocCie());
 			
 			TiposCertd.add(getDocCtint());
 			TiposCertd.add(getDocSimp());
@@ -426,6 +435,30 @@ public class Societario {
 	
 //------------------------------------------------------------------------------------------------
 		
+		public TipoDocumento getDocIcc() {
+			return DocIcc;
+		}
+
+		public void setDocIcc(TipoDocumento docIcc) {
+			DocIcc = docIcc;
+		}
+
+		public TipoDocumento getDocCie() {
+			return DocCie;
+		}
+
+		public void setDocCie(TipoDocumento docCie) {
+			DocCie = docCie;
+		}
+
+		public TipoDocumento getDocDue() {
+			return DocDue;
+		}
+
+		public void setDocDue(TipoDocumento docDue) {
+			DocDue = docDue;
+		}
+
 		public TipoDocumento getDocTxal() {
 			return DocTxal;
 		}

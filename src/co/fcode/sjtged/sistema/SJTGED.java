@@ -41,7 +41,7 @@ public class SJTGED extends JFrame{
 		jdp.add(jtp);
 		
 		Janela.tp.setText(nomePrograma+" - "+versao);
-		Janela.tp.setBorder(new EmptyBorder(20,20,20,20));
+		Janela.tp.setBorder(new EmptyBorder(20,20,18,20));
 		jdp.add(Janela.tp, BorderLayout.NORTH);
 		
 		jdp.setBackground(Color.WHITE);
