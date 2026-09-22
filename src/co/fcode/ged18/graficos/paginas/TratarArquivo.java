@@ -363,7 +363,7 @@ public class TratarArquivo extends JDesktopPane{
 							tipoDocTxt+"/"+
 							nomeArquivo);
 					}
-					//System.out.println(arqNovo.getAbsolutePath());
+					System.out.println(arqNovo.getAbsolutePath());
 		 				
 					if(!arqNovo.exists()){
 						arqVelho.renameTo(arqNovo);

@@ -14,7 +14,7 @@ public class Database implements Runnable{
 	
 	/* Conexão com SQL */
 	// -- Acesso ao Banco da Alterdata (Produção)
-	public static String urlAlterdata = "jdbc:sqlserver://192.168.100.220:64363;databaseName=ALTERDATA_PACK"; // @production
+	public static String urlAlterdata = "jdbc:sqlserver://192.168.100.220:59288;databaseName=ALTERDATA_PACK"; // @production
 	//public static String urlAlterdata = "jdbc:sybase:Tds:192.168.100.216:2638?ServiceName=contabil"; // @production
 	//public static String urlAlterdata = "jdbc:sqlserver://177.207.207.148:49398;databaseName=ALTERDATA"; // @home
 	// SQL RESERVA
